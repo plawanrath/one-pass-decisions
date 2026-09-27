@@ -1,0 +1,38 @@
+{
+ "spec": {
+  "task": "routing150",
+  "seed": 20260927,
+  "n_dev": 1033,
+  "n_cal": 2067,
+  "n_test": 5500,
+  "n_train": 15250,
+  "source": "clinc/clinc_oos:plus",
+  "notes": "official splits; validation split into dev/cal 1:2 with seed 20260927; layout=intent150"
+ },
+ "splits": {
+  "train": {
+   "n": 15250,
+   "sha256": "43a409640589ce2716ffbdc1453700002cc0e18f98e2f7c08aae3bd581a45cff",
+   "n_groups": 15250
+  },
+  "dev": {
+   "n": 1033,
+   "sha256": "79dd987f9315278e22d680ffd649227d8a438a3a999ab981a9bc33e841008b77",
+   "n_groups": 1033
+  },
+  "cal": {
+   "n": 2067,
+   "sha256": "0b17df0331e394a76cbcc0054d00a05191c49ed4847f911af4f51e0ac7c6f821",
+   "n_groups": 2067
+  },
+  "test": {
+   "n": 5500,
+   "sha256": "db0b708c09da75cb9ae6813365e9cbde0226c7f47bd472b6c5288c29e3423db6",
+   "n_groups": 5500
+  }
+ },
+ "kinds": [
+  "choice"
+ ],
+ "manifest_sha256": "ff352e6e6ae47ddf6ef8cc148d073adc751d8f984234b55a80af5ce5c74022e6"
+}

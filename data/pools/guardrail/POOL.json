@@ -1,0 +1,40 @@
+{
+ "spec": {
+  "task": "guardrail",
+  "seed": 20260927,
+  "n_dev": 9026,
+  "n_cal": 24822,
+  "n_test": 33849,
+  "n_train": null,
+  "source": "reshabhs/SPML_Chatbot_Prompt_Injection + S-Labs/prompt-injection-dataset + walledai/JailbreakHub + deepset/prompt-injections + jackhhao/jailbreak-classification",
+  "notes": "33239 groups; SPML grouped by system prompt (unseen policies at test)"
+ },
+ "splits": {
+  "train": {
+   "n": 45122,
+   "sha256": "8865db183bccc57ec0fe7a2e3ddc85fe7303d17378cf6af87557151a8ab5caff",
+   "n_groups": 13722
+  },
+  "dev": {
+   "n": 9027,
+   "sha256": "f2e66aef7feed106e5efb994bc834d1c794d7d96f7dea768ad82c865f8d61d6d",
+   "n_groups": 2451
+  },
+  "cal": {
+   "n": 24832,
+   "sha256": "19379ed8fb7448fbe1becab166bfd4d32ec8ec651814dc82ad70e2b8d040bfce",
+   "n_groups": 7073
+  },
+  "test": {
+   "n": 33850,
+   "sha256": "4640bdf8344dff78c16e6aa9f63dac282ce4764c1d92fa650e4afff3974ba003",
+   "n_groups": 9993
+  }
+ },
+ "kinds": [
+  "choice",
+  "noul",
+  "score"
+ ],
+ "manifest_sha256": "5244010ae12827f632b81508797a88d195c51a09821504a91382c537e626e618"
+}

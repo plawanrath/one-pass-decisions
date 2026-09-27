@@ -1,0 +1,24 @@
+[project]
+name = "onepass"
+version = "0.1.0"
+description = "A serving engine for typed-decision workloads: many small questions over one shared state, packed into a single encoder pass with exact reuse of the state encoding, and gated by an escalation threshold calibrated on the scores the served engine actually produces."
+readme = "README.md"
+requires-python = ">=3.11"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["onepass*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-ra --strict-markers"
+markers = [
+    "slow: tests that take >5s",
+    "gpu: tests requiring an accelerator (MLX / CUDA)",
+    "docker: tests requiring the pinned toolchain container",
+]

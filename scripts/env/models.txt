@@ -1,0 +1,11 @@
+# One Hugging Face repo id per line. scripts/env/pin_models.py resolves each to a commit hash in models.lock.txt.
+# Encoders we fine-tune (Answer.AI / LightOn, Apache-2.0)
+answerdotai/ModernBERT-base
+answerdotai/ModernBERT-large
+# Second workload model, served unmodified (Fastino Labs, Apache-2.0)
+fastino/GLiNER2.5-Decide
+# System 2 LLM, thinking off (Mistral AI, Apache-2.0; MLX 8-bit)
+mlx-community/Mistral-Small-3.2-24B-Instruct-2506-8bit
+# Same-size decoder for the prefill-only and one-token (AnyJev recipe) baselines (Hugging Face, Apache-2.0)
+HuggingFaceTB/SmolLM2-360M-Instruct
+HuggingFaceTB/SmolLM2-1.7B-Instruct

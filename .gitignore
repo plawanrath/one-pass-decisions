@@ -1,0 +1,44 @@
+# private research state: plans, tracker, ADRs, daily logs, handoff, paper drafts. Never tracked.
+# (moved between machines by the research-kit state bundle, not by git)
+docs/
+paper/
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+.research-kit/
+# environments and weights
+.venv/
+venv/
+.env
+.env.*
+models/
+checkpoints/
+wandb/
+outputs/
+*.safetensors
+*.gguf
+*.pt
+*.ckpt
+# data that is derived or too large to track
+data/raw/
+data/processed/
+data/cache/
+# caches and logs
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+.DS_Store
+logs/*
+!logs/.gitkeep
+*.sqlite
+*.nsys-rep
+*.qdrep
+
+# Locked pools are regenerated from public corpora by scripts/w01_lock_pools.py; only the manifests are tracked.
+data/pools/**/*.jsonl

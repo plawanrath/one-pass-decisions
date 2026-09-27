@@ -1,0 +1,1 @@
+"""A serving engine for typed-decision workloads: many small questions over one shared state, packed into a single encoder pass with exact reuse of the state encoding, and gated by an escalation threshold calibrated on the scores the served engine actually produces."""

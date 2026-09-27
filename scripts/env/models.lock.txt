@@ -1,0 +1,8 @@
+# Pinned upstream model revisions (HF commit hashes). Regenerate with scripts/env/pin_models.py.
+# Format: <hf_repo>@<revision>
+answerdotai/ModernBERT-base@8949b909ec900327062f0ebf497f51aef5e6f0c8
+answerdotai/ModernBERT-large@45bb4654a4d5aaff24dd11d4781fa46d39bf8c13
+fastino/GLiNER2.5-Decide@7ee5da4c2415e32259bcdc0b1a7367c32ce8d6f6
+mlx-community/Mistral-Small-3.2-24B-Instruct-2506-8bit@1db835463eb0f953019af1048077b90403b70424
+HuggingFaceTB/SmolLM2-360M-Instruct@a10cc1512eabd3dde888204e902eca88bddb4951
+HuggingFaceTB/SmolLM2-1.7B-Instruct@31b70e2e869a7173562077fd711b654946d38674
