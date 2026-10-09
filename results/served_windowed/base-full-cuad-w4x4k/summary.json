@@ -1,0 +1,49 @@
+{
+ "model": "models/_from_h100_cuad/modernbert-base-full-cuad",
+ "task": "cuad",
+ "pool_manifest": "fb9d753bc08db3a96bec908f64939e81e274bb7ac628a67445dcd83a98943d88",
+ "git": "nogit",
+ "config": {
+  "mode": "windowed",
+  "epochs": 1.0,
+  "lr": 3e-05,
+  "head_lr": 0.0001,
+  "weight_decay": 0.01,
+  "warmup_frac": 0.06,
+  "tokens_per_batch": 16384,
+  "max_seqs_per_batch": 1,
+  "max_state_tokens": 16384,
+  "state_side": "head",
+  "max_option_tokens": 24,
+  "max_questions_per_seq": 41,
+  "max_seq_tokens": 33792,
+  "window_tokens": 4096,
+  "decouple_layers": 0,
+  "max_steps": 5021,
+  "micro_tokens": null,
+  "pad_multiple": 128,
+  "autocast_bf16": true,
+  "grad_checkpoint": false,
+  "seed": 20260927,
+  "ckpt_every": 200,
+  "select_points": 0,
+  "select_metric": "aurc",
+  "log_every": 20,
+  "grad_clip": 1.0,
+  "device": "auto",
+  "notes": "answerdotai/ModernBERT-base@8949b909 task=cuad"
+ },
+ "splits": {
+  "test": {
+   "n": 2091,
+   "accuracy": 0.8708751793400287,
+   "aurc": 0.03991433864654261,
+   "eaurc": 0.031162905418591548,
+   "ece": 0.08104137921663973,
+   "auroc_error": 0.8108161978562857,
+   "coverage_at_risk_0.02": 0.3510282161645146,
+   "coverage_at_risk_0.05": 0.6585365853658537,
+   "coverage_at_risk_0.1": 0.9196556671449068
+  }
+ }
+}
