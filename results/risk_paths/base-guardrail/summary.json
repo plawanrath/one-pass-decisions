@@ -1,0 +1,476 @@
+{
+ "alpha": 0.05,
+ "delta": 0.05,
+ "reference": "torch-block",
+ "paths": {
+  "torch-block": {
+   "n_cal": 24832,
+   "n_test": 33850,
+   "grid_source": "own dev scores",
+   "own_threshold": {
+    "alpha": 0.05,
+    "delta": 0.05,
+    "tau": 0.5772425532341003,
+    "n_calibration": 24832,
+    "n_accepted": 21822,
+    "k_wrong": 938,
+    "coverage": 0.8787854381443299,
+    "empirical_risk": 0.04298414444138943,
+    "p_value": 6.286187113343661e-07,
+    "grid_sha256": "cb432b1c333cd46ce9366849a81c3dbbd205a4364ad3839fedf07b3ae1b39733",
+    "pool_sha256": "",
+    "thresholds_tested": 84,
+    "path": {
+     "name": "torch-block"
+    }
+   },
+   "own_tau_on_test": {
+    "tau": 0.5772425532341003,
+    "coverage": 0.8841949778434269,
+    "risk": 0.04416972936852656,
+    "n": 33850,
+    "n_accepted": 29930,
+    "k_wrong": 1322,
+    "risk_ci_low": 0.041869557244249615,
+    "risk_ci_high": 0.04655889342727716,
+    "violates_alpha": false
+   },
+   "reference_tau_on_test": {
+    "tau": 0.5772425532341003,
+    "coverage": 0.8841949778434269,
+    "risk": 0.04416972936852656,
+    "n": 33850,
+    "n_accepted": 29930,
+    "k_wrong": 1322,
+    "risk_ci_low": 0.041869557244249615,
+    "risk_ci_high": 0.04655889342727716,
+    "violates_alpha": false
+   },
+   "hand_picked_tau_on_test": {
+    "tau": 0.9232029318809509,
+    "coverage": 0.8030723781388479,
+    "risk": 0.01912889935256033,
+    "n": 33850,
+    "n_accepted": 27184,
+    "k_wrong": 520,
+    "risk_ci_low": 0.017533730530694135,
+    "risk_ci_high": 0.020827985516754976,
+    "violates_alpha": false
+   }
+  },
+  "compiled-int4": {
+   "n_cal": 24832,
+   "n_test": 33850,
+   "grid_source": "own dev scores",
+   "own_threshold": {
+    "alpha": 0.05,
+    "delta": 0.05,
+    "tau": 0.5960474014282227,
+    "n_calibration": 24832,
+    "n_accepted": 21618,
+    "k_wrong": 952,
+    "coverage": 0.8705702319587629,
+    "empirical_risk": 0.04403737626052364,
+    "p_value": 2.2389997039674653e-05,
+    "grid_sha256": "cf7d5a4ac557e9aaca92acf60e1c3df4ba106dba7e7944c50890703c822a5362",
+    "pool_sha256": "",
+    "thresholds_tested": 83,
+    "path": {
+     "name": "compiled-int4"
+    }
+   },
+   "own_tau_on_test": {
+    "tau": 0.5960474014282227,
+    "coverage": 0.8745937961595274,
+    "risk": 0.044350616449923996,
+    "n": 33850,
+    "n_accepted": 29605,
+    "k_wrong": 1313,
+    "risk_ci_low": 0.0420334232796971,
+    "risk_ci_high": 0.0467577457067316,
+    "violates_alpha": false
+   },
+   "reference_tau_on_test": {
+    "tau": 0.5772425532341003,
+    "coverage": 0.8768685376661743,
+    "risk": 0.045313658109291825,
+    "n": 33850,
+    "n_accepted": 29682,
+    "k_wrong": 1345,
+    "risk_ci_low": 0.04297524293041181,
+    "risk_ci_high": 0.04774157684378705,
+    "violates_alpha": false
+   },
+   "hand_picked_tau_on_test": {
+    "tau": 0.9232029318809509,
+    "coverage": 0.7688330871491876,
+    "risk": 0.01771373679154659,
+    "n": 33850,
+    "n_accepted": 26025,
+    "k_wrong": 461,
+    "risk_ci_low": 0.01614594156612408,
+    "risk_ci_high": 0.019390493637355,
+    "violates_alpha": false
+   }
+  },
+  "compiled-int8": {
+   "n_cal": 24832,
+   "n_test": 33850,
+   "grid_source": "own dev scores",
+   "own_threshold": {
+    "alpha": 0.05,
+    "delta": 0.05,
+    "tau": 0.5888691544532776,
+    "n_calibration": 24832,
+    "n_accepted": 21811,
+    "k_wrong": 944,
+    "coverage": 0.8783424613402062,
+    "empirical_risk": 0.043280913300628124,
+    "p_value": 1.7886719496911043e-06,
+    "grid_sha256": "eae3fb73d8c9bf4a4fa5ef7db245738b06c1244a645c5535229063bdbb1a1cee",
+    "pool_sha256": "",
+    "thresholds_tested": 84,
+    "path": {
+     "name": "compiled-int8"
+    }
+   },
+   "own_tau_on_test": {
+    "tau": 0.5888691544532776,
+    "coverage": 0.882658788774003,
+    "risk": 0.04361068344601379,
+    "n": 33850,
+    "n_accepted": 29878,
+    "k_wrong": 1303,
+    "risk_ci_low": 0.041322703491875896,
+    "risk_ci_high": 0.04598792536408065,
+    "violates_alpha": false
+   },
+   "reference_tau_on_test": {
+    "tau": 0.5772425532341003,
+    "coverage": 0.8838995568685377,
+    "risk": 0.04438502673796792,
+    "n": 33850,
+    "n_accepted": 29920,
+    "k_wrong": 1328,
+    "risk_ci_low": 0.04207904952961718,
+    "risk_ci_high": 0.046779981786418644,
+    "violates_alpha": false
+   },
+   "hand_picked_tau_on_test": {
+    "tau": 0.9232029318809509,
+    "coverage": 0.804549483013294,
+    "risk": 0.019460967907762357,
+    "n": 33850,
+    "n_accepted": 27234,
+    "k_wrong": 530,
+    "risk_ci_low": 0.01785341445383188,
+    "risk_ci_high": 0.02117216222989691,
+    "violates_alpha": false
+   }
+  },
+  "engine-hit": {
+   "n_cal": 24832,
+   "n_test": 33850,
+   "grid_source": "own dev scores",
+   "own_threshold": {
+    "alpha": 0.05,
+    "delta": 0.05,
+    "tau": 0.5780367851257324,
+    "n_calibration": 24832,
+    "n_accepted": 21815,
+    "k_wrong": 937,
+    "coverage": 0.878503543814433,
+    "empirical_risk": 0.04295209718083887,
+    "p_value": 5.625635148641259e-07,
+    "grid_sha256": "ceb1eb700052be6e88558f4150f669ff602804f99e6117e522c4578eab88dd1f",
+    "pool_sha256": "",
+    "thresholds_tested": 84,
+    "path": {
+     "name": "engine-hit"
+    }
+   },
+   "own_tau_on_test": {
+    "tau": 0.5780367851257324,
+    "coverage": 0.8841949778434269,
+    "risk": 0.043835616438356165,
+    "n": 33850,
+    "n_accepted": 29930,
+    "k_wrong": 1312,
+    "risk_ci_low": 0.041543892398937306,
+    "risk_ci_high": 0.04621640066506365,
+    "violates_alpha": false
+   },
+   "reference_tau_on_test": {
+    "tau": 0.5772425532341003,
+    "coverage": 0.8842836041358937,
+    "risk": 0.043898038953663183,
+    "n": 33850,
+    "n_accepted": 29933,
+    "k_wrong": 1314,
+    "risk_ci_low": 0.041604847291809105,
+    "risk_ci_high": 0.046280269081969735,
+    "violates_alpha": false
+   },
+   "hand_picked_tau_on_test": {
+    "tau": 0.9232029318809509,
+    "coverage": 0.8033382570162482,
+    "risk": 0.019232890817489794,
+    "n": 33850,
+    "n_accepted": 27193,
+    "k_wrong": 523,
+    "risk_ci_low": 0.017633636056744104,
+    "risk_ci_high": 0.020936001795525194,
+    "violates_alpha": false
+   }
+  },
+  "ort-fp32": {
+   "n_cal": 24832,
+   "n_test": 33850,
+   "grid_source": "own dev scores",
+   "own_threshold": {
+    "alpha": 0.05,
+    "delta": 0.05,
+    "tau": 0.5772377848625183,
+    "n_calibration": 24832,
+    "n_accepted": 21822,
+    "k_wrong": 938,
+    "coverage": 0.8787854381443299,
+    "empirical_risk": 0.04298414444138943,
+    "p_value": 6.286187113343661e-07,
+    "grid_sha256": "f839f65ab4ae7808d84f9d93d8145ddd37764798f0a9ebcec84b1d39033a50a5",
+    "pool_sha256": "",
+    "thresholds_tested": 84,
+    "path": {
+     "name": "ort-fp32"
+    }
+   },
+   "own_tau_on_test": {
+    "tau": 0.5772377848625183,
+    "coverage": 0.8841949778434269,
+    "risk": 0.04416972936852656,
+    "n": 33850,
+    "n_accepted": 29930,
+    "k_wrong": 1322,
+    "risk_ci_low": 0.041869557244249615,
+    "risk_ci_high": 0.04655889342727716,
+    "violates_alpha": false
+   },
+   "reference_tau_on_test": {
+    "tau": 0.5772425532341003,
+    "coverage": 0.8841949778434269,
+    "risk": 0.04416972936852656,
+    "n": 33850,
+    "n_accepted": 29930,
+    "k_wrong": 1322,
+    "risk_ci_low": 0.041869557244249615,
+    "risk_ci_high": 0.04655889342727716,
+    "violates_alpha": false
+   },
+   "hand_picked_tau_on_test": {
+    "tau": 0.9232029318809509,
+    "coverage": 0.8030723781388479,
+    "risk": 0.01912889935256033,
+    "n": 33850,
+    "n_accepted": 27184,
+    "k_wrong": 520,
+    "risk_ci_low": 0.017533730530694135,
+    "risk_ci_high": 0.020827985516754976,
+    "violates_alpha": false
+   }
+  },
+  "ort-int8": {
+   "n_cal": 24832,
+   "n_test": 33850,
+   "grid_source": "own dev scores",
+   "own_threshold": {
+    "alpha": 0.05,
+    "delta": 0.05,
+    "tau": 0.6002833247184753,
+    "n_calibration": 24832,
+    "n_accepted": 21491,
+    "k_wrong": 949,
+    "coverage": 0.8654558634020618,
+    "empirical_risk": 0.04415801963612675,
+    "p_value": 3.3770299332852095e-05,
+    "grid_sha256": "881708c38efdbc4bb995b0fef8b40f0d0b950078a44ba90b7f514601673ca459",
+    "pool_sha256": "",
+    "thresholds_tested": 83,
+    "path": {
+     "name": "ort-int8"
+    }
+   },
+   "own_tau_on_test": {
+    "tau": 0.6002833247184753,
+    "coverage": 0.8690398818316101,
+    "risk": 0.043478260869565216,
+    "n": 33850,
+    "n_accepted": 29417,
+    "k_wrong": 1279,
+    "risk_ci_low": 0.04117604092950473,
+    "risk_ci_high": 0.04587117577347035,
+    "violates_alpha": false
+   },
+   "reference_tau_on_test": {
+    "tau": 0.5772425532341003,
+    "coverage": 0.8735007385524373,
+    "risk": 0.045251623376623376,
+    "n": 33850,
+    "n_accepted": 29568,
+    "k_wrong": 1338,
+    "risk_ci_low": 0.04291031117062807,
+    "risk_ci_high": 0.047682798615039886,
+    "violates_alpha": false
+   },
+   "hand_picked_tau_on_test": {
+    "tau": 0.9232029318809509,
+    "coverage": 0.6860856720827179,
+    "risk": 0.0146830864622804,
+    "n": 33850,
+    "n_accepted": 23224,
+    "k_wrong": 341,
+    "risk_ci_low": 0.013175574335277844,
+    "risk_ci_high": 0.016313773276453388,
+    "violates_alpha": false
+   }
+  },
+  "ort-int8-static": {
+   "n_cal": 24832,
+   "n_test": 33850,
+   "grid_source": "own dev scores",
+   "own_error": "no threshold on the grid keeps risk <= 0.05 at confidence 0.95 (n = 24832)",
+   "reference_tau_on_test": {
+    "tau": 0.5772425532341003,
+    "coverage": 0.34209748892171343,
+    "risk": 0.5164075993091537,
+    "n": 33850,
+    "n_accepted": 11580,
+    "k_wrong": 5980,
+    "risk_ci_low": 0.5072594029333923,
+    "risk_ci_high": 0.5255475433671398,
+    "violates_alpha": true
+   },
+   "hand_picked_tau_on_test": {
+    "tau": 0.9232029318809509,
+    "coverage": 0.003958641063515509,
+    "risk": 0.6492537313432836,
+    "n": 33850,
+    "n_accepted": 134,
+    "k_wrong": 87,
+    "risk_ci_low": 0.5621136279197183,
+    "risk_ci_high": 0.7296366497754477,
+    "violates_alpha": true
+   }
+  },
+  "torch-mps-bf16": {
+   "n_cal": 24832,
+   "n_test": 33850,
+   "grid_source": "own dev scores",
+   "own_threshold": {
+    "alpha": 0.05,
+    "delta": 0.05,
+    "tau": 0.5835701823234558,
+    "n_calibration": 24832,
+    "n_accepted": 21801,
+    "k_wrong": 928,
+    "coverage": 0.8779397551546392,
+    "empirical_risk": 0.04256685473143434,
+    "p_value": 1.3670407711720773e-07,
+    "grid_sha256": "0e3ceb831f39db8bc9d4639881d5ea6e8401c84c3c8b3bb2b3a9683d934c5eff",
+    "pool_sha256": "",
+    "thresholds_tested": 84,
+    "path": {
+     "name": "torch-mps-bf16"
+    }
+   },
+   "own_tau_on_test": {
+    "tau": 0.5835701823234558,
+    "coverage": 0.8834859675036928,
+    "risk": 0.04390423326422791,
+    "n": 33850,
+    "n_accepted": 29906,
+    "k_wrong": 1313,
+    "risk_ci_low": 0.04160986237012156,
+    "risk_ci_high": 0.04628772211824614,
+    "violates_alpha": false
+   },
+   "reference_tau_on_test": {
+    "tau": 0.5772425532341003,
+    "coverage": 0.8838404726735598,
+    "risk": 0.044087171602379835,
+    "n": 33850,
+    "n_accepted": 29918,
+    "k_wrong": 1319,
+    "risk_ci_low": 0.041788628321007826,
+    "risk_ci_high": 0.046474759546158186,
+    "violates_alpha": false
+   },
+   "hand_picked_tau_on_test": {
+    "tau": 0.9232029318809509,
+    "coverage": 0.803042836041359,
+    "risk": 0.01912960306073649,
+    "n": 33850,
+    "n_accepted": 27183,
+    "k_wrong": 520,
+    "risk_ci_low": 0.017534376068486696,
+    "risk_ci_high": 0.02082875106645772,
+    "violates_alpha": false
+   }
+  },
+  "torch-mps-fp16": {
+   "n_cal": 24832,
+   "n_test": 33850,
+   "grid_source": "own dev scores",
+   "own_threshold": {
+    "alpha": 0.05,
+    "delta": 0.05,
+    "tau": 0.5782536864280701,
+    "n_calibration": 24832,
+    "n_accepted": 21816,
+    "k_wrong": 935,
+    "coverage": 0.8785438144329897,
+    "empirical_risk": 0.04285845251191786,
+    "p_value": 4.0058963391222114e-07,
+    "grid_sha256": "724d1df860b39215598ee354d88e2f23537b9d3a75759975352869ba31671d9d",
+    "pool_sha256": "",
+    "thresholds_tested": 84,
+    "path": {
+     "name": "torch-mps-fp16"
+    }
+   },
+   "own_tau_on_test": {
+    "tau": 0.5782536864280701,
+    "coverage": 0.8839586410635155,
+    "risk": 0.04411469821535994,
+    "n": 33850,
+    "n_accepted": 29922,
+    "k_wrong": 1320,
+    "risk_ci_low": 0.04181561148982426,
+    "risk_ci_high": 0.046502812020805924,
+    "violates_alpha": false
+   },
+   "reference_tau_on_test": {
+    "tau": 0.5772425532341003,
+    "coverage": 0.884165435745938,
+    "risk": 0.04420461759497477,
+    "n": 33850,
+    "n_accepted": 29929,
+    "k_wrong": 1323,
+    "risk_ci_low": 0.041903527450994564,
+    "risk_ci_high": 0.046594695535662575,
+    "violates_alpha": false
+   },
+   "hand_picked_tau_on_test": {
+    "tau": 0.9232029318809509,
+    "coverage": 0.803042836041359,
+    "risk": 0.019092815362542766,
+    "n": 33850,
+    "n_accepted": 27183,
+    "k_wrong": 519,
+    "risk_ci_low": 0.01749912847220048,
+    "risk_ci_high": 0.020790432646833584,
+    "violates_alpha": false
+   }
+  }
+ },
+ "path_scores_suffix": ""
+}

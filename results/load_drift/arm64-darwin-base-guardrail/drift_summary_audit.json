@@ -1,0 +1,50 @@
+{
+ "base": {
+  "n": 500,
+  "accuracy": 0.868,
+  "mean_conf": 0.8965214527547359,
+  "tau": 0.5780367851257324,
+  "escalate_rate": 0.12,
+  "risk_accepted": 0.05454545454545454,
+  "audit": {
+   "n_audited": 440,
+   "disagree_rate": 0.24545454545454545,
+   "confident_disagree_rate": 0.12045454545454545,
+   "accepted_accuracy": 0.9454545454545454,
+   "auditor_accuracy": 0.7522727272727273,
+   "conf_min": 0.9
+  }
+ },
+ "paraphrase": {
+  "n": 500,
+  "accuracy": 0.844,
+  "mean_conf": 0.8911744113862514,
+  "tau": 0.5780367851257324,
+  "escalate_rate": 0.11399999999999999,
+  "risk_accepted": 0.08577878103837472,
+  "audit": {
+   "n_audited": 443,
+   "disagree_rate": 0.22573363431151242,
+   "confident_disagree_rate": 0.15349887133182843,
+   "accepted_accuracy": 0.9142212189616253,
+   "auditor_accuracy": 0.7990970654627539,
+   "conf_min": 0.9
+  }
+ },
+ "option-shift": {
+  "n": 500,
+  "accuracy": 0.708,
+  "mean_conf": 0.7827134587466716,
+  "tau": 0.5780367851257324,
+  "escalate_rate": 0.20399999999999996,
+  "risk_accepted": 0.21608040201005024,
+  "audit": {
+   "n_audited": 398,
+   "disagree_rate": 0.42462311557788945,
+   "confident_disagree_rate": 0.1658291457286432,
+   "accepted_accuracy": 0.7839195979899497,
+   "auditor_accuracy": 0.7286432160804021,
+   "conf_min": 0.9
+  }
+ }
+}

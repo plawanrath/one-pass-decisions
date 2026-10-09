@@ -1,0 +1,64 @@
+{
+ "decoder": "HuggingFaceTB/SmolLM2-360M-Instruct@a10cc1512eabd3dde888204e902eca88bddb4951",
+ "task": "contractnli",
+ "pool_manifest": "3be931bc0c7a1e694e9822ac732674a28ea4559e833986910f7be8fd0269ee79",
+ "git": "nogit",
+ "train": {
+  "config": {
+   "lr": 0.0001,
+   "epochs": 3.0,
+   "docs_per_step": 4,
+   "max_state_tokens": 4096,
+   "warmup_frac": 0.06,
+   "weight_decay": 0.0,
+   "grad_clip": 1.0,
+   "seed": 20260927,
+   "autocast_bf16": true,
+   "grad_checkpointing": true,
+   "log_every": 10,
+   "notes": "HuggingFaceTB/SmolLM2-360M-Instruct@a10cc151 task=contractnli"
+  },
+  "n_records": 7191,
+  "n_documents": 423,
+  "steps": 318,
+  "seconds": 361.3,
+  "device": "cuda:0"
+ },
+ "kv_bytes_per_token_bf16": 40960,
+ "max_state_tokens": 4096,
+ "splits": {
+  "dev": {
+   "n": 1037,
+   "accuracy": 0.8293153326904532,
+   "aurc": 0.048950216201550704,
+   "eaurc": 0.033393641704221766,
+   "ece": 0.09452337023722174,
+   "auroc_error": 0.8436966233083695,
+   "coverage_at_risk_0.02": 0.3866923818707811,
+   "coverage_at_risk_0.05": 0.6123432979749277,
+   "coverage_at_risk_0.1": 0.8437801350048216
+  },
+  "cal": {
+   "n": 1037,
+   "accuracy": 0.8428158148505304,
+   "aurc": 0.05755758800455554,
+   "eaurc": 0.04442490449005368,
+   "ece": 0.07360366880606314,
+   "auroc_error": 0.8023297440721034,
+   "coverage_at_risk_0.02": 0.08389585342333655,
+   "coverage_at_risk_0.05": 0.5872709739633558,
+   "coverage_at_risk_0.1": 0.8302796528447445
+  },
+  "test": {
+   "n": 1054,
+   "accuracy": 0.8662239089184061,
+   "aurc": 0.043643054964977744,
+   "eaurc": 0.03420354113945916,
+   "ece": 0.05225360795035536,
+   "auroc_error": 0.8240078301600988,
+   "coverage_at_risk_0.02": 0.0683111954459203,
+   "coverage_at_risk_0.05": 0.7096774193548387,
+   "coverage_at_risk_0.1": 0.9165085388994307
+  }
+ }
+}

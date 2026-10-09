@@ -1,0 +1,7 @@
+{
+ "model": "models/_from_h100_round16/modernbert-base-block-contractnli-steps-s2",
+ "result": "base-block-contractnli-steps-s2",
+ "n": 34,
+ "same_decisions": 34,
+ "max_prob_diff": 0.00022999999999995246
+}

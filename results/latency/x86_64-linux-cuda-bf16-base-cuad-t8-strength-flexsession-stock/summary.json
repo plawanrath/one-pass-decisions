@@ -1,0 +1,57 @@
+{
+ "host": "x86_64-linux-cuda-bf16",
+ "threads": 8,
+ "size": "base",
+ "task": "cuad",
+ "torch": "2.14.1+cu130",
+ "grid": {
+  "S8192_K41": {
+   "N": 2,
+   "p50_ms": {
+    "engine-cold-split": 71.99614308774471,
+    "engine-cold-fill-split": 73.85859824717045,
+    "engine-hit-split": 23.62462878227234
+   },
+   "per_decision_p50_ms": {
+    "engine-cold-split": 1.756003489944993,
+    "engine-cold-fill-split": 1.8014292255407427,
+    "engine-hit-split": 0.5762104581042033
+   },
+   "speedup_vs_one_seq": {
+    "engine-cold-split": {
+     "speedup": 1.0,
+     "ci_low": 0.9010098214409186,
+     "ci_high": 1.1105060599002303,
+     "cell": "engine-cold-split",
+     "reference": "engine-cold-split",
+     "cell_p50_ms": 71.99614308774471,
+     "reference_p50_ms": 71.99614308774471,
+     "K": 41,
+     "S": 8192
+    },
+    "engine-cold-fill-split": {
+     "speedup": 0.9747835024814178,
+     "ci_low": 0.880419925214361,
+     "ci_high": 1.0861455813545056,
+     "cell": "engine-cold-fill-split",
+     "reference": "engine-cold-split",
+     "cell_p50_ms": 73.85859824717045,
+     "reference_p50_ms": 71.99614308774471,
+     "K": 41,
+     "S": 8192
+    },
+    "engine-hit-split": {
+     "speedup": 3.047503677254384,
+     "ci_low": 2.8551359126098137,
+     "ci_high": 3.253863742732,
+     "cell": "engine-hit-split",
+     "reference": "engine-cold-split",
+     "cell_p50_ms": 23.62462878227234,
+     "reference_p50_ms": 71.99614308774471,
+     "K": 41,
+     "S": 8192
+    }
+   }
+  }
+ }
+}

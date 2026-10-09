@@ -1,0 +1,38 @@
+{
+ "spec": {
+  "task": "quality",
+  "seed": 20260927,
+  "n_dev": 252,
+  "n_cal": 1029,
+  "n_test": 1057,
+  "n_train": 2271,
+  "source": "https://github.com/nyu-mll/quality/raw/main/data/v1.0.1/QuALITY.v1.0.1.zip sha256:58552970c3dc4fe199654579e9f74139becd90fca61ddc2eb0b0d82cbb437341",
+  "notes": "official train split by article into train and dev (15 articles); official dev split by article into cal/test halves with seed 20260927; every question of an article (both writers) is one request"
+ },
+ "splits": {
+  "train": {
+   "n": 2271,
+   "sha256": "f47b0dbf7c23af9c8d60cda91339108d7f0891fa0e067bb1cbcb020d8da3eaa4",
+   "n_groups": 135
+  },
+  "dev": {
+   "n": 252,
+   "sha256": "f06c8dff196eef0bde2873fd2d26af42eb414f29a747edffc876e95fccfee206",
+   "n_groups": 15
+  },
+  "cal": {
+   "n": 1029,
+   "sha256": "56804c8283b7545368634055be1e70ea4116496b62c812c00753881e165dc625",
+   "n_groups": 57
+  },
+  "test": {
+   "n": 1057,
+   "sha256": "36602f5e17c7cffe5c43fe88d76894b9c711f4823b6c7ab8140e1103da8e6d2b",
+   "n_groups": 58
+  }
+ },
+ "kinds": [
+  "choice"
+ ],
+ "manifest_sha256": "3f08b778555076f603e8a5497b043c9a70030fe14b8331327bfc7dd1aeaf1b51"
+}

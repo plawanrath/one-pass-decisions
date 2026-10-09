@@ -1,0 +1,30 @@
+{
+ "model": "base-late-tracegrade",
+ "kind": "late",
+ "task": "tracegrade",
+ "train": {
+  "epochs": 10.0,
+  "steps": 360,
+  "seconds": 1242.4537289142609,
+  "device": "cuda",
+  "states_per_step": 8,
+  "lr": 3e-05,
+  "head_lr": 0.001,
+  "max_state_tokens": 1024,
+  "state_side": "tail"
+ },
+ "splits": {
+  "dev": {
+   "n": 576,
+   "accuracy": 0.9496527777777778
+  },
+  "cal": {
+   "n": 1726,
+   "accuracy": 0.9414831981460023
+  },
+  "test": {
+   "n": 2298,
+   "accuracy": 0.9486510008703221
+  }
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "progress/silver": {
+  "n": 50,
+  "kappa": 0.7573886193206881,
+  "kappa_ci": [
+   0.6284341690436872,
+   0.8487836949375411
+  ],
+  "agreement": 0.38,
+  "weighted": true
+ },
+ "progress/encoder": {
+  "n": 50,
+  "kappa": 0.8478827766049919,
+  "kappa_ci": [
+   0.7523478708349414,
+   0.9252701770521959
+  ],
+  "agreement": 0.66,
+  "weighted": true
+ },
+ "supervisor/silver": {
+  "n": 50,
+  "kappa": 0.28741092636579557,
+  "kappa_ci": [
+   0.13990825688073383,
+   0.4537275064267352
+  ],
+  "agreement": 0.52,
+  "weighted": false
+ },
+ "supervisor/encoder": {
+  "n": 50,
+  "kappa": 0.526813880126183,
+  "kappa_ci": [
+   0.3585827733659134,
+   0.6940856560163153
+  ],
+  "agreement": 0.7,
+  "weighted": false
+ }
+}

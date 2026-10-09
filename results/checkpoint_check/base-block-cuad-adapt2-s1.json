@@ -1,0 +1,7 @@
+{
+ "model": "models/_from_h100_dose/modernbert-base-block-cuad-adapt2-s1",
+ "result": "base-block-cuad-adapt2-s1",
+ "n": 82,
+ "same_decisions": 82,
+ "max_prob_diff": 0.07460900000000001
+}

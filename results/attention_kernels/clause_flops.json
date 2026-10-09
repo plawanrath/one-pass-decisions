@@ -1,0 +1,26 @@
+{
+ "pool": "cuad test",
+ "n_contracts": 51,
+ "encoders": {
+  "base": {
+   "one_seq_one_window": 104077822470987.3,
+   "engine_one_window": 3202250472749.1763,
+   "engine_four_windows": 5950156563877.647
+  },
+  "eurobert-large": {
+   "one_seq_one_window": 452047136344274.8,
+   "engine_one_window": 13837909846046.117,
+   "engine_four_windows": 25375317665686.59
+  }
+ },
+ "decoders": {
+  "SmolLM2-360M": {
+   "one_window": 10349986194371.766,
+   "four_windows": 19187342326362.35
+  },
+  "SmolLM2-1.7B": {
+   "one_window": 36274497569731.766,
+   "four_windows": 64321734662746.35
+  }
+ }
+}

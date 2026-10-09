@@ -1,0 +1,38 @@
+{
+ "spec": {
+  "task": "cuad",
+  "seed": 20260927,
+  "n_dev": 2091,
+  "n_cal": 2091,
+  "n_test": 2091,
+  "n_train": 14637,
+  "source": "https://zenodo.org/records/4595826/files/CUAD_v1.zip sha256:88b694d99007d39777fa44cd72daf8297773d285dc3eab0091ba32078888d18e",
+  "notes": "510 contracts split by contract 70/10/10/10 with seed 20260927; 41 categories per contract; gold yes when CUAD marks a span"
+ },
+ "splits": {
+  "train": {
+   "n": 14637,
+   "sha256": "0cba2e960736c397dafb7c03aec26df7c16c50c901d2dc6a1af85f90d308aafc",
+   "n_groups": 357
+  },
+  "dev": {
+   "n": 2091,
+   "sha256": "eee1c20d4fc807f70234dc0a0b7ecf5b125421361c2f7f33421c35850ac27f06",
+   "n_groups": 51
+  },
+  "cal": {
+   "n": 2091,
+   "sha256": "d7652d80fcbe5952964d12f92f12adb89f58bd9fb49bf6d099e2c4b0ec908885",
+   "n_groups": 51
+  },
+  "test": {
+   "n": 2091,
+   "sha256": "0d0533f157628fe52e7efd9c28bebddf53159172467fdbff63a73a8aad13afa9",
+   "n_groups": 51
+  }
+ },
+ "kinds": [
+  "choice"
+ ],
+ "manifest_sha256": "fb9d753bc08db3a96bec908f64939e81e274bb7ac628a67445dcd83a98943d88"
+}

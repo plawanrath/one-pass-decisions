@@ -1,0 +1,71 @@
+{
+ "model": "models/eurobert-large-full-cuad",
+ "task": "cuad",
+ "pool_manifest": "fb9d753bc08db3a96bec908f64939e81e274bb7ac628a67445dcd83a98943d88",
+ "git": "nogit",
+ "config": {
+  "mode": "windowed",
+  "epochs": 1.0,
+  "lr": 3e-05,
+  "head_lr": 0.0001,
+  "weight_decay": 0.01,
+  "warmup_frac": 0.06,
+  "tokens_per_batch": 16384,
+  "max_seqs_per_batch": 1,
+  "max_state_tokens": 32768,
+  "state_side": "head",
+  "max_option_tokens": 24,
+  "max_questions_per_seq": 41,
+  "max_seq_tokens": 33792,
+  "window_tokens": 8192,
+  "decouple_layers": 0,
+  "max_steps": 5021,
+  "micro_tokens": null,
+  "pad_multiple": 128,
+  "autocast_bf16": true,
+  "grad_checkpoint": false,
+  "seed": 20260927,
+  "ckpt_every": 200,
+  "select_points": 0,
+  "select_metric": "aurc",
+  "log_every": 20,
+  "grad_clip": 1.0,
+  "device": "auto",
+  "notes": "answerdotai/ModernBERT-base@8949b909 task=cuad"
+ },
+ "splits": {
+  "dev": {
+   "n": 2091,
+   "accuracy": 0.8785270205643233,
+   "aurc": 0.03866694721814398,
+   "eaurc": 0.03094174309192576,
+   "ece": 0.06103492153711374,
+   "auroc_error": 0.8093208714996635,
+   "coverage_at_risk_0.02": 0.31898613103778095,
+   "coverage_at_risk_0.05": 0.7034911525585844,
+   "coverage_at_risk_0.1": 0.9426111908177905
+  },
+  "cal": {
+   "n": 2091,
+   "accuracy": 0.8919177427068389,
+   "aurc": 0.028066228846888943,
+   "eaurc": 0.021976902265010916,
+   "ece": 0.02911171384088048,
+   "auroc_error": 0.8336496714038293,
+   "coverage_at_risk_0.02": 0.4968914395026303,
+   "coverage_at_risk_0.05": 0.7661406025824964,
+   "coverage_at_risk_0.1": 0.9794356767097083
+  },
+  "test": {
+   "n": 2091,
+   "accuracy": 0.8723098995695839,
+   "aurc": 0.041990182791587616,
+   "eaurc": 0.0334362709758836,
+   "ece": 0.041405377263717236,
+   "auroc_error": 0.7940773046849333,
+   "coverage_at_risk_0.02": 0.3357245337159254,
+   "coverage_at_risk_0.05": 0.648493543758967,
+   "coverage_at_risk_0.1": 0.9096126255380201
+  }
+ }
+}

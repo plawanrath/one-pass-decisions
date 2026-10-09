@@ -1,0 +1,1 @@
+decoder-smol360-cuad-lr1e4

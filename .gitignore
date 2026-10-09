@@ -40,5 +40,5 @@ logs/*
 *.nsys-rep
 *.qdrep
 
-# Locked pools are regenerated from public corpora by scripts/w01_lock_pools.py; only the manifests are tracked.
+# Locked pools are regenerated from public corpora by scripts/lock_pools.py; only the manifests are tracked.
 data/pools/**/*.jsonl

@@ -6,8 +6,9 @@ activations, and therefore its keys and values, are the same whether the state i
 questions. A question block attends to the state and to itself, so running the question tokens with the cached state
 keys/values reproduces the packed forward for that block. `tests/test_model.py` checks both statements numerically.
 
-The two forwards below re-implement the backbone's layer loop with the same modules and math (pre-norm attention with
-rotary embeddings, residual, GLU MLP), because the stock forward has no way to inject cached keys and values.
+The forwards below run the backbone's layers through the shared loop in onepass.model.backbones (one interface for
+ModernBERT and EuroBERT), because the stock forwards have no way to inject cached keys and values. A windowed state is
+cached as the concatenation of its independently encoded windows.
 """
 from __future__ import annotations
 
@@ -15,9 +16,8 @@ from collections import OrderedDict
 from dataclasses import dataclass
 
 import torch
-import torch.nn.functional as F
-from transformers.models.modernbert.modeling_modernbert import apply_rotary_pos_emb
 
+from ..model.backbones import run_layers
 from ..model.layout import PackedBatch
 from ..model.mask import allowed_matrix, to_additive, window_matrix
 
@@ -29,56 +29,55 @@ class StateEntry:
     keys: list[torch.Tensor]  # per layer, (1, heads, S, head_dim), rotary applied
     values: list[torch.Tensor]  # per layer, (1, heads, S, head_dim)
     positions: torch.Tensor  # (1, S)
+    local_idx: torch.Tensor | None = None  # set when trimmed: the state tokens the local-attention layers still hold
 
     @property
     def n_bytes(self) -> int:
         return sum(t.numel() * t.element_size() for t in self.keys + self.values)
 
 
-def _qkv(layer, x: torch.Tensor):
-    B, L, _ = x.shape
-    a = layer.attn
-    qkv = a.Wqkv(x).view(B, L, 3, -1, a.head_dim)
-    q, k, v = qkv.unbind(dim=2)
-    return q.transpose(1, 2), k.transpose(1, 2), v.transpose(1, 2)
-
-
-def _attend(layer, q, k, v, mask_add: torch.Tensor) -> torch.Tensor:
-    out = F.scaled_dot_product_attention(q, k, v, attn_mask=mask_add, scale=layer.attn.head_dim ** -0.5)
-    B, _, L, _ = out.shape
-    return layer.attn.Wo(out.transpose(1, 2).reshape(B, L, -1))
+def trim_local(encoder, entry: StateEntry) -> StateEntry:
+    """Keep, in the local-attention layers, only the state tokens a later query can see. Every later query (a question,
+    or an appended chunk) sits at a position >= q_start = max state position + 1, and a local layer lets a token see
+    keys within `half_window` positions, so state tokens below q_start - half_window are invisible to it there. The
+    global layers keep every token. Exact by construction (tests); a family without local layers is returned as is."""
+    types = [encoder.ops.layer_type(layer) for layer in encoder.ops.layers(encoder.backbone)]
+    if "sliding_attention" not in types or encoder.half_window >= (1 << 29):
+        return entry
+    pos = entry.positions[0]
+    cur = entry.local_idx if entry.local_idx is not None else torch.arange(entry.state_len, device=pos.device)
+    q_start = int(pos.max()) + 1
+    keep = (pos[cur.to(pos.device)] >= q_start - encoder.half_window).nonzero().squeeze(-1)  # into the current local arrays
+    keys, values = list(entry.keys), list(entry.values)
+    for i, t in enumerate(types):
+        if t == "sliding_attention":
+            keys[i] = keys[i][:, :, keep.to(keys[i].device)].contiguous()
+            values[i] = values[i][:, :, keep.to(values[i].device)].contiguous()
+    return StateEntry(entry.key, entry.state_len, keys, values, entry.positions, cur.to(pos.device)[keep])
 
 
 def manual_forward(encoder, batch: PackedBatch, capture: bool = False):
     """Layer loop equal to the backbone's forward under the packed masks; optionally returns per-layer keys/values."""
-    bb = encoder.backbone
-    h = bb.embeddings(input_ids=batch.input_ids)
-    allowed = allowed_matrix(batch.block_ids, batch.attention_pad, batch.mode)
+    h = encoder.ops.embed(encoder.backbone, batch.input_ids)
+    allowed = allowed_matrix(batch.block_ids, batch.attention_pad, batch.mode, batch.chunk_ids)
     masks = {"full_attention": to_additive(allowed, h.dtype),
              "sliding_attention": to_additive(allowed & window_matrix(batch.position_ids, encoder.half_window), h.dtype)}
-    rot = {t: bb.rotary_emb(h, batch.position_ids, t) for t in set(bb.config.layer_types)}
-    ks, vs = [], []
-    for layer in bb.layers:
-        t = layer.attention_type
-        q, k, v = _qkv(layer, layer.attn_norm(h))
-        cos, sin = rot[t]
-        q, k = apply_rotary_pos_emb(q, k, cos, sin, unsqueeze_dim=1)
-        if capture:
-            ks.append(k)
-            vs.append(v)
-        h = h + _attend(layer, q, k, v, masks[t])
-        h = h + layer.mlp(layer.mlp_norm(h))
-    h = bb.final_norm(h)
-    return (h, ks, vs) if capture else h
+    return run_layers(encoder, h, batch.position_ids, masks, capture=capture)
 
 
 @torch.no_grad()
 def encode_state(encoder, state_batch: PackedBatch, key: str) -> StateEntry:
-    """`state_batch` holds one row: the state block only (no questions), mode "block"."""
+    """`state_batch` holds one row: the state block only (no questions), mode "block", "chunked" or "windowed". A
+    windowed state is encoded as a batch of independent windows and their keys/values are concatenated in order."""
     if state_batch.input_ids.shape[0] != 1 or int(state_batch.n_questions[0]) != 0:
         raise ValueError("encode_state takes one row with the state block only")
-    _, ks, vs = manual_forward(encoder, state_batch, capture=True)
     S = int(state_batch.state_len[0])
+    if state_batch.mode == "windowed":
+        wid = state_batch.chunk_ids[0, :S]
+        wins = [(wid == w).nonzero().squeeze(-1) for w in torch.unique(wid, sorted=True)]
+        _, ks, vs, pos = encoder.windows_kv(state_batch.input_ids[0], state_batch.position_ids[0], wins)
+        return StateEntry(key, S, [k.contiguous() for k in ks], [v.contiguous() for v in vs], pos)
+    _, ks, vs = manual_forward(encoder, state_batch, capture=True)
     return StateEntry(key, S, [k[:, :, :S].contiguous() for k in ks], [v[:, :, :S].contiguous() for v in vs],
                       state_batch.position_ids[:, :S].clone())
 
@@ -87,30 +86,37 @@ def encode_state(encoder, state_batch: PackedBatch, key: str) -> StateEntry:
 def questions_with_cache(encoder, entry: StateEntry, q_batch: PackedBatch) -> torch.Tensor:
     """Hidden states of the question tokens (one row; mode "block") given a cached state.
 
-    `q_batch` is the layout of the questions *without* the state tokens: block ids >= 1, positions starting at S."""
+    `q_batch` is the layout of the questions *without* the state tokens: block ids >= 1, positions starting where the
+    packed layout starts them (the state length, or the longest window of a windowed state)."""
     if q_batch.input_ids.shape[0] != 1:
         raise ValueError("one row per cached state")
-    bb = encoder.backbone
-    h = bb.embeddings(input_ids=q_batch.input_ids)
-    Lq = h.shape[1]
+    return encoder.questions_given_kv(entry.keys, entry.values, entry.positions, q_batch.input_ids, q_batch.position_ids,
+                                      q_batch.block_ids, q_batch.attention_pad, local_idx=entry.local_idx)
+
+
+@torch.no_grad()
+def extend_state(encoder, entry: StateEntry, chunk_batch: PackedBatch, key: str) -> StateEntry:
+    """Append chunks to a cached chunked state. `chunk_batch` holds one row with the new chunks' tokens only (block id
+    0, positions continuing from the entry, chunk ids continuing from the entry's last chunk). Each new token attends to
+    every cached state token and, among the new tokens, to chunks up to its own; the result equals encoding the whole
+    longer state from scratch (tests)."""
+    h = encoder.ops.embed(encoder.backbone, chunk_batch.input_ids)
     S = entry.state_len
-    blk = torch.cat([torch.zeros((1, S), dtype=torch.long, device=h.device), q_batch.block_ids], dim=1)
-    pad = torch.cat([torch.ones((1, S), dtype=torch.bool, device=h.device), q_batch.attention_pad], dim=1)
-    pos = torch.cat([entry.positions.to(h.device), q_batch.position_ids], dim=1)
-    allowed = allowed_matrix(blk, pad, "block")[:, S:, :]  # rows: question tokens; cols: state + question tokens
+    Ln = h.shape[1]
+    blk = torch.zeros((1, S + Ln), dtype=torch.long, device=h.device)
+    pad = torch.ones((1, S + Ln), dtype=torch.bool, device=h.device)
+    cids = torch.cat([torch.full((1, S), -1, dtype=torch.long, device=h.device), chunk_batch.chunk_ids.to(h.device)], dim=1)
+    pos = torch.cat([entry.positions.to(h.device), chunk_batch.position_ids], dim=1)
+    allowed = allowed_matrix(blk, pad, "chunked", cids)[:, S:, :]
     local = allowed & window_matrix(pos, encoder.half_window)[:, S:, :]
+    new_idx = torch.arange(S, S + Ln, device=h.device)
+    local_idx = None
+    if entry.local_idx is not None:  # a trimmed entry: local layers hold only entry.local_idx, then the new tokens
+        local_idx = torch.cat([entry.local_idx.to(h.device), new_idx])
+        local = local[:, :, local_idx]
     masks = {"full_attention": to_additive(allowed, h.dtype), "sliding_attention": to_additive(local, h.dtype)}
-    rot = {t: bb.rotary_emb(h, q_batch.position_ids, t) for t in set(bb.config.layer_types)}
-    for i, layer in enumerate(bb.layers):
-        t = layer.attention_type
-        q, k, v = _qkv(layer, layer.attn_norm(h))
-        cos, sin = rot[t]
-        q, k = apply_rotary_pos_emb(q, k, cos, sin, unsqueeze_dim=1)
-        k = torch.cat([entry.keys[i].to(h.device), k], dim=2)
-        v = torch.cat([entry.values[i].to(h.device), v], dim=2)
-        h = h + _attend(layer, q, k, v, masks[t])
-        h = h + layer.mlp(layer.mlp_norm(h))
-    return bb.final_norm(h)
+    _, keys, values = run_layers(encoder, h, chunk_batch.position_ids, masks, past=(entry.keys, entry.values), capture=True)
+    return StateEntry(key, S + Ln, [k.contiguous() for k in keys], [v.contiguous() for v in values], pos.clone(), local_idx)
 
 
 class StateCache:

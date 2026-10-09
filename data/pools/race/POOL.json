@@ -1,0 +1,38 @@
+{
+ "spec": {
+  "task": "race",
+  "seed": 20260927,
+  "n_dev": 4887,
+  "n_cal": 0,
+  "n_test": 0,
+  "n_train": 87866,
+  "source": "ehovy/race@2fec9fd81f1dc971569a9b729c43f2f0e6436637 all",
+  "notes": "official train and validation (dev); intermediate training before QuALITY, never scored as a result"
+ },
+ "splits": {
+  "train": {
+   "n": 87866,
+   "sha256": "b8a2ea29906b9c297c86dfbf5c1cdaa71144aa072adcd1e288656c606276fe4b",
+   "n_groups": 25135
+  },
+  "dev": {
+   "n": 4887,
+   "sha256": "62468526d737fb888ad2644161940401896a9e8bab9b6f667d1fa2d3e54b6499",
+   "n_groups": 1389
+  },
+  "cal": {
+   "n": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "n_groups": 0
+  },
+  "test": {
+   "n": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "n_groups": 0
+  }
+ },
+ "kinds": [
+  "choice"
+ ],
+ "manifest_sha256": "0378d86f83c5f74d4bfc5a350cb906a1749a14b5ade6f101572f1d79db53e138"
+}

@@ -1,0 +1,105 @@
+{
+ "host": "arm64-darwin",
+ "threads": 8,
+ "size": "large",
+ "task": "guardrail",
+ "torch": "2.14.0",
+ "grid": {
+  "S512_K1": {
+   "N": 3,
+   "p50_ms": {
+    "torch-one-seq-full": 293.1229794921819,
+    "engine-cold": 284.35066650854424,
+    "engine-hit": 60.7040835020598
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 293.1229794921819,
+    "engine-cold": 284.35066650854424,
+    "engine-hit": 60.7040835020598
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.8436898931077268,
+     "ci_high": 1.1843576341553226,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 293.1229794921819,
+     "reference_p50_ms": 293.1229794921819,
+     "K": 1,
+     "S": 512
+    },
+    "engine-cold": {
+     "speedup": 1.0308503338196822,
+     "ci_low": 0.8382816181267044,
+     "ci_high": 1.1875997885433935,
+     "cell": "engine-cold",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 284.35066650854424,
+     "reference_p50_ms": 293.1229794921819,
+     "K": 1,
+     "S": 512
+    },
+    "engine-hit": {
+     "speedup": 4.828719298302818,
+     "ci_low": 4.1588125242705525,
+     "ci_high": 5.4171270060536925,
+     "cell": "engine-hit",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 60.7040835020598,
+     "reference_p50_ms": 293.1229794921819,
+     "K": 1,
+     "S": 512
+    }
+   }
+  },
+  "S512_K20": {
+   "N": 3,
+   "p50_ms": {
+    "torch-one-seq-full": 5834.472062531859,
+    "engine-cold": 1195.3923749970272,
+    "engine-hit": 685.8228129858617
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 291.72360312659293,
+    "engine-cold": 59.76961874985136,
+    "engine-hit": 34.291140649293084
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.8592555966141402,
+     "ci_high": 1.1647056725236296,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 5834.472062531859,
+     "reference_p50_ms": 5834.472062531859,
+     "K": 20,
+     "S": 512
+    },
+    "engine-cold": {
+     "speedup": 4.8808008019512155,
+     "ci_low": 4.219896215759061,
+     "ci_high": 5.820158333238758,
+     "cell": "engine-cold",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 1195.3923749970272,
+     "reference_p50_ms": 5834.472062531859,
+     "K": 20,
+     "S": 512
+    },
+    "engine-hit": {
+     "speedup": 8.507258656401879,
+     "ci_low": 7.473627291942769,
+     "ci_high": 10.171557241258098,
+     "cell": "engine-hit",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 685.8228129858617,
+     "reference_p50_ms": 5834.472062531859,
+     "K": 20,
+     "S": 512
+    }
+   }
+  }
+ }
+}

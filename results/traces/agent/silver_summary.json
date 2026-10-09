@@ -1,0 +1,11 @@
+{
+ "n_records": 5746,
+ "n_trajectories": 1000,
+ "mean_agreement": 0.9470221606648187,
+ "splits": {
+  "train": 1146,
+  "dev": 576,
+  "cal": 1726,
+  "test": 2298
+ }
+}

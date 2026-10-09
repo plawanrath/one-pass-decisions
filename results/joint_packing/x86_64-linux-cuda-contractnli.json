@@ -1,0 +1,27 @@
+{
+ "model": "models/modernbert-base-joint-contractnli-steps",
+ "task": "contractnli",
+ "n_documents": 62,
+ "latency_ms_S4096_K17": {
+  "joint-cold": 39.84908014535904,
+  "joint-cold-flash": 48.98815928027034,
+  "engine-cold-cascade": 57.005466893315315,
+  "engine-cold-fill-cascade": 23.40820850804448,
+  "engine-hit-cascade": 9.137740824371576
+ },
+ "flips": {
+  "reorder": {
+   "changed": 173,
+   "total": 1054,
+   "share": 0.16413662239089183,
+   "max_prob_change": 0.9999999997544364
+  },
+  "drop": {
+   "changed": 39,
+   "total": 558,
+   "share": 0.06989247311827956,
+   "max_prob_change": 0.9999999985811883
+  }
+ },
+ "note": "latency re-timed with every engine and the joint model built once (an earlier timing built an engine inside each timed call and is withdrawn); joint-cold-flash runs the joint sequence through variable-length FlashAttention; engine-cold-cascade (no cache) is slower than engine-cold-fill-cascade in this stack, and the paper's cold numbers are the cold-fill path; flips from the original run (H100 session 19)"
+}

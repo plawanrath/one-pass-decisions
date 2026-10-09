@@ -1,0 +1,219 @@
+{
+ "host": "arm64-darwin",
+ "threads": 8,
+ "step_tokens": 128,
+ "K": 4,
+ "n": 30,
+ "lengths": {
+  "512": {
+   "state_tokens_median": 453.0,
+   "p50_ms": {
+    "cold": 93.91085454262793,
+    "extend": 82.84508355427533,
+    "hit": 36.10808355733752
+   },
+   "extend_vs_cold": {
+    "speedup": 1.1335718489692022,
+    "ci_low": 1.1234945918490107,
+    "ci_high": 1.1521337144942658,
+    "cell": "chunked-extend",
+    "reference": "chunked-cold",
+    "cell_p50_ms": 82.84508355427533,
+    "reference_p50_ms": 93.91085454262793,
+    "K": 4,
+    "S": 512
+   },
+   "hit_vs_cold": {
+    "speedup": 2.600826332793403,
+    "ci_low": 2.5691255005099847,
+    "ci_high": 2.649186654581611,
+    "cell": "chunked-hit",
+    "reference": "chunked-cold",
+    "cell_p50_ms": 36.10808355733752,
+    "reference_p50_ms": 93.91085454262793,
+    "K": 4,
+    "S": 512
+   }
+  },
+  "1024": {
+   "state_tokens_median": 969.0,
+   "p50_ms": {
+    "cold": 183.75343747902662,
+    "extend": 95.97512503387406,
+    "hit": 40.71995854610577
+   },
+   "extend_vs_cold": {
+    "speedup": 1.914594405729313,
+    "ci_low": 1.9015733282279605,
+    "ci_high": 1.9266405607549273,
+    "cell": "chunked-extend",
+    "reference": "chunked-cold",
+    "cell_p50_ms": 95.97512503387406,
+    "reference_p50_ms": 183.75343747902662,
+    "K": 4,
+    "S": 1024
+   },
+   "hit_vs_cold": {
+    "speedup": 4.512613569362284,
+    "ci_low": 4.492091084490717,
+    "ci_high": 4.548267045078329,
+    "cell": "chunked-hit",
+    "reference": "chunked-cold",
+    "cell_p50_ms": 40.71995854610577,
+    "reference_p50_ms": 183.75343747902662,
+    "K": 4,
+    "S": 1024
+   }
+  },
+  "2048": {
+   "state_tokens_median": 2001.0,
+   "p50_ms": {
+    "cold": 470.35152098396793,
+    "extend": 126.12452101893723,
+    "hit": 50.201521487906575
+   },
+   "extend_vs_cold": {
+    "speedup": 3.7292630900326356,
+    "ci_low": 3.700412623874671,
+    "ci_high": 3.771909985470236,
+    "cell": "chunked-extend",
+    "reference": "chunked-cold",
+    "cell_p50_ms": 126.12452101893723,
+    "reference_p50_ms": 470.35152098396793,
+    "K": 4,
+    "S": 2048
+   },
+   "hit_vs_cold": {
+    "speedup": 9.369268242144305,
+    "ci_low": 9.319968618336025,
+    "ci_high": 9.410075378587404,
+    "cell": "chunked-hit",
+    "reference": "chunked-cold",
+    "cell_p50_ms": 50.201521487906575,
+    "reference_p50_ms": 470.35152098396793,
+    "K": 4,
+    "S": 2048
+   }
+  },
+  "3072": {
+   "state_tokens_median": 3032.0,
+   "p50_ms": {
+    "cold": 895.4719374887645,
+    "extend": 153.77810451900586,
+    "hit": 60.55099953664467
+   },
+   "extend_vs_cold": {
+    "speedup": 5.823143290065008,
+    "ci_low": 5.772866704804128,
+    "ci_high": 5.935088291336267,
+    "cell": "chunked-extend",
+    "reference": "chunked-cold",
+    "cell_p50_ms": 153.77810451900586,
+    "reference_p50_ms": 895.4719374887645,
+    "K": 4,
+    "S": 3072
+   },
+   "hit_vs_cold": {
+    "speedup": 14.788722636144705,
+    "ci_low": 14.587581457789968,
+    "ci_high": 14.986298235890446,
+    "cell": "chunked-hit",
+    "reference": "chunked-cold",
+    "cell_p50_ms": 60.55099953664467,
+    "reference_p50_ms": 895.4719374887645,
+    "K": 4,
+    "S": 3072
+   }
+  },
+  "4096": {
+   "state_tokens_median": 4064.0,
+   "p50_ms": {
+    "cold": 1472.7548959781416,
+    "extend": 183.87514544883743,
+    "hit": 73.23093706509098
+   },
+   "extend_vs_cold": {
+    "speedup": 8.009537626105809,
+    "ci_low": 7.8644992878520465,
+    "ci_high": 8.056793051727693,
+    "cell": "chunked-extend",
+    "reference": "chunked-cold",
+    "cell_p50_ms": 183.87514544883743,
+    "reference_p50_ms": 1472.7548959781416,
+    "K": 4,
+    "S": 4096
+   },
+   "hit_vs_cold": {
+    "speedup": 20.1111026978815,
+    "ci_low": 19.98108570941814,
+    "ci_high": 20.22348012758643,
+    "cell": "chunked-hit",
+    "reference": "chunked-cold",
+    "cell_p50_ms": 73.23093706509098,
+    "reference_p50_ms": 1472.7548959781416,
+    "K": 4,
+    "S": 4096
+   }
+  },
+  "6144": {
+   "state_tokens_median": 6128.0,
+   "p50_ms": {
+    "cold": 2564.1634579515085,
+    "extend": 272.4106039968319,
+    "hit": 103.2626039814204
+   },
+   "extend_vs_cold": {
+    "speedup": 9.412862129189836,
+    "ci_low": 9.27272749646002,
+    "ci_high": 9.55854129001559,
+    "cell": "chunked-extend",
+    "reference": "chunked-cold",
+    "cell_p50_ms": 272.4106039968319,
+    "reference_p50_ms": 2564.1634579515085,
+    "K": 4,
+    "S": 6144
+   },
+   "hit_vs_cold": {
+    "speedup": 24.83148166990702,
+    "ci_low": 24.599281533115306,
+    "ci_high": 24.982103102585118,
+    "cell": "chunked-hit",
+    "reference": "chunked-cold",
+    "cell_p50_ms": 103.2626039814204,
+    "reference_p50_ms": 2564.1634579515085,
+    "K": 4,
+    "S": 6144
+   }
+  },
+  "8000": {
+   "state_tokens_median": 8061.0,
+   "p50_ms": {
+    "cold": 4148.9924165653065,
+    "extend": 337.3366460436955,
+    "hit": 126.55704200733453
+   },
+   "extend_vs_cold": {
+    "speedup": 12.299263851778155,
+    "ci_low": 11.872100467844188,
+    "ci_high": 12.438104403778466,
+    "cell": "chunked-extend",
+    "reference": "chunked-cold",
+    "cell_p50_ms": 337.3366460436955,
+    "reference_p50_ms": 4148.9924165653065,
+    "K": 4,
+    "S": 8000
+   },
+   "hit_vs_cold": {
+    "speedup": 32.783576091521276,
+    "ci_low": 32.4505348949047,
+    "ci_high": 33.28044615407934,
+    "cell": "chunked-hit",
+    "reference": "chunked-cold",
+    "cell_p50_ms": 126.55704200733453,
+    "reference_p50_ms": 4148.9924165653065,
+    "K": 4,
+    "S": 8000
+   }
+  }
+ }
+}

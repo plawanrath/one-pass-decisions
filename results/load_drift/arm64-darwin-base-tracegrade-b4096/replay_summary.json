@@ -1,0 +1,71 @@
+{
+ "trace": "results/traces/agent/requests_arrival_sample.jsonl",
+ "trace_meta": {
+  "arrivals": "measured step completion times, one uncontended run",
+  "n_trajectories": 300
+ },
+ "n_requests": 451,
+ "trace_rate_per_s": 0.053612501969136674,
+ "threads": 8,
+ "max_batch_tokens": 4096,
+ "max_state_tokens": 1024,
+ "results": {
+  "x16": {
+   "speedup": 16.0,
+   "offered_rate_per_s": 0.8578000315061868,
+   "n_requests": 451,
+   "n_questions": 1804,
+   "wall_s": 526.3499239999801,
+   "latency_ms_p50": 181.4811250078492,
+   "latency_ms_p99": 412.3120839940384,
+   "wait_ms_p99": 0.10991602903231978,
+   "deadline_miss_rate": 1.0,
+   "max_queue_depth": 4,
+   "steps": 451,
+   "cache": {
+    "entries": 235,
+    "bytes": 17059688448,
+    "hits": 0,
+    "misses": 451
+   }
+  },
+  "x64": {
+   "speedup": 64.0,
+   "offered_rate_per_s": 3.431200126024747,
+   "n_requests": 451,
+   "n_questions": 1804,
+   "wall_s": 132.14775441604434,
+   "latency_ms_p50": 411.449791979976,
+   "latency_ms_p99": 2439.4732500077225,
+   "wait_ms_p99": 0.05420797970145941,
+   "deadline_miss_rate": 1.0,
+   "max_queue_depth": 44,
+   "steps": 271,
+   "cache": {
+    "entries": 235,
+    "bytes": 17059688448,
+    "hits": 0,
+    "misses": 451
+   }
+  },
+  "x256": {
+   "speedup": 256.0,
+   "offered_rate_per_s": 13.724800504098988,
+   "n_requests": 451,
+   "n_questions": 1804,
+   "wall_s": 108.26981916697696,
+   "latency_ms_p50": 33502.69524951,
+   "latency_ms_p99": 71569.14316600887,
+   "wait_ms_p99": 70980.99279101007,
+   "deadline_miss_rate": 1.0,
+   "max_queue_depth": 1104,
+   "steps": 35,
+   "cache": {
+    "entries": 237,
+    "bytes": 17168769024,
+    "hits": 320,
+    "misses": 451
+   }
+  }
+ }
+}

@@ -1,0 +1,41 @@
+{
+ "cell": "4096:17",
+ "n_requests": 60,
+ "encoders": {
+  "base": {
+   "engine_flops": 1530816359628.8,
+   "baseline_flops": 23023904089907.2
+  },
+  "large": {
+   "engine_flops": 4045390098158.933,
+   "baseline_flops": 60776907168699.734
+  },
+  "eurobert-xl": {
+   "engine_flops": 22540213903641.6,
+   "baseline_flops": 339754451427609.6,
+   "model": "models/_from_h100_round20/eurobert-xl-block-contractnli-adapt2-lr5e6-s1"
+  }
+ },
+ "decoders": {
+  "SmolLM2-1.7B": {
+   "flops": 18714657354547.2,
+   "nonembedding_params": 1610612736
+  },
+  "SmolLM2-360M": {
+   "flops": 4698640783360.0,
+   "nonembedding_params": 314572800
+  }
+ },
+ "model_tflops_per_s": {
+  "base engine cold, masked": 36.52266414367594,
+  "base engine cold, split": 46.36366562739985,
+  "base unpadded baseline": 120.45413438088042,
+  "base engine, 64 contracts, split": 53.99514981384579,
+  "large engine cold, masked": 61.451160671093334,
+  "large engine cold, split": 85.86235752459048,
+  "large unpadded baseline": 188.49149555332454,
+  "large engine, 64 contracts, split": 100.78698591844514,
+  "SmolLM2-1.7B, 64 contracts": 365.8793501123711,
+  "SmolLM2-360M, 64 contracts": 159.61480508166267
+ }
+}

@@ -1,0 +1,165 @@
+{
+ "backbone": "answerdotai/ModernBERT-base@8949b909ec900327062f0ebf497f51aef5e6f0c8",
+ "task": "contractnli",
+ "mode": "full",
+ "pool_manifest": "3be931bc0c7a1e694e9822ac732674a28ea4559e833986910f7be8fd0269ee79",
+ "git": "nogit",
+ "train": {
+  "config": {
+   "mode": "full",
+   "epochs": 5.0,
+   "lr": 1e-05,
+   "head_lr": 0.0001,
+   "weight_decay": 0.01,
+   "warmup_frac": 0.06,
+   "tokens_per_batch": 16384,
+   "max_seqs_per_batch": 32,
+   "max_state_tokens": 4096,
+   "state_side": "head",
+   "max_option_tokens": 24,
+   "max_questions_per_seq": 16,
+   "max_seq_tokens": 5120,
+   "window_tokens": 8192,
+   "max_steps": null,
+   "micro_tokens": null,
+   "pad_multiple": 128,
+   "autocast_bf16": true,
+   "seed": 20260927,
+   "ckpt_every": 200,
+   "select_points": 10,
+   "select_metric": "accuracy",
+   "log_every": 20,
+   "grad_clip": 1.0,
+   "device": "auto",
+   "notes": "answerdotai/ModernBERT-base@8949b909 task=contractnli"
+  },
+  "n_records": 7191,
+  "n_sequences": 7191,
+  "steps": 5951,
+  "epochs_run": 5.0,
+  "final_loss_20": 0.4155694722525823,
+  "seconds": 2733.9,
+  "device": "cuda",
+  "selection": [
+   {
+    "step": 595,
+    "dev_aurc": 0.23847157094467322,
+    "dev_accuracy": 0.6171648987463838
+   },
+   {
+    "step": 1190,
+    "dev_aurc": 0.1322947917940803,
+    "dev_accuracy": 0.712632594021215
+   },
+   {
+    "step": 1785,
+    "dev_aurc": 0.10490872844756934,
+    "dev_accuracy": 0.7714561234329798
+   },
+   {
+    "step": 2380,
+    "dev_aurc": 0.08168450237437085,
+    "dev_accuracy": 0.7907425265188043
+   },
+   {
+    "step": 2976,
+    "dev_aurc": 0.09509701808697413,
+    "dev_accuracy": 0.7974927675988428
+   },
+   {
+    "step": 3571,
+    "dev_aurc": 0.08614632586907946,
+    "dev_accuracy": 0.8119575699132112
+   },
+   {
+    "step": 4166,
+    "dev_aurc": 0.07571441345268774,
+    "dev_accuracy": 0.8119575699132112
+   },
+   {
+    "step": 4761,
+    "dev_aurc": 0.06841858126090856,
+    "dev_accuracy": 0.8177434908389585
+   },
+   {
+    "step": 5356,
+    "dev_aurc": 0.07510884285584528,
+    "dev_accuracy": 0.8254580520732884
+   },
+   {
+    "step": 5951,
+    "dev_aurc": 0.07846284478027918,
+    "dev_accuracy": 0.8264223722275795
+   }
+  ],
+  "selected_step": 5951
+ },
+ "splits": {
+  "dev": {
+   "n": 1037,
+   "accuracy": 0.8264223722275795,
+   "aurc": 0.07846284478027918,
+   "eaurc": 0.062358392733635526,
+   "ece": 0.14738544887838845,
+   "auroc_error": 0.7495559445092701,
+   "coverage_at_risk_0.02": 0.1051108968177435,
+   "coverage_at_risk_0.05": 0.26422372227579555,
+   "coverage_at_risk_0.1": 0.7299903567984571
+  },
+  "dev_as_block": {
+   "n": 1037,
+   "accuracy": 0.8206364513018323,
+   "aurc": 0.07708695068995135,
+   "eaurc": 0.05985632676582896,
+   "ece": 0.15459182665915938,
+   "auroc_error": 0.7664638691987921,
+   "coverage_at_risk_0.02": 0.0703953712632594,
+   "coverage_at_risk_0.05": 0.2700096432015429,
+   "coverage_at_risk_0.1": 0.7377049180327869
+  },
+  "cal": {
+   "n": 1037,
+   "accuracy": 0.8428158148505304,
+   "aurc": 0.06416850770962025,
+   "eaurc": 0.05103582419511839,
+   "ece": 0.1337217526472638,
+   "auroc_error": 0.7690015583102863,
+   "coverage_at_risk_0.02": 0.0703953712632594,
+   "coverage_at_risk_0.05": 0.48601735776277727,
+   "coverage_at_risk_0.1": 0.7907425265188043
+  },
+  "cal_as_block": {
+   "n": 1037,
+   "accuracy": 0.8302796528447445,
+   "aurc": 0.06534885368280001,
+   "eaurc": 0.049972660688741094,
+   "ece": 0.14411810181294937,
+   "auroc_error": 0.7886607802766339,
+   "coverage_at_risk_0.02": 0.12632594021215043,
+   "coverage_at_risk_0.05": 0.4686595949855352,
+   "coverage_at_risk_0.1": 0.7965284474445516
+  },
+  "test": {
+   "n": 1054,
+   "accuracy": 0.8557874762808348,
+   "aurc": 0.07260822432497417,
+   "eaurc": 0.0616018419876252,
+   "ece": 0.12274826548470497,
+   "auroc_error": 0.750051056132571,
+   "coverage_at_risk_0.02": 0.007590132827324478,
+   "coverage_at_risk_0.05": 0.07874762808349146,
+   "coverage_at_risk_0.1": 0.8690702087286527
+  },
+  "test_as_block": {
+   "n": 1054,
+   "accuracy": 0.8462998102466793,
+   "aurc": 0.07406865657270607,
+   "eaurc": 0.06152744263853662,
+   "ece": 0.13136607408523554,
+   "auroc_error": 0.7482803244200853,
+   "coverage_at_risk_0.02": 0.05218216318785579,
+   "coverage_at_risk_0.05": 0.1110056925996205,
+   "coverage_at_risk_0.1": 0.8235294117647058
+  }
+ }
+}

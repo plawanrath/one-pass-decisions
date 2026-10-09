@@ -1,0 +1,42 @@
+{
+ "flex_vs_sdpa_fp32": {
+  "argmax_same": 170,
+  "total": 170,
+  "max_prob_diff": 1.3068318367004395e-05
+ },
+ "flex_vs_sdpa_bf16": {
+  "argmax_same": 163,
+  "total": 170,
+  "max_prob_diff": 0.0732421875
+ },
+ "sdpa_bf16_vs_sdpa_fp32": {
+  "argmax_same": 162,
+  "total": 170,
+  "max_prob_diff": 0.15833257138729095
+ },
+ "flex_bf16_vs_sdpa_fp32": {
+  "argmax_same": 159,
+  "total": 170,
+  "max_prob_diff": 0.16223882138729095
+ },
+ "split_vs_sdpa_bf16": {
+  "argmax_same": 163,
+  "total": 170,
+  "max_prob_diff": 0.0625
+ },
+ "split_bf16_vs_sdpa_fp32": {
+  "argmax_same": 161,
+  "total": 170,
+  "max_prob_diff": 0.1563793122768402
+ },
+ "cascade_vs_sdpa_bf16": {
+  "argmax_same": 161,
+  "total": 170,
+  "max_prob_diff": 0.119140625
+ },
+ "cascade_bf16_vs_sdpa_fp32": {
+  "argmax_same": 159,
+  "total": 170,
+  "max_prob_diff": 0.16614507138729095
+ }
+}

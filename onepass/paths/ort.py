@@ -30,22 +30,10 @@ class _PackedWrapper(nn.Module):
         self.enc = enc
 
     def forward(self, ids, pos, mask_full, mask_local, markers):
-        bb = self.enc.backbone
-        h = bb.embeddings(input_ids=ids)
-        masks = {"full_attention": mask_full, "sliding_attention": mask_local}
-        rot = {t: bb.rotary_emb(h, pos, t) for t in set(bb.config.layer_types)}
-        from transformers.models.modernbert.modeling_modernbert import apply_rotary_pos_emb
+        from ..model.backbones import run_layers
 
-        from ..engine.state_cache import _attend, _qkv
-
-        for layer in bb.layers:
-            t = layer.attention_type
-            q, k, v = _qkv(layer, layer.attn_norm(h))
-            cos, sin = rot[t]
-            q, k = apply_rotary_pos_emb(q, k, cos, sin, unsqueeze_dim=1)
-            h = h + _attend(layer, q, k, v, masks[t])
-            h = h + layer.mlp(layer.mlp_norm(h))
-        h = bb.final_norm(h)
+        h = self.enc.ops.embed(self.enc.backbone, ids)
+        h = run_layers(self.enc, h, pos, {"full_attention": mask_full, "sliding_attention": mask_local})
         B, K, N = markers.shape
         idx = markers.clamp(min=0).reshape(B, K * N)
         g = torch.gather(h, 1, idx[:, :, None].expand(-1, -1, h.shape[-1]))
@@ -78,6 +66,25 @@ def quantize_int8(model_path: str | Path, out_path: str | Path) -> Path:
     from onnxruntime.quantization import QuantType, quantize_dynamic
 
     quantize_dynamic(str(model_path), str(out_path), weight_type=QuantType.QInt8)
+    return Path(out_path)
+
+
+def quantize_static_int8(model_path: str | Path, out_path: str | Path, enc: OnePassEncoder, calib: list[PackedBatch]) -> Path:
+    """Static int8 (QDQ, per-channel weights, activation ranges calibrated on `calib` packed batches): the deployment
+    quantization that fixes activation scales offline, unlike the dynamic export above. Only MatMul and Gemm are
+    quantized, the usual recipe for transformers: quantizing every op also puts the additive attention mask and the
+    normalisations through int8, and the export then scores near chance (8% on routing)."""
+    from onnxruntime.quantization import CalibrationDataReader, QuantFormat, QuantType, quantize_static
+
+    class Reader(CalibrationDataReader):
+        def __init__(self):
+            self.it = iter([batch_inputs(enc, b) for b in calib])
+
+        def get_next(self):
+            return next(self.it, None)
+
+    quantize_static(str(model_path), str(out_path), Reader(), quant_format=QuantFormat.QDQ, per_channel=True,
+                    activation_type=QuantType.QInt8, weight_type=QuantType.QInt8, op_types_to_quantize=["MatMul", "Gemm"])
     return Path(out_path)
 
 

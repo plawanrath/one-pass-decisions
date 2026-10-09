@@ -1,0 +1,30 @@
+{
+ "model": "base-late-routing",
+ "kind": "late",
+ "task": "routing",
+ "train": {
+  "epochs": 2.0,
+  "steps": 3813,
+  "seconds": 2497.000317335129,
+  "device": "cuda",
+  "states_per_step": 8,
+  "lr": 3e-05,
+  "head_lr": 0.001,
+  "max_state_tokens": 1024,
+  "state_side": "head"
+ },
+ "splits": {
+  "dev": {
+   "n": 3100,
+   "accuracy": 0.9738709677419355
+  },
+  "cal": {
+   "n": 2750,
+   "accuracy": 0.9007272727272727
+  },
+  "test": {
+   "n": 2750,
+   "accuracy": 0.9018181818181819
+  }
+ }
+}

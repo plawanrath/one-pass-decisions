@@ -1,0 +1,145 @@
+{
+ "alpha": 0.02,
+ "delta": 0.05,
+ "reference": "torch-block",
+ "paths": {
+  "torch-block": {
+   "n_cal": 2750,
+   "n_test": 2750,
+   "grid_source": "own dev scores",
+   "own_error": "no threshold on the grid keeps risk <= 0.02 at confidence 0.95 (n = 2750)",
+   "hand_picked_tau_on_test": {
+    "tau": 0.9874130487442017,
+    "coverage": 0.7883636363636364,
+    "risk": 0.03413284132841329,
+    "n": 2750,
+    "n_accepted": 2168,
+    "k_wrong": 74,
+    "risk_ci_low": 0.026894723641928277,
+    "risk_ci_high": 0.042662860625889476,
+    "violates_alpha": true
+   }
+  },
+  "compiled-int4": {
+   "n_cal": 2750,
+   "n_test": 2750,
+   "grid_source": "own dev scores",
+   "own_error": "no threshold on the grid keeps risk <= 0.02 at confidence 0.95 (n = 2750)",
+   "hand_picked_tau_on_test": {
+    "tau": 0.9874130487442017,
+    "coverage": 0.7112727272727273,
+    "risk": 0.029141104294478526,
+    "n": 2750,
+    "n_accepted": 1956,
+    "k_wrong": 57,
+    "risk_ci_low": 0.02214428052475562,
+    "risk_ci_high": 0.037592373773850746,
+    "violates_alpha": true
+   }
+  },
+  "compiled-int8": {
+   "n_cal": 2750,
+   "n_test": 2750,
+   "grid_source": "own dev scores",
+   "own_error": "no threshold on the grid keeps risk <= 0.02 at confidence 0.95 (n = 2750)",
+   "hand_picked_tau_on_test": {
+    "tau": 0.9874130487442017,
+    "coverage": 0.7829090909090909,
+    "risk": 0.03390617742684626,
+    "n": 2750,
+    "n_accepted": 2153,
+    "k_wrong": 73,
+    "risk_ci_low": 0.026669275581004532,
+    "risk_ci_high": 0.04244493149512411,
+    "violates_alpha": true
+   }
+  },
+  "engine-hit": {
+   "n_cal": 2750,
+   "n_test": 2750,
+   "grid_source": "own dev scores",
+   "own_error": "no threshold on the grid keeps risk <= 0.02 at confidence 0.95 (n = 2750)",
+   "hand_picked_tau_on_test": {
+    "tau": 0.9874130487442017,
+    "coverage": 0.7883636363636364,
+    "risk": 0.03413284132841329,
+    "n": 2750,
+    "n_accepted": 2168,
+    "k_wrong": 74,
+    "risk_ci_low": 0.026894723641928277,
+    "risk_ci_high": 0.042662860625889476,
+    "violates_alpha": true
+   }
+  },
+  "ort-fp32": {
+   "n_cal": 2750,
+   "n_test": 2750,
+   "grid_source": "own dev scores",
+   "own_error": "no threshold on the grid keeps risk <= 0.02 at confidence 0.95 (n = 2750)",
+   "hand_picked_tau_on_test": {
+    "tau": 0.9874130487442017,
+    "coverage": 0.7883636363636364,
+    "risk": 0.03413284132841329,
+    "n": 2750,
+    "n_accepted": 2168,
+    "k_wrong": 74,
+    "risk_ci_low": 0.026894723641928277,
+    "risk_ci_high": 0.042662860625889476,
+    "violates_alpha": true
+   }
+  },
+  "ort-int8": {
+   "n_cal": 2750,
+   "n_test": 2750,
+   "grid_source": "own dev scores",
+   "own_error": "no threshold on the grid keeps risk <= 0.02 at confidence 0.95 (n = 2750)",
+   "hand_picked_tau_on_test": {
+    "tau": 0.9874130487442017,
+    "coverage": 0.3014545454545455,
+    "risk": 0.019300361881785282,
+    "n": 2750,
+    "n_accepted": 829,
+    "k_wrong": 16,
+    "risk_ci_low": 0.011071070189918436,
+    "risk_ci_high": 0.031153765272167525,
+    "violates_alpha": false
+   }
+  },
+  "torch-mps-bf16": {
+   "n_cal": 2750,
+   "n_test": 2750,
+   "grid_source": "own dev scores",
+   "own_error": "no threshold on the grid keeps risk <= 0.02 at confidence 0.95 (n = 2750)",
+   "hand_picked_tau_on_test": {
+    "tau": 0.9874130487442017,
+    "coverage": 0.7861818181818182,
+    "risk": 0.033765032377428304,
+    "n": 2750,
+    "n_accepted": 2162,
+    "k_wrong": 73,
+    "risk_ci_low": 0.02655786969475436,
+    "risk_ci_high": 0.04226902060524128,
+    "violates_alpha": true
+   }
+  },
+  "torch-mps-fp16": {
+   "n_cal": 2750,
+   "n_test": 2750,
+   "grid_source": "own dev scores",
+   "own_error": "no threshold on the grid keeps risk <= 0.02 at confidence 0.95 (n = 2750)",
+   "hand_picked_tau_on_test": {
+    "tau": 0.9874130487442017,
+    "coverage": 0.7887272727272727,
+    "risk": 0.03411710465652374,
+    "n": 2750,
+    "n_accepted": 2169,
+    "k_wrong": 74,
+    "risk_ci_low": 0.026882280654967325,
+    "risk_ci_high": 0.04264327827513015,
+    "violates_alpha": true
+   }
+  }
+ },
+ "reference_error": "no threshold on the grid keeps risk <= 0.02 at confidence 0.95 (n = 2750)",
+ "path_scores_suffix": ""
+}

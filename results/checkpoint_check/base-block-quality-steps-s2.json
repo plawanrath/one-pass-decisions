@@ -1,0 +1,7 @@
+{
+ "model": "models/_from_h100_dose/modernbert-base-block-quality-steps-s2",
+ "result": "base-block-quality-steps-s2",
+ "n": 18,
+ "same_decisions": 18,
+ "max_prob_diff": 0.0769470000000001
+}

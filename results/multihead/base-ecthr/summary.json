@@ -1,0 +1,118 @@
+{
+ "backbone": "answerdotai/ModernBERT-base@8949b909ec900327062f0ebf497f51aef5e6f0c8",
+ "task": "ecthr",
+ "pool_manifest": "f2dfe41579901e0031758539cee9bfa6857e8717e04e5042ede2b4a83d88f7fe",
+ "git": "nogit",
+ "train": {
+  "steps": 2193,
+  "seconds": 2012.3,
+  "selection": [
+   {
+    "step": 219,
+    "dev_accuracy": 0.892
+   },
+   {
+    "step": 439,
+    "dev_accuracy": 0.9126
+   },
+   {
+    "step": 658,
+    "dev_accuracy": 0.9068
+   },
+   {
+    "step": 877,
+    "dev_accuracy": 0.918
+   },
+   {
+    "step": 1096,
+    "dev_accuracy": 0.9252
+   },
+   {
+    "step": 1316,
+    "dev_accuracy": 0.9281
+   },
+   {
+    "step": 1535,
+    "dev_accuracy": 0.9247
+   },
+   {
+    "step": 1754,
+    "dev_accuracy": 0.9307
+   },
+   {
+    "step": 1974,
+    "dev_accuracy": 0.9261
+   },
+   {
+    "step": 2193,
+    "dev_accuracy": 0.9269
+   }
+  ],
+  "selected_step": 1754,
+  "n_documents": 8999
+ },
+ "config": {
+  "task": "ecthr",
+  "size": "base",
+  "epochs": 1.0,
+  "lr": 3e-05,
+  "head_lr": 0.001,
+  "tokens_per_batch": 16384,
+  "max_docs": 32,
+  "pool": "cls",
+  "select_points": 10,
+  "seed": 20260927,
+  "holdout_qids_file": null,
+  "max_train": null,
+  "max_eval": null,
+  "max_state_tokens": null,
+  "device": null,
+  "tag": ""
+ },
+ "max_state_tokens": 4096,
+ "holdout_qids": [],
+ "heldout_answerable": null,
+ "splits": {
+  "dev": {
+   "n": 10000,
+   "accuracy": 0.9307,
+   "aurc": 0.010422224324060486,
+   "eaurc": 0.007960039890453085,
+   "ece": 0.005504585576057431,
+   "auroc_error": 0.9038405513639208,
+   "coverage_at_risk_0.02": 0.8266,
+   "coverage_at_risk_0.05": 0.957,
+   "coverage_at_risk_0.1": 1.0,
+   "n_records_answered": 10000,
+   "n_records": 10000
+  },
+  "cal": {
+   "n": 5000,
+   "accuracy": 0.9192,
+   "aurc": 0.015101733802321271,
+   "eaurc": 0.011737681374488775,
+   "ece": 0.012802603572607069,
+   "auroc_error": 0.8858696003412352,
+   "coverage_at_risk_0.02": 0.7816,
+   "coverage_at_risk_0.05": 0.9244,
+   "coverage_at_risk_0.1": 1.0,
+   "n_records_answered": 5000,
+   "n_records": 5000
+  },
+  "test": {
+   "n": 5000,
+   "accuracy": 0.935,
+   "aurc": 0.01097030442497601,
+   "eaurc": 0.008803985836747527,
+   "ece": 0.00897830564975741,
+   "auroc_error": 0.8910229535170712,
+   "coverage_at_risk_0.02": 0.8148,
+   "coverage_at_risk_0.05": 0.964,
+   "coverage_at_risk_0.1": 1.0,
+   "n_records_answered": 5000,
+   "n_records": 5000
+  }
+ },
+ "latency_ms_per_document": 65.55178016424179,
+ "forwards_per_document": 1
+}

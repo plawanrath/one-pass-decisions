@@ -1,0 +1,98 @@
+{
+ "analytic": {
+  "encoders": {
+   "base": {
+    "bytes_per_token_bf16": 67584,
+    "bytes_4k_bf16": 276824064,
+    "bytes_8k_bf16": 553648128,
+    "bytes_32k_bf16": 2214592512,
+    "trimmed_bytes_4k_bf16": 103415808,
+    "trimmed_bytes_8k_bf16": 204079104,
+    "trimmed_bytes_32k_bf16": 808058880,
+    "trimmed_bytes_per_token_bf16": 24578.625,
+    "bytes_per_token_fp32": 135168,
+    "bytes_4k_fp32": 553648128,
+    "bytes_8k_fp32": 1107296256,
+    "bytes_32k_fp32": 4429185024,
+    "trimmed_bytes_4k_fp32": 206831616,
+    "trimmed_bytes_8k_fp32": 408158208,
+    "trimmed_bytes_32k_fp32": 1616117760,
+    "trimmed_bytes_per_token_fp32": 49157.25
+   },
+   "large": {
+    "bytes_per_token_bf16": 114688,
+    "bytes_4k_bf16": 469762048,
+    "bytes_8k_bf16": 939524096,
+    "bytes_32k_bf16": 3758096384,
+    "trimmed_bytes_4k_bf16": 172490752,
+    "trimmed_bytes_8k_bf16": 340262912,
+    "trimmed_bytes_32k_bf16": 1346895872,
+    "trimmed_bytes_per_token_bf16": 40964.5,
+    "bytes_per_token_fp32": 229376,
+    "bytes_4k_fp32": 939524096,
+    "bytes_8k_fp32": 1879048192,
+    "bytes_32k_fp32": 7516192768,
+    "trimmed_bytes_4k_fp32": 344981504,
+    "trimmed_bytes_8k_fp32": 680525824,
+    "trimmed_bytes_32k_fp32": 2693791744,
+    "trimmed_bytes_per_token_fp32": 81929.0
+   },
+   "eurobert-base": {
+    "bytes_per_token_bf16": 36864,
+    "bytes_4k_bf16": 150994944,
+    "bytes_8k_bf16": 301989888,
+    "bytes_32k_bf16": 1207959552,
+    "trimmed_bytes_4k_bf16": 150994944,
+    "trimmed_bytes_8k_bf16": 301989888,
+    "trimmed_bytes_32k_bf16": 1207959552,
+    "trimmed_bytes_per_token_bf16": 36864.0,
+    "bytes_per_token_fp32": 73728,
+    "bytes_4k_fp32": 301989888,
+    "bytes_8k_fp32": 603979776,
+    "bytes_32k_fp32": 2415919104,
+    "trimmed_bytes_4k_fp32": 301989888,
+    "trimmed_bytes_8k_fp32": 603979776,
+    "trimmed_bytes_32k_fp32": 2415919104,
+    "trimmed_bytes_per_token_fp32": 73728.0
+   },
+   "eurobert-large": {
+    "bytes_per_token_bf16": 39936,
+    "bytes_4k_bf16": 163577856,
+    "bytes_8k_bf16": 327155712,
+    "bytes_32k_bf16": 1308622848,
+    "trimmed_bytes_4k_bf16": 163577856,
+    "trimmed_bytes_8k_bf16": 327155712,
+    "trimmed_bytes_32k_bf16": 1308622848,
+    "trimmed_bytes_per_token_bf16": 39936.0,
+    "bytes_per_token_fp32": 79872,
+    "bytes_4k_fp32": 327155712,
+    "bytes_8k_fp32": 654311424,
+    "bytes_32k_fp32": 2617245696,
+    "trimmed_bytes_4k_fp32": 327155712,
+    "trimmed_bytes_8k_fp32": 654311424,
+    "trimmed_bytes_32k_fp32": 2617245696,
+    "trimmed_bytes_per_token_fp32": 79872.0
+   }
+  },
+  "decoders": {
+   "smol360": {
+    "bytes_per_token_bf16": 40960,
+    "bytes_4k_bf16": 167772160,
+    "bytes_8k_bf16": 335544320,
+    "bytes_32k_bf16": 1342177280
+   },
+   "smol1.7": {
+    "bytes_per_token_bf16": 196608,
+    "bytes_4k_bf16": 805306368,
+    "bytes_8k_bf16": 1610612736,
+    "bytes_32k_bf16": 6442450944
+   },
+   "mistral-small-3.2": {
+    "bytes_per_token_bf16": 163840,
+    "bytes_4k_bf16": 671088640,
+    "bytes_8k_bf16": 1342177280,
+    "bytes_32k_bf16": 5368709120
+   }
+  }
+ }
+}

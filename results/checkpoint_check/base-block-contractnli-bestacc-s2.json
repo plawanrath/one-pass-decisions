@@ -1,0 +1,7 @@
+{
+ "model": "models/_from_h100_round20/modernbert-base-block-contractnli-bestacc-s2",
+ "result": "base-block-contractnli-bestacc-s2",
+ "n": 34,
+ "same_decisions": 34,
+ "max_prob_diff": 0.02832800000000002
+}

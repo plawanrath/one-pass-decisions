@@ -1,0 +1,108 @@
+{
+ "task": "guardrail",
+ "n": 1000,
+ "tau_risk_controlled": 0.5780367851257324,
+ "tau_hand": 0.9232029318809509,
+ "system2": {
+  "model": "mlx-community/Mistral-Small-3.2-24B-Instruct-2506-8bit",
+  "mode": "generate",
+  "shots": 0,
+  "prompt_version": 2
+ },
+ "systems": {
+  "system2-alone": {
+   "accuracy": 0.656,
+   "escalate_rate": 1.0,
+   "mean_ms": 939.7482191669988,
+   "p99_ms": 5055.726755453502,
+   "usd_per_1k": 1.1183003808087284
+  },
+  "system1-alone": {
+   "accuracy": 0.875,
+   "escalate_rate": 0.0,
+   "mean_ms": 14.26,
+   "p99_ms": 14.26,
+   "usd_per_1k": 0.0169694
+  },
+  "cascade-risk-controlled": {
+   "accuracy": 0.856,
+   "delta_vs_system2_pp": {
+    "point": 19.999999999999996,
+    "ci_low": 17.299999999999994,
+    "ci_high": 22.7
+   },
+   "delta_vs_system1_pp": {
+    "point": -1.9000000000000017,
+    "ci_low": -3.1000000000000028,
+    "ci_high": -0.8000000000000007
+   },
+   "escalate_rate": 0.123,
+   "audit_rate": 0.057,
+   "mean_ms": 196.43803687759447,
+   "p99_ms": 1830.4279238837678,
+   "usd_per_1k": 0.2337612638843402,
+   "audit": {
+    "n_audited": 57,
+    "disagreement_rate": 0.19298245614035087,
+    "confident_disagreement_rate": 0.14035087719298245
+   },
+   "tau": 0.5780367851257324,
+   "accepted": {
+    "n": 877,
+    "risk": 0.036488027366020526,
+    "risk_ci_low": 0.02508915037415893,
+    "risk_ci_high": 0.05112185987439782,
+    "violates_alpha": false
+   },
+   "escalated": {
+    "n": 123,
+    "system1_accuracy": 0.24390243902439024,
+    "final_accuracy": 0.08943089430894309,
+    "mean_ms": 1094.8201256698865,
+    "p99_ms": 1995.5918329979665,
+    "usd_share": 0.6855234230492057
+   },
+   "escalation_gain_pp": -1.9
+  },
+  "cascade-hand-picked": {
+   "accuracy": 0.851,
+   "delta_vs_system2_pp": {
+    "point": 19.499999999999996,
+    "ci_low": 16.900000000000006,
+    "ci_high": 22.099999999999998
+   },
+   "delta_vs_system1_pp": {
+    "point": -2.400000000000002,
+    "ci_low": -3.9000000000000035,
+    "ci_high": -1.0000000000000009
+   },
+   "escalate_rate": 0.192,
+   "audit_rate": 0.054,
+   "mean_ms": 268.4802120376752,
+   "p99_ms": 2159.590805396078,
+   "usd_per_1k": 0.3194914523248376,
+   "audit": {
+    "n_audited": 54,
+    "disagreement_rate": 0.2777777777777778,
+    "confident_disagreement_rate": 0.2777777777777778
+   },
+   "tau": 0.9232029318809509,
+   "accepted": {
+    "n": 808,
+    "risk": 0.017326732673267328,
+    "risk_ci_low": 0.009504236450910128,
+    "risk_ci_high": 0.028900576104684654,
+    "violates_alpha": false
+   },
+   "escalated": {
+    "n": 192,
+    "system1_accuracy": 0.421875,
+    "final_accuracy": 0.296875,
+    "mean_ms": 1101.6754541843407,
+    "p99_ms": 3286.2455000032114,
+    "usd_share": 0.7878483319050262
+   },
+   "escalation_gain_pp": -2.4
+  }
+ }
+}

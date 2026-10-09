@@ -1,0 +1,75 @@
+{
+ "host": "arm64-darwin",
+ "threads": 8,
+ "size": "base",
+ "task": "contractnli",
+ "torch": "2.14.0",
+ "grid": {
+  "S512_K17": {
+   "N": 3,
+   "p50_ms": {
+    "torch-one-seq-full": 1625.1909790444188
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 95.59946935555405
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.9893626141998701,
+     "ci_high": 1.0104280289293102,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 1625.1909790444188,
+     "reference_p50_ms": 1625.1909790444188,
+     "K": 17,
+     "S": 512
+    }
+   }
+  },
+  "S1024_K17": {
+   "N": 3,
+   "p50_ms": {
+    "torch-one-seq-full": 3069.3607084685937
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 180.55062990991726
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.9951136346441775,
+     "ci_high": 1.0049130814865639,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 3069.3607084685937,
+     "reference_p50_ms": 3069.3607084685937,
+     "K": 17,
+     "S": 1024
+    }
+   }
+  },
+  "S2048_K17": {
+   "N": 3,
+   "p50_ms": {
+    "torch-one-seq-full": 7727.090458502062
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 454.53473285306245
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.996920141437559,
+     "ci_high": 1.0031973101495328,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 7727.090458502062,
+     "reference_p50_ms": 7727.090458502062,
+     "K": 17,
+     "S": 2048
+    }
+   }
+  }
+ }
+}

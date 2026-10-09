@@ -1,0 +1,32 @@
+{
+ "size": "base",
+ "task": "contractnli",
+ "cell": "4096:17",
+ "layers": 22,
+ "requests": 20,
+ "tflop_per_contract": {
+  "decoupled l=0": 23.0223718373376,
+  "decoupled l=7": 15.794618918092802,
+  "decoupled l=11": 12.2460344742912,
+  "decoupled l=15": 8.6974500304896,
+  "decoupled l=22": 1.4696971112448,
+  "engine (block mask)": 1.5296470643712,
+  "joint packing": 1.5974732838912,
+  "mice l=7": 1.5072711180288,
+  "mice l=11": 1.499672087808,
+  "mice l=15": 1.4920730575871999
+ },
+ "note": "decoupled l=0 is one-sequence-per-question (full attention); l=L has no joint layer; mice l=N is the engine's block layout without question-to-state attention in the lower N layers",
+ "relative_to_one_seq": {
+  "decoupled l=0": 1.0,
+  "decoupled l=7": 0.6860552435556246,
+  "decoupled l=11": 0.5319188900611285,
+  "decoupled l=15": 0.3777825365666324,
+  "decoupled l=22": 0.06383778012225702,
+  "engine (block mask)": 0.06644176695515028,
+  "joint packing": 0.06938786738299585,
+  "mice l=7": 0.06546984510016093,
+  "mice l=11": 0.06513977353870365,
+  "mice l=15": 0.06480970197724636
+ }
+}

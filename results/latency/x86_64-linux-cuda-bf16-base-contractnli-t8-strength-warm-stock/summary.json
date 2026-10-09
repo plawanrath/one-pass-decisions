@@ -1,0 +1,70 @@
+{
+ "host": "x86_64-linux-cuda-bf16",
+ "threads": 8,
+ "size": "base",
+ "task": "contractnli",
+ "torch": "2.14.1+cu130",
+ "grid": {
+  "S4096_K17": {
+   "N": 3,
+   "p50_ms": {
+    "torch-one-seq-full": 438.84059228003025,
+    "torch-compile-one-seq-full": 338.0173114128411,
+    "varlen-torch-varlen-one-seq-full": 196.91482046619058,
+    "torch-naive-batch-full": 357.27253276854753
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 25.814152487060603,
+    "torch-compile-one-seq-full": 19.883371259578887,
+    "varlen-torch-varlen-one-seq-full": 11.583224733305329,
+    "torch-naive-batch-full": 21.016031339326325
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.9977813953059829,
+     "ci_high": 1.0021773733647241,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 438.84059228003025,
+     "reference_p50_ms": 438.84059228003025,
+     "K": 17,
+     "S": 4096
+    },
+    "torch-compile-one-seq-full": {
+     "speedup": 1.298278453389766,
+     "ci_low": 1.2956827331934322,
+     "ci_high": 1.3027719037472263,
+     "cell": "torch-compile-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 338.0173114128411,
+     "reference_p50_ms": 438.84059228003025,
+     "K": 17,
+     "S": 4096
+    },
+    "varlen-torch-varlen-one-seq-full": {
+     "speedup": 2.228580821093541,
+     "ci_low": 2.226366511784729,
+     "ci_high": 2.2334955117133455,
+     "cell": "varlen-torch-varlen-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 196.91482046619058,
+     "reference_p50_ms": 438.84059228003025,
+     "K": 17,
+     "S": 4096
+    },
+    "torch-naive-batch-full": {
+     "speedup": 1.2283076700002715,
+     "ci_low": 1.2263777314191961,
+     "ci_high": 1.2311488764826914,
+     "cell": "torch-naive-batch-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 357.27253276854753,
+     "reference_p50_ms": 438.84059228003025,
+     "K": 17,
+     "S": 4096
+    }
+   }
+  }
+ }
+}

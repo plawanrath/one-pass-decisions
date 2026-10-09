@@ -1,0 +1,10 @@
+{
+ "host": "x86_64-linux",
+ "threads": 8,
+ "size": "base",
+ "task": "guardrail",
+ "paths": [
+  "torch-cuda-bf16-bs1",
+  "torch-cuda-bf16-bs64"
+ ]
+}

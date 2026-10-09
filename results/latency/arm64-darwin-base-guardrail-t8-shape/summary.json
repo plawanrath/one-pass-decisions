@@ -1,0 +1,53 @@
+{
+ "host": "arm64-darwin",
+ "threads": 8,
+ "size": "base",
+ "task": "guardrail",
+ "torch": "2.14.0",
+ "grid": {
+  "S32_K2": {
+   "N": 3,
+   "p50_ms": {
+    "torch-compile-one-seq-full": 110.5316879984457
+   },
+   "per_decision_p50_ms": {
+    "torch-compile-one-seq-full": 55.26584399922285
+   },
+   "speedup_vs_one_seq": {
+    "torch-compile-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.9483344411166887,
+     "ci_high": 1.0541147576112397,
+     "cell": "torch-compile-one-seq-full",
+     "reference": "torch-compile-one-seq-full",
+     "cell_p50_ms": 110.5316879984457,
+     "reference_p50_ms": 110.5316879984457,
+     "K": 2,
+     "S": 32
+    }
+   }
+  },
+  "S1024_K2": {
+   "N": 4,
+   "p50_ms": {
+    "torch-compile-one-seq-full": 460.9793754934799
+   },
+   "per_decision_p50_ms": {
+    "torch-compile-one-seq-full": 230.48968774673995
+   },
+   "speedup_vs_one_seq": {
+    "torch-compile-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.8932756084893922,
+     "ci_high": 1.1207546465373015,
+     "cell": "torch-compile-one-seq-full",
+     "reference": "torch-compile-one-seq-full",
+     "cell_p50_ms": 460.9793754934799,
+     "reference_p50_ms": 460.9793754934799,
+     "K": 2,
+     "S": 1024
+    }
+   }
+  }
+ }
+}

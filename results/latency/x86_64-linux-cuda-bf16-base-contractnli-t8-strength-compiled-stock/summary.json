@@ -1,0 +1,79 @@
+{
+ "host": "x86_64-linux-cuda-bf16",
+ "threads": 8,
+ "size": "base",
+ "task": "contractnli",
+ "torch": "2.14.1+cu130",
+ "grid": {
+  "S2048_K17": {
+   "N": 3,
+   "p50_ms": {
+    "engine-cold-fill-cascade-compiled": 15.763061121106148,
+    "engine-hit-cascade-compiled": 10.421953164041042
+   },
+   "per_decision_p50_ms": {
+    "engine-cold-fill-cascade-compiled": 0.9272388894768322,
+    "engine-hit-cascade-compiled": 0.6130560684730025
+   },
+   "speedup_vs_one_seq": {
+    "engine-cold-fill-cascade-compiled": {
+     "speedup": 1.0,
+     "ci_low": 0.983176482886846,
+     "ci_high": 1.017325997399791,
+     "cell": "engine-cold-fill-cascade-compiled",
+     "reference": "engine-cold-fill-cascade-compiled",
+     "cell_p50_ms": 15.763061121106148,
+     "reference_p50_ms": 15.763061121106148,
+     "K": 17,
+     "S": 2048
+    },
+    "engine-hit-cascade-compiled": {
+     "speedup": 1.512486275172832,
+     "ci_low": 1.497520395851091,
+     "ci_high": 1.531948778591709,
+     "cell": "engine-hit-cascade-compiled",
+     "reference": "engine-cold-fill-cascade-compiled",
+     "cell_p50_ms": 10.421953164041042,
+     "reference_p50_ms": 15.763061121106148,
+     "K": 17,
+     "S": 2048
+    }
+   }
+  },
+  "S4096_K17": {
+   "N": 3,
+   "p50_ms": {
+    "engine-cold-fill-cascade-compiled": 16.34384412318468,
+    "engine-hit-cascade-compiled": 10.45979093760252
+   },
+   "per_decision_p50_ms": {
+    "engine-cold-fill-cascade-compiled": 0.9614025954814518,
+    "engine-hit-cascade-compiled": 0.6152818198589718
+   },
+   "speedup_vs_one_seq": {
+    "engine-cold-fill-cascade-compiled": {
+     "speedup": 1.0,
+     "ci_low": 0.9973084739973243,
+     "ci_high": 1.0026316414979548,
+     "cell": "engine-cold-fill-cascade-compiled",
+     "reference": "engine-cold-fill-cascade-compiled",
+     "cell_p50_ms": 16.34384412318468,
+     "reference_p50_ms": 16.34384412318468,
+     "K": 17,
+     "S": 4096
+    },
+    "engine-hit-cascade-compiled": {
+     "speedup": 1.5625402286415908,
+     "ci_low": 1.5580349527639072,
+     "ci_high": 1.5678628638745584,
+     "cell": "engine-hit-cascade-compiled",
+     "reference": "engine-cold-fill-cascade-compiled",
+     "cell_p50_ms": 10.45979093760252,
+     "reference_p50_ms": 16.34384412318468,
+     "K": 17,
+     "S": 4096
+    }
+   }
+  }
+ }
+}

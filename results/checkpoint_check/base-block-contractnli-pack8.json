@@ -1,0 +1,7 @@
+{
+ "model": "models/_from_h100_dose/modernbert-base-block-contractnli-pack8",
+ "result": "base-block-contractnli-pack8",
+ "n": 34,
+ "same_decisions": 34,
+ "max_prob_diff": 0.009853
+}

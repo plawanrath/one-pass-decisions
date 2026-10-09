@@ -1,0 +1,40 @@
+{
+ "spec": {
+  "task": "tracegrade",
+  "seed": 20260927,
+  "n_dev": 574,
+  "n_cal": 1723,
+  "n_test": 2298,
+  "n_train": null,
+  "source": "agent harness over openai/gsm8k",
+  "notes": "1000 trajectories; silver labels: 5 samples at T=0.7, kept if agreement >= 0.6"
+ },
+ "splits": {
+  "train": {
+   "n": 1146,
+   "sha256": "04a950c918e9fb078d78b7834d90a2850eef5964f3ca0561d39161f12e9c34cd",
+   "n_groups": 201
+  },
+  "dev": {
+   "n": 576,
+   "sha256": "0d15f1662acbf53f00d77853c9bf582b19ddda8153f198fd58859cb266592790",
+   "n_groups": 85
+  },
+  "cal": {
+   "n": 1726,
+   "sha256": "627b0228c8419b7c6084862ce1aac9adfb7ae76932af9e615a10df0d132d3036",
+   "n_groups": 287
+  },
+  "test": {
+   "n": 2298,
+   "sha256": "bca02389dd322abe67a11a62825ede1537b1a1ba96307ec6daa21c8d6b84b7da",
+   "n_groups": 427
+  }
+ },
+ "kinds": [
+  "choice",
+  "noul",
+  "score"
+ ],
+ "manifest_sha256": "46ca5a1bd8200aebce3cdb3607b317cfd0ee318aaf30d1ae2639138726efdfda"
+}

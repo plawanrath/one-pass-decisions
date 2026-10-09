@@ -1,6 +1,6 @@
-# One-Pass Decisions: Serving Typed Decisions with Exact State Reuse and Certified Escalation
+# Exact Prefix Caching for Bidirectional Encoders: Serving Many Questions over One Document
 
-A serving engine for typed-decision workloads: many small questions over one shared state, packed into a single encoder pass with exact reuse of the state encoding, and gated by an escalation threshold calibrated on the scores the served engine actually produces.
+A block attention mask makes a bidirectional encoder's document keys and values independent of the questions asked of it, so one encode serves every closed-set question about a document exactly and can be cached. This repository holds the mask, the engine that runs it as FlashAttention with no mask, the measurements of its accuracy price and speed, and an escalation threshold set on the scores the served engine actually produces.
 
 - `onepass/` — package.
 - `scripts/` — one runner per experiment, writing to `results/wNN_<exp>/`.

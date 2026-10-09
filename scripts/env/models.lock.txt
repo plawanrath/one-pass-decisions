@@ -6,3 +6,10 @@ fastino/GLiNER2.5-Decide@7ee5da4c2415e32259bcdc0b1a7367c32ce8d6f6
 mlx-community/Mistral-Small-3.2-24B-Instruct-2506-8bit@1db835463eb0f953019af1048077b90403b70424
 HuggingFaceTB/SmolLM2-360M-Instruct@a10cc1512eabd3dde888204e902eca88bddb4951
 HuggingFaceTB/SmolLM2-1.7B-Instruct@31b70e2e869a7173562077fd711b654946d38674
+HuggingFaceTB/SmolLM3-3B@a07cc9a04f16550a088caea529712d1d335b0ac1
+EuroBERT/EuroBERT-210m@39b51e15dd1f1a06f58b5cbf6a8a188cec60bd0e
+EuroBERT/EuroBERT-610m@d9af784ed20db6c2096e335ec6a67dd4a219924c
+EuroBERT/EuroBERT-2.1B@81245a4d71f43452badf5e04458e4ddb831ff109
+google/flan-t5-small@0fc9ddf78a1e988dac52e2dac162b0ede4fd74ab
+google/flan-t5-base@7bcac572ce56db69c1ea7c8af255c5d7c9672fc2
+google/flan-t5-large@0613663d0d48ea86ba8cb3d7a44f0f65dc596a2a

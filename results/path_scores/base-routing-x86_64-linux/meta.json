@@ -1,0 +1,9 @@
+{
+ "host": "x86_64-linux",
+ "threads": 16,
+ "size": "base",
+ "task": "routing",
+ "paths": [
+  "ort-int8-static"
+ ]
+}

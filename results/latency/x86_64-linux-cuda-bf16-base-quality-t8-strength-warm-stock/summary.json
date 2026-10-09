@@ -1,0 +1,57 @@
+{
+ "host": "x86_64-linux-cuda-bf16",
+ "threads": 8,
+ "size": "base",
+ "task": "quality",
+ "torch": "2.14.1+cu130",
+ "grid": {
+  "S8192_K17": {
+   "N": 4,
+   "p50_ms": {
+    "engine-cold-cascade": 27.151775546371937,
+    "engine-cold-fill-cascade": 27.806460857391357,
+    "engine-hit-cascade": 12.576946057379246
+   },
+   "per_decision_p50_ms": {
+    "engine-cold-cascade": 1.5971632674336433,
+    "engine-cold-fill-cascade": 1.6356741680818445,
+    "engine-hit-cascade": 0.7398203563164262
+   },
+   "speedup_vs_one_seq": {
+    "engine-cold-cascade": {
+     "speedup": 1.0,
+     "ci_low": 0.9953107455218348,
+     "ci_high": 1.0047290731682246,
+     "cell": "engine-cold-cascade",
+     "reference": "engine-cold-cascade",
+     "cell_p50_ms": 27.151775546371937,
+     "reference_p50_ms": 27.151775546371937,
+     "K": 17,
+     "S": 8192
+    },
+    "engine-cold-fill-cascade": {
+     "speedup": 0.9764556404938748,
+     "ci_low": 0.9717413728689249,
+     "ci_high": 0.9810123257165161,
+     "cell": "engine-cold-fill-cascade",
+     "reference": "engine-cold-cascade",
+     "cell_p50_ms": 27.806460857391357,
+     "reference_p50_ms": 27.151775546371937,
+     "K": 17,
+     "S": 8192
+    },
+    "engine-hit-cascade": {
+     "speedup": 2.158852826632045,
+     "ci_low": 2.146950475177783,
+     "ci_high": 2.196787794677706,
+     "cell": "engine-hit-cascade",
+     "reference": "engine-cold-cascade",
+     "cell_p50_ms": 12.576946057379246,
+     "reference_p50_ms": 27.151775546371937,
+     "K": 17,
+     "S": 8192
+    }
+   }
+  }
+ }
+}

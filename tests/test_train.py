@@ -51,3 +51,25 @@ def test_train_resumes_and_evaluates(tok, tmp_path):
     assert len(rows_full) == len(recs)
     assert len((tmp_path / "eval.jsonl").read_text().splitlines()) == len(recs)
     json.loads((tmp_path / "run" / "train_report.json").read_text())
+
+
+def test_block_sequences_respect_token_budget(tok):
+    recs = _records(n_states=1, k=6)
+    long_q = " ".join(f"tok{i}" for i in range(60))
+    recs[2] = DecisionRecord("t", recs[2].state, Question("choice", long_q, ["x", "y", "z"], qid="long"), 1, "dataset", "g0")
+    # no budget: one state, six questions, one sequence
+    assert len(build_sequences(recs, tok, TrainConfig(max_seq_tokens=0))) == 1
+    budget = build_sequences(recs, tok, TrainConfig(max_seq_tokens=90))
+    assert len(budget) > 1 and all(s.layout.length <= 90 or len(s.gold) == 1 for s in budget)
+    assert sorted(i for s in budget for i in s.record_idx) == list(range(6))  # nothing dropped
+
+
+def test_padded_to_multiple_is_exact(tok):
+    from onepass.train.finetune import collate
+    m = OnePassEncoder.tiny().eval()
+    seqs = build_sequences(_records(n_states=3, k=2), tok, TrainConfig())[:3]
+    pb1, g1 = collate(seqs, tok.pad_id, "block", 1)
+    pb2, g2 = collate(seqs, tok.pad_id, "block", 64)
+    assert pb2.input_ids.shape[1] % 64 == 0 and pb2.input_ids.shape[1] > pb1.input_ids.shape[1]
+    with torch.no_grad():
+        assert torch.allclose(m(pb1), m(pb2), atol=1e-5) and torch.equal(g1, g2)

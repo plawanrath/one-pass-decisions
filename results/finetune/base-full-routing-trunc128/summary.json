@@ -1,0 +1,11 @@
+{
+ "size": "base",
+ "task": "routing",
+ "max_state_tokens": 128,
+ "splits": {
+  "test": {
+   "n": 2750,
+   "accuracy": 0.9065454545454545
+  }
+ }
+}

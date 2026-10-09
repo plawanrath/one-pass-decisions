@@ -1,0 +1,43 @@
+{
+ "trace": null,
+ "trace_meta": {
+  "slicing": "per-turn",
+  "subset": "all",
+  "arrivals": "simulated Poisson over user turns",
+  "source": "test pool"
+ },
+ "n_requests": 600,
+ "questions_per_request": 2.415,
+ "trace_rate_per_s": 19.882739538075242,
+ "threads": 8,
+ "server": "engine",
+ "order": "edf",
+ "split": null,
+ "max_batch_tokens": 4096,
+ "max_state_tokens": 1024,
+ "results": {
+  "r5.3": {
+   "speedup": 0.2665628642295773,
+   "offered_rate_per_s": 5.3,
+   "offered_questions_per_s": 12.7995,
+   "n_requests": 600,
+   "n_questions": 1449,
+   "wall_s": 114.1812256249832,
+   "latency_ms_p50": 3256.582250003703,
+   "latency_ms_p99": 9791.134582948871,
+   "wait_ms_p99": 5415.152625006158,
+   "deadline_miss_rate": 0.9917184265010351,
+   "max_queue_depth": 82,
+   "steps": 134,
+   "cache": {
+    "entries": 551,
+    "bytes": 12419776512,
+    "hits": 118,
+    "misses": 551
+   },
+   "hit_rate": 0.11249137336093858,
+   "goodput_qps": 0.10509608680688713,
+   "p90_ms": 5443.758816400084
+  }
+ }
+}

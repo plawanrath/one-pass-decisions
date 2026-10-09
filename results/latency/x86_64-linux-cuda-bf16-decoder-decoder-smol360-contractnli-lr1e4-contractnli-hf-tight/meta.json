@@ -1,0 +1,12 @@
+{
+ "backend": "hf-tight",
+ "model": "decoder-smol360-contractnli-lr1e4",
+ "task": "contractnli",
+ "max_model_len": 8192,
+ "cells": {
+  "4096:17": {
+   "prefix_cap": 4096,
+   "prefix_tokens_median": 4097.0
+  }
+ }
+}

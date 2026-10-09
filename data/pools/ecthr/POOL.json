@@ -1,0 +1,38 @@
+{
+ "spec": {
+  "task": "ecthr",
+  "seed": 20260927,
+  "n_dev": 10000,
+  "n_cal": 5000,
+  "n_test": 5000,
+  "n_train": 90000,
+  "source": "coastalcph/lex_glue@c23fdff1a6bf74e0e1a71cb86f1e781d37da888c ecthr_a+ecthr_b",
+  "notes": "train and validation official (validation is dev); official test split by case into cal/test halves with seed 20260927; 10 articles per case, three-way (not alleged / alleged, no violation / violation)"
+ },
+ "splits": {
+  "train": {
+   "n": 90000,
+   "sha256": "995d27ee7561f2088e47a7b56f139ba4a9dee51f34d4e3f61a0cd298a060c10f",
+   "n_groups": 9000
+  },
+  "dev": {
+   "n": 10000,
+   "sha256": "d9050ace4ef99423a7b0467a321ac5f341b45dc615762787b853bc88f13503bd",
+   "n_groups": 1000
+  },
+  "cal": {
+   "n": 5000,
+   "sha256": "aa603e1492b898e8ea5a5ef1b0da79c16643049c9bb3adba79747fcd06c1af7d",
+   "n_groups": 500
+  },
+  "test": {
+   "n": 5000,
+   "sha256": "338d7590c1ec23e464487028af6d7f718f1e03207072bbb0ee64e4d854d8c69d",
+   "n_groups": 500
+  }
+ },
+ "kinds": [
+  "choice"
+ ],
+ "manifest_sha256": "f2dfe41579901e0031758539cee9bfa6857e8717e04e5042ede2b4a83d88f7fe"
+}

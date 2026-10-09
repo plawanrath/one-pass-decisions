@@ -1,0 +1,96 @@
+{
+ "task": "contractnli",
+ "S": 4096,
+ "K": 17,
+ "N": 64,
+ "size": "large",
+ "kernel": "cascade",
+ "flops_per_contract": 4045235230592.0,
+ "budgets": {
+  "65536": {
+   "steps": 5,
+   "contracts_per_s": 31.984388260257695,
+   "model_tflops": 129.38437421932758
+  },
+  "131072": {
+   "steps": 3,
+   "contracts_per_s": 31.9842904358908,
+   "model_tflops": 129.3839784967522
+  }
+ },
+ "profile": {
+  "budget": 65536,
+  "wall_ms": 2168.7426239950582,
+  "kernel_ms": 1281.3097019999914,
+  "share_no_kernel": 0.4091923643573342,
+  "by_category_ms": {
+   "elementwise / norm": 789.6111649999829,
+   "matrix multiply": 254.92964100000165,
+   "state-row FlashAttention": 198.32510599999898,
+   "masked attention": 23.936176000000444,
+   "other": 14.507614000007452
+  },
+  "top_kernels": [
+   {
+    "kernel": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl<at::native::BinaryFunctor<float, float, float, a",
+    "ms": 145.14684600000095
+   },
+   {
+    "kernel": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl<at::native::direct_copy_kernel_cuda(at::TensorIt",
+    "ms": 114.42271800000121
+   },
+   {
+    "kernel": "cudnn_generated_fort_native_sdpa_sm90_flash_fprop_wgmma_f16_knob_1_64x128x64_4x1x1_cga1x1x1_kernel0_0",
+    "ms": 109.26017899999951
+   },
+   {
+    "kernel": "void pytorch_flash::flash_fwd_kernel<Flash_fwd_kernel_traits<64, 128, 128, 4, false, false, cutlass::bfloat16_t, Flash_k",
+    "ms": 84.93845899999948
+   },
+   {
+    "kernel": "nvjet_sm90_tst_128x304_64x3_1x2_h_bz_coopA_TNT",
+    "ms": 76.93322500000076
+   },
+   {
+    "kernel": "void at::native::elementwise_kernel<128, 2, at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctor_add<float> >(at::",
+    "ms": 72.28376500000127
+   },
+   {
+    "kernel": "void at::native::(anonymous namespace)::CatArrayBatchedCopy<at::native::(anonymous namespace)::OpaqueType<4u>, unsigned ",
+    "ms": 64.22060800000202
+   },
+   {
+    "kernel": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::GeluCUDAKernelImpl(at::Tensor",
+    "ms": 61.8633320000018
+   },
+   {
+    "kernel": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::BFloat16, ",
+    "ms": 59.91854399999531
+   },
+   {
+    "kernel": "nvjet_sm90_tst_192x208_64x4_2x1_v_bz_coopB_TNT",
+    "ms": 50.914270000000016
+   },
+   {
+    "kernel": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::T",
+    "ms": 44.66179299999768
+   },
+   {
+    "kernel": "nvjet_sm90_tst_256x144_64x4_1x2_h_bz_coopA_TNT",
+    "ms": 43.33721600000013
+   },
+   {
+    "kernel": "void at::native::(anonymous namespace)::vectorized_layer_norm_kernel<c10::BFloat16, float, false>(int, float, c10::BFloa",
+    "ms": 37.60276900000035
+   },
+   {
+    "kernel": "void at::native::vectorized_gather_kernel<16, long>(char*, char*, long*, int, long, long, long, long, bool)",
+    "ms": 36.18855599999835
+   },
+   {
+    "kernel": "void at::native::vectorized_elementwise_kernel<8, at::native::bfloat16_copy_kernel_cuda(at::TensorIteratorBase&)::{lambd",
+    "ms": 32.08811399999715
+   }
+  ]
+ }
+}

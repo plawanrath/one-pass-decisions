@@ -1,0 +1,209 @@
+{
+ "host": "x86_64-linux",
+ "threads": 8,
+ "size": "base",
+ "task": "routing",
+ "torch": "2.14.0+cu130",
+ "grid": {
+  "S32_K2": {
+   "N": 11,
+   "p50_ms": {
+    "torch-one-seq-full": 80.28494752943516,
+    "torch-naive-batch-full": 61.54953129589558,
+    "engine-cold": 55.73039688169956,
+    "engine-hit": 42.669519782066345,
+    "ort-fp32-one-seq-full": 75.41399449110031,
+    "ort-int8-one-seq-full": 50.5239088088274,
+    "ort-fp32-packed-block": 52.42329463362694
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 40.14247376471758,
+    "torch-naive-batch-full": 30.77476564794779,
+    "engine-cold": 27.86519844084978,
+    "engine-hit": 21.334759891033173,
+    "ort-fp32-one-seq-full": 37.706997245550156,
+    "ort-int8-one-seq-full": 25.2619544044137,
+    "ort-fp32-packed-block": 26.21164731681347
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.9604132609518599,
+     "ci_high": 1.0419739426955628,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 80.28494752943516,
+     "reference_p50_ms": 80.28494752943516,
+     "K": 2,
+     "S": 32
+    },
+    "torch-naive-batch-full": {
+     "speedup": 1.3043957580029362,
+     "ci_low": 1.25244491605126,
+     "ci_high": 1.3373550685943796,
+     "cell": "torch-naive-batch-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 61.54953129589558,
+     "reference_p50_ms": 80.28494752943516,
+     "K": 2,
+     "S": 32
+    },
+    "engine-cold": {
+     "speedup": 1.440595294877555,
+     "ci_low": 1.3843881576109578,
+     "ci_high": 1.4731375807762115,
+     "cell": "engine-cold",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 55.73039688169956,
+     "reference_p50_ms": 80.28494752943516,
+     "K": 2,
+     "S": 32
+    },
+    "engine-hit": {
+     "speedup": 1.881552638499069,
+     "ci_low": 1.8051588968376593,
+     "ci_high": 1.9254688361953713,
+     "cell": "engine-hit",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 42.669519782066345,
+     "reference_p50_ms": 80.28494752943516,
+     "K": 2,
+     "S": 32
+    },
+    "ort-fp32-one-seq-full": {
+     "speedup": 1.0645895111537909,
+     "ci_low": 1.019997284208339,
+     "ci_high": 1.086949802326215,
+     "cell": "ort-fp32-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 75.41399449110031,
+     "reference_p50_ms": 80.28494752943516,
+     "K": 2,
+     "S": 32
+    },
+    "ort-int8-one-seq-full": {
+     "speedup": 1.5890486192035875,
+     "ci_low": 1.5231080354093232,
+     "ci_high": 1.625107312986451,
+     "cell": "ort-int8-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 50.5239088088274,
+     "reference_p50_ms": 80.28494752943516,
+     "K": 2,
+     "S": 32
+    },
+    "ort-fp32-packed-block": {
+     "speedup": 1.531474663897533,
+     "ci_low": 1.4727952190356841,
+     "ci_high": 1.5745360231323096,
+     "cell": "ort-fp32-packed-block",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 52.42329463362694,
+     "reference_p50_ms": 80.28494752943516,
+     "K": 2,
+     "S": 32
+    }
+   }
+  },
+  "S1024_K2": {
+   "N": 11,
+   "p50_ms": {
+    "torch-one-seq-full": 724.1854537278414,
+    "torch-naive-batch-full": 669.7056498378515,
+    "engine-cold": 369.0100200474262,
+    "engine-hit": 51.13600194454193,
+    "ort-fp32-one-seq-full": 1131.7134350538254,
+    "ort-int8-one-seq-full": 827.2667732089758,
+    "ort-fp32-packed-block": 611.4278361201286
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 362.0927268639207,
+    "torch-naive-batch-full": 334.85282491892576,
+    "engine-cold": 184.5050100237131,
+    "engine-hit": 25.568000972270966,
+    "ort-fp32-one-seq-full": 565.8567175269127,
+    "ort-int8-one-seq-full": 413.6333866044879,
+    "ort-fp32-packed-block": 305.7139180600643
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.9827167997873715,
+     "ci_high": 1.017659046348348,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 724.1854537278414,
+     "reference_p50_ms": 724.1854537278414,
+     "K": 2,
+     "S": 1024
+    },
+    "torch-naive-batch-full": {
+     "speedup": 1.0813488790234642,
+     "ci_low": 1.0670715879656532,
+     "ci_high": 1.0964234744913801,
+     "cell": "torch-naive-batch-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 669.7056498378515,
+     "reference_p50_ms": 724.1854537278414,
+     "K": 2,
+     "S": 1024
+    },
+    "engine-cold": {
+     "speedup": 1.9625089140798047,
+     "ci_low": 1.9385295072916988,
+     "ci_high": 1.993600362039517,
+     "cell": "engine-cold",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 369.0100200474262,
+     "reference_p50_ms": 724.1854537278414,
+     "K": 2,
+     "S": 1024
+    },
+    "engine-hit": {
+     "speedup": 14.161949041562455,
+     "ci_low": 13.991758086196494,
+     "ci_high": 14.366714506031686,
+     "cell": "engine-hit",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 51.13600194454193,
+     "reference_p50_ms": 724.1854537278414,
+     "K": 2,
+     "S": 1024
+    },
+    "ort-fp32-one-seq-full": {
+     "speedup": 0.6399017907686131,
+     "ci_low": 0.630758616713521,
+     "ci_high": 0.6484863016299939,
+     "cell": "ort-fp32-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 1131.7134350538254,
+     "reference_p50_ms": 724.1854537278414,
+     "K": 2,
+     "S": 1024
+    },
+    "ort-int8-one-seq-full": {
+     "speedup": 0.8753953104132528,
+     "ci_low": 0.8637336153308691,
+     "ci_high": 0.8872891625096853,
+     "cell": "ort-int8-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 827.2667732089758,
+     "reference_p50_ms": 724.1854537278414,
+     "K": 2,
+     "S": 1024
+    },
+    "ort-fp32-packed-block": {
+     "speedup": 1.1844168860927669,
+     "ci_low": 1.168577499991056,
+     "ci_high": 1.2027301197561462,
+     "cell": "ort-fp32-packed-block",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 611.4278361201286,
+     "reference_p50_ms": 724.1854537278414,
+     "K": 2,
+     "S": 1024
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,1900 @@
+{
+ "tasks": {
+  "contractnli": {
+   "decoder": "decoder-smol1.7-contractnli-lr3e5",
+   "decoder_test": {
+    "n": 1054,
+    "accuracy": 0.888045540796964,
+    "aurc": 0.03329464369943885,
+    "eaurc": 0.02672674051651872,
+    "ece": 0.06719654592096924,
+    "auroc_error": 0.834646168332609,
+    "coverage_at_risk_0.02": 0.4297912713472486,
+    "coverage_at_risk_0.05": 0.8244781783681214,
+    "coverage_at_risk_0.1": 0.9715370018975332
+   },
+   "decoder_kv_bytes_per_token": 196608,
+   "accuracy": {
+    "MB-b block, equal steps": {
+     "encoder_accuracy": 0.8235294117647058,
+     "encoder_minus_decoder_pp": {
+      "point": -6.451612903225811,
+      "ci_low": -8.633776091081591,
+      "ci_high": -4.36432637571158
+     },
+     "encoder_minus_decoder_aurc": {
+      "point": 0.07416533894295631,
+      "ci_low": 0.05216452525065043,
+      "ci_high": 0.09724125205593087,
+      "p_value": 0.0,
+      "n": 1054,
+      "n_resamples": 10000
+     }
+    },
+    "MB-l block, equal steps": {
+     "encoder_accuracy": 0.8927893738140418,
+     "encoder_minus_decoder_pp": {
+      "point": 0.4743833017077814,
+      "ci_low": -0.9487666034155628,
+      "ci_high": 1.8999051233396298
+     },
+     "encoder_minus_decoder_aurc": {
+      "point": 0.032767903980743196,
+      "ci_low": 0.019351784589701968,
+      "ci_high": 0.04603999937404761,
+      "p_value": 0.0,
+      "n": 1054,
+      "n_resamples": 10000
+     }
+    },
+    "MB-l full": {
+     "encoder_accuracy": 0.8918406072106262,
+     "encoder_minus_decoder_pp": {
+      "point": 0.3795066413662229,
+      "ci_low": -1.1385199240986688,
+      "ci_high": 1.8026565464895672
+     },
+     "encoder_minus_decoder_aurc": {
+      "point": 0.008307522047900348,
+      "ci_low": -0.0011686734375626958,
+      "ci_high": 0.01844804935866339,
+      "p_value": 0.0426,
+      "n": 1054,
+      "n_resamples": 10000
+     }
+    },
+    "MB-b block, best checkpoint": {
+     "encoder_accuracy": 0.8643263757115749,
+     "encoder_minus_decoder_pp": {
+      "point": -2.371916508538896,
+      "ci_low": -4.079696394686905,
+      "ci_high": -0.6641366223908873
+     },
+     "encoder_minus_decoder_aurc": {
+      "point": 0.03093138925594026,
+      "ci_low": 0.014221826333652331,
+      "ci_high": 0.04655135768002257,
+      "p_value": 0.0,
+      "n": 1054,
+      "n_resamples": 10000
+     }
+    }
+   },
+   "latency": {
+    "MB-b:2048:17": {
+     "engine": "MB-b",
+     "accuracy_arm": "MB-b block, equal steps",
+     "decoder_cold_ms": 71.71515599475242,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 79.0264249953907,
+     "engine_cold_fill_ms": 33.45126399653964,
+     "engine_hit_ms": 12.542476993985474,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 165.39625450968742,
+     "engine_vs_decoder_cold": {
+      "speedup": 2.143869840080512,
+      "ci_low": 1.9724604260186727,
+      "ci_high": 2.619833073879571,
+      "cell": "engine-cold-fill",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 33.45126399653964,
+      "reference_p50_ms": 71.71515599475242,
+      "K": 17,
+      "S": 2048
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 6.30070320505961,
+      "ci_low": 5.7242519289539455,
+      "ci_high": 6.593489026596027,
+      "cell": "engine-hit",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 12.542476993985474,
+      "reference_p50_ms": 79.0264249953907,
+      "K": 17,
+      "S": 2048
+     },
+     "usd_per_million": {
+      "decoder_cold": 4.089638797739967,
+      "decoder_warm": 4.506572275063947,
+      "engine_cold": 1.9075965906523422,
+      "engine_hit": 0.7152490965524396
+     },
+     "fusion_saving": {
+      "speedup": 1.634897907129017,
+      "ci_low": 1.3215484960753645,
+      "ci_high": 1.984786849899016,
+      "cell": "engine-cold-fill",
+      "reference": "engine-cold-fill-unfused",
+      "cell_p50_ms": 33.45126399653964,
+      "reference_p50_ms": 54.68940149876289,
+      "K": 17,
+      "S": 2048
+     }
+    },
+    "MB-b:4096:1": {
+     "engine": "MB-b",
+     "accuracy_arm": "MB-b block, equal steps",
+     "decoder_cold_ms": 37.98192250542343,
+     "decoder_cold_mode": "decoder-cold-first",
+     "decoder_warm_ms": 15.1942434895318,
+     "engine_cold_fill_ms": 33.87357000610791,
+     "engine_hit_ms": 9.70142098958604,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 18.59979997971095,
+     "engine_vs_decoder_cold": {
+      "speedup": 1.1212848984791008,
+      "ci_low": 1.0826298610802758,
+      "ci_high": 1.1430249129881662,
+      "cell": "engine-cold-fill",
+      "reference": "decoder-cold-first",
+      "cell_p50_ms": 33.87357000610791,
+      "reference_p50_ms": 37.98192250542343,
+      "K": 1,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 1.5661874178887827,
+      "ci_low": 1.5308607550980835,
+      "ci_high": 1.6163860275473745,
+      "cell": "engine-hit",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 9.70142098958604,
+      "reference_p50_ms": 15.1942434895318,
+      "K": 1,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 36.821363762202154,
+      "decoder_warm": 14.729974938462773,
+      "engine_cold": 32.838544255921285,
+      "engine_hit": 9.404988681570911
+     }
+    },
+    "MB-b:4096:2": {
+     "engine": "MB-b",
+     "accuracy_arm": "MB-b block, equal steps",
+     "decoder_cold_ms": 41.22074999031611,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 23.245974502060562,
+     "engine_cold_fill_ms": 36.293742479756474,
+     "engine_hit_ms": 10.040560038760304,
+     "fastest_baseline": "torch-compile-one-seq-full",
+     "fastest_baseline_ms": 47.642513003665954,
+     "engine_vs_decoder_cold": {
+      "speedup": 1.1357536361345972,
+      "ci_low": 1.1167561054651454,
+      "ci_high": 1.1670920136531449,
+      "cell": "engine-cold-fill",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 36.293742479756474,
+      "reference_p50_ms": 41.22074999031611,
+      "K": 2,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 2.315206961795202,
+      "ci_low": 2.1894698637036036,
+      "ci_high": 2.3550495913363685,
+      "cell": "engine-hit",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 10.040560038760304,
+      "reference_p50_ms": 23.245974502060562,
+      "K": 2,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 19.98061353697267,
+      "decoder_warm": 11.267840418359912,
+      "engine_cold": 17.592383507548625,
+      "engine_hit": 4.866882574343537
+     }
+    },
+    "MB-b:4096:5": {
+     "engine": "MB-b",
+     "accuracy_arm": "MB-b block, equal steps",
+     "decoder_cold_ms": 57.570471515646204,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 35.601440991740674,
+     "engine_cold_fill_ms": 35.64035749877803,
+     "engine_hit_ms": 10.834831511601806,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 87.12205901974812,
+     "engine_vs_decoder_cold": {
+      "speedup": 1.6153168923072692,
+      "ci_low": 1.4730015507985916,
+      "ci_high": 1.660441692918772,
+      "cell": "engine-cold-fill",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 35.64035749877803,
+      "reference_p50_ms": 57.570471515646204,
+      "K": 5,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 3.285832451904682,
+      "ci_low": 3.20637626701719,
+      "ci_high": 3.4206106831140115,
+      "cell": "engine-hit",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 10.834831511601806,
+      "reference_p50_ms": 35.601440991740674,
+      "K": 5,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 11.16227475497807,
+      "decoder_warm": 6.902723836731943,
+      "engine_cold": 6.9102693150408525,
+      "engine_hit": 2.1007534430827945
+     }
+    },
+    "MB-b:4096:10": {
+     "engine": "MB-b",
+     "accuracy_arm": "MB-b block, equal steps",
+     "decoder_cold_ms": 69.35208299546503,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 59.3238849833142,
+     "engine_cold_fill_ms": 38.21274501387961,
+     "engine_hit_ms": 12.01471101376228,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 130.64557753386907,
+     "engine_vs_decoder_cold": {
+      "speedup": 1.8148940352302616,
+      "ci_low": 1.7683569517812923,
+      "ci_high": 1.8602144831853393,
+      "cell": "engine-cold-fill",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 38.21274501387961,
+      "reference_p50_ms": 69.35208299546503,
+      "K": 10,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 4.937603985261195,
+      "ci_low": 4.718889400550341,
+      "ci_high": 5.091365307396958,
+      "cell": "engine-hit",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 12.01471101376228,
+      "reference_p50_ms": 59.3238849833142,
+      "K": 10,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 6.72329915706036,
+      "decoder_warm": 5.7511210719935155,
+      "engine_cold": 3.7045133360677736,
+      "engine_hit": 1.1647594843897322
+     }
+    },
+    "MB-b:4096:17": {
+     "engine": "MB-b",
+     "accuracy_arm": "MB-b block, equal steps",
+     "decoder_cold_ms": 84.34807002777234,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 87.75973453884944,
+     "engine_cold_fill_ms": 41.913902008673176,
+     "engine_hit_ms": 12.578966503497213,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 193.84883099701256,
+     "engine_vs_decoder_cold": {
+      "speedup": 2.012412731468388,
+      "ci_low": 1.8850850722658306,
+      "ci_high": 2.1345954634675395,
+      "cell": "engine-cold-fill",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 41.913902008673176,
+      "reference_p50_ms": 84.34807002777234,
+      "K": 17,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 6.976704685114665,
+      "ci_low": 6.772747438691963,
+      "ci_high": 7.229461652115316,
+      "cell": "engine-hit",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 12.578966503497213,
+      "reference_p50_ms": 87.75973453884944,
+      "K": 17,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 4.810045169884403,
+      "decoder_warm": 5.004599240859225,
+      "engine_cold": 2.3901882027821797,
+      "engine_hit": 0.7173299525687137
+     },
+     "fusion_saving": {
+      "speedup": 1.6283761043905802,
+      "ci_low": 1.5685336168105717,
+      "ci_high": 1.6670685162456338,
+      "cell": "engine-cold-fill",
+      "reference": "engine-cold-fill-unfused",
+      "cell_p50_ms": 41.913902008673176,
+      "reference_p50_ms": 68.25159647269174,
+      "K": 17,
+      "S": 4096
+     }
+    },
+    "MB-l:2048:17": {
+     "engine": "MB-l",
+     "accuracy_arm": "MB-l block, equal steps",
+     "decoder_cold_ms": 71.71515599475242,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 79.0264249953907,
+     "engine_cold_fill_ms": 51.62114652921446,
+     "engine_hit_ms": 14.16287847678177,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 285.8311934978701,
+     "engine_vs_decoder_cold": {
+      "speedup": 1.389259263239455,
+      "ci_low": 1.17189452059399,
+      "ci_high": 1.6449216534930688,
+      "cell": "engine-cold-fill",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 51.62114652921446,
+      "reference_p50_ms": 71.71515599475242,
+      "K": 17,
+      "S": 2048
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 5.579827937162945,
+      "ci_low": 4.992953412150112,
+      "ci_high": 5.812499795217287,
+      "cell": "engine-hit",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 14.16287847678177,
+      "reference_p50_ms": 79.0264249953907,
+      "K": 17,
+      "S": 2048
+     },
+     "usd_per_million": {
+      "decoder_cold": 4.089638797739967,
+      "decoder_warm": 4.506572275063947,
+      "engine_cold": 2.943754924623504,
+      "engine_hit": 0.8076543445092872
+     }
+    },
+    "MB-l:4096:1": {
+     "engine": "MB-l",
+     "accuracy_arm": "MB-l block, equal steps",
+     "decoder_cold_ms": 37.98192250542343,
+     "decoder_cold_mode": "decoder-cold-first",
+     "decoder_warm_ms": 15.1942434895318,
+     "engine_cold_fill_ms": 53.091550507815555,
+     "engine_hit_ms": 10.853639483684674,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 30.643028498161584,
+     "engine_vs_decoder_cold": {
+      "speedup": 0.715404280758991,
+      "ci_low": 0.6939238412904329,
+      "ci_high": 0.758568022301158,
+      "cell": "engine-cold-fill",
+      "reference": "decoder-cold-first",
+      "cell_p50_ms": 53.091550507815555,
+      "reference_p50_ms": 37.98192250542343,
+      "K": 1,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 1.3999215205528042,
+      "ci_low": 1.2907800195813006,
+      "ci_high": 1.5135948610615784,
+      "cell": "engine-hit",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 10.853639483684674,
+      "reference_p50_ms": 15.1942434895318,
+      "K": 1,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 36.821363762202154,
+      "decoder_warm": 14.729974938462773,
+      "engine_cold": 51.46930868674342,
+      "engine_hit": 10.522000499460976
+     }
+    },
+    "MB-l:4096:2": {
+     "engine": "MB-l",
+     "accuracy_arm": "MB-l block, equal steps",
+     "decoder_cold_ms": 41.22074999031611,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 23.245974502060562,
+     "engine_cold_fill_ms": 54.639609035803005,
+     "engine_hit_ms": 10.83659500000067,
+     "fastest_baseline": "torch-compile-one-seq-full",
+     "fastest_baseline_ms": 72.6430359936785,
+     "engine_vs_decoder_cold": {
+      "speedup": 0.754411510582111,
+      "ci_low": 0.7172983100523734,
+      "ci_high": 0.7795232309596334,
+      "cell": "engine-cold-fill",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 54.639609035803005,
+      "reference_p50_ms": 41.22074999031611,
+      "K": 2,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 2.1451364106584334,
+      "ci_low": 2.0125534632960314,
+      "ci_high": 2.2113556971344415,
+      "cell": "engine-hit",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 10.83659500000067,
+      "reference_p50_ms": 23.245974502060562,
+      "K": 2,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 19.98061353697267,
+      "decoder_warm": 11.267840418359912,
+      "engine_cold": 26.485032713187845,
+      "engine_hit": 5.252738409722547
+     }
+    },
+    "MB-l:4096:5": {
+     "engine": "MB-l",
+     "accuracy_arm": "MB-l block, equal steps",
+     "decoder_cold_ms": 57.570471515646204,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 35.601440991740674,
+     "engine_cold_fill_ms": 61.59445448429324,
+     "engine_hit_ms": 11.062623496400192,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 137.0210660097655,
+     "engine_vs_decoder_cold": {
+      "speedup": 0.9346697198256191,
+      "ci_low": 0.8445565331221128,
+      "ci_high": 0.980207337327441,
+      "cell": "engine-cold-fill",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 61.59445448429324,
+      "reference_p50_ms": 57.570471515646204,
+      "K": 5,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 3.2181734290537394,
+      "ci_low": 2.914887121752152,
+      "ci_high": 3.340228786392904,
+      "cell": "engine-hit",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 11.062623496400192,
+      "reference_p50_ms": 35.601440991740674,
+      "K": 5,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 11.16227475497807,
+      "decoder_warm": 6.902723836731943,
+      "engine_cold": 11.942480341676855,
+      "engine_hit": 2.144919777913149
+     }
+    },
+    "MB-l:4096:10": {
+     "engine": "MB-l",
+     "accuracy_arm": "MB-l block, equal steps",
+     "decoder_cold_ms": 69.35208299546503,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 59.3238849833142,
+     "engine_cold_fill_ms": 64.48136747349054,
+     "engine_hit_ms": 14.150650036754087,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 216.2512844952289,
+     "engine_vs_decoder_cold": {
+      "speedup": 1.075536790127426,
+      "ci_low": 1.0414946450510838,
+      "ci_high": 1.1064494122484043,
+      "cell": "engine-cold-fill",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 64.48136747349054,
+      "reference_p50_ms": 69.35208299546503,
+      "K": 10,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 4.192308115120489,
+      "ci_low": 3.686548073938878,
+      "ci_high": 4.668754783030376,
+      "cell": "engine-hit",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 14.150650036754087,
+      "reference_p50_ms": 59.3238849833142,
+      "K": 10,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 6.72329915706036,
+      "decoder_warm": 5.7511210719935155,
+      "engine_cold": 6.251110346735611,
+      "engine_hit": 1.3718269063408821
+     }
+    },
+    "MB-l:4096:17": {
+     "engine": "MB-l",
+     "accuracy_arm": "MB-l block, equal steps",
+     "decoder_cold_ms": 84.34807002777234,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 87.75973453884944,
+     "engine_cold_fill_ms": 68.47823897260241,
+     "engine_hit_ms": 14.12846750463359,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 330.723808525363,
+     "engine_vs_decoder_cold": {
+      "speedup": 1.2317499879271037,
+      "ci_low": 1.15899788552309,
+      "ci_high": 1.3087453890943288,
+      "cell": "engine-cold-fill",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 68.47823897260241,
+      "reference_p50_ms": 84.34807002777234,
+      "K": 17,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 6.21155369540735,
+      "ci_low": 5.812264976628274,
+      "ci_high": 6.449430242358464,
+      "cell": "engine-hit",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 14.12846750463359,
+      "reference_p50_ms": 87.75973453884944,
+      "K": 17,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 4.810045169884403,
+      "decoder_warm": 5.004599240859225,
+      "engine_cold": 3.9050499021957914,
+      "engine_hit": 0.8056920194635823
+     }
+    },
+    "MB-b split:2048:17": {
+     "engine": "MB-b split",
+     "accuracy_arm": "MB-b block, equal steps",
+     "decoder_cold_ms": 71.71515599475242,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 79.0264249953907,
+     "engine_cold_fill_ms": 26.35757438838482,
+     "engine_hit_ms": 10.962733998894691,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 163.7895666062832,
+     "engine_vs_decoder_cold": {
+      "speedup": 2.7208556803449886,
+      "ci_low": 2.5182769117534924,
+      "ci_high": 3.080849969026214,
+      "cell": "engine-cold-fill-split",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 26.35757438838482,
+      "reference_p50_ms": 71.71515599475242,
+      "K": 17,
+      "S": 2048
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 7.2086420233637405,
+      "ci_low": 6.544846346401052,
+      "ci_high": 7.549485662869676,
+      "cell": "engine-hit-split",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 10.962733998894691,
+      "reference_p50_ms": 79.0264249953907,
+      "K": 17,
+      "S": 2048
+     },
+     "usd_per_million": {
+      "decoder_cold": 4.089638797739967,
+      "decoder_warm": 4.506572275063947,
+      "engine_cold": 1.5030708270500492,
+      "engine_hit": 0.625162445361805
+     }
+    },
+    "MB-b split:4096:1": {
+     "engine": "MB-b split",
+     "accuracy_arm": "MB-b block, equal steps",
+     "decoder_cold_ms": 37.98192250542343,
+     "decoder_cold_mode": "decoder-cold-first",
+     "decoder_warm_ms": 15.1942434895318,
+     "engine_cold_fill_ms": 27.97543630003929,
+     "engine_hit_ms": 7.970865815877914,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 18.1163027882576,
+     "engine_vs_decoder_cold": {
+      "speedup": 1.357688298336569,
+      "ci_low": 1.2773005087004032,
+      "ci_high": 1.3907701764655696,
+      "cell": "engine-cold-fill-split",
+      "reference": "decoder-cold-first",
+      "cell_p50_ms": 27.97543630003929,
+      "reference_p50_ms": 37.98192250542343,
+      "K": 1,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 1.9062224657282478,
+      "ci_low": 1.8660143545348633,
+      "ci_high": 1.968551080243573,
+      "cell": "engine-hit-split",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 7.970865815877914,
+      "reference_p50_ms": 15.1942434895318,
+      "K": 1,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 36.821363762202154,
+      "decoder_warm": 14.729974938462773,
+      "engine_cold": 27.120631301982534,
+      "engine_hit": 7.727311582614979
+     }
+    },
+    "MB-b split:4096:2": {
+     "engine": "MB-b split",
+     "accuracy_arm": "MB-b block, equal steps",
+     "decoder_cold_ms": 41.22074999031611,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 23.245974502060562,
+     "engine_cold_fill_ms": 29.030518606305122,
+     "engine_hit_ms": 8.238367736339569,
+     "fastest_baseline": "varlen-torch-varlen-one-seq-full",
+     "fastest_baseline_ms": 30.38308396935463,
+     "engine_vs_decoder_cold": {
+      "speedup": 1.4199109064956006,
+      "ci_low": 1.3814654042043273,
+      "ci_high": 1.4670561996317337,
+      "cell": "engine-cold-fill-split",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 29.030518606305122,
+      "reference_p50_ms": 41.22074999031611,
+      "K": 2,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 2.8216723562268538,
+      "ci_low": 2.654152244671719,
+      "ci_high": 2.864328385456836,
+      "cell": "engine-hit-split",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 8.238367736339569,
+      "reference_p50_ms": 23.245974502060562,
+      "K": 2,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 19.98061353697267,
+      "decoder_warm": 11.267840418359912,
+      "engine_cold": 14.071737491111788,
+      "engine_hit": 3.993319916642375
+     }
+    },
+    "MB-b split:4096:5": {
+     "engine": "MB-b split",
+     "accuracy_arm": "MB-b block, equal steps",
+     "decoder_cold_ms": 57.570471515646204,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 35.601440991740674,
+     "engine_cold_fill_ms": 29.597988352179527,
+     "engine_hit_ms": 8.752739056944847,
+     "fastest_baseline": "varlen-torch-varlen-one-seq-full",
+     "fastest_baseline_ms": 65.94397686421871,
+     "engine_vs_decoder_cold": {
+      "speedup": 1.9450805517803662,
+      "ci_low": 1.7753591844787227,
+      "ci_high": 2.008994323419749,
+      "cell": "engine-cold-fill-split",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 29.597988352179527,
+      "reference_p50_ms": 57.570471515646204,
+      "K": 5,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 4.067462854784043,
+      "ci_low": 3.876209720466999,
+      "ci_high": 4.20657056665321,
+      "cell": "engine-hit-split",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 8.752739056944847,
+      "reference_p50_ms": 35.601440991740674,
+      "K": 5,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 11.16227475497807,
+      "decoder_warm": 6.902723836731943,
+      "engine_cold": 5.738721074950364,
+      "engine_hit": 1.6970588504854178
+     }
+    },
+    "MB-b split:4096:10": {
+     "engine": "MB-b split",
+     "accuracy_arm": "MB-b block, equal steps",
+     "decoder_cold_ms": 69.35208299546503,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 59.3238849833142,
+     "engine_cold_fill_ms": 31.388934701681137,
+     "engine_hit_ms": 9.926863014698029,
+     "fastest_baseline": "varlen-torch-varlen-one-seq-full",
+     "fastest_baseline_ms": 126.00224278867245,
+     "engine_vs_decoder_cold": {
+      "speedup": 2.2094436671579887,
+      "ci_low": 2.1518571831455726,
+      "ci_high": 2.291543522916497,
+      "cell": "engine-cold-fill-split",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 31.388934701681137,
+      "reference_p50_ms": 69.35208299546503,
+      "K": 10,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 5.976095861852569,
+      "ci_low": 5.7028735689663685,
+      "ci_high": 6.131707880784337,
+      "cell": "engine-hit-split",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 9.926863014698029,
+      "reference_p50_ms": 59.3238849833142,
+      "K": 10,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 6.72329915706036,
+      "decoder_warm": 5.7511210719935155,
+      "engine_cold": 3.042982836357421,
+      "engine_hit": 0.9623542200360033
+     }
+    },
+    "MB-b split:4096:17": {
+     "engine": "MB-b split",
+     "accuracy_arm": "MB-b block, equal steps",
+     "decoder_cold_ms": 84.34807002777234,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 87.75973453884944,
+     "engine_cold_fill_ms": 33.017586916685104,
+     "engine_hit_ms": 10.772723704576492,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 191.14249758422375,
+     "engine_vs_decoder_cold": {
+      "speedup": 2.5546406598583946,
+      "ci_low": 2.3938087372996315,
+      "ci_high": 2.7099670166130614,
+      "cell": "engine-cold-fill-split",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 33.017586916685104,
+      "reference_p50_ms": 84.34807002777234,
+      "K": 17,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 8.146475946613869,
+      "ci_low": 7.911730403966655,
+      "ci_high": 8.418549007492455,
+      "cell": "engine-hit-split",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 10.772723704576492,
+      "reference_p50_ms": 87.75973453884944,
+      "K": 17,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 4.810045169884403,
+      "decoder_warm": 5.004599240859225,
+      "engine_cold": 1.8828656591377617,
+      "engine_hit": 0.6143268909962738
+     }
+    },
+    "MB-l split:2048:17": {
+     "engine": "MB-l split",
+     "accuracy_arm": "MB-l block, equal steps",
+     "decoder_cold_ms": 71.71515599475242,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 79.0264249953907,
+     "engine_cold_fill_ms": 39.20377045869827,
+     "engine_hit_ms": 13.849671930074692,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 280.9463366866112,
+     "engine_vs_decoder_cold": {
+      "speedup": 1.829292314378418,
+      "ci_low": 1.7299446404191563,
+      "ci_high": 2.167369917235103,
+      "cell": "engine-cold-fill-split",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 39.20377045869827,
+      "reference_p50_ms": 71.71515599475242,
+      "K": 17,
+      "S": 2048
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 5.7060142214476635,
+      "ci_low": 5.191894573421029,
+      "ci_high": 5.9696014696000015,
+      "cell": "engine-hit-split",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 13.849671930074692,
+      "reference_p50_ms": 79.0264249953907,
+      "K": 17,
+      "S": 2048
+     },
+     "usd_per_million": {
+      "decoder_cold": 4.089638797739967,
+      "decoder_warm": 4.506572275063947,
+      "engine_cold": 2.2356398513211926,
+      "engine_hit": 0.7897933829405338
+     }
+    },
+    "MB-l split:4096:1": {
+     "engine": "MB-l split",
+     "accuracy_arm": "MB-l block, equal steps",
+     "decoder_cold_ms": 37.98192250542343,
+     "decoder_cold_mode": "decoder-cold-first",
+     "decoder_warm_ms": 15.1942434895318,
+     "engine_cold_fill_ms": 39.65078853070736,
+     "engine_hit_ms": 9.635424241423607,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 26.758035644888878,
+     "engine_vs_decoder_cold": {
+      "speedup": 0.9579108994518107,
+      "ci_low": 0.9323639615679845,
+      "ci_high": 0.9760666386954973,
+      "cell": "engine-cold-fill-split",
+      "reference": "decoder-cold-first",
+      "cell_p50_ms": 39.65078853070736,
+      "reference_p50_ms": 37.98192250542343,
+      "K": 1,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 1.5769148414047303,
+      "ci_low": 1.5400692685379191,
+      "ci_high": 1.6290941225495499,
+      "cell": "engine-hit-split",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 9.635424241423607,
+      "reference_p50_ms": 15.1942434895318,
+      "K": 1,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 36.821363762202154,
+      "decoder_warm": 14.729974938462773,
+      "engine_cold": 38.43923665893574,
+      "engine_hit": 9.341008500713441
+     }
+    },
+    "MB-l split:4096:2": {
+     "engine": "MB-l split",
+     "accuracy_arm": "MB-l block, equal steps",
+     "decoder_cold_ms": 41.22074999031611,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 23.245974502060562,
+     "engine_cold_fill_ms": 40.47261364758015,
+     "engine_hit_ms": 9.790454059839249,
+     "fastest_baseline": "varlen-torch-varlen-one-seq-full",
+     "fastest_baseline_ms": 48.24428632855415,
+     "engine_vs_decoder_cold": {
+      "speedup": 1.0184850019633138,
+      "ci_low": 0.9930240731099257,
+      "ci_high": 1.0428759890999015,
+      "cell": "engine-cold-fill-split",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 40.47261364758015,
+      "reference_p50_ms": 41.22074999031611,
+      "K": 2,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 2.3743510117080557,
+      "ci_low": 2.2258839853851953,
+      "ci_high": 2.415190942900521,
+      "cell": "engine-hit-split",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 9.790454059839249,
+      "reference_p50_ms": 23.245974502060562,
+      "K": 2,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 19.98061353697267,
+      "decoder_warm": 11.267840418359912,
+      "engine_cold": 19.617975226396485,
+      "engine_hit": 4.745650648449859
+     }
+    },
+    "MB-l split:4096:5": {
+     "engine": "MB-l split",
+     "accuracy_arm": "MB-l block, equal steps",
+     "decoder_cold_ms": 57.570471515646204,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 35.601440991740674,
+     "engine_cold_fill_ms": 41.6547991335392,
+     "engine_hit_ms": 10.578492656350136,
+     "fastest_baseline": "varlen-torch-varlen-one-seq-full",
+     "fastest_baseline_ms": 110.7399333268404,
+     "engine_vs_decoder_cold": {
+      "speedup": 1.3820849629134853,
+      "ci_low": 1.265208457115881,
+      "ci_high": 1.4167025741816497,
+      "cell": "engine-cold-fill-split",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 41.6547991335392,
+      "reference_p50_ms": 57.570471515646204,
+      "K": 5,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 3.365454998956735,
+      "ci_low": 3.2349228660743528,
+      "ci_high": 3.493943525218962,
+      "cell": "engine-hit-split",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 10.578492656350136,
+      "reference_p50_ms": 35.601440991740674,
+      "K": 5,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 11.16227475497807,
+      "decoder_warm": 6.902723836731943,
+      "engine_cold": 8.076402720891767,
+      "engine_hit": 2.0510521872589984
+     }
+    },
+    "MB-l split:4096:10": {
+     "engine": "MB-l split",
+     "accuracy_arm": "MB-l block, equal steps",
+     "decoder_cold_ms": 69.35208299546503,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 59.3238849833142,
+     "engine_cold_fill_ms": 43.56963559985161,
+     "engine_hit_ms": 11.794909834861755,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 203.8227766752243,
+     "engine_vs_decoder_cold": {
+      "speedup": 1.5917526516035683,
+      "ci_low": 1.549617315958691,
+      "ci_high": 1.637176654659124,
+      "cell": "engine-cold-fill-split",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 43.56963559985161,
+      "reference_p50_ms": 69.35208299546503,
+      "K": 10,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 5.029617505677992,
+      "ci_low": 4.800542577414955,
+      "ci_high": 5.186763212836046,
+      "cell": "engine-hit-split",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 11.794909834861755,
+      "reference_p50_ms": 59.3238849833142,
+      "K": 10,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 6.72329915706036,
+      "decoder_warm": 5.7511210719935155,
+      "engine_cold": 4.223834117874503,
+      "engine_hit": 1.1434509812129867
+     }
+    },
+    "MB-l split:4096:17": {
+     "engine": "MB-l split",
+     "accuracy_arm": "MB-l block, equal steps",
+     "decoder_cold_ms": 84.34807002777234,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 87.75973453884944,
+     "engine_cold_fill_ms": 47.11482673883438,
+     "engine_hit_ms": 13.748342171311378,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 322.438457980752,
+     "engine_vs_decoder_cold": {
+      "speedup": 1.7902659495136903,
+      "ci_low": 1.6822853959229442,
+      "ci_high": 1.8987073417970481,
+      "cell": "engine-cold-fill-split",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 47.11482673883438,
+      "reference_p50_ms": 84.34807002777234,
+      "K": 17,
+      "S": 4096
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 6.383295778161341,
+      "ci_low": 6.198278591840367,
+      "ci_high": 6.595605436433667,
+      "cell": "engine-hit-split",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 13.748342171311378,
+      "reference_p50_ms": 87.75973453884944,
+      "K": 17,
+      "S": 4096
+     },
+     "usd_per_million": {
+      "decoder_cold": 4.810045169884403,
+      "decoder_warm": 5.004599240859225,
+      "engine_cold": 2.6867768842897384,
+      "engine_hit": 0.7840149375470051
+     }
+    }
+   },
+   "throughput_large_engine": {
+    "task": "contractnli",
+    "S": 4096,
+    "K": 17,
+    "mask": "block",
+    "batch_tokens": 65536,
+    "engine": {
+     "1": 14.269921148915286,
+     "4": 16.00431342075026,
+     "16": 16.67735344586574,
+     "64": 17.234093861835106
+    },
+    "baseline": {
+     "1": 2.0815443371373568,
+     "4": 2.39571336211991,
+     "16": 2.292260742364273,
+     "64": 2.2782779614668707
+    }
+   },
+   "throughput": {
+    "throughput_S4096_K17": {
+     "1": {
+      "batch": 9.013233292635197,
+      "first": 7.7990799170145975
+     },
+     "4": {
+      "batch": 10.95013086429428,
+      "first": 9.699801263080984
+     },
+     "16": {
+      "batch": 14.625908971946643,
+      "first": 10.820343745360985
+     },
+     "64": {
+      "batch": 19.550416723150505,
+      "first": 13.699905377613288
+     }
+    },
+    "throughput_S2048_K17": {
+     "1": {
+      "batch": 11.254184692291886,
+      "first": 9.116437356433657
+     },
+     "4": {
+      "batch": 10.916245872114374,
+      "first": 11.050177027362782
+     },
+     "16": {
+      "batch": 16.454935898533893,
+      "first": 11.720375500965849
+     },
+     "64": {
+      "batch": 27.40073510032847,
+      "first": 19.450542429495083
+     }
+    }
+   },
+   "engine_throughput": {
+    "MB-b": {
+     "1": 21.77909037250388,
+     "4": 26.47414458028157,
+     "16": 26.009745813932685,
+     "64": 27.018811224652072
+    },
+    "MB-l": {
+     "1": 14.239978466734069,
+     "4": 17.180666366919425,
+     "16": 17.040928563181243,
+     "64": 17.721885392886957
+    },
+    "MB-b split": {
+     "1": 27.02011393855427,
+     "4": 34.221098568254824,
+     "16": 34.02323766010551,
+     "64": 35.272127498649674
+    },
+    "MB-l split": {
+     "1": 20.442107738524232,
+     "4": 23.98625065252034,
+     "16": 23.792930416737708,
+     "64": 24.914033868900194
+    }
+   },
+   "small_decoder": {
+    "decoder": "decoder-smol360-contractnli-lr1e4",
+    "decoder_test": {
+     "n": 1054,
+     "accuracy": 0.8662239089184061,
+     "aurc": 0.043643054964977744,
+     "eaurc": 0.03420354113945916,
+     "ece": 0.05225360795035536,
+     "auroc_error": 0.8240078301600988,
+     "coverage_at_risk_0.02": 0.0683111954459203,
+     "coverage_at_risk_0.05": 0.7096774193548387,
+     "coverage_at_risk_0.1": 0.9165085388994307
+    },
+    "decoder_kv_bytes_per_token": 40960,
+    "accuracy": {
+     "MB-b block, equal steps": {
+      "encoder_minus_decoder_pp": {
+       "point": -4.269449715370022,
+       "ci_low": -6.356736242884253,
+       "ci_high": -2.2770398481973375
+      },
+      "encoder_minus_decoder_aurc": {
+       "point": 0.06381692767741742,
+       "ci_low": 0.04293086552066009,
+       "ci_high": 0.08584430797146499,
+       "p_value": 0.0,
+       "n": 1054,
+       "n_resamples": 10000
+      }
+     },
+     "MB-l block, equal steps": {
+      "encoder_minus_decoder_pp": {
+       "point": 2.6565464895635715,
+       "ci_low": 1.0436432637571103,
+       "ci_high": 4.364326375711569
+      },
+      "encoder_minus_decoder_aurc": {
+       "point": 0.022419492715204305,
+       "ci_low": 0.008482860111995937,
+       "ci_high": 0.036240331326814285,
+       "p_value": 0.0006,
+       "n": 1054,
+       "n_resamples": 10000
+      }
+     },
+     "MB-l full": {
+      "encoder_minus_decoder_pp": {
+       "point": 2.561669829222013,
+       "ci_low": 0.8538899430740043,
+       "ci_high": 4.364326375711569
+      },
+      "encoder_minus_decoder_aurc": {
+       "point": -0.002040889217638543,
+       "ci_low": -0.012426573759036694,
+       "ci_high": 0.008362299439436536,
+       "p_value": 0.6472,
+       "n": 1054,
+       "n_resamples": 10000
+      }
+     },
+     "MB-b block, best checkpoint": {
+      "encoder_minus_decoder_pp": {
+       "point": -0.1897533206831059,
+       "ci_low": -1.8026565464895672,
+       "ci_high": 1.4231499051233336
+      },
+      "encoder_minus_decoder_aurc": {
+       "point": 0.020582977990401367,
+       "ci_low": 0.004044349547580883,
+       "ci_high": 0.035827808888515195,
+       "p_value": 0.0047,
+       "n": 1054,
+       "n_resamples": 10000
+      }
+     }
+    },
+    "latency": {
+     "decoder-cold-batch": {
+      "cell": "S4096_K17",
+      "p50_ms": 130.77536970376968
+     },
+     "decoder-cold-first": {
+      "cell": "S4096_K17",
+      "p50_ms": 168.97550597786903
+     },
+     "decoder-warm": {
+      "cell": "S4096_K17",
+      "p50_ms": 148.09158444404602
+     }
+    },
+    "throughput": {
+     "throughput_S4096_K17": {
+      "1": {
+       "batch": 7.545286850836171,
+       "first": 5.784745967472041
+      },
+      "4": {
+       "batch": 14.320676088834134,
+       "first": 11.830899410938477
+      },
+      "16": {
+       "batch": 25.6942928742154,
+       "first": 18.699241902579935
+      },
+      "64": {
+       "batch": 33.970420902770535,
+       "first": 24.01765358512742
+      }
+     }
+    },
+    "serving_meta": {
+     "backend": "vllm",
+     "model": "decoder-smol360-contractnli-lr1e4",
+     "task": "contractnli",
+     "max_model_len": 8192,
+     "cells": {
+      "4096:17": {
+       "prefix_cap": 4096,
+       "prefix_tokens_median": 4097.0
+      }
+     },
+     "vllm": "0.30.0",
+     "agreement_with_packed_scoring": {
+      "same": 336,
+      "total": 340,
+      "rate": 0.9882352941176471
+     }
+    }
+   },
+   "serving_meta": {
+    "backend": "vllm",
+    "model": "decoder-smol1.7-contractnli-lr3e5",
+    "task": "contractnli",
+    "max_model_len": 8192,
+    "cells": {
+     "4096:1": {
+      "prefix_cap": 4096,
+      "prefix_tokens_median": 4097.0
+     },
+     "4096:2": {
+      "prefix_cap": 4096,
+      "prefix_tokens_median": 4097.0
+     },
+     "4096:5": {
+      "prefix_cap": 4096,
+      "prefix_tokens_median": 4097.0
+     },
+     "4096:10": {
+      "prefix_cap": 4096,
+      "prefix_tokens_median": 4097.0
+     }
+    },
+    "vllm": "0.30.0"
+   }
+  },
+  "cuad": {
+   "decoder": "decoder-smol1.7-cuad-lr3e5",
+   "decoder_test": {
+    "n": 2091,
+    "accuracy": 0.8880918220946915,
+    "aurc": 0.02858270298336496,
+    "eaurc": 0.02204663019516146,
+    "ece": 0.049503246487070586,
+    "auroc_error": 0.8344299002618873,
+    "coverage_at_risk_0.02": 0.5428024868483979,
+    "coverage_at_risk_0.05": 0.7589670014347202,
+    "coverage_at_risk_0.1": 0.9493065518890483
+   },
+   "decoder_kv_bytes_per_token": 196608,
+   "accuracy": {
+    "MB-b block, one window": {
+     "encoder_accuracy": 0.8603538976566236,
+     "encoder_minus_decoder_pp": {
+      "point": -2.7737924438067885,
+      "ci_low": -4.112864658058346,
+      "ci_high": -1.434720229555242
+     },
+     "encoder_minus_decoder_aurc": {
+      "point": 0.0691396501071831,
+      "ci_low": 0.053182792040088474,
+      "ci_high": 0.08541409286890572,
+      "p_value": 0.0,
+      "n": 2091,
+      "n_resamples": 10000
+     }
+    },
+    "MB-b windowed, four windows": {
+     "encoder_accuracy": 0.8876135820181731,
+     "encoder_minus_decoder_pp": {
+      "point": -0.04782400765184214,
+      "ci_low": -1.482544237207073,
+      "ci_high": 1.3390722142515465
+     },
+     "encoder_minus_decoder_aurc": {
+      "point": 0.010183282371715043,
+      "ci_low": 0.0022606208492391856,
+      "ci_high": 0.01870998831160767,
+      "p_value": 0.0052,
+      "n": 2091,
+      "n_resamples": 10000
+     }
+    },
+    "MB-b full, one window": {
+     "encoder_accuracy": 0.8684839789574366,
+     "encoder_minus_decoder_pp": {
+      "point": -1.9607843137254832,
+      "ci_low": -3.25203252032521,
+      "ci_high": -0.6695361071257788
+     },
+     "encoder_minus_decoder_aurc": {
+      "point": 0.01198715108900987,
+      "ci_low": 0.006762409421275165,
+      "ci_high": 0.01758562973419228,
+      "p_value": 0.0,
+      "n": 2091,
+      "n_resamples": 10000
+     }
+    }
+   },
+   "latency": {
+    "MB-b:8192:41": {
+     "engine": "MB-b",
+     "accuracy_arm": "MB-b block, one window",
+     "decoder_cold_ms": 372.4758115131408,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 349.0976200264413,
+     "engine_cold_fill_ms": 132.39507700200193,
+     "engine_hit_ms": 24.216901510953903,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 815.2161434991285,
+     "engine_vs_decoder_cold": {
+      "speedup": 2.8133660249882904,
+      "ci_low": 2.716591837075163,
+      "ci_high": 2.9572853351645,
+      "cell": "engine-cold-fill",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 132.39507700200193,
+      "reference_p50_ms": 372.4758115131408,
+      "K": 41,
+      "S": 8192
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 14.41545359832825,
+      "ci_low": 14.225188101606756,
+      "ci_high": 14.644769628024918,
+      "cell": "engine-hit",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 24.216901510953903,
+      "reference_p50_ms": 349.0976200264413,
+      "K": 41,
+      "S": 8192
+     },
+     "usd_per_million": {
+      "decoder_cold": 8.807185516130497,
+      "decoder_warm": 8.25440849520515,
+      "engine_cold": 3.130479801741102,
+      "engine_hit": 0.5726083080842082
+     },
+     "fusion_saving": {
+      "speedup": 1.4973701362576843,
+      "ci_low": 1.4339891413085437,
+      "ci_high": 1.586879885006028,
+      "cell": "engine-cold-fill",
+      "reference": "engine-cold-fill-unfused",
+      "cell_p50_ms": 132.39507700200193,
+      "reference_p50_ms": 198.24443449033424,
+      "K": 41,
+      "S": 8192
+     }
+    },
+    "MB-b split:8192:41": {
+     "engine": "MB-b split",
+     "accuracy_arm": "MB-b block, one window",
+     "decoder_cold_ms": 372.4758115131408,
+     "decoder_cold_mode": "decoder-cold-batch",
+     "decoder_warm_ms": 349.0976200264413,
+     "engine_cold_fill_ms": 73.85859824717045,
+     "engine_hit_ms": 23.62462878227234,
+     "fastest_baseline": "varlen-torch-varlen-batched-full",
+     "fastest_baseline_ms": 804.3925948441029,
+     "engine_vs_decoder_cold": {
+      "speedup": 5.0430934292394385,
+      "ci_low": 4.693052177523228,
+      "ci_high": 5.407260849320243,
+      "cell": "engine-cold-fill-split",
+      "reference": "decoder-cold-batch",
+      "cell_p50_ms": 73.85859824717045,
+      "reference_p50_ms": 372.4758115131408,
+      "K": 41,
+      "S": 8192
+     },
+     "engine_vs_decoder_warm": {
+      "speedup": 14.776851024571455,
+      "ci_low": 14.568015919462905,
+      "ci_high": 14.99167166767159,
+      "cell": "engine-hit-split",
+      "reference": "decoder-warm",
+      "cell_p50_ms": 23.62462878227234,
+      "reference_p50_ms": 349.0976200264413,
+      "K": 41,
+      "S": 8192
+     },
+     "usd_per_million": {
+      "decoder_cold": 8.807185516130497,
+      "decoder_warm": 8.25440849520515,
+      "engine_cold": 1.746385554760331,
+      "engine_hit": 0.5586040274399083
+     }
+    }
+   },
+   "throughput": {
+    "throughput_S8192_K41": {
+     "1": {
+      "batch": 2.878728301961852,
+      "first": 2.545692144424887
+     },
+     "4": {
+      "batch": 4.621510534189887,
+      "first": 3.97035944045749
+     },
+     "16": {
+      "batch": 5.185687653053119,
+      "first": 3.4845645475391787
+     },
+     "32": {
+      "batch": 6.0166686981355655,
+      "first": 4.356432622669362
+     }
+    }
+   },
+   "engine_throughput": {
+    "MB-b": {
+     "1": 7.807925532700276,
+     "4": 6.854208480324859,
+     "16": 7.9115579438586145,
+     "32": 7.550403522708789
+    },
+    "MB-b split": {
+     "1": 13.378389358986677,
+     "4": 12.066459881274795,
+     "16": 13.953303353742445,
+     "32": 13.919676518903454
+    }
+   },
+   "small_decoder": {
+    "decoder": "decoder-smol360-cuad-lr1e4",
+    "decoder_test": {
+     "n": 2091,
+     "accuracy": 0.8589191774270684,
+     "aurc": 0.03631427826200961,
+     "eaurc": 0.025824541760208958,
+     "ece": 0.054012435495083805,
+     "auroc_error": 0.8453418142010494,
+     "coverage_at_risk_0.02": 0.5078909612625538,
+     "coverage_at_risk_0.05": 0.6924916307986609,
+     "coverage_at_risk_0.1": 0.8943089430894309
+    },
+    "decoder_kv_bytes_per_token": 40960,
+    "accuracy": {
+     "MB-b block, one window": {
+      "encoder_minus_decoder_pp": {
+       "point": 0.1434720229555264,
+       "ci_low": -1.052128168340516,
+       "ci_high": 1.3868962219033887
+      },
+      "encoder_minus_decoder_aurc": {
+       "point": 0.06140807482853846,
+       "ci_low": 0.04603366229014869,
+       "ci_high": 0.07733065209007862,
+       "p_value": 0.0,
+       "n": 2091,
+       "n_resamples": 10000
+      }
+     },
+     "MB-b windowed, four windows": {
+      "encoder_minus_decoder_pp": {
+       "point": 2.8694404591104727,
+       "ci_low": 1.482544237207073,
+       "ci_high": 4.20851267336203
+      },
+      "encoder_minus_decoder_aurc": {
+       "point": 0.002451707093070396,
+       "ci_low": -0.005370644138496092,
+       "ci_high": 0.010389349333433105,
+       "p_value": 0.2876,
+       "n": 2091,
+       "n_resamples": 10000
+      }
+     },
+     "MB-b full, one window": {
+      "encoder_minus_decoder_pp": {
+       "point": 0.9564801530368316,
+       "ci_low": -0.19129603060735745,
+       "ci_high": 2.1054519368722993
+      },
+      "encoder_minus_decoder_aurc": {
+       "point": 0.004255575810365224,
+       "ci_low": -0.00011878456670522816,
+       "ci_high": 0.008824623398106485,
+       "p_value": 0.0308,
+       "n": 2091,
+       "n_resamples": 10000
+      }
+     }
+    },
+    "latency": {
+     "decoder-cold-batch": {
+      "cell": "S8192_K41",
+      "p50_ms": 270.04920318722725
+     },
+     "decoder-cold-first": {
+      "cell": "S8192_K41",
+      "p50_ms": 292.8499486297369
+     },
+     "decoder-warm": {
+      "cell": "S8192_K41",
+      "p50_ms": 271.6077081859112
+     }
+    },
+    "throughput": {
+     "throughput_S8192_K41": {
+      "1": {
+       "batch": 3.761509690738667,
+       "first": 3.5055395357481762
+      },
+      "4": {
+       "batch": 5.028857661988408,
+       "first": 4.193415012397899
+      },
+      "16": {
+       "batch": 6.371889219439897,
+       "first": 5.080371805329061
+      },
+      "32": {
+       "batch": 6.5881942879241056,
+       "first": 5.512162911730454
+      }
+     }
+    },
+    "serving_meta": {
+     "backend": "vllm",
+     "model": "decoder-smol360-cuad-lr1e4",
+     "task": "cuad",
+     "max_model_len": 8192,
+     "cells": {
+      "8192:41": {
+       "prefix_cap": 8000,
+       "prefix_tokens_median": 8001.0
+      }
+     },
+     "vllm": "0.30.0",
+     "agreement_with_packed_scoring": {
+      "same": 408,
+      "total": 410,
+      "rate": 0.9951219512195122
+     }
+    }
+   },
+   "serving_meta": {
+    "backend": "vllm",
+    "model": "decoder-smol1.7-cuad-lr3e5",
+    "task": "cuad",
+    "max_model_len": 8192,
+    "cells": {
+     "8192:41": {
+      "prefix_cap": 8000,
+      "prefix_tokens_median": 8001.0
+     }
+    },
+    "vllm": "0.30.0",
+    "agreement_with_packed_scoring": {
+     "same": 409,
+     "total": 410,
+     "rate": 0.9975609756097561
+    }
+   }
+  }
+ },
+ "pairs": [
+  {
+   "task": "contractnli",
+   "engine": "MB-l",
+   "encoder_arm": "MB-l block, equal steps",
+   "decoder": "decoder-smol1.7-contractnli-lr3e5",
+   "engine_cell": "S4096_K17",
+   "decoder_cell": "S4096_K17",
+   "encoder_accuracy": 0.8927893738140418,
+   "decoder_accuracy": 0.888045540796964,
+   "encoder_minus_decoder_pp": {
+    "point": 0.4743833017077814,
+    "ci_low": -0.9487666034155628,
+    "ci_high": 1.8999051233396298
+   },
+   "decoder_cold_path": "vllm",
+   "decoder_warm_path": "vllm",
+   "engine_cold_ms": 35.36985442042351,
+   "decoder_cold_ms": 84.34807002777234,
+   "engine_hit_ms": 13.111734762787819,
+   "decoder_warm_ms": 87.75973453884944,
+   "cold": {
+    "speedup": 2.3847446196744166,
+    "ci_low": 2.2322383760250255,
+    "ci_high": 2.535847696413192,
+    "cell": "engine-cold-fill-cascade",
+    "reference": "decoder-cold-batch",
+    "cell_p50_ms": 35.36985442042351,
+    "reference_p50_ms": 84.34807002777234,
+    "K": 17,
+    "S": 4096
+   },
+   "resident": {
+    "speedup": 6.693220700888397,
+    "ci_low": 6.468145231226502,
+    "ci_high": 7.086814186951421,
+    "cell": "engine-hit-cascade",
+    "reference": "decoder-warm",
+    "cell_p50_ms": 13.111734762787819,
+    "reference_p50_ms": 87.75973453884944,
+    "K": 17,
+    "S": 4096
+   },
+   "usd_per_million_cold": {
+    "engine": 2.017006404040491,
+    "decoder": 4.810045169884403
+   },
+   "kb_per_token": {
+    "engine": 40.00439453125,
+    "decoder": 192.0
+   },
+   "throughput": {
+    "engine": 34.582149589886605,
+    "engine_N": "64",
+    "decoder": 19.550416723150505,
+    "decoder_N": "64"
+   },
+   "served_masked": {
+    "run": "large-full-contractnli",
+    "accuracy": 0.8833017077798861,
+    "minus_decoder_pp": {
+     "point": -0.4743833017077814,
+     "ci_low": -2.0872865275142316,
+     "ci_high": 1.1385199240986688
+    },
+    "minus_decoder_pp_cluster": {
+     "point": -0.474383301707789,
+     "ci_low": -2.0872865275142374,
+     "ci_high": 1.1385199240986594
+    },
+    "minus_decoder_aurc": {
+     "point": 0.0074335786130495865,
+     "ci_low": -0.0017789736695877684,
+     "ci_high": 0.016882125862953196,
+     "p_value": 0.0577,
+     "n": 1054,
+     "n_resamples": 10000
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "engine": "MB-b",
+   "encoder_arm": "MB-b block, best checkpoint",
+   "decoder": "decoder-smol360-contractnli-lr1e4",
+   "engine_cell": "S4096_K17",
+   "decoder_cell": "S4096_K17",
+   "encoder_accuracy": 0.8643263757115749,
+   "decoder_accuracy": 0.8662239089184061,
+   "encoder_minus_decoder_pp": {
+    "point": -0.1897533206831059,
+    "ci_low": -1.8026565464895672,
+    "ci_high": 1.4231499051233336
+   },
+   "decoder_cold_path": "tight",
+   "decoder_warm_path": "tight",
+   "engine_cold_ms": 26.5664029866457,
+   "decoder_cold_ms": 59.67859039083123,
+   "engine_hit_ms": 10.426744818687439,
+   "decoder_warm_ms": 40.51945288665593,
+   "cold": {
+    "speedup": 2.246393326971297,
+    "ci_low": 2.137000474190889,
+    "ci_high": 2.319309915370208,
+    "cell": "engine-cold-fill-cascade",
+    "reference": "decoder-cold-batch",
+    "cell_p50_ms": 26.5664029866457,
+    "reference_p50_ms": 59.67859039083123,
+    "K": 17,
+    "S": 4096
+   },
+   "resident": {
+    "speedup": 3.88610765787943,
+    "ci_low": 3.8738599897765114,
+    "ci_high": 3.904933976782222,
+    "cell": "engine-hit-cascade",
+    "reference": "decoder-warm",
+    "cell_p50_ms": 10.426744818687439,
+    "reference_p50_ms": 40.51945288665593,
+    "K": 17,
+    "S": 4096
+   },
+   "usd_per_million_cold": {
+    "engine": 1.5149795167221156,
+    "decoder": 3.403239876862761
+   },
+   "kb_per_token": {
+    "engine": 24.0025634765625,
+    "decoder": 40.0
+   },
+   "throughput": {
+    "engine": 51.14037667281766,
+    "engine_N": "64",
+    "decoder": 33.970420902770535,
+    "decoder_N": "64"
+   },
+   "served_masked": {
+    "run": "base-full-contractnli-lr2e5-bestacc",
+    "accuracy": 0.849146110056926,
+    "minus_decoder_pp": {
+     "point": -1.7077798861480087,
+     "ci_low": -3.510436432637576,
+     "ci_high": 0.0948766603415585
+    },
+    "minus_decoder_pp_cluster": {
+     "point": -1.7077798861480176,
+     "ci_low": -3.415559772296021,
+     "ci_high": 0.0
+    },
+    "minus_decoder_aurc": {
+     "point": 0.018110877391732005,
+     "ci_low": 0.005441371298459729,
+     "ci_high": 0.031145497038798438,
+     "p_value": 0.0021,
+     "n": 1054,
+     "n_resamples": 10000
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "engine": "MB-b 1w",
+   "encoder_arm": "MB-b block, one window",
+   "decoder": "decoder-smol360-cuad-lr1e4",
+   "engine_cell": "S8192_K41",
+   "decoder_cell": "S8192_K41",
+   "encoder_accuracy": 0.8603538976566236,
+   "decoder_accuracy": 0.8589191774270684,
+   "encoder_minus_decoder_pp": {
+    "point": 0.1434720229555264,
+    "ci_low": -1.052128168340516,
+    "ci_high": 1.3868962219033887
+   },
+   "decoder_cold_path": "tight",
+   "decoder_warm_path": "tight",
+   "engine_cold_ms": 53.18404175341129,
+   "decoder_cold_ms": 219.94689665734768,
+   "engine_hit_ms": 17.863154411315918,
+   "decoder_warm_ms": 181.49812053889036,
+   "cold": {
+    "speedup": 4.13558070063827,
+    "ci_low": 3.6931333901838865,
+    "ci_high": 4.652371769130816,
+    "cell": "engine-cold-fill-cascade",
+    "reference": "decoder-cold-batch",
+    "cell_p50_ms": 53.18404175341129,
+    "reference_p50_ms": 219.94689665734768,
+    "K": 41,
+    "S": 8192
+   },
+   "resident": {
+    "speedup": 10.160474256658459,
+    "ci_low": 10.11448232968587,
+    "ci_high": 10.289634854837061,
+    "cell": "engine-hit-cascade",
+    "reference": "decoder-warm",
+    "cell_p50_ms": 17.863154411315918,
+    "reference_p50_ms": 181.49812053889036,
+    "K": 41,
+    "S": 8192
+   },
+   "usd_per_million_cold": {
+    "engine": 1.2575359466084377,
+    "decoder": 5.200641391152733
+   },
+   "kb_per_token": {
+    "engine": 24.0025634765625,
+    "decoder": 40.0
+   },
+   "throughput": {
+    "engine": 18.079031363668765,
+    "engine_N": "32",
+    "decoder": 6.5881942879241056,
+    "decoder_N": "32"
+   },
+   "served_masked": {
+    "run": "base-full-cuad",
+    "accuracy": 0.8579626972740315,
+    "minus_decoder_pp": {
+     "point": -0.09564801530368428,
+     "ci_low": -1.3390722142515576,
+     "ci_high": 1.147776183644189
+    },
+    "minus_decoder_pp_cluster": {
+     "point": -0.09564801530368072,
+     "ci_low": -1.53036824485892,
+     "ci_high": 1.386896221903399
+    },
+    "minus_decoder_aurc": {
+     "point": 0.006327142330145044,
+     "ci_low": 0.0015093058436966436,
+     "ci_high": 0.01128787334397324,
+     "p_value": 0.0035,
+     "n": 2091,
+     "n_resamples": 10000
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "engine": "MB-b 4w",
+   "encoder_arm": "MB-b windowed, four windows",
+   "decoder": "decoder-smol1.7-cuad-lr3e5",
+   "engine_cell": "S32768_K41",
+   "decoder_cell": "S8192_K41",
+   "encoder_accuracy": 0.8876135820181731,
+   "decoder_accuracy": 0.8880918220946915,
+   "encoder_minus_decoder_pp": {
+    "point": -0.04782400765184214,
+    "ci_low": -1.482544237207073,
+    "ci_high": 1.3390722142515465
+   },
+   "decoder_cold_path": "vllm",
+   "decoder_warm_path": "vllm",
+   "engine_cold_ms": 304.8997912555933,
+   "decoder_cold_ms": 372.4758115131408,
+   "engine_hit_ms": 56.844715029001236,
+   "decoder_warm_ms": 349.0976200264413,
+   "cold": {
+    "speedup": 1.2216335405782532,
+    "ci_low": 1.1739579721863629,
+    "ci_high": 1.2458911348130566,
+    "cell": "engine-windowed-cold-split",
+    "reference": "decoder-cold-batch",
+    "cell_p50_ms": 304.8997912555933,
+    "reference_p50_ms": 372.4758115131408,
+    "K": 41,
+    "S": 32768
+   },
+   "resident": {
+    "speedup": 6.1412502437269225,
+    "ci_low": 6.076618056012915,
+    "ci_high": 6.2397431347898875,
+    "cell": "engine-windowed-hit-split",
+    "reference": "decoder-warm",
+    "cell_p50_ms": 56.844715029001236,
+    "reference_p50_ms": 349.0976200264413,
+    "K": 41,
+    "S": 32768
+   },
+   "usd_per_million_cold": {
+    "engine": 7.209351432805018,
+    "decoder": 8.807185516130497
+   },
+   "kb_per_token": {
+    "engine": 24.0025634765625,
+    "decoder": 192.0
+   },
+   "throughput": {
+    "engine": null,
+    "engine_N": null,
+    "decoder": 6.0166686981355655,
+    "decoder_N": "32"
+   }
+  }
+ ]
+}

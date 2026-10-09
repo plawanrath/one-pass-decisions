@@ -12,6 +12,7 @@ import os
 import platform
 import statistics
 import time
+import dataclasses
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 from typing import Callable
@@ -66,6 +67,12 @@ class TimingCell:
     def save(self, path: str | Path) -> None:
         Path(path).parent.mkdir(parents=True, exist_ok=True)
         Path(path).write_text(json.dumps(self.as_dict(), indent=1) + "\n")
+
+    @classmethod
+    def load(cls, path: str | Path) -> "TimingCell":
+        d = json.loads(Path(path).read_text())
+        fields = {f.name for f in dataclasses.fields(cls)}
+        return cls(**{k: v for k, v in d.items() if k in fields})
 
     @staticmethod
     def load(path: str | Path) -> "TimingCell":

@@ -1,0 +1,30 @@
+{
+ "model": "mlx-community/Mistral-Small-3.2-24B-Instruct-2506-8bit@1db835463eb0f953019af1048077b90403b70424",
+ "task": "cuad",
+ "context_cap_tokens": 32760,
+ "mode": "loglik, zero-shot",
+ "splits": {
+  "test": {
+   "n": 2091,
+   "accuracy": 0.8517455762792923,
+   "aurc": 0.046252899352473856,
+   "eaurc": 0.0346404430047622,
+   "ece": 0.08797792638653454,
+   "auroc_error": 0.8096067812573582,
+   "coverage_at_risk_0.02": 0.4012434241989479,
+   "coverage_at_risk_0.05": 0.6274509803921569,
+   "coverage_at_risk_0.1": 0.8330942132950742
+  },
+  "cal": {
+   "n": 2091,
+   "accuracy": 0.874701099952176,
+   "aurc": 0.03452507820661458,
+   "eaurc": 0.026295126796060254,
+   "ece": 0.07191699872448143,
+   "auroc_error": 0.82833400807182,
+   "coverage_at_risk_0.02": 0.4949784791965567,
+   "coverage_at_risk_0.05": 0.7226207556193209,
+   "coverage_at_risk_0.1": 0.9148732663797227
+  }
+ }
+}

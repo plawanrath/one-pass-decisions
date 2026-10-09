@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Local queue on the workstation. Every step skips when its artifact exists, so re-running resumes. Order:
 #   wait for the agent capture -> silver labels + tracegrade pools -> fine-tunes (guardrail, routing 4-epoch, tracegrade)
-#   -> per-path scores (3 tasks) -> G1 comparison -> K sweeps (routing, guardrail, tracegrade) -> certification.
+#   -> per-path scores (3 tasks) -> G1 comparison -> K sweeps (routing, guardrail, tracegrade) -> thresholds.
 set -uo pipefail
 cd "$(dirname "$0")/.."
 PY=".venv/bin/python -u"
@@ -44,8 +44,8 @@ for task in routing guardrail tracegrade; do
 done
 for task in routing guardrail tracegrade; do
   if [ -f "results/path_scores/base-$task/meta.json" ]; then
-    log "certify $task"
-    $PY scripts/certify_paths.py --size base --task $task 2>&1 | tee -a logs/certify_$task.log
+    log "thresholds $task"
+    $PY scripts/risk_paths.py --size base --task $task 2>&1 | tee -a logs/thresholds_$task.log
   fi
 done
 log "queue done"

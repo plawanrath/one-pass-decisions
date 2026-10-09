@@ -1,0 +1,118 @@
+{
+ "alpha": 0.05,
+ "delta": 0.05,
+ "reference": "torch-block",
+ "paths": {
+  "torch-block": {
+   "n_cal": 24832,
+   "n_test": 33850,
+   "grid_source": "own dev scores",
+   "own_threshold": {
+    "alpha": 0.05,
+    "delta": 0.05,
+    "tau": 0.5772425532341003,
+    "n_calibration": 24832,
+    "n_accepted": 21822,
+    "k_wrong": 938,
+    "coverage": 0.8787854381443299,
+    "empirical_risk": 0.04298414444138943,
+    "p_value": 6.286187113343661e-07,
+    "grid_sha256": "cb432b1c333cd46ce9366849a81c3dbbd205a4364ad3839fedf07b3ae1b39733",
+    "pool_sha256": "",
+    "thresholds_tested": 84,
+    "path": {
+     "name": "torch-block"
+    }
+   },
+   "own_tau_on_test": {
+    "tau": 0.5772425532341003,
+    "coverage": 0.8841949778434269,
+    "risk": 0.04416972936852656,
+    "n": 33850,
+    "n_accepted": 29930,
+    "k_wrong": 1322,
+    "risk_ci_low": 0.041869557244249615,
+    "risk_ci_high": 0.04655889342727716,
+    "violates_alpha": false
+   },
+   "reference_tau_on_test": {
+    "tau": 0.5772425532341003,
+    "coverage": 0.8841949778434269,
+    "risk": 0.04416972936852656,
+    "n": 33850,
+    "n_accepted": 29930,
+    "k_wrong": 1322,
+    "risk_ci_low": 0.041869557244249615,
+    "risk_ci_high": 0.04655889342727716,
+    "violates_alpha": false
+   },
+   "hand_picked_tau_on_test": {
+    "tau": 0.9232029318809509,
+    "coverage": 0.8030723781388479,
+    "risk": 0.01912889935256033,
+    "n": 33850,
+    "n_accepted": 27184,
+    "k_wrong": 520,
+    "risk_ci_low": 0.017533730530694135,
+    "risk_ci_high": 0.020827985516754976,
+    "violates_alpha": false
+   }
+  },
+  "engine-hit": {
+   "n_cal": 24832,
+   "n_test": 33850,
+   "grid_source": "own dev scores",
+   "own_threshold": {
+    "alpha": 0.05,
+    "delta": 0.05,
+    "tau": 0.5772395133972168,
+    "n_calibration": 24832,
+    "n_accepted": 21822,
+    "k_wrong": 938,
+    "coverage": 0.8787854381443299,
+    "empirical_risk": 0.04298414444138943,
+    "p_value": 6.286187113343661e-07,
+    "grid_sha256": "8325851fa90af6fc7855ea3fb50801879521822a44448bc440e4c2dcc9efdc89",
+    "pool_sha256": "",
+    "thresholds_tested": 84,
+    "path": {
+     "name": "engine-hit"
+    }
+   },
+   "own_tau_on_test": {
+    "tau": 0.5772395133972168,
+    "coverage": 0.8841949778434269,
+    "risk": 0.04416972936852656,
+    "n": 33850,
+    "n_accepted": 29930,
+    "k_wrong": 1322,
+    "risk_ci_low": 0.041869557244249615,
+    "risk_ci_high": 0.04655889342727716,
+    "violates_alpha": false
+   },
+   "reference_tau_on_test": {
+    "tau": 0.5772425532341003,
+    "coverage": 0.8841949778434269,
+    "risk": 0.04416972936852656,
+    "n": 33850,
+    "n_accepted": 29930,
+    "k_wrong": 1322,
+    "risk_ci_low": 0.041869557244249615,
+    "risk_ci_high": 0.04655889342727716,
+    "violates_alpha": false
+   },
+   "hand_picked_tau_on_test": {
+    "tau": 0.9232029318809509,
+    "coverage": 0.8030723781388479,
+    "risk": 0.01912889935256033,
+    "n": 33850,
+    "n_accepted": 27184,
+    "k_wrong": 520,
+    "risk_ci_low": 0.017533730530694135,
+    "risk_ci_high": 0.020827985516754976,
+    "violates_alpha": false
+   }
+  }
+ },
+ "path_scores_suffix": "x86_64-linux"
+}

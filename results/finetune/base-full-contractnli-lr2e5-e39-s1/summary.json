@@ -1,0 +1,155 @@
+{
+ "backbone": "answerdotai/ModernBERT-base@8949b909ec900327062f0ebf497f51aef5e6f0c8",
+ "task": "contractnli",
+ "mode": "full",
+ "pool_manifest": "3be931bc0c7a1e694e9822ac732674a28ea4559e833986910f7be8fd0269ee79",
+ "git": "nogit",
+ "train": {
+  "config": {
+   "mode": "full",
+   "epochs": 38.673,
+   "lr": 2e-05,
+   "head_lr": 0.0001,
+   "weight_decay": 0.01,
+   "warmup_frac": 0.06,
+   "tokens_per_batch": 16384,
+   "max_seqs_per_batch": 32,
+   "max_state_tokens": 4096,
+   "state_side": "head",
+   "max_option_tokens": 24,
+   "max_questions_per_seq": 16,
+   "max_seq_tokens": 5120,
+   "window_tokens": 8192,
+   "max_steps": null,
+   "micro_tokens": null,
+   "pad_multiple": 128,
+   "autocast_bf16": true,
+   "seed": 1,
+   "ckpt_every": 200,
+   "select_points": 8,
+   "select_metric": "last",
+   "log_every": 20,
+   "grad_clip": 1.0,
+   "device": "auto",
+   "notes": "answerdotai/ModernBERT-base@8949b909 task=contractnli"
+  },
+  "n_records": 7191,
+  "n_sequences": 7191,
+  "steps": 46041,
+  "epochs_run": 38.675,
+  "final_loss_20": 1.8765042511859064e-06,
+  "seconds": 25802.4,
+  "device": "cuda",
+  "selection": [
+   {
+    "step": 5755,
+    "dev_aurc": 0.08601341702972917,
+    "dev_accuracy": 0.7984570877531341
+   },
+   {
+    "step": 11510,
+    "dev_aurc": 0.11539167259831519,
+    "dev_accuracy": 0.7888138862102219
+   },
+   {
+    "step": 17265,
+    "dev_aurc": 0.10236368954410424,
+    "dev_accuracy": 0.7974927675988428
+   },
+   {
+    "step": 23020,
+    "dev_aurc": 0.08675601817408742,
+    "dev_accuracy": 0.8129218900675024
+   },
+   {
+    "step": 28776,
+    "dev_aurc": 0.0986839009933615,
+    "dev_accuracy": 0.8061716489874639
+   },
+   {
+    "step": 34531,
+    "dev_aurc": 0.09703376645144098,
+    "dev_accuracy": 0.8052073288331726
+   },
+   {
+    "step": 40286,
+    "dev_aurc": 0.10029395157551226,
+    "dev_accuracy": 0.8090646094503375
+   },
+   {
+    "step": 46041,
+    "dev_aurc": 0.10157324825824121,
+    "dev_accuracy": 0.81099324975892
+   }
+  ],
+  "selected_step": 46041
+ },
+ "splits": {
+  "dev": {
+   "n": 1037,
+   "accuracy": 0.81099324975892,
+   "aurc": 0.10157324825824121,
+   "eaurc": 0.0823748747053131,
+   "ece": 0.18835630849104373,
+   "auroc_error": 0.7431902011696474,
+   "coverage_at_risk_0.02": 0.01253616200578592,
+   "coverage_at_risk_0.05": 0.026036644165863067,
+   "coverage_at_risk_0.1": 0.71648987463838
+  },
+  "dev_as_block": {
+   "n": 1037,
+   "accuracy": 0.8023143683702989,
+   "aurc": 0.09472895966019616,
+   "eaurc": 0.07366161091782521,
+   "ece": 0.19723111632474938,
+   "auroc_error": 0.7701160881801126,
+   "coverage_at_risk_0.02": 0.024108003857280617,
+   "coverage_at_risk_0.05": 0.026036644165863067,
+   "coverage_at_risk_0.1": 0.703953712632594
+  },
+  "cal": {
+   "n": 1037,
+   "accuracy": 0.8158148505303761,
+   "aurc": 0.09174117070238867,
+   "eaurc": 0.07354092027272517,
+   "ece": 0.18325865900964847,
+   "auroc_error": 0.7405592068619806,
+   "coverage_at_risk_0.02": 0.06075216972034716,
+   "coverage_at_risk_0.05": 0.30665380906460943,
+   "coverage_at_risk_0.1": 0.6489874638379942
+  },
+  "cal_as_block": {
+   "n": 1037,
+   "accuracy": 0.8129218900675024,
+   "aurc": 0.08288849739164594,
+   "eaurc": 0.06409280348021051,
+   "ece": 0.18598865106227655,
+   "auroc_error": 0.7509905712294089,
+   "coverage_at_risk_0.02": 0.08003857280617165,
+   "coverage_at_risk_0.05": 0.29218900675024106,
+   "coverage_at_risk_0.1": 0.6576663452266153
+  },
+  "test": {
+   "n": 1054,
+   "accuracy": 0.8349146110056926,
+   "aurc": 0.07390529435955429,
+   "eaurc": 0.05938177350988014,
+   "ece": 0.16453331392223067,
+   "auroc_error": 0.7628689916405433,
+   "coverage_at_risk_0.02": 0.018026565464895637,
+   "coverage_at_risk_0.05": 0.34724857685009486,
+   "coverage_at_risk_0.1": 0.793168880455408
+  },
+  "test_as_block": {
+   "n": 1054,
+   "accuracy": 0.8263757115749526,
+   "aurc": 0.06793815996724964,
+   "eaurc": 0.05182613757966471,
+   "ece": 0.1732215001415709,
+   "auroc_error": 0.7945643786113569,
+   "coverage_at_risk_0.02": 0.10056925996204934,
+   "coverage_at_risk_0.05": 0.3870967741935484,
+   "coverage_at_risk_0.1": 0.8045540796963947
+  }
+ }
+}

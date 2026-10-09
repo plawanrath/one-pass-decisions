@@ -1,0 +1,11 @@
+{
+ "size": "base",
+ "task": "contractnli",
+ "max_state_tokens": 512,
+ "splits": {
+  "test": {
+   "n": 1054,
+   "accuracy": 0.5645161290322581
+  }
+ }
+}

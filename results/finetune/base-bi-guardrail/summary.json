@@ -1,0 +1,30 @@
+{
+ "model": "base-bi-guardrail",
+ "kind": "bi",
+ "task": "guardrail",
+ "train": {
+  "epochs": 1.0,
+  "steps": 549,
+  "seconds": 429.48420763015747,
+  "device": "cuda",
+  "states_per_step": 8,
+  "lr": 3e-05,
+  "head_lr": 0.001,
+  "max_state_tokens": 1024,
+  "state_side": "head"
+ },
+ "splits": {
+  "dev": {
+   "n": 9027,
+   "accuracy": 0.6974631660573835
+  },
+  "cal": {
+   "n": 24832,
+   "accuracy": 0.708239368556701
+  },
+  "test": {
+   "n": 33850,
+   "accuracy": 0.7129985228951256
+  }
+ }
+}

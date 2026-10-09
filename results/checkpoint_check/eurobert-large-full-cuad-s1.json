@@ -1,0 +1,7 @@
+{
+ "model": "models/_from_h100_eurobert_cuad/eurobert-large-full-cuad-s1",
+ "result": "eurobert-large-full-cuad-s1",
+ "n": 41,
+ "same_decisions": 41,
+ "max_prob_diff": 0.0032210000000000294
+}

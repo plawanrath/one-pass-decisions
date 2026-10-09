@@ -1,0 +1,118 @@
+{
+ "families": {
+  "base": {
+   "n_beyond": 224,
+   "configs": {
+    "1 x 8k (served masked)": [
+     {
+      "run": "base-full-cuad",
+      "accuracy_all": 85.79626972740316,
+      "accuracy_beyond": 52.232142857142854,
+      "one_window_all": 86.84839789574366,
+      "one_window_beyond": 57.589285714285715,
+      "delta_beyond": {
+       "point": -5.357142857142847,
+       "ci_low": -9.42776824852297,
+       "ci_high": -1.7045454545454604
+      }
+     },
+     {
+      "run": "base-full-cuad-s1",
+      "accuracy_all": 86.27450980392157,
+      "accuracy_beyond": 62.05357142857143,
+      "one_window_all": 86.37015781922526,
+      "one_window_beyond": 62.94642857142857,
+      "delta_beyond": {
+       "point": -0.8928571428571388,
+       "ci_low": -4.072398190045249,
+       "ci_high": 2.325807619219988
+      }
+     }
+    ],
+    "4 x 8k": [
+     {
+      "run": "base-full-cuad",
+      "accuracy_all": 88.37876614060258,
+      "accuracy_beyond": 78.57142857142857,
+      "one_window_all": 86.84839789574366,
+      "one_window_beyond": 57.589285714285715,
+      "delta_beyond": {
+       "point": 20.98214285714286,
+       "ci_low": 15.98167631690438,
+       "ci_high": 25.532203977798336
+      }
+     },
+     {
+      "run": "base-full-cuad-s1",
+      "accuracy_all": 87.27881396461024,
+      "accuracy_beyond": 79.91071428571429,
+      "one_window_all": 86.37015781922526,
+      "one_window_beyond": 62.94642857142857,
+      "delta_beyond": {
+       "point": 16.964285714285722,
+       "ci_low": 12.435233160621749,
+       "ci_high": 21.05263157894737
+      }
+     }
+    ]
+   }
+  },
+  "eurobert-large": {
+   "n_beyond": 215,
+   "configs": {
+    "1 x 8k (served masked)": [
+     {
+      "run": "eurobert-large-full-cuad",
+      "accuracy_all": 85.844093735055,
+      "accuracy_beyond": 59.53488372093023,
+      "one_window_all": 86.0832137733142,
+      "one_window_beyond": 60.0,
+      "delta_beyond": {
+       "point": -0.46511627906976827,
+       "ci_low": -3.2110091743119256,
+       "ci_high": 2.2028257112955467
+      }
+     },
+     {
+      "run": "eurobert-large-full-cuad-s1",
+      "accuracy_all": 85.844093735055,
+      "accuracy_beyond": 59.53488372093023,
+      "one_window_all": 85.98756575801052,
+      "one_window_beyond": 60.46511627906977,
+      "delta_beyond": {
+       "point": -0.9302325581395294,
+       "ci_low": -3.9408866995073812,
+       "ci_high": 1.7021276595744723
+      }
+     }
+    ],
+    "4 x 8k": [
+     {
+      "run": "eurobert-large-full-cuad",
+      "accuracy_all": 87.2309899569584,
+      "accuracy_beyond": 81.86046511627907,
+      "one_window_all": 86.0832137733142,
+      "one_window_beyond": 60.0,
+      "delta_beyond": {
+       "point": 21.860465116279073,
+       "ci_low": 17.391304347826086,
+       "ci_high": 25.83033517835178
+      }
+     },
+     {
+      "run": "eurobert-large-full-cuad-s1",
+      "accuracy_all": 86.32233381157342,
+      "accuracy_beyond": 80.93023255813954,
+      "one_window_all": 85.98756575801052,
+      "one_window_beyond": 60.46511627906977,
+      "delta_beyond": {
+       "point": 20.465116279069775,
+       "ci_low": 14.673913043478265,
+       "ci_high": 26.070073652028896
+      }
+     }
+    ]
+   }
+  }
+ }
+}

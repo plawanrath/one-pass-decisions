@@ -1,0 +1,3215 @@
+{
+ "alphas": [
+  0.05,
+  0.1
+ ],
+ "delta": 0.05,
+ "arms": [
+  {
+   "task": "contractnli",
+   "arm": "MB-b full",
+   "run": "base-full-contractnli",
+   "ref": null,
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.7922201138519924,
+    "aurc": 0.07830357992197293,
+    "eaurc": 0.05494590513112396,
+    "ece": 0.1297123718024205,
+    "auroc_error": 0.7991469116561398,
+    "coverage_at_risk_0.02": 0.1110056925996205,
+    "coverage_at_risk_0.05": 0.33111954459203036,
+    "coverage_at_risk_0.1": 0.6878557874762808
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.33111954459203036,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.33111954459203036,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.17362428842504743
+      },
+      "share_no_threshold": 0.649,
+      "test_risk_when_found": {
+       "p5": 0.008695652173913044,
+       "median": 0.023255813953488372,
+       "p95": 0.03418803418803419
+      },
+      "share_risk_above_alpha": 0.0
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.6878557874762808,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.6878557874762808,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.04174573055028463,
+       "p95": 0.5759013282732448
+      },
+      "share_no_threshold": 0.424,
+      "test_risk_when_found": {
+       "p5": 0.0,
+       "median": 0.0353356890459364,
+       "p95": 0.06581059390048154
+      },
+      "share_risk_above_alpha": 0.0
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-b block, equal epochs",
+   "run": "base-block-contractnli",
+   "ref": "base-full-contractnli",
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.7922201138519924,
+    "aurc": 0.07287703745402634,
+    "eaurc": 0.04951936266317737,
+    "ece": 0.04017408780287067,
+    "auroc_error": 0.7998632871243814,
+    "coverage_at_risk_0.02": 0.349146110056926,
+    "coverage_at_risk_0.05": 0.47722960151802657,
+    "coverage_at_risk_0.1": 0.6499051233396584
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.47722960151802657,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.47722960151802657,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.33396584440227706
+      },
+      "share_no_threshold": 0.625,
+      "test_risk_when_found": {
+       "p5": 0.0,
+       "median": 0.01892744479495268,
+       "p95": 0.019021739130434784
+      },
+      "share_risk_above_alpha": 0.0,
+      "coverage_minus_ref": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.2125237191650854
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.6499051233396584,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.6499051233396584,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.5056925996204934
+      },
+      "share_no_threshold": 0.591,
+      "test_risk_when_found": {
+       "p5": 0.019021739130434784,
+       "median": 0.0408997955010225,
+       "p95": 0.06813996316758748
+      },
+      "share_risk_above_alpha": 0.0,
+      "coverage_minus_ref": {
+       "p5": -0.12239089184060721,
+       "median": 0.0,
+       "p95": 0.25540796963946855
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-b block, equal steps",
+   "run": "base-block-contractnli-steps",
+   "ref": "base-full-contractnli",
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.8235294117647058,
+    "aurc": 0.10745998264239516,
+    "eaurc": 0.09079889738180444,
+    "ece": 0.17242168973021535,
+    "auroc_error": 0.7056234824835241,
+    "coverage_at_risk_0.02": 0.015180265654648957,
+    "coverage_at_risk_0.05": 0.021821631878557873,
+    "coverage_at_risk_0.1": 0.6375711574952562
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.021821631878557873,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.021821631878557873,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.0
+      },
+      "share_no_threshold": 1.0,
+      "test_risk_when_found": null,
+      "share_risk_above_alpha": null,
+      "coverage_minus_ref": {
+       "p5": -0.17362428842504743,
+       "median": 0.0,
+       "p95": 0.0
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.6375711574952562,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.6375711574952562,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.0
+      },
+      "share_no_threshold": 0.96,
+      "test_risk_when_found": {
+       "p5": 0.09327548806941431,
+       "median": 0.09327548806941431,
+       "p95": 0.09327548806941431
+      },
+      "share_risk_above_alpha": 0.0,
+      "coverage_minus_ref": {
+       "p5": -0.5759013282732448,
+       "median": -0.04174573055028463,
+       "p95": 0.0
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-l full",
+   "run": "large-full-contractnli",
+   "ref": null,
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.8918406072106262,
+    "aurc": 0.0416021657473392,
+    "eaurc": 0.03547856143113853,
+    "ece": 0.09207353835653301,
+    "auroc_error": 0.7870380739081747,
+    "coverage_at_risk_0.02": 0.10341555977229601,
+    "coverage_at_risk_0.05": 0.7647058823529411,
+    "coverage_at_risk_0.1": 0.9819734345351043
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.7647058823529411,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.7647058823529411,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.7258064516129032
+      },
+      "share_no_threshold": 0.567,
+      "test_risk_when_found": {
+       "p5": 0.014285714285714285,
+       "median": 0.033271719038817,
+       "p95": 0.050492610837438424
+      },
+      "share_risk_above_alpha": 0.06928406466512702
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.9819734345351043,
+     "threshold_found": true,
+     "tau": 0.9773380756378174,
+     "cal_coverage": 0.8804243008678881,
+     "test_coverage": 0.9022770398481973,
+     "test_risk": 0.07570977917981073,
+     "test_risk_ci": [
+      0.0597066834863616,
+      0.094396499951868
+     ],
+     "n_accepted": 951,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.9819734345351043,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.06641366223908918,
+       "median": 0.8851992409867173,
+       "p95": 0.9250474383301708
+      },
+      "share_no_threshold": 0.004,
+      "test_risk_when_found": {
+       "p5": 0.014285714285714285,
+       "median": 0.0707395498392283,
+       "p95": 0.08
+      },
+      "share_risk_above_alpha": 0.0
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-l block, equal steps",
+   "run": "large-block-contractnli-e30",
+   "ref": "large-full-contractnli",
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.8927893738140418,
+    "aurc": 0.06606254768018205,
+    "eaurc": 0.060047492075123055,
+    "ece": 0.10414552094814213,
+    "auroc_error": 0.664624340515174,
+    "coverage_at_risk_0.02": 0.014231499051233396,
+    "coverage_at_risk_0.05": 0.4278937381404175,
+    "coverage_at_risk_0.1": 0.9724857685009488
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.4278937381404175,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.4278937381404175,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.4089184060721063
+      },
+      "share_no_threshold": 0.623,
+      "test_risk_when_found": {
+       "p5": 0.03571428571428571,
+       "median": 0.04428044280442804,
+       "p95": 0.055865921787709494
+      },
+      "share_risk_above_alpha": 0.06896551724137931,
+      "coverage_minus_ref": {
+       "p5": -0.6347248576850095,
+       "median": 0.0,
+       "p95": 0.4032258064516129
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.9724857685009488,
+     "threshold_found": true,
+     "tau": 0.9999967813491821,
+     "cal_coverage": 0.42719382835101255,
+     "test_coverage": 0.4629981024667932,
+     "test_risk": 0.06967213114754098,
+     "test_risk_ci": [
+      0.0487292578487626,
+      0.09600162317677827
+     ],
+     "n_accepted": 488,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.9724857685009488,
+      "threshold_found": true,
+      "tau": 0.9999967813491821,
+      "cal_coverage": 0.42719382835101255,
+      "test_coverage": 0.4629981024667932,
+      "test_risk": 0.06967213114754098,
+      "test_risk_ci": [
+       0.0487292578487626,
+       0.09600162317677827
+      ],
+      "n_accepted": 488,
+      "violates_alpha": false
+     },
+     "coverage_minus_ref": {
+      "point": -0.4392789373814041,
+      "ci_low": -0.48671726755218214,
+      "ci_high": -0.3937381404174573,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.4629981024667932,
+       "p95": 0.4876660341555977
+      },
+      "share_no_threshold": 0.112,
+      "test_risk_when_found": {
+       "p5": 0.04932735426008968,
+       "median": 0.06967213114754098,
+       "p95": 0.08754863813229571
+      },
+      "share_risk_above_alpha": 0.0011261261261261261,
+      "coverage_minus_ref": {
+       "p5": -0.8851992409867173,
+       "median": -0.4326375711574952,
+       "p95": 0.40322580645161293
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-l full, dev-AURC selection",
+   "run": "large-full-contractnli-sel",
+   "ref": null,
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.8937381404174574,
+    "aurc": 0.037589556443858876,
+    "eaurc": 0.03168204129637788,
+    "ece": 0.08398539684642188,
+    "auroc_error": 0.7964153017895056,
+    "coverage_at_risk_0.02": 0.2314990512333966,
+    "coverage_at_risk_0.05": 0.7751423149905123,
+    "coverage_at_risk_0.1": 0.9838709677419355
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.7751423149905123,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.7751423149905123,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.7533206831119544
+      },
+      "share_no_threshold": 0.631,
+      "test_risk_when_found": {
+       "p5": 0.015037593984962405,
+       "median": 0.018633540372670808,
+       "p95": 0.04630788485607009
+      },
+      "share_risk_above_alpha": 0.04607046070460705
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.9838709677419355,
+     "threshold_found": true,
+     "tau": 0.9997438788414001,
+     "cal_coverage": 0.03182256509161042,
+     "test_coverage": 0.04364326375711575,
+     "test_risk": 0.0,
+     "test_risk_ci": [
+      0.0,
+      0.07706182705190072
+     ],
+     "n_accepted": 46,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.9838709677419355,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.04364326375711575,
+       "p95": 0.9098671726755219
+      },
+      "share_no_threshold": 0.192,
+      "test_risk_when_found": {
+       "p5": 0.0,
+       "median": 0.015037593984962405,
+       "p95": 0.0740354535974974
+      },
+      "share_risk_above_alpha": 0.0
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-l block, steps, dev-AURC selection",
+   "run": "large-block-contractnli-sel",
+   "ref": "large-full-contractnli-sel",
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.8643263757115749,
+    "aurc": 0.03840046959201387,
+    "eaurc": 0.02868546782056248,
+    "ece": 0.05373587347637768,
+    "auroc_error": 0.835245983434787,
+    "coverage_at_risk_0.02": 0.3377609108159393,
+    "coverage_at_risk_0.05": 0.6925996204933587,
+    "coverage_at_risk_0.1": 0.9155597722960152
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.6925996204933587,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.6925996204933587,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.6129032258064516
+      },
+      "share_no_threshold": 0.624,
+      "test_risk_when_found": {
+       "p5": 0.0,
+       "median": 0.013651877133105802,
+       "p95": 0.04160688665710186
+      },
+      "share_risk_above_alpha": 0.015957446808510637,
+      "coverage_minus_ref": {
+       "p5": -0.6261859582542695,
+       "median": 0.0,
+       "p95": 0.3937381404174573
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.9155597722960152,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.9155597722960152,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": -0.04364326375711575,
+      "ci_low": -0.06736242884250475,
+      "ci_high": -0.022770398481973434,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.8586337760910816
+      },
+      "share_no_threshold": 0.622,
+      "test_risk_when_found": {
+       "p5": 0.05860805860805861,
+       "median": 0.0764904386951631,
+       "p95": 0.08719052744886975
+      },
+      "share_risk_above_alpha": 0.0026455026455026454,
+      "coverage_minus_ref": {
+       "p5": -0.8861480075901328,
+       "median": -0.04364326375711575,
+       "p95": 0.8154174573055024
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b full (one window)",
+   "run": "base-full-cuad",
+   "ref": null,
+   "n_test": 2091,
+   "test": {
+    "n": 2091,
+    "accuracy": 0.8684839789574366,
+    "aurc": 0.04056985407237483,
+    "eaurc": 0.03148396406351771,
+    "ece": 0.08778331831047718,
+    "auroc_error": 0.809777733279936,
+    "coverage_at_risk_0.02": 0.39263510282161646,
+    "coverage_at_risk_0.05": 0.6666666666666666,
+    "coverage_at_risk_0.1": 0.9062649450023912
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.6666666666666666,
+     "threshold_found": true,
+     "tau": 0.9681411385536194,
+     "cal_coverage": 0.7450980392156863,
+     "test_coverage": 0.7120994739359159,
+     "test_risk": 0.053727333781061114,
+     "test_risk_ci": [
+      0.04282906757216257,
+      0.0664250698337077
+     ],
+     "n_accepted": 1489,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.6666666666666666,
+      "threshold_found": true,
+      "tau": 0.9681411385536194,
+      "cal_coverage": 0.7450980392156863,
+      "test_coverage": 0.7120994739359159,
+      "test_risk": 0.053727333781061114,
+      "test_risk_ci": [
+       0.04282906757216257,
+       0.0664250698337077
+      ],
+      "n_accepted": 1489,
+      "violates_alpha": false
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.577714012434242,
+       "median": 0.7120994739359159,
+       "p95": 0.8216164514586323
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.041084634346754315,
+       "median": 0.053727333781061114,
+       "p95": 0.07916181606519208
+      },
+      "share_risk_above_alpha": 0.649
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.9062649450023912,
+     "threshold_found": true,
+     "tau": 0.6951311230659485,
+     "cal_coverage": 0.9622190339550454,
+     "test_coverage": 0.9693926351028216,
+     "test_risk": 0.12185495806610755,
+     "test_risk_ci": [
+      0.10792237310661103,
+      0.13689122306630275
+     ],
+     "n_accepted": 2027,
+     "violates_alpha": true,
+     "fixed_start": {
+      "oracle_test_coverage": 0.9062649450023912,
+      "threshold_found": true,
+      "tau": 0.6951311230659485,
+      "cal_coverage": 0.9622190339550454,
+      "test_coverage": 0.9693926351028216,
+      "test_risk": 0.12185495806610755,
+      "test_risk_ci": [
+       0.10792237310661103,
+       0.13689122306630275
+      ],
+      "n_accepted": 2027,
+      "violates_alpha": true
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.9158297465327594,
+       "median": 0.9693926351028216,
+       "p95": 0.9995217599234816
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.10496083550913839,
+       "median": 0.12185495806610755,
+       "p95": 0.13157894736842105
+      },
+      "share_risk_above_alpha": 0.981
+     }
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b block (one window), equal steps",
+   "run": "base-block-cuad-steps",
+   "ref": "base-full-cuad",
+   "n_test": 2091,
+   "test": {
+    "n": 2091,
+    "accuracy": 0.8603538976566236,
+    "aurc": 0.09772235309054807,
+    "eaurc": 0.08744995489733191,
+    "ece": 0.13593291817299774,
+    "auroc_error": 0.6638829029826312,
+    "coverage_at_risk_0.02": 0.0,
+    "coverage_at_risk_0.05": 0.0,
+    "coverage_at_risk_0.1": 0.8383548541367767
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.0,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.0,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": -0.7120994739359159,
+      "ci_low": -0.7474892395982783,
+      "ci_high": -0.6757532281205165,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.0
+      },
+      "share_no_threshold": 0.995,
+      "test_risk_when_found": {
+       "p5": 0.08493589743589743,
+       "median": 0.09134615384615384,
+       "p95": 0.09761392961461021
+      },
+      "share_risk_above_alpha": 1.0,
+      "coverage_minus_ref": {
+       "p5": -0.8216164514586323,
+       "median": -0.7120994739359159,
+       "p95": -0.577714012434242
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.8383548541367767,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.8383548541367767,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": -0.9693926351028216,
+      "ci_low": -0.9765662362505978,
+      "ci_high": -0.9617407938785271,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.9794356767097083
+      },
+      "share_no_threshold": 0.756,
+      "test_risk_when_found": {
+       "p5": 0.08108108108108109,
+       "median": 0.12829438090502238,
+       "p95": 0.13923444976076554
+      },
+      "share_risk_above_alpha": 0.8483606557377049,
+      "coverage_minus_ref": {
+       "p5": -0.9904351984696318,
+       "median": -0.9512195121951219,
+       "p95": 0.0
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b windowed (four windows), equal steps",
+   "run": "base-windowed-cuad-steps",
+   "ref": "base-full-cuad",
+   "n_test": 2091,
+   "test": {
+    "n": 2091,
+    "accuracy": 0.8876135820181731,
+    "aurc": 0.03876598535508,
+    "eaurc": 0.03217291184248575,
+    "ece": 0.10896376289858425,
+    "auroc_error": 0.8058212582538518,
+    "coverage_at_risk_0.02": 0.22764227642276422,
+    "coverage_at_risk_0.05": 0.7948350071736011,
+    "coverage_at_risk_0.1": 0.9722620755619321
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.7948350071736011,
+     "threshold_found": true,
+     "tau": 0.9999927282333374,
+     "cal_coverage": 0.743663318986131,
+     "test_coverage": 0.7039693926351028,
+     "test_risk": 0.04483695652173913,
+     "test_risk_ci": [
+      0.0348437576733831,
+      0.05669304523526217
+     ],
+     "n_accepted": 1472,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.7948350071736011,
+      "threshold_found": true,
+      "tau": 0.9999927282333374,
+      "cal_coverage": 0.743663318986131,
+      "test_coverage": 0.7039693926351028,
+      "test_risk": 0.04483695652173913,
+      "test_risk_ci": [
+       0.0348437576733831,
+       0.05669304523526217
+      ],
+      "n_accepted": 1472,
+      "violates_alpha": false
+     },
+     "coverage_minus_ref": {
+      "point": -0.008130081300813052,
+      "ci_low": -0.052606408417025345,
+      "ci_high": 0.032520325203252036,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.08895265423242468,
+       "median": 0.7039693926351028,
+       "p95": 0.8431372549019608
+      },
+      "share_no_threshold": 0.004,
+      "test_risk_when_found": {
+       "p5": 0.019736842105263157,
+       "median": 0.04481434058898848,
+       "p95": 0.060692002268859895
+      },
+      "share_risk_above_alpha": 0.09939759036144578,
+      "coverage_minus_ref": {
+       "p5": -0.5609756097560975,
+       "median": -0.025346724055475778,
+       "p95": 0.11477761836441891
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.9722620755619321,
+     "threshold_found": true,
+     "tau": 0.5,
+     "cal_coverage": 1.0,
+     "test_coverage": 1.0,
+     "test_risk": 0.11238641798182687,
+     "test_risk_ci": [
+      0.09916019089692253,
+      0.12670983380185316
+     ],
+     "n_accepted": 2091,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.9722620755619321,
+      "threshold_found": true,
+      "tau": 0.5,
+      "cal_coverage": 1.0,
+      "test_coverage": 1.0,
+      "test_risk": 0.11238641798182687,
+      "test_risk_ci": [
+       0.09916019089692253,
+       0.12670983380185316
+      ],
+      "n_accepted": 2091,
+      "violates_alpha": false
+     },
+     "coverage_minus_ref": {
+      "point": 0.030607364897178413,
+      "ci_low": 0.0234337637494022,
+      "ci_high": 0.03825920612147298,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.9646102343376375,
+       "median": 1.0,
+       "p95": 1.0
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.09568666336142786,
+       "median": 0.11238641798182687,
+       "p95": 0.11238641798182687
+      },
+      "share_risk_above_alpha": 0.876,
+      "coverage_minus_ref": {
+       "p5": 0.0004782400765184214,
+       "median": 0.030607364897178413,
+       "p95": 0.06504065040650409
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b block, steps, dev-AURC selection",
+   "run": "base-block-cuad-sel",
+   "ref": "base-full-cuad",
+   "n_test": 2091,
+   "test": {
+    "n": 2091,
+    "accuracy": 0.8512673362027738,
+    "aurc": 0.04449349829108923,
+    "eaurc": 0.03280405137209766,
+    "ece": 0.0351462377309229,
+    "auroc_error": 0.8154936955814878,
+    "coverage_at_risk_0.02": 0.46293639406982307,
+    "coverage_at_risk_0.05": 0.6131037780966045,
+    "coverage_at_risk_0.1": 0.8402678144428503
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.6131037780966045,
+     "threshold_found": true,
+     "tau": 0.8991213440895081,
+     "cal_coverage": 0.6714490674318508,
+     "test_coverage": 0.6255380200860832,
+     "test_risk": 0.054281345565749234,
+     "test_risk_ci": [
+      0.04263424163080104,
+      0.06797866026556659
+     ],
+     "n_accepted": 1308,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.6131037780966045,
+      "threshold_found": true,
+      "tau": 0.8991213440895081,
+      "cal_coverage": 0.6714490674318508,
+      "test_coverage": 0.6255380200860832,
+      "test_risk": 0.054281345565749234,
+      "test_risk_ci": [
+       0.04263424163080104,
+       0.06797866026556659
+      ],
+      "n_accepted": 1308,
+      "violates_alpha": false
+     },
+     "coverage_minus_ref": {
+      "point": -0.08656145384983271,
+      "ci_low": -0.11382113821138211,
+      "ci_high": -0.06025824964131994,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.547584887613582,
+       "median": 0.6255380200860832,
+       "p95": 0.7570540411286466
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.0354295837023915,
+       "median": 0.054281345565749234,
+       "p95": 0.07833228048010107
+      },
+      "share_risk_above_alpha": 0.762,
+      "coverage_minus_ref": {
+       "p5": -0.15315638450502156,
+       "median": -0.04447632711621241,
+       "p95": 0.0495217599234813
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.8402678144428503,
+     "threshold_found": true,
+     "tau": 0.6546739935874939,
+     "cal_coverage": 0.9186991869918699,
+     "test_coverage": 0.9196556671449068,
+     "test_risk": 0.12064482579303172,
+     "test_risk_ci": [
+      0.10641386090966772,
+      0.13604363681590265
+     ],
+     "n_accepted": 1923,
+     "violates_alpha": true,
+     "fixed_start": {
+      "oracle_test_coverage": 0.8402678144428503,
+      "threshold_found": true,
+      "tau": 0.6546739935874939,
+      "cal_coverage": 0.9186991869918699,
+      "test_coverage": 0.9196556671449068,
+      "test_risk": 0.12064482579303172,
+      "test_risk_ci": [
+       0.10641386090966772,
+       0.13604363681590265
+      ],
+      "n_accepted": 1923,
+      "violates_alpha": true
+     },
+     "coverage_minus_ref": {
+      "point": -0.049736967957914824,
+      "ci_low": -0.06743185078909612,
+      "ci_high": -0.03395504543280727,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.8723098995695839,
+       "median": 0.9277857484457197,
+       "p95": 0.973218555714969
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.1074561403508772,
+       "median": 0.12268041237113401,
+       "p95": 0.14004914004914004
+      },
+      "share_risk_above_alpha": 0.997,
+      "coverage_minus_ref": {
+       "p5": -0.06264945002391198,
+       "median": -0.03395504543280725,
+       "p95": -0.004734576757532309
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b windowed, steps, dev-AURC selection",
+   "run": "base-windowed-cuad-sel",
+   "ref": "base-full-cuad",
+   "n_test": 2091,
+   "test": {
+    "n": 2091,
+    "accuracy": 0.8780487804878049,
+    "aurc": 0.03340417657419876,
+    "eaurc": 0.025616791710154747,
+    "ece": 0.03181514729728313,
+    "auroc_error": 0.8270868042205989,
+    "coverage_at_risk_0.02": 0.48637015781922527,
+    "coverage_at_risk_0.05": 0.7207077953132472,
+    "coverage_at_risk_0.1": 0.9340028694404591
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.7207077953132472,
+     "threshold_found": true,
+     "tau": 0.8897086381912231,
+     "cal_coverage": 0.7790530846484935,
+     "test_coverage": 0.7350549976087997,
+     "test_risk": 0.054001301236174366,
+     "test_risk_ci": [
+      0.043238049204769397,
+      0.06650567212293537
+     ],
+     "n_accepted": 1537,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.7207077953132472,
+      "threshold_found": true,
+      "tau": 0.8897086381912231,
+      "cal_coverage": 0.7790530846484935,
+      "test_coverage": 0.7350549976087997,
+      "test_risk": 0.054001301236174366,
+      "test_risk_ci": [
+       0.043238049204769397,
+       0.06650567212293537
+      ],
+      "n_accepted": 1537,
+      "violates_alpha": false
+     },
+     "coverage_minus_ref": {
+      "point": 0.022955523672883782,
+      "ci_low": 0.001912960306073649,
+      "ci_high": 0.04447632711621234,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.6661884265901482,
+       "median": 0.7450980392156863,
+       "p95": 0.8206599713055954
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.040918880114860015,
+       "median": 0.05455712451861361,
+       "p95": 0.06818181818181818
+      },
+      "share_risk_above_alpha": 0.662,
+      "coverage_minus_ref": {
+       "p5": -0.05308464849354377,
+       "median": 0.03586800573888094,
+       "p95": 0.17027737924438063
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.9340028694404591,
+     "threshold_found": true,
+     "tau": 0.5220803618431091,
+     "cal_coverage": 0.9885222381635581,
+     "test_coverage": 0.9890004782400765,
+     "test_risk": 0.11750483558994197,
+     "test_risk_ci": [
+      0.10393361832813366,
+      0.13217044907297748
+     ],
+     "n_accepted": 2068,
+     "violates_alpha": true,
+     "fixed_start": {
+      "oracle_test_coverage": 0.9340028694404591,
+      "threshold_found": true,
+      "tau": 0.5220803618431091,
+      "cal_coverage": 0.9885222381635581,
+      "test_coverage": 0.9890004782400765,
+      "test_risk": 0.11750483558994197,
+      "test_risk_ci": [
+       0.10393361832813366,
+       0.13217044907297748
+      ],
+      "n_accepted": 2068,
+      "violates_alpha": true
+     },
+     "coverage_minus_ref": {
+      "point": 0.019607843137254943,
+      "ci_low": 0.010999521759923482,
+      "ci_high": 0.028694404591104734,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.9172644667623147,
+       "median": 0.9890004782400765,
+       "p95": 1.0
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.0954118873826903,
+       "median": 0.11750483558994197,
+       "p95": 0.12195121951219512
+      },
+      "share_risk_above_alpha": 0.923,
+      "coverage_minus_ref": {
+       "p5": -0.014395026303204253,
+       "median": 0.019607843137254943,
+       "p95": 0.04878048780487809
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-b full, retuned",
+   "run": "base-full-contractnli-lr2e5-bestacc",
+   "ref": null,
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.8538899430740038,
+    "aurc": 0.057666099648812474,
+    "eaurc": 0.046361203303050005,
+    "ece": 0.12883707569943886,
+    "auroc_error": 0.7791017316017316,
+    "coverage_at_risk_0.02": 0.16223908918406071,
+    "coverage_at_risk_0.05": 0.5370018975332068,
+    "coverage_at_risk_0.1": 0.8747628083491461
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.5370018975332068,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.5370018975332068,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.22675521821631878
+      },
+      "share_no_threshold": 0.625,
+      "test_risk_when_found": {
+       "p5": 0.01818181818181818,
+       "median": 0.02564102564102564,
+       "p95": 0.03676470588235294
+      },
+      "share_risk_above_alpha": 0.021333333333333333
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.8747628083491461,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.8747628083491461,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.7732447817836812
+      },
+      "share_no_threshold": 0.551,
+      "test_risk_when_found": {
+       "p5": 0.05089058524173028,
+       "median": 0.06847545219638243,
+       "p95": 0.08133971291866028
+      },
+      "share_risk_above_alpha": 0.0
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-b served-masked (retuned full)",
+   "run": "base-full-contractnli-lr2e5-bestacc@block",
+   "ref": "base-full-contractnli-lr2e5-bestacc",
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.849146110056926,
+    "aurc": 0.06175393235670975,
+    "eaurc": 0.04968428218382368,
+    "ece": 0.13778399049783344,
+    "auroc_error": 0.7738765327992692,
+    "coverage_at_risk_0.02": 0.1461100569259962,
+    "coverage_at_risk_0.05": 0.33206831119544594,
+    "coverage_at_risk_0.1": 0.8415559772296015
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.33206831119544594,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.33206831119544594,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.05977229601518026,
+       "p95": 0.30075901328273247
+      },
+      "share_no_threshold": 0.403,
+      "test_risk_when_found": {
+       "p5": 0.015873015873015872,
+       "median": 0.02247191011235955,
+       "p95": 0.052805280528052806
+      },
+      "share_risk_above_alpha": 0.16750418760469013,
+      "coverage_minus_ref": {
+       "p5": -0.016129032258064502,
+       "median": 0.0,
+       "p95": 0.09696394686907006
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.8415559772296015,
+     "threshold_found": true,
+     "tau": 0.996215283870697,
+     "cal_coverage": 0.703953712632594,
+     "test_coverage": 0.7400379506641366,
+     "test_risk": 0.07179487179487179,
+     "test_risk_ci": [
+      0.05468551902511411,
+      0.09222180619895368
+     ],
+     "n_accepted": 780,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.8415559772296015,
+      "threshold_found": true,
+      "tau": 0.996215283870697,
+      "cal_coverage": 0.703953712632594,
+      "test_coverage": 0.7400379506641366,
+      "test_risk": 0.07179487179487179,
+      "test_risk_ci": [
+       0.05468551902511411,
+       0.09222180619895368
+      ],
+      "n_accepted": 780,
+      "violates_alpha": false
+     },
+     "coverage_minus_ref": {
+      "point": 0.7400379506641366,
+      "ci_low": 0.7049335863377609,
+      "ci_high": 0.7751423149905123,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.05977229601518026,
+       "median": 0.7239089184060721,
+       "p95": 0.7751423149905123
+      },
+      "share_no_threshold": 0.001,
+      "test_risk_when_found": {
+       "p5": 0.015873015873015872,
+       "median": 0.06946264744429882,
+       "p95": 0.07833537331701346
+      },
+      "share_risk_above_alpha": 0.0,
+      "coverage_minus_ref": {
+       "p5": -0.054269449715370004,
+       "median": 0.09487666034155598,
+       "p95": 0.7685009487666035
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-l served-masked",
+   "run": "large-full-contractnli@block",
+   "ref": "large-full-contractnli",
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.8833017077798861,
+    "aurc": 0.04072822231248844,
+    "eaurc": 0.03358213044766724,
+    "ece": 0.09645399425807899,
+    "auroc_error": 0.8071223354553632,
+    "coverage_at_risk_0.02": 0.1650853889943074,
+    "coverage_at_risk_0.05": 0.7476280834914611,
+    "coverage_at_risk_0.1": 0.9544592030360531
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.7476280834914611,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.7476280834914611,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.7533206831119544
+      },
+      "share_no_threshold": 0.567,
+      "test_risk_when_found": {
+       "p5": 0.014705882352941176,
+       "median": 0.03137254901960784,
+       "p95": 0.05185185185185185
+      },
+      "share_risk_above_alpha": 0.13625866050808313,
+      "coverage_minus_ref": {
+       "p5": -0.12751423149905122,
+       "median": 0.0,
+       "p95": 0.14245730550284608
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.9544592030360531,
+     "threshold_found": true,
+     "tau": 0.9745211601257324,
+     "cal_coverage": 0.8784956605593057,
+     "test_coverage": 0.8956356736242884,
+     "test_risk": 0.07733050847457627,
+     "test_risk_ci": [
+      0.06110170661313038,
+      0.09625185997456406
+     ],
+     "n_accepted": 944,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.9544592030360531,
+      "threshold_found": true,
+      "tau": 0.9745211601257324,
+      "cal_coverage": 0.8784956605593057,
+      "test_coverage": 0.8956356736242884,
+      "test_risk": 0.07733050847457627,
+      "test_risk_ci": [
+       0.06110170661313038,
+       0.09625185997456406
+      ],
+      "n_accepted": 944,
+      "violates_alpha": false
+     },
+     "coverage_minus_ref": {
+      "point": -0.006641366223908873,
+      "ci_low": -0.020872865275142316,
+      "ci_high": 0.008538899430740038,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.06451612903225806,
+       "median": 0.8927893738140418,
+       "p95": 0.9345351043643264
+      },
+      "share_no_threshold": 0.004,
+      "test_risk_when_found": {
+       "p5": 0.014705882352941176,
+       "median": 0.07733050847457627,
+       "p95": 0.08934010152284264
+      },
+      "share_risk_above_alpha": 0.0030120481927710845,
+      "coverage_minus_ref": {
+       "p5": -0.8206831119544593,
+       "median": -0.0018975332068311146,
+       "p95": 0.02092030360531305
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b served-masked (one window)",
+   "run": "base-full-cuad@block",
+   "ref": "base-full-cuad",
+   "n_test": 2091,
+   "test": {
+    "n": 2091,
+    "accuracy": 0.8579626972740315,
+    "aurc": 0.04264142059215465,
+    "eaurc": 0.032005460727992735,
+    "ece": 0.09785099918337198,
+    "auroc_error": 0.8221616011471083,
+    "coverage_at_risk_0.02": 0.3510282161645146,
+    "coverage_at_risk_0.05": 0.6532759445241512,
+    "coverage_at_risk_0.1": 0.8943089430894309
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.6532759445241512,
+     "threshold_found": true,
+     "tau": 0.9759464263916016,
+     "cal_coverage": 0.7020564323290291,
+     "test_coverage": 0.6661884265901482,
+     "test_risk": 0.05312275664034458,
+     "test_risk_ci": [
+      0.0419397433378323,
+      0.06623446250816849
+     ],
+     "n_accepted": 1393,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.6532759445241512,
+      "threshold_found": true,
+      "tau": 0.9759464263916016,
+      "cal_coverage": 0.7020564323290291,
+      "test_coverage": 0.6661884265901482,
+      "test_risk": 0.05312275664034458,
+      "test_risk_ci": [
+       0.0419397433378323,
+       0.06623446250816849
+      ],
+      "n_accepted": 1393,
+      "violates_alpha": false
+     },
+     "coverage_minus_ref": {
+      "point": -0.045911047345767675,
+      "ci_low": -0.060736489717838356,
+      "ci_high": -0.032520325203252036,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.5308464849354376,
+       "median": 0.6537541846006696,
+       "p95": 0.7704447632711621
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.03568320278503046,
+       "median": 0.05047549378200439,
+       "p95": 0.07200496585971446
+      },
+      "share_risk_above_alpha": 0.503,
+      "coverage_minus_ref": {
+       "p5": -0.10234337637494018,
+       "median": -0.027498804399808674,
+       "p95": 0.06456241032998566
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.8943089430894309,
+     "threshold_found": true,
+     "tau": 0.7662936449050903,
+     "cal_coverage": 0.9497847919655668,
+     "test_coverage": 0.9521759923481588,
+     "test_risk": 0.12104470115519839,
+     "test_risk_ci": [
+      0.10703206529213123,
+      0.13618366116323335
+     ],
+     "n_accepted": 1991,
+     "violates_alpha": true,
+     "fixed_start": {
+      "oracle_test_coverage": 0.8943089430894309,
+      "threshold_found": true,
+      "tau": 0.7662936449050903,
+      "cal_coverage": 0.9497847919655668,
+      "test_coverage": 0.9521759923481588,
+      "test_risk": 0.12104470115519839,
+      "test_risk_ci": [
+       0.10703206529213123,
+       0.13618366116323335
+      ],
+      "n_accepted": 1991,
+      "violates_alpha": true
+     },
+     "coverage_minus_ref": {
+      "point": -0.017216642754662836,
+      "ci_low": -0.02773792443806791,
+      "ci_high": -0.006217120994739359,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.8880918220946915,
+       "median": 0.9521759923481588,
+       "p95": 0.986131037780966
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.09693053311793215,
+       "median": 0.12104470115519839,
+       "p95": 0.13579049466537343
+      },
+      "share_risk_above_alpha": 0.949,
+      "coverage_minus_ref": {
+       "p5": -0.038259206121473044,
+       "median": -0.017216642754662836,
+       "p95": 0.0009564801530368428
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b full (one window), seed 1",
+   "run": "base-full-cuad-s1",
+   "ref": null,
+   "n_test": 2091,
+   "test": {
+    "n": 2091,
+    "accuracy": 0.8637015781922526,
+    "aurc": 0.04307191070121082,
+    "eaurc": 0.03329733782505895,
+    "ece": 0.08074079832353415,
+    "auroc_error": 0.806686289366828,
+    "coverage_at_risk_0.02": 0.3864179818268771,
+    "coverage_at_risk_0.05": 0.6446676231468197,
+    "coverage_at_risk_0.1": 0.8847441415590627
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.6446676231468197,
+     "threshold_found": true,
+     "tau": 0.9669140577316284,
+     "cal_coverage": 0.646102343376375,
+     "test_coverage": 0.6269727403156384,
+     "test_risk": 0.04652936689549962,
+     "test_risk_ci": [
+      0.03577521297753863,
+      0.05937050935025384
+     ],
+     "n_accepted": 1311,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.6446676231468197,
+      "threshold_found": true,
+      "tau": 0.9669140577316284,
+      "cal_coverage": 0.646102343376375,
+      "test_coverage": 0.6269727403156384,
+      "test_risk": 0.04652936689549962,
+      "test_risk_ci": [
+       0.03577521297753863,
+       0.05937050935025384
+      ],
+      "n_accepted": 1311,
+      "violates_alpha": false
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.5432807269249164,
+       "median": 0.6269727403156384,
+       "p95": 0.763271162123386
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.03609154929577465,
+       "median": 0.04652936689549962,
+       "p95": 0.07017543859649122
+      },
+      "share_risk_above_alpha": 0.301
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.8847441415590627,
+     "threshold_found": true,
+     "tau": 0.7972412705421448,
+     "cal_coverage": 0.9249163079866093,
+     "test_coverage": 0.921090387374462,
+     "test_risk": 0.10539979231568017,
+     "test_risk_ci": [
+      0.09203514882924722,
+      0.11997896742602124
+     ],
+     "n_accepted": 1926,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.8847441415590627,
+      "threshold_found": true,
+      "tau": 0.7972412705421448,
+      "cal_coverage": 0.9249163079866093,
+      "test_coverage": 0.921090387374462,
+      "test_risk": 0.10539979231568017,
+      "test_risk_ci": [
+       0.09203514882924722,
+       0.11997896742602124
+      ],
+      "n_accepted": 1926,
+      "violates_alpha": false
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.8603538976566236,
+       "median": 0.921090387374462,
+       "p95": 0.9665231946437112
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.09449694274596998,
+       "median": 0.10539979231568017,
+       "p95": 0.12469074715487383
+      },
+      "share_risk_above_alpha": 0.889
+     }
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b served-masked (one window), seed 1",
+   "run": "base-full-cuad-s1@block",
+   "ref": "base-full-cuad-s1",
+   "n_test": 2091,
+   "test": {
+    "n": 2091,
+    "accuracy": 0.8627450980392157,
+    "aurc": 0.04616900268528996,
+    "eaurc": 0.036253520239345347,
+    "ece": 0.0829910761656686,
+    "auroc_error": 0.7912401399908836,
+    "coverage_at_risk_0.02": 0.3586800573888092,
+    "coverage_at_risk_0.05": 0.5724533715925395,
+    "coverage_at_risk_0.1": 0.8780487804878049
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.5724533715925395,
+     "threshold_found": true,
+     "tau": 0.9633687138557434,
+     "cal_coverage": 0.68675274988044,
+     "test_coverage": 0.6575801052128168,
+     "test_risk": 0.06109090909090909,
+     "test_risk_ci": [
+      0.0490177185196693,
+      0.07507905334612168
+     ],
+     "n_accepted": 1375,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.5724533715925395,
+      "threshold_found": true,
+      "tau": 0.9633687138557434,
+      "cal_coverage": 0.68675274988044,
+      "test_coverage": 0.6575801052128168,
+      "test_risk": 0.06109090909090909,
+      "test_risk_ci": [
+       0.0490177185196693,
+       0.07507905334612168
+      ],
+      "n_accepted": 1375,
+      "violates_alpha": false
+     },
+     "coverage_minus_ref": {
+      "point": 0.030607364897178413,
+      "ci_low": 0.01673840267814443,
+      "ci_high": 0.04495456719273075,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.5753228120516499,
+       "median": 0.6370157819225251,
+       "p95": 0.7589670014347202
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.05070656691604322,
+       "median": 0.05780780780780781,
+       "p95": 0.074354127284184
+      },
+      "share_risk_above_alpha": 0.954,
+      "coverage_minus_ref": {
+       "p5": -0.021042563366810207,
+       "median": 0.022955523672883782,
+       "p95": 0.08751793400286945
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.8780487804878049,
+     "threshold_found": true,
+     "tau": 0.7839884757995605,
+     "cal_coverage": 0.9316116690578671,
+     "test_coverage": 0.9249163079866093,
+     "test_risk": 0.11271975180972078,
+     "test_risk_ci": [
+      0.0989619190951746,
+      0.12766377654454203
+     ],
+     "n_accepted": 1934,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.8780487804878049,
+      "threshold_found": true,
+      "tau": 0.7839884757995605,
+      "cal_coverage": 0.9316116690578671,
+      "test_coverage": 0.9249163079866093,
+      "test_risk": 0.11271975180972078,
+      "test_risk_ci": [
+       0.0989619190951746,
+       0.12766377654454203
+      ],
+      "n_accepted": 1934,
+      "violates_alpha": false
+     },
+     "coverage_minus_ref": {
+      "point": 0.00382592061214726,
+      "ci_low": -0.00430416068866571,
+      "ci_high": 0.012434241989478718,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.8670492587278814,
+       "median": 0.9249163079866093,
+       "p95": 0.9717838354854137
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.09928295642581357,
+       "median": 0.11271975180972078,
+       "p95": 0.12893700787401574
+      },
+      "share_risk_above_alpha": 0.927,
+      "coverage_minus_ref": {
+       "p5": -0.011956001912960312,
+       "median": 0.008608321377331474,
+       "p95": 0.032544237207078
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b block (one window), seed 1",
+   "run": "base-block-cuad-steps-s1",
+   "ref": "base-full-cuad-s1",
+   "n_test": 2091,
+   "test": {
+    "n": 2091,
+    "accuracy": 0.8522238163558107,
+    "aurc": 0.06950754323739211,
+    "eaurc": 0.05797180893761588,
+    "ece": 0.14532056688863326,
+    "auroc_error": 0.7490501926855756,
+    "coverage_at_risk_0.02": 0.0023912003825920613,
+    "coverage_at_risk_0.05": 0.39933046389287424,
+    "coverage_at_risk_0.1": 0.8273553323768532
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.39933046389287424,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.39933046389287424,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": -0.6269727403156384,
+      "ci_low": -0.6700143472022956,
+      "ci_high": -0.5839311334289814,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.5768770923003342
+      },
+      "share_no_threshold": 0.646,
+      "test_risk_when_found": {
+       "p5": 0.02962962962962963,
+       "median": 0.04487179487179487,
+       "p95": 0.07601115760111576
+      },
+      "share_risk_above_alpha": 0.16101694915254236,
+      "coverage_minus_ref": {
+       "p5": -0.7254901960784313,
+       "median": -0.6035389765662362,
+       "p95": -0.05643232902917265
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.8273553323768532,
+     "threshold_found": true,
+     "tau": 0.999438464641571,
+     "cal_coverage": 0.9320899091343855,
+     "test_coverage": 0.9273075083692014,
+     "test_risk": 0.12841670964414648,
+     "test_risk_ci": [
+      0.11383821600325092,
+      0.14412890870500258
+     ],
+     "n_accepted": 1939,
+     "violates_alpha": true,
+     "fixed_start": {
+      "oracle_test_coverage": 0.8273553323768532,
+      "threshold_found": true,
+      "tau": 0.999438464641571,
+      "cal_coverage": 0.9320899091343855,
+      "test_coverage": 0.9273075083692014,
+      "test_risk": 0.12841670964414648,
+      "test_risk_ci": [
+       0.11383821600325092,
+       0.14412890870500258
+      ],
+      "n_accepted": 1939,
+      "violates_alpha": true
+     },
+     "coverage_minus_ref": {
+      "point": 0.006217120994739367,
+      "ci_low": -0.005738880918220947,
+      "ci_high": 0.018651362984218076,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.8627450980392157,
+       "median": 0.93974175035868,
+       "p95": 0.9846963175514108
+      },
+      "share_no_threshold": 0.002,
+      "test_risk_when_found": {
+       "p5": 0.10753880266075388,
+       "median": 0.1297709923664122,
+       "p95": 0.14327343370568238
+      },
+      "share_risk_above_alpha": 0.9759519038076152,
+      "coverage_minus_ref": {
+       "p5": -0.02881396461023432,
+       "median": 0.01482544237207084,
+       "p95": 0.04686752749880441
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b windowed (four windows), seed 1",
+   "run": "base-windowed-cuad-steps-s1",
+   "ref": "base-full-cuad-s1",
+   "n_test": 2091,
+   "test": {
+    "n": 2091,
+    "accuracy": 0.8656145384983261,
+    "aurc": 0.04520036185789769,
+    "eaurc": 0.035704431617626736,
+    "ece": 0.12806615770746793,
+    "auroc_error": 0.7991289986433613,
+    "coverage_at_risk_0.02": 0.31563845050215206,
+    "coverage_at_risk_0.05": 0.6231468197034912,
+    "coverage_at_risk_0.1": 0.9048302247728359
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.6231468197034912,
+     "threshold_found": true,
+     "tau": 0.999992847442627,
+     "cal_coverage": 0.6814921090387375,
+     "test_coverage": 0.642754662840746,
+     "test_risk": 0.05282738095238095,
+     "test_risk_ci": [
+      0.04148588309591519,
+      0.06617068272063388
+     ],
+     "n_accepted": 1344,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.6231468197034912,
+      "threshold_found": true,
+      "tau": 0.999992847442627,
+      "cal_coverage": 0.6814921090387375,
+      "test_coverage": 0.642754662840746,
+      "test_risk": 0.05282738095238095,
+      "test_risk_ci": [
+       0.04148588309591519,
+       0.06617068272063388
+      ],
+      "n_accepted": 1344,
+      "violates_alpha": false
+     },
+     "coverage_minus_ref": {
+      "point": 0.015781922525107572,
+      "ci_low": -0.009564801530368245,
+      "ci_high": 0.042085126733620276,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.4500239120038259,
+       "median": 0.642754662840746,
+       "p95": 0.7369679579148732
+      },
+      "share_no_threshold": 0.019,
+      "test_risk_when_found": {
+       "p5": 0.036131774707757705,
+       "median": 0.05282738095238095,
+       "p95": 0.06294613887086307
+      },
+      "share_risk_above_alpha": 0.5504587155963303,
+      "coverage_minus_ref": {
+       "p5": -0.1611669057867049,
+       "median": -0.013629842180774732,
+       "p95": 0.1196795791487325
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.9048302247728359,
+     "threshold_found": true,
+     "tau": 0.9978001713752747,
+     "cal_coverage": 0.9387852702056433,
+     "test_coverage": 0.9177427068388331,
+     "test_risk": 0.10265763418447107,
+     "test_risk_ci": [
+      0.08943254398003134,
+      0.11711055221664501
+     ],
+     "n_accepted": 1919,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.9048302247728359,
+      "threshold_found": true,
+      "tau": 0.9978001713752747,
+      "cal_coverage": 0.9387852702056433,
+      "test_coverage": 0.9177427068388331,
+      "test_risk": 0.10265763418447107,
+      "test_risk_ci": [
+       0.08943254398003134,
+       0.11711055221664501
+      ],
+      "n_accepted": 1919,
+      "violates_alpha": false
+     },
+     "coverage_minus_ref": {
+      "point": -0.0033476805356289496,
+      "ci_low": -0.01721664275466284,
+      "ci_high": 0.011011477761836268,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.8794835007173601,
+       "median": 0.9177427068388331,
+       "p95": 0.9636537541846006
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.09026644915715062,
+       "median": 0.10265763418447107,
+       "p95": 0.12109181141439206
+      },
+      "share_risk_above_alpha": 0.742,
+      "coverage_minus_ref": {
+       "p5": -0.038259206121473044,
+       "median": -0.0014347202295552641,
+       "p95": 0.04686752749880441
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-b full, retuned, seed 1",
+   "run": "base-full-contractnli-lr2e5-bestacc-s1",
+   "ref": null,
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.8586337760910816,
+    "aurc": 0.06472272989371755,
+    "eaurc": 0.054156232617058195,
+    "ece": 0.12536296355882687,
+    "auroc_error": 0.7472245911973006,
+    "coverage_at_risk_0.02": 0.05787476280834915,
+    "coverage_at_risk_0.05": 0.2504743833017078,
+    "coverage_at_risk_0.1": 0.8614800759013282
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.2504743833017078,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.2504743833017078,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.16318785578747627
+      },
+      "share_no_threshold": 0.861,
+      "test_risk_when_found": {
+       "p5": 0.022058823529411766,
+       "median": 0.037037037037037035,
+       "p95": 0.05787781350482315
+      },
+      "share_risk_above_alpha": 0.2158273381294964
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.8614800759013282,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.8614800759013282,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.5607210626185958
+      },
+      "share_no_threshold": 0.86,
+      "test_risk_when_found": {
+       "p5": 0.040697674418604654,
+       "median": 0.05865921787709497,
+       "p95": 0.08403361344537816
+      },
+      "share_risk_above_alpha": 0.014285714285714285
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-b served-masked (retuned full), seed 1",
+   "run": "base-full-contractnli-lr2e5-bestacc-s1@block",
+   "ref": "base-full-contractnli-lr2e5-bestacc-s1",
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.8481973434535104,
+    "aurc": 0.06831078495094567,
+    "eaurc": 0.056085008513955016,
+    "ece": 0.13258840870359595,
+    "auroc_error": 0.7616331096196868,
+    "coverage_at_risk_0.02": 0.05028462998102467,
+    "coverage_at_risk_0.05": 0.31404174573055027,
+    "coverage_at_risk_0.1": 0.8320683111954459
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.31404174573055027,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.31404174573055027,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.09392789373814042
+      },
+      "share_no_threshold": 0.878,
+      "test_risk_when_found": {
+       "p5": 0.030303030303030304,
+       "median": 0.030303030303030304,
+       "p95": 0.048458149779735685
+      },
+      "share_risk_above_alpha": 0.03278688524590164,
+      "coverage_minus_ref": {
+       "p5": -0.06925996204933585,
+       "median": 0.0,
+       "p95": 0.0
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.8320683111954459,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.8320683111954459,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.6992409867172675
+      },
+      "share_no_threshold": 0.818,
+      "test_risk_when_found": {
+       "p5": 0.030303030303030304,
+       "median": 0.07055630936227951,
+       "p95": 0.08322981366459627
+      },
+      "share_risk_above_alpha": 0.0,
+      "coverage_minus_ref": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.3821631878557868
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-b full, retuned, seed 2",
+   "run": "base-full-contractnli-lr2e5-bestacc-s2",
+   "ref": null,
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.8273244781783682,
+    "aurc": 0.06630713307981452,
+    "eaurc": 0.050375951410986726,
+    "ece": 0.127066441940628,
+    "auroc_error": 0.7967726081258192,
+    "coverage_at_risk_0.02": 0.07400379506641366,
+    "coverage_at_risk_0.05": 0.5578747628083491,
+    "coverage_at_risk_0.1": 0.7893738140417458
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.5578747628083491,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.5578747628083491,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.004886148007585689
+      },
+      "share_no_threshold": 0.95,
+      "test_risk_when_found": {
+       "p5": 0.02654867256637168,
+       "median": 0.02912621359223301,
+       "p95": 0.04746600159992471
+      },
+      "share_risk_above_alpha": 0.0
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.7893738140417458,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.7893738140417458,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.6252371916508539
+      },
+      "share_no_threshold": 0.749,
+      "test_risk_when_found": {
+       "p5": 0.017241379310344827,
+       "median": 0.02654867256637168,
+       "p95": 0.06629055007052186
+      },
+      "share_risk_above_alpha": 0.0
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-b served-masked (retuned full), seed 2",
+   "run": "base-full-contractnli-lr2e5-bestacc-s2@block",
+   "ref": "base-full-contractnli-lr2e5-bestacc-s2",
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.8244781783681214,
+    "aurc": 0.06597369968624371,
+    "eaurc": 0.049496726756269004,
+    "ece": 0.13215067790400595,
+    "auroc_error": 0.8016888004229776,
+    "coverage_at_risk_0.02": 0.09582542694497154,
+    "coverage_at_risk_0.05": 0.5692599620493358,
+    "coverage_at_risk_0.1": 0.7903225806451613
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.5692599620493358,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.5692599620493358,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.0
+      },
+      "share_no_threshold": 0.967,
+      "test_risk_when_found": {
+       "p5": 0.021505376344086023,
+       "median": 0.02830188679245283,
+       "p95": 0.047587722622205376
+      },
+      "share_risk_above_alpha": 0.06060606060606061,
+      "coverage_minus_ref": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.0
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.7903225806451613,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.7903225806451613,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.17912713472483716
+      },
+      "share_no_threshold": 0.78,
+      "test_risk_when_found": {
+       "p5": 0.021505376344086023,
+       "median": 0.029850746268656716,
+       "p95": 0.07283267256650139
+      },
+      "share_risk_above_alpha": 0.0,
+      "coverage_minus_ref": {
+       "p5": -0.0981973434535104,
+       "median": 0.0,
+       "p95": 0.0635673624288425
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b full (one window), seed 2",
+   "run": "base-full-cuad-s2",
+   "ref": null,
+   "n_test": 2091,
+   "test": {
+    "n": 2091,
+    "accuracy": 0.8479196556671449,
+    "aurc": 0.047805883684597,
+    "eaurc": 0.03556997141970725,
+    "ece": 0.09516101026580646,
+    "auroc_error": 0.8089706889151387,
+    "coverage_at_risk_0.02": 0.3835485413677666,
+    "coverage_at_risk_0.05": 0.5753228120516499,
+    "coverage_at_risk_0.1": 0.8373983739837398
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.5753228120516499,
+     "threshold_found": true,
+     "tau": 0.9643214344978333,
+     "cal_coverage": 0.7001434720229556,
+     "test_coverage": 0.6709708273553324,
+     "test_risk": 0.06414825374198146,
+     "test_risk_ci": [
+      0.051894932327019756,
+      0.07826314525946668
+     ],
+     "n_accepted": 1403,
+     "violates_alpha": true,
+     "fixed_start": {
+      "oracle_test_coverage": 0.5753228120516499,
+      "threshold_found": true,
+      "tau": 0.9643214344978333,
+      "cal_coverage": 0.7001434720229556,
+      "test_coverage": 0.6709708273553324,
+      "test_risk": 0.06414825374198146,
+      "test_risk_ci": [
+       0.051894932327019756,
+       0.07826314525946668
+      ],
+      "n_accepted": 1403,
+      "violates_alpha": true
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.5772357723577236,
+       "median": 0.6709708273553324,
+       "p95": 0.7350549976087997
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.05136702568351284,
+       "median": 0.06414825374198146,
+       "p95": 0.07677293428757319
+      },
+      "share_risk_above_alpha": 0.956
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.8373983739837398,
+     "threshold_found": true,
+     "tau": 0.7579735517501831,
+     "cal_coverage": 0.9191774270683883,
+     "test_coverage": 0.9253945480631277,
+     "test_risk": 0.12454780361757106,
+     "test_risk_ci": [
+      0.1101540561937395,
+      0.14008978553253415
+     ],
+     "n_accepted": 1935,
+     "violates_alpha": true,
+     "fixed_start": {
+      "oracle_test_coverage": 0.8373983739837398,
+      "threshold_found": true,
+      "tau": 0.7579735517501831,
+      "cal_coverage": 0.9191774270683883,
+      "test_coverage": 0.9253945480631277,
+      "test_risk": 0.12454780361757106,
+      "test_risk_ci": [
+       0.1101540561937395,
+       0.14008978553253415
+      ],
+      "n_accepted": 1935,
+      "violates_alpha": true
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.8560497369679579,
+       "median": 0.9253945480631277,
+       "p95": 0.9713055954088953
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.10446927374301676,
+       "median": 0.12454780361757106,
+       "p95": 0.14229443623830626
+      },
+      "share_risk_above_alpha": 0.989
+     }
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b served-masked (one window), seed 2",
+   "run": "base-full-cuad-s2@block",
+   "ref": "base-full-cuad-s2",
+   "n_test": 2091,
+   "test": {
+    "n": 2091,
+    "accuracy": 0.8498326159732186,
+    "aurc": 0.049380863932843314,
+    "eaurc": 0.037458832650538766,
+    "ece": 0.08636396179810377,
+    "auroc_error": 0.7994024854026502,
+    "coverage_at_risk_0.02": 0.34959349593495936,
+    "coverage_at_risk_0.05": 0.5691056910569106,
+    "coverage_at_risk_0.1": 0.8383548541367767
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.5691056910569106,
+     "threshold_found": true,
+     "tau": 0.9658995866775513,
+     "cal_coverage": 0.689143950263032,
+     "test_coverage": 0.6508847441415591,
+     "test_risk": 0.06318883174136664,
+     "test_risk_ci": [
+      0.05085021397809379,
+      0.07745211203455907
+     ],
+     "n_accepted": 1361,
+     "violates_alpha": true,
+     "fixed_start": {
+      "oracle_test_coverage": 0.5691056910569106,
+      "threshold_found": true,
+      "tau": 0.9658995866775513,
+      "cal_coverage": 0.689143950263032,
+      "test_coverage": 0.6508847441415591,
+      "test_risk": 0.06318883174136664,
+      "test_risk_ci": [
+       0.05085021397809379,
+       0.07745211203455907
+      ],
+      "n_accepted": 1361,
+      "violates_alpha": true
+     },
+     "coverage_minus_ref": {
+      "point": -0.020086083213773365,
+      "ci_low": -0.028694404591104734,
+      "ci_high": -0.011956001912960305,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.5576279292204687,
+       "median": 0.6508847441415591,
+       "p95": 0.7326637972262076
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.04888507718696398,
+       "median": 0.06318883174136664,
+       "p95": 0.07702349869451697
+      },
+      "share_risk_above_alpha": 0.923,
+      "coverage_minus_ref": {
+       "p5": -0.042563366810138725,
+       "median": -0.0019129603060735745,
+       "p95": 0.02917264466762315
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.8383548541367767,
+     "threshold_found": true,
+     "tau": 0.7365901470184326,
+     "cal_coverage": 0.9306551889048302,
+     "test_coverage": 0.9220468675274988,
+     "test_risk": 0.12344398340248963,
+     "test_risk_ci": [
+      0.1090825957646065,
+      0.13896130488529623
+     ],
+     "n_accepted": 1928,
+     "violates_alpha": true,
+     "fixed_start": {
+      "oracle_test_coverage": 0.8383548541367767,
+      "threshold_found": true,
+      "tau": 0.7365901470184326,
+      "cal_coverage": 0.9306551889048302,
+      "test_coverage": 0.9220468675274988,
+      "test_risk": 0.12344398340248963,
+      "test_risk_ci": [
+       0.1090825957646065,
+       0.13896130488529623
+      ],
+      "n_accepted": 1928,
+      "violates_alpha": true
+     },
+     "coverage_minus_ref": {
+      "point": -0.0033476805356289496,
+      "ci_low": -0.013868962219033954,
+      "ci_high": 0.007173601147776184,
+      "n_documents": 51
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 51,
+      "coverage": {
+       "p5": 0.8507890961262554,
+       "median": 0.9220468675274988,
+       "p95": 0.975609756097561
+      },
+      "share_no_threshold": 0.0,
+      "test_risk_when_found": {
+       "p5": 0.10342889263631254,
+       "median": 0.12344398340248963,
+       "p95": 0.14166666666666666
+      },
+      "share_risk_above_alpha": 0.99,
+      "coverage_minus_ref": {
+       "p5": -0.021544715447154437,
+       "median": -0.004782400765184103,
+       "p95": 0.017694882831181258
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-l full, seed 1",
+   "run": "large-full-contractnli-s1",
+   "ref": null,
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.8851992409867173,
+    "aurc": 0.038908892295896384,
+    "eaurc": 0.03199712551388623,
+    "ece": 0.09872607527693039,
+    "auroc_error": 0.8009221120884378,
+    "coverage_at_risk_0.02": 0.198292220113852,
+    "coverage_at_risk_0.05": 0.7096774193548387,
+    "coverage_at_risk_0.1": 0.961100569259962
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.7096774193548387,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.7096774193548387,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.642314990512334
+      },
+      "share_no_threshold": 0.597,
+      "test_risk_when_found": {
+       "p5": 0.0,
+       "median": 0.02786377708978328,
+       "p95": 0.051451187335092345
+      },
+      "share_risk_above_alpha": 0.07196029776674938
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.961100569259962,
+     "threshold_found": true,
+     "tau": 0.9793509244918823,
+     "cal_coverage": 0.8659594985535197,
+     "test_coverage": 0.9079696394686907,
+     "test_risk": 0.08254963427377221,
+     "test_risk_ci": [
+      0.06589772863507172,
+      0.10182118007798269
+     ],
+     "n_accepted": 957,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.961100569259962,
+      "threshold_found": true,
+      "tau": 0.9793509244918823,
+      "cal_coverage": 0.8659594985535197,
+      "test_coverage": 0.9079696394686907,
+      "test_risk": 0.08254963427377221,
+      "test_risk_ci": [
+       0.06589772863507172,
+       0.10182118007798269
+      ],
+      "n_accepted": 957,
+      "violates_alpha": false
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.05977229601518026,
+       "median": 0.8927893738140418,
+       "p95": 0.9345351043643264
+      },
+      "share_no_threshold": 0.001,
+      "test_risk_when_found": {
+       "p5": 0.0,
+       "median": 0.0765143464399575,
+       "p95": 0.09035532994923857
+      },
+      "share_risk_above_alpha": 0.004004004004004004
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-l served-masked, seed 1",
+   "run": "large-full-contractnli-s1@block",
+   "ref": "large-full-contractnli-s1",
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.8690702087286528,
+    "aurc": 0.039567790806376145,
+    "eaurc": 0.030533717924823043,
+    "ece": 0.10714172827790319,
+    "auroc_error": 0.8164554458578571,
+    "coverage_at_risk_0.02": 0.4819734345351044,
+    "coverage_at_risk_0.05": 0.6176470588235294,
+    "coverage_at_risk_0.1": 0.9231499051233396
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.6176470588235294,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.6176470588235294,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.6679316888045541
+      },
+      "share_no_threshold": 0.615,
+      "test_risk_when_found": {
+       "p5": 0.0040650406504065045,
+       "median": 0.03571428571428571,
+       "p95": 0.06176314331033677
+      },
+      "share_risk_above_alpha": 0.3012987012987013,
+      "coverage_minus_ref": {
+       "p5": -0.103415559772296,
+       "median": 0.0,
+       "p95": 0.26280834914611007
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.9231499051233396,
+     "threshold_found": true,
+     "tau": 0.9862909913063049,
+     "cal_coverage": 0.7647058823529411,
+     "test_coverage": 0.8130929791271347,
+     "test_risk": 0.07117852975495916,
+     "test_risk_ci": [
+      0.05488004773587062,
+      0.09049590630396297
+     ],
+     "n_accepted": 857,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.9231499051233396,
+      "threshold_found": true,
+      "tau": 0.9862909913063049,
+      "cal_coverage": 0.7647058823529411,
+      "test_coverage": 0.8130929791271347,
+      "test_risk": 0.07117852975495916,
+      "test_risk_ci": [
+       0.05488004773587062,
+       0.09049590630396297
+      ],
+      "n_accepted": 857,
+      "violates_alpha": false
+     },
+     "coverage_minus_ref": {
+      "point": -0.09487666034155595,
+      "ci_low": -0.11669829222011385,
+      "ci_high": -0.07400379506641366,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.046489563567362426,
+       "median": 0.8026565464895635,
+       "p95": 0.8349146110056926
+      },
+      "share_no_threshold": 0.005,
+      "test_risk_when_found": {
+       "p5": 0.0,
+       "median": 0.06855791962174941,
+       "p95": 0.075
+      },
+      "share_risk_above_alpha": 0.0,
+      "coverage_minus_ref": {
+       "p5": -0.8614800759013282,
+       "median": -0.09013282732447825,
+       "p95": -0.013282732447817837
+      }
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-l full, seed 2",
+   "run": "large-full-contractnli-s2",
+   "ref": null,
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.8908918406072106,
+    "aurc": 0.05132356856073531,
+    "eaurc": 0.04509040620721912,
+    "ece": 0.09820095572684245,
+    "auroc_error": 0.7486919479557346,
+    "coverage_at_risk_0.02": 0.009487666034155597,
+    "coverage_at_risk_0.05": 0.5246679316888045,
+    "coverage_at_risk_0.1": 0.9705882352941176
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.5246679316888045,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.5246679316888045,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.49430740037950666
+      },
+      "share_no_threshold": 0.625,
+      "test_risk_when_found": {
+       "p5": 0.025510204081632654,
+       "median": 0.044270833333333336,
+       "p95": 0.0548885077186964
+      },
+      "share_risk_above_alpha": 0.16533333333333333
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.9705882352941176,
+     "threshold_found": true,
+     "tau": 0.9872493147850037,
+     "cal_coverage": 0.8881388621022179,
+     "test_coverage": 0.9117647058823529,
+     "test_risk": 0.07908428720083246,
+     "test_risk_ci": [
+      0.06281271043686024,
+      0.09798797600222188
+     ],
+     "n_accepted": 961,
+     "violates_alpha": false,
+     "fixed_start": {
+      "oracle_test_coverage": 0.9705882352941176,
+      "threshold_found": true,
+      "tau": 0.9872493147850037,
+      "cal_coverage": 0.8881388621022179,
+      "test_coverage": 0.9117647058823529,
+      "test_risk": 0.07908428720083246,
+      "test_risk_ci": [
+       0.06281271043686024,
+       0.09798797600222188
+      ],
+      "n_accepted": 961,
+      "violates_alpha": false
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.8975332068311196,
+       "p95": 0.9639468690702088
+      },
+      "share_no_threshold": 0.158,
+      "test_risk_when_found": {
+       "p5": 0.05714285714285714,
+       "median": 0.07908428720083246,
+       "p95": 0.09547244094488189
+      },
+      "share_risk_above_alpha": 0.0011876484560570072
+     }
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-l served-masked, seed 2",
+   "run": "large-full-contractnli-s2@block",
+   "ref": "large-full-contractnli-s2",
+   "n_test": 1054,
+   "test": {
+    "n": 1054,
+    "accuracy": 0.8662239089184061,
+    "aurc": 0.046563032913170196,
+    "eaurc": 0.037123519087651616,
+    "ece": 0.11495340249343884,
+    "auroc_error": 0.8082232217069438,
+    "coverage_at_risk_0.02": 0.19070208728652752,
+    "coverage_at_risk_0.05": 0.6736242884250474,
+    "coverage_at_risk_0.1": 0.920303605313093
+   },
+   "alpha": {
+    "0.05": {
+     "oracle_test_coverage": 0.6736242884250474,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.6736242884250474,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.681214421252372
+      },
+      "share_no_threshold": 0.625,
+      "test_risk_when_found": {
+       "p5": 0.017543859649122806,
+       "median": 0.04308797127468582,
+       "p95": 0.053497942386831275
+      },
+      "share_risk_above_alpha": 0.312,
+      "coverage_minus_ref": {
+       "p5": -0.07001897533206823,
+       "median": 0.0,
+       "p95": 0.26959203036053125
+      }
+     }
+    },
+    "0.1": {
+     "oracle_test_coverage": 0.920303605313093,
+     "threshold_found": false,
+     "tau": null,
+     "test_coverage": 0.0,
+     "test_risk": null,
+     "fixed_start": {
+      "oracle_test_coverage": 0.920303605313093,
+      "threshold_found": false,
+      "tau": null,
+      "test_coverage": 0.0,
+      "test_risk": null
+     },
+     "coverage_minus_ref": {
+      "point": -0.9117647058823529,
+      "ci_low": -0.9307400379506642,
+      "ci_high": -0.8918406072106262,
+      "n_documents": 62
+     },
+     "cal_bootstrap": {
+      "n_resamples": 1000,
+      "n_cal_documents": 61,
+      "coverage": {
+       "p5": 0.0,
+       "median": 0.0,
+       "p95": 0.8690702087286527
+      },
+      "share_no_threshold": 0.615,
+      "test_risk_when_found": {
+       "p5": 0.06427688504326329,
+       "median": 0.07874015748031496,
+       "p95": 0.08432432432432432
+      },
+      "share_risk_above_alpha": 0.0,
+      "coverage_minus_ref": {
+       "p5": -0.9392789373814042,
+       "median": -0.061669829222011474,
+       "p95": 0.0
+      }
+     }
+    }
+   }
+  }
+ ]
+}

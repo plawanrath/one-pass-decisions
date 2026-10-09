@@ -1,0 +1,12 @@
+{
+ "backend": "hf-tight",
+ "model": "decoder-smol360-cuad-lr1e4",
+ "task": "cuad",
+ "max_model_len": 8192,
+ "cells": {
+  "8192:41": {
+   "prefix_cap": 8000,
+   "prefix_tokens_median": 8001.0
+  }
+ }
+}

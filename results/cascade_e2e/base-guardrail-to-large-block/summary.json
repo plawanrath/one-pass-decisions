@@ -1,0 +1,42 @@
+{
+ "task": "guardrail",
+ "n": 1000,
+ "tau": 0.5780367851257324,
+ "target": "large-block",
+ "s1_ms": 14.26,
+ "s2_ms": 60.7,
+ "accuracy": {
+  "system1": 0.875,
+  "target": 0.894,
+  "cascade": 0.884
+ },
+ "delta_vs_target_pp": {
+  "point": -1.0000000000000009,
+  "ci_low": -1.9000000000000017,
+  "ci_high": -0.10000000000000009
+ },
+ "delta_vs_system1_pp": {
+  "point": 0.9000000000000008,
+  "ci_low": -0.30000000000000027,
+  "ci_high": 2.100000000000002
+ },
+ "mean_ms": 21.7261,
+ "target_alone_ms": 34.29,
+ "escalate_rate": 0.123,
+ "accepted": {
+  "n": 877,
+  "risk": 0.036488027366020526,
+  "risk_ci_low": 0.02508915037415893,
+  "risk_ci_high": 0.05112185987439782,
+  "violates_alpha": false
+ },
+ "escalated": {
+  "n": 123,
+  "system1_accuracy": 0.24390243902439024,
+  "final_accuracy": 0.3170731707317073,
+  "mean_ms": 74.95999999999992,
+  "p99_ms": 74.96000000000001,
+  "usd_share": 0.4243780522044888
+ },
+ "escalation_gain_pp": 0.9000000000000001
+}

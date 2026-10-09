@@ -1,0 +1,109 @@
+{
+ "host": "x86_64-linux-cuda-bf16",
+ "threads": 8,
+ "size": "base",
+ "task": "cuad",
+ "torch": "2.14.1+cu130",
+ "grid": {
+  "S8192_K41": {
+   "N": 2,
+   "p50_ms": {
+    "torch-one-seq-full": 3821.2202549912035,
+    "torch-compile-one-seq-full": 3304.936286062002,
+    "varlen-torch-varlen-one-seq-full": 1776.9466880708933,
+    "varlen-torch-varlen-batched-full": 1606.2600738368928,
+    "torch-naive-batch-full": 3640.3613188304007,
+    "engine-cold": 130.13529917225242,
+    "engine-hit": 33.76127406954765
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 93.2004940241757,
+    "torch-compile-one-seq-full": 80.60820209907322,
+    "varlen-torch-varlen-one-seq-full": 43.34016312368033,
+    "varlen-torch-varlen-batched-full": 39.177074971631534,
+    "torch-naive-batch-full": 88.78930045927807,
+    "engine-cold": 3.1740316871281076,
+    "engine-hit": 0.8234457090133573
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.9479872002842097,
+     "ci_high": 1.0551019383945748,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 3821.2202549912035,
+     "reference_p50_ms": 3821.2202549912035,
+     "K": 41,
+     "S": 8192
+    },
+    "torch-compile-one-seq-full": {
+     "speedup": 1.1562160127281544,
+     "ci_low": 1.0924351642595915,
+     "ci_high": 1.2153748827705484,
+     "cell": "torch-compile-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 3304.936286062002,
+     "reference_p50_ms": 3821.2202549912035,
+     "K": 41,
+     "S": 8192
+    },
+    "varlen-torch-varlen-one-seq-full": {
+     "speedup": 2.1504416990357966,
+     "ci_low": 1.9277626455330206,
+     "ci_high": 2.3320775292506735,
+     "cell": "varlen-torch-varlen-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 1776.9466880708933,
+     "reference_p50_ms": 3821.2202549912035,
+     "K": 41,
+     "S": 8192
+    },
+    "varlen-torch-varlen-batched-full": {
+     "speedup": 2.37895488858377,
+     "ci_low": 2.1294620662715458,
+     "ci_high": 2.56150649578618,
+     "cell": "varlen-torch-varlen-batched-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 1606.2600738368928,
+     "reference_p50_ms": 3821.2202549912035,
+     "K": 41,
+     "S": 8192
+    },
+    "torch-naive-batch-full": {
+     "speedup": 1.0496815893590778,
+     "ci_low": 0.9985661117609738,
+     "ci_high": 1.107163574014619,
+     "cell": "torch-naive-batch-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 3640.3613188304007,
+     "reference_p50_ms": 3821.2202549912035,
+     "K": 41,
+     "S": 8192
+    },
+    "engine-cold": {
+     "speedup": 29.363441581928356,
+     "ci_low": 27.99474114096379,
+     "ci_high": 31.28234487946813,
+     "cell": "engine-cold",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 130.13529917225242,
+     "reference_p50_ms": 3821.2202549912035,
+     "K": 41,
+     "S": 8192
+    },
+    "engine-hit": {
+     "speedup": 113.18353232521837,
+     "ci_low": 109.76538222823883,
+     "ci_high": 119.12433633180834,
+     "cell": "engine-hit",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 33.76127406954765,
+     "reference_p50_ms": 3821.2202549912035,
+     "K": 41,
+     "S": 8192
+    }
+   }
+  }
+ }
+}

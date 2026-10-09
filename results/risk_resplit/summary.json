@@ -1,0 +1,2044 @@
+{
+ "alpha": 0.1,
+ "delta": 0.05,
+ "resplits": 500,
+ "arms": [
+  {
+   "task": "contractnli",
+   "arm": "MB-b full",
+   "run": "base-full-contractnli",
+   "n_cal": 1037,
+   "cal_documents": 61,
+   "original": {
+    "question-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    },
+    "document-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    }
+   },
+   "design_effect_cal": null,
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.1,
+     "share_risk_above_alpha": 0.07333333333333333,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.0,
+      0.06962253336608532,
+      0.10353161086445033
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.44924098671726753,
+      0.608301707779886
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.06,
+     "share_risk_above_alpha": 0.12340425531914893,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.039988070892978865,
+      0.07724764274710952,
+      0.10710216739137758
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.5592979127134725,
+      0.6176944971537002
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.046,
+     "share_risk_above_alpha": 0.050314465408805034,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.0,
+      0.05449591280653951,
+      0.10009569377990431
+     ],
+     "coverage_p5_p50_p95": [
+      0.026565464895635674,
+      0.3429791271347249,
+      0.5996679316888045
+     ]
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-b block, equal epochs",
+   "run": "base-block-contractnli",
+   "n_cal": 1037,
+   "cal_documents": 61,
+   "original": {
+    "question-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    },
+    "document-test": {
+     "tau": 0.8772416114807129,
+     "found": true,
+     "coverage": 0.4857685009487666,
+     "risk": 0.052734375,
+     "above": false,
+     "ci_above": false
+    }
+   },
+   "design_effect_cal": null,
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.154,
+     "share_risk_above_alpha": 0.09219858156028368,
+     "share_ci_above_alpha": 0.002364066193853428,
+     "test_risk_p5_p50_p95": [
+      0.05523692889708022,
+      0.07692307692307693,
+      0.10696004285338151
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.49620493358633777,
+      0.5493358633776091
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.002,
+     "share_risk_above_alpha": 0.12024048096192384,
+     "share_ci_above_alpha": 0.004008016032064128,
+     "test_risk_p5_p50_p95": [
+      0.05406518803013582,
+      0.07879924953095685,
+      0.10769467213114753
+     ],
+     "coverage_p5_p50_p95": [
+      0.46864326375711574,
+      0.5037950664136622,
+      0.5579222011385199
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.09,
+     "share_risk_above_alpha": 0.07252747252747253,
+     "share_ci_above_alpha": 0.004395604395604396,
+     "test_risk_p5_p50_p95": [
+      0.049811092101511266,
+      0.0741444866920152,
+      0.10443580809434468
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.4952561669829222,
+      0.542741935483871
+     ]
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-b block, equal steps",
+   "run": "base-block-contractnli-steps",
+   "n_cal": 1037,
+   "cal_documents": 61,
+   "original": {
+    "question-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    },
+    "document-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    }
+   },
+   "design_effect_cal": null,
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.988,
+     "share_risk_above_alpha": 1.0,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.1129306558532425,
+      0.11467437976470837,
+      0.11745163157584915
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.964,
+     "share_risk_above_alpha": 1.0,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.10766625615763546,
+      0.11038244316390011,
+      0.1172956360496831
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.972,
+     "share_risk_above_alpha": 1.0,
+     "share_ci_above_alpha": 0.07142857142857142,
+     "test_risk_p5_p50_p95": [
+      0.11280879307098475,
+      0.11516663722546075,
+      0.12794568335941575
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.0,
+      0.0
+     ]
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-l full",
+   "run": "large-full-contractnli",
+   "n_cal": 1037,
+   "cal_documents": 61,
+   "original": {
+    "question-test": {
+     "tau": 0.9773380756378174,
+     "found": true,
+     "coverage": 0.9022770398481973,
+     "risk": 0.07570977917981073,
+     "above": false,
+     "ci_above": false
+    },
+    "document-test": {
+     "tau": 0.9773380756378174,
+     "found": true,
+     "coverage": 0.9022770398481973,
+     "risk": 0.07570977917981073,
+     "above": false,
+     "ci_above": false
+    }
+   },
+   "design_effect_cal": {
+    "n_accepted": 913,
+    "risk": 0.08214676889375684,
+    "design_effect": 0.7022093999778678,
+    "n_effective": 1300.1819685535054,
+    "documents": 61
+   },
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.09,
+     "share_risk_above_alpha": 0.054945054945054944,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.0,
+      0.07782515991471216,
+      0.10194813931443598
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.8908918406072106,
+      0.9364800759013282
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.016,
+     "share_risk_above_alpha": 0.09959349593495935,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.0640759803480483,
+      0.08258837645892,
+      0.10214814012409203
+     ],
+     "coverage_p5_p50_p95": [
+      0.872865275142315,
+      0.905123339658444,
+      0.9430740037950665
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.004,
+     "share_risk_above_alpha": 0.06224899598393574,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.0,
+      0.07822410147991543,
+      0.10295285194377021
+     ],
+     "coverage_p5_p50_p95": [
+      0.03795066413662239,
+      0.8956356736242884,
+      0.9374288425047438
+     ]
+    }
+   },
+   "share_contract_resplits_risk_ge_original": 0.589010989010989
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-l block, equal steps",
+   "run": "large-block-contractnli-e30",
+   "n_cal": 1037,
+   "cal_documents": 61,
+   "original": {
+    "question-test": {
+     "tau": 0.9999967813491821,
+     "found": true,
+     "coverage": 0.4629981024667932,
+     "risk": 0.06967213114754098,
+     "above": false,
+     "ci_above": false
+    },
+    "document-test": {
+     "tau": 0.9999961853027344,
+     "found": true,
+     "coverage": 0.4696394686907021,
+     "risk": 0.07676767676767676,
+     "above": false,
+     "ci_above": false
+    }
+   },
+   "design_effect_cal": {
+    "n_accepted": 443,
+    "risk": 0.06772009029345373,
+    "design_effect": 0.7456623187922323,
+    "n_effective": 594.1027041805439,
+    "documents": 59
+   },
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.174,
+     "share_risk_above_alpha": 0.06295399515738499,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.046487394957983194,
+      0.06976744186046512,
+      0.10105871474803513
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.44212523719165087,
+      0.49430740037950666
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.054,
+     "share_risk_above_alpha": 0.0613107822410148,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.05462569212207955,
+      0.07676767676767676,
+      0.10181440601410073
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.45161290322580644,
+      0.5826850094876521
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.156,
+     "share_risk_above_alpha": 0.07109004739336493,
+     "share_ci_above_alpha": 0.002369668246445498,
+     "test_risk_p5_p50_p95": [
+      0.04635704709234121,
+      0.07872340425531915,
+      0.10204874917163684
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.4459203036053131,
+      0.49160341555977216
+     ]
+    }
+   },
+   "share_contract_resplits_risk_ge_original": 0.5036319612590799
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-l full, dev-AURC selection",
+   "run": "large-full-contractnli-sel",
+   "n_cal": 1037,
+   "cal_documents": 61,
+   "original": {
+    "question-test": {
+     "tau": 0.9997438788414001,
+     "found": true,
+     "coverage": 0.04364326375711575,
+     "risk": 0.0,
+     "above": false,
+     "ci_above": false
+    },
+    "document-test": {
+     "tau": 0.9997323155403137,
+     "found": true,
+     "coverage": 0.05313092979127135,
+     "risk": 0.0,
+     "above": false,
+     "ci_above": false
+    }
+   },
+   "design_effect_cal": {
+    "n_accepted": 33,
+    "risk": 0.0,
+    "design_effect": NaN,
+    "n_effective": NaN,
+    "documents": 15
+   },
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.038,
+     "share_risk_above_alpha": 0.0395010395010395,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.0,
+      0.07399347116430903,
+      0.09865005192107996
+     ],
+     "coverage_p5_p50_p95": [
+      0.03889943074003795,
+      0.8747628083491461,
+      0.920303605313093
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.016,
+     "share_risk_above_alpha": 0.042682926829268296,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.0,
+      0.08129641027957693,
+      0.09912248119602562
+     ],
+     "coverage_p5_p50_p95": [
+      0.04933586337760911,
+      0.8908918406072106,
+      0.9250474383301708
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.004,
+     "share_risk_above_alpha": 0.03815261044176707,
+     "share_ci_above_alpha": 0.002008032128514056,
+     "test_risk_p5_p50_p95": [
+      0.0,
+      0.07417420058395188,
+      0.09948186528497409
+     ],
+     "coverage_p5_p50_p95": [
+      0.03984819734345351,
+      0.8795066413662239,
+      0.9212998102466793
+     ]
+    }
+   },
+   "share_contract_resplits_risk_ge_original": 1.0
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-l block, steps, dev-AURC selection",
+   "run": "large-block-contractnli-sel",
+   "n_cal": 1037,
+   "cal_documents": 61,
+   "original": {
+    "question-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    },
+    "document-test": {
+     "tau": 0.8117711544036865,
+     "found": true,
+     "coverage": 0.8434535104364327,
+     "risk": 0.0764904386951631,
+     "above": false,
+     "ci_above": false
+    }
+   },
+   "design_effect_cal": null,
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.498,
+     "share_risk_above_alpha": 0.09561752988047809,
+     "share_ci_above_alpha": 0.00796812749003984,
+     "test_risk_p5_p50_p95": [
+      0.05734775210971669,
+      0.07924107142857142,
+      0.10313356122445409
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.7632827324478177,
+      0.8748102466793168
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.01,
+     "share_risk_above_alpha": 0.08686868686868687,
+     "share_ci_above_alpha": 0.00404040404040404,
+     "test_risk_p5_p50_p95": [
+      0.05767873303167421,
+      0.07927519818799547,
+      0.1022329460269865
+     ],
+     "coverage_p5_p50_p95": [
+      0.7893738140417458,
+      0.8425047438330171,
+      0.8833017077798861
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.484,
+     "share_risk_above_alpha": 0.09302325581395349,
+     "share_ci_above_alpha": 0.003875968992248062,
+     "test_risk_p5_p50_p95": [
+      0.06310315887468175,
+      0.08426290279786396,
+      0.10450086878538196
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.8007590132827325,
+      0.8766603415559773
+     ]
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b full (one window)",
+   "run": "base-full-cuad",
+   "n_cal": 2091,
+   "cal_documents": 51,
+   "original": {
+    "question-test": {
+     "tau": 0.6951311230659485,
+     "found": true,
+     "coverage": 0.9693926351028216,
+     "risk": 0.12185495806610755,
+     "above": true,
+     "ci_above": true
+    },
+    "document-test": {
+     "tau": 0.7871550917625427,
+     "found": true,
+     "coverage": 0.9421329507412721,
+     "risk": 0.1131979695431472,
+     "above": true,
+     "ci_above": false
+    }
+   },
+   "design_effect_cal": {
+    "n_accepted": 2012,
+    "risk": 0.08797216699801193,
+    "design_effect": 2.2343218338332815,
+    "n_effective": 900.4969514835477,
+    "documents": 51
+   },
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.148,
+     "share_ci_above_alpha": 0.036,
+     "test_risk_p5_p50_p95": [
+      0.06516507758503942,
+      0.08699090947736766,
+      0.11313417142623813
+     ],
+     "coverage_p5_p50_p95": [
+      0.8737207077953133,
+      0.9124820659971306,
+      0.9464610234337637
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.11,
+     "share_ci_above_alpha": 0.02,
+     "test_risk_p5_p50_p95": [
+      0.0593972844622237,
+      0.08284652150823155,
+      0.10476891115604782
+     ],
+     "coverage_p5_p50_p95": [
+      0.8573648971783836,
+      0.8969392635102822,
+      0.934026781444285
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.054,
+     "share_ci_above_alpha": 0.002,
+     "test_risk_p5_p50_p95": [
+      0.07229162186215422,
+      0.08714992958865528,
+      0.10041453305042523
+     ],
+     "coverage_p5_p50_p95": [
+      0.8865853658536584,
+      0.9134385461501674,
+      0.9368723098995696
+     ]
+    }
+   },
+   "share_contract_resplits_risk_ge_original": 0.016
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b block (one window), equal steps",
+   "run": "base-block-cuad-steps",
+   "n_cal": 2091,
+   "cal_documents": 51,
+   "original": {
+    "question-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    },
+    "document-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    }
+   },
+   "design_effect_cal": null,
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.816,
+     "share_risk_above_alpha": 0.358695652173913,
+     "share_ci_above_alpha": 0.15217391304347827,
+     "test_risk_p5_p50_p95": [
+      0.08559629644727236,
+      0.09821428571428571,
+      0.12561156343110966
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.0,
+      0.8889287422285984
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.7,
+     "share_risk_above_alpha": 0.2733333333333333,
+     "share_ci_above_alpha": 0.07333333333333333,
+     "test_risk_p5_p50_p95": [
+      0.08277272574745814,
+      0.09485904857790083,
+      0.11667166079856169
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.0,
+      0.8619560019129602
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.906,
+     "share_risk_above_alpha": 0.23404255319148937,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.08519762101934804,
+      0.09642857142857143,
+      0.10433182181915177
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.0,
+      0.08560497369679579
+     ]
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b windowed (four windows), equal steps",
+   "run": "base-windowed-cuad-steps",
+   "n_cal": 2091,
+   "cal_documents": 51,
+   "original": {
+    "question-test": {
+     "tau": 0.5,
+     "found": true,
+     "coverage": 1.0,
+     "risk": 0.11238641798182687,
+     "above": true,
+     "ci_above": false
+    },
+    "document-test": {
+     "tau": 0.9458011984825134,
+     "found": true,
+     "coverage": 0.9808703969392635,
+     "risk": 0.10433934666016577,
+     "above": true,
+     "ci_above": false
+    }
+   },
+   "design_effect_cal": {
+    "n_accepted": 2091,
+    "risk": 0.08703969392635102,
+    "design_effect": 2.483167068656855,
+    "n_effective": 842.0698012603001,
+    "documents": 51
+   },
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.104,
+     "share_ci_above_alpha": 0.02,
+     "test_risk_p5_p50_p95": [
+      0.06917523481184598,
+      0.08335388916296661,
+      0.11047345767575323
+     ],
+     "coverage_p5_p50_p95": [
+      0.9492826398852224,
+      0.9689143950263032,
+      1.0
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.104,
+     "share_ci_above_alpha": 0.016,
+     "test_risk_p5_p50_p95": [
+      0.06425625934965751,
+      0.08331267559081143,
+      0.10210260721298511
+     ],
+     "coverage_p5_p50_p95": [
+      0.9363701578192253,
+      0.9655667144906743,
+      0.9827833572453372
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.044,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.07217683668359683,
+      0.08357988381490916,
+      0.09936934334226415
+     ],
+     "coverage_p5_p50_p95": [
+      0.9540889526542324,
+      0.9693926351028216,
+      0.9851745576279293
+     ]
+    }
+   },
+   "share_contract_resplits_risk_ge_original": 0.03
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b block, steps, dev-AURC selection",
+   "run": "base-block-cuad-sel",
+   "n_cal": 2091,
+   "cal_documents": 51,
+   "original": {
+    "question-test": {
+     "tau": 0.6546739935874939,
+     "found": true,
+     "coverage": 0.9196556671449068,
+     "risk": 0.12064482579303172,
+     "above": true,
+     "ci_above": true
+    },
+    "document-test": {
+     "tau": 0.6546739935874939,
+     "found": true,
+     "coverage": 0.9196556671449068,
+     "risk": 0.12064482579303172,
+     "above": true,
+     "ci_above": true
+    }
+   },
+   "design_effect_cal": {
+    "n_accepted": 1921,
+    "risk": 0.08381051535658511,
+    "design_effect": 2.0683474837974645,
+    "n_effective": 928.7607691880979,
+    "documents": 51
+   },
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.186,
+     "share_ci_above_alpha": 0.036,
+     "test_risk_p5_p50_p95": [
+      0.06373382566723976,
+      0.08629304058182391,
+      0.11106385656770103
+     ],
+     "coverage_p5_p50_p95": [
+      0.8134624581539933,
+      0.8625059780009565,
+      0.9063366810138689
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.102,
+     "share_ci_above_alpha": 0.022,
+     "test_risk_p5_p50_p95": [
+      0.058268247246569566,
+      0.08030870635160231,
+      0.1052175091955107
+     ],
+     "coverage_p5_p50_p95": [
+      0.7919416547106648,
+      0.8373983739837398,
+      0.8871592539454806
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.06,
+     "share_ci_above_alpha": 0.004,
+     "test_risk_p5_p50_p95": [
+      0.07017404052874689,
+      0.0859673997272595,
+      0.1018003528038966
+     ],
+     "coverage_p5_p50_p95": [
+      0.826829268292683,
+      0.8598756575801052,
+      0.890961262553802
+     ]
+    }
+   },
+   "share_contract_resplits_risk_ge_original": 0.014
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b windowed, steps, dev-AURC selection",
+   "run": "base-windowed-cuad-sel",
+   "n_cal": 2091,
+   "cal_documents": 51,
+   "original": {
+    "question-test": {
+     "tau": 0.5220803618431091,
+     "found": true,
+     "coverage": 0.9890004782400765,
+     "risk": 0.11750483558994197,
+     "above": true,
+     "ci_above": true
+    },
+    "document-test": {
+     "tau": 0.5614402294158936,
+     "found": true,
+     "coverage": 0.9708273553323769,
+     "risk": 0.11280788177339901,
+     "above": true,
+     "ci_above": false
+    }
+   },
+   "design_effect_cal": {
+    "n_accepted": 2067,
+    "risk": 0.0880503144654088,
+    "design_effect": 1.7721378452386916,
+    "n_effective": 1166.387821101802,
+    "documents": 51
+   },
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.158,
+     "share_ci_above_alpha": 0.026,
+     "test_risk_p5_p50_p95": [
+      0.0666631430584919,
+      0.0870450552696631,
+      0.10931114788302261
+     ],
+     "coverage_p5_p50_p95": [
+      0.90480631276901,
+      0.9402199904351984,
+      0.9722620755619321
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.112,
+     "share_ci_above_alpha": 0.02,
+     "test_risk_p5_p50_p95": [
+      0.06222788493901095,
+      0.08405965544273947,
+      0.10643557999644021
+     ],
+     "coverage_p5_p50_p95": [
+      0.8890483022477284,
+      0.9263510282161646,
+      0.9641319942611191
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.108,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.06932495600140795,
+      0.08771035186129526,
+      0.10298507462686567
+     ],
+     "coverage_p5_p50_p95": [
+      0.9057627929220469,
+      0.9406982305117169,
+      0.9631994261119081
+     ]
+    }
+   },
+   "share_contract_resplits_risk_ge_original": 0.024
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-b full, retuned",
+   "run": "base-full-contractnli-lr2e5-bestacc",
+   "n_cal": 1037,
+   "cal_documents": 61,
+   "original": {
+    "question-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    },
+    "document-test": {
+     "tau": 0.996944010257721,
+     "found": true,
+     "coverage": 0.7343453510436433,
+     "risk": 0.06847545219638243,
+     "above": false,
+     "ci_above": false
+    }
+   },
+   "design_effect_cal": null,
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.214,
+     "share_risk_above_alpha": 0.06870229007633588,
+     "share_ci_above_alpha": 0.007633587786259542,
+     "test_risk_p5_p50_p95": [
+      0.04886334566911677,
+      0.07770700636942675,
+      0.10411622276029056
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.7129981024667932,
+      0.7894686907020873
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.094,
+     "share_ci_above_alpha": 0.01,
+     "test_risk_p5_p50_p95": [
+      0.050331354760379074,
+      0.07777705586255951,
+      0.10560415942259176
+     ],
+     "coverage_p5_p50_p95": [
+      0.5711100569259963,
+      0.7291271347248577,
+      0.8036527514231498
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.25,
+     "share_risk_above_alpha": 0.09866666666666667,
+     "share_ci_above_alpha": 0.0026666666666666666,
+     "test_risk_p5_p50_p95": [
+      0.056558070583957426,
+      0.07850707850707851,
+      0.10336815815393274
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.7172675521821632,
+      0.7913187855787476
+     ]
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-b served-masked (retuned full)",
+   "run": "base-full-contractnli-lr2e5-bestacc@block",
+   "n_cal": 1037,
+   "cal_documents": 61,
+   "original": {
+    "question-test": {
+     "tau": 0.996215283870697,
+     "found": true,
+     "coverage": 0.7400379506641366,
+     "risk": 0.07179487179487179,
+     "above": false,
+     "ci_above": false
+    },
+    "document-test": {
+     "tau": 0.996215283870697,
+     "found": true,
+     "coverage": 0.7400379506641366,
+     "risk": 0.07179487179487179,
+     "above": false,
+     "ci_above": false
+    }
+   },
+   "design_effect_cal": {
+    "n_accepted": 730,
+    "risk": 0.08082191780821918,
+    "design_effect": 1.1343955927981932,
+    "n_effective": 643.5144888030833,
+    "documents": 61
+   },
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.062,
+     "share_ci_above_alpha": 0.004,
+     "test_risk_p5_p50_p95": [
+      0.0,
+      0.0779644493603509,
+      0.10258295625942683
+     ],
+     "coverage_p5_p50_p95": [
+      0.06541745730550284,
+      0.7371916508538899,
+      0.7827324478178368
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.084,
+     "share_ci_above_alpha": 0.004,
+     "test_risk_p5_p50_p95": [
+      0.03507736943907164,
+      0.08022763916159825,
+      0.10456445709035403
+     ],
+     "coverage_p5_p50_p95": [
+      0.5014705882352953,
+      0.7466793168880456,
+      0.7941176470588235
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.096,
+     "share_ci_above_alpha": 0.004,
+     "test_risk_p5_p50_p95": [
+      0.0,
+      0.07971405517171819,
+      0.10508199847444698
+     ],
+     "coverage_p5_p50_p95": [
+      0.07115749525616698,
+      0.7409867172675522,
+      0.7894686907020873
+     ]
+    }
+   },
+   "share_contract_resplits_risk_ge_original": 0.63
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-l served-masked",
+   "run": "large-full-contractnli@block",
+   "n_cal": 1037,
+   "cal_documents": 61,
+   "original": {
+    "question-test": {
+     "tau": 0.9745211601257324,
+     "found": true,
+     "coverage": 0.8956356736242884,
+     "risk": 0.07733050847457627,
+     "above": false,
+     "ci_above": false
+    },
+    "document-test": {
+     "tau": 0.966937243938446,
+     "found": true,
+     "coverage": 0.905123339658444,
+     "risk": 0.08071278825995808,
+     "above": false,
+     "ci_above": false
+    }
+   },
+   "design_effect_cal": {
+    "n_accepted": 911,
+    "risk": 0.08122941822173436,
+    "design_effect": 0.595251904761719,
+    "n_effective": 1530.4444936882242,
+    "documents": 61
+   },
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.25,
+     "share_risk_above_alpha": 0.04,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.06016262738007632,
+      0.08236536430834214,
+      0.09843559528646892
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.8866223908918406,
+      0.9212998102466793
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.004,
+     "share_risk_above_alpha": 0.08433734939759036,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.06616052060737528,
+      0.0827186266399427,
+      0.10155409887853419
+     ],
+     "coverage_p5_p50_p95": [
+      0.869022770398482,
+      0.9022770398481973,
+      0.9345351043643264
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.332,
+     "share_risk_above_alpha": 0.09281437125748503,
+     "share_ci_above_alpha": 0.0029940119760479044,
+     "test_risk_p5_p50_p95": [
+      0.05962339775387912,
+      0.08280254777070063,
+      0.10399857897644132
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.8833017077798861,
+      0.928842504743833
+     ]
+    }
+   },
+   "share_contract_resplits_risk_ge_original": 0.6293333333333333
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b served-masked (one window)",
+   "run": "base-full-cuad@block",
+   "n_cal": 2091,
+   "cal_documents": 51,
+   "original": {
+    "question-test": {
+     "tau": 0.7662936449050903,
+     "found": true,
+     "coverage": 0.9521759923481588,
+     "risk": 0.12104470115519839,
+     "above": true,
+     "ci_above": true
+    },
+    "document-test": {
+     "tau": 0.8031737804412842,
+     "found": true,
+     "coverage": 0.9368723098995696,
+     "risk": 0.11638591117917305,
+     "above": true,
+     "ci_above": true
+    }
+   },
+   "design_effect_cal": {
+    "n_accepted": 1986,
+    "risk": 0.08761329305135952,
+    "design_effect": 2.026186178333974,
+    "n_effective": 980.1665914200358,
+    "documents": 51
+   },
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.172,
+     "share_ci_above_alpha": 0.038,
+     "test_risk_p5_p50_p95": [
+      0.06454031327380086,
+      0.08558438697235789,
+      0.1125905956352623
+     ],
+     "coverage_p5_p50_p95": [
+      0.8655906264945002,
+      0.9000478240076518,
+      0.9325681492109039
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.102,
+     "share_ci_above_alpha": 0.016,
+     "test_risk_p5_p50_p95": [
+      0.060497437655889635,
+      0.08393279378579369,
+      0.10763442281509379
+     ],
+     "coverage_p5_p50_p95": [
+      0.8421807747489239,
+      0.8890483022477284,
+      0.921090387374462
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.08,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.07404901312405392,
+      0.08437241637211901,
+      0.10156472751425609
+     ],
+     "coverage_p5_p50_p95": [
+      0.8809182209469153,
+      0.8986131037780966,
+      0.9239837398373983
+     ]
+    }
+   },
+   "share_contract_resplits_risk_ge_original": 0.014
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b full (one window), seed 1",
+   "run": "base-full-cuad-s1",
+   "n_cal": 2091,
+   "cal_documents": 51,
+   "original": {
+    "question-test": {
+     "tau": 0.7972412705421448,
+     "found": true,
+     "coverage": 0.921090387374462,
+     "risk": 0.10539979231568017,
+     "above": true,
+     "ci_above": false
+    },
+    "document-test": {
+     "tau": 0.8210441470146179,
+     "found": true,
+     "coverage": 0.9105691056910569,
+     "risk": 0.10346638655462184,
+     "above": true,
+     "ci_above": false
+    }
+   },
+   "design_effect_cal": {
+    "n_accepted": 1934,
+    "risk": 0.08686659772492245,
+    "design_effect": 2.191086284201159,
+    "n_effective": 882.6672020837877,
+    "documents": 51
+   },
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.168,
+     "share_ci_above_alpha": 0.042,
+     "test_risk_p5_p50_p95": [
+      0.06325440006291069,
+      0.08739446888577763,
+      0.11141063693076075
+     ],
+     "coverage_p5_p50_p95": [
+      0.8311812529890005,
+      0.8809182209469153,
+      0.9311334289813487
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.108,
+     "share_ci_above_alpha": 0.018,
+     "test_risk_p5_p50_p95": [
+      0.06023709323274406,
+      0.08427129862379515,
+      0.10842229606293442
+     ],
+     "coverage_p5_p50_p95": [
+      0.8134863701578192,
+      0.8615494978479197,
+      0.9182209469153515
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.07,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.07261502360084383,
+      0.0864569148165315,
+      0.10382600354191263
+     ],
+     "coverage_p5_p50_p95": [
+      0.8440698230511717,
+      0.8773314203730272,
+      0.9206599713055954
+     ]
+    }
+   },
+   "share_contract_resplits_risk_ge_original": 0.1
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b served-masked (one window), seed 1",
+   "run": "base-full-cuad-s1@block",
+   "n_cal": 2091,
+   "cal_documents": 51,
+   "original": {
+    "question-test": {
+     "tau": 0.7839884757995605,
+     "found": true,
+     "coverage": 0.9249163079866093,
+     "risk": 0.11271975180972078,
+     "above": true,
+     "ci_above": false
+    },
+    "document-test": {
+     "tau": 0.814643383026123,
+     "found": true,
+     "coverage": 0.9153515064562411,
+     "risk": 0.11024033437826541,
+     "above": true,
+     "ci_above": false
+    }
+   },
+   "design_effect_cal": {
+    "n_accepted": 1948,
+    "risk": 0.08521560574948665,
+    "design_effect": 1.994533941044913,
+    "n_effective": 976.6692658934977,
+    "documents": 51
+   },
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.168,
+     "share_ci_above_alpha": 0.024,
+     "test_risk_p5_p50_p95": [
+      0.06274376832844575,
+      0.08902619170598389,
+      0.11053477640831214
+     ],
+     "coverage_p5_p50_p95": [
+      0.8244619799139168,
+      0.8792443806791009,
+      0.9244619799139168
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.112,
+     "share_ci_above_alpha": 0.018,
+     "test_risk_p5_p50_p95": [
+      0.06208061959405907,
+      0.08317176312300611,
+      0.10639691954720498
+     ],
+     "coverage_p5_p50_p95": [
+      0.8077235772357724,
+      0.8570062171209948,
+      0.913534194165471
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.086,
+     "share_ci_above_alpha": 0.002,
+     "test_risk_p5_p50_p95": [
+      0.07268981928203451,
+      0.08635863586358636,
+      0.10338561647557462
+     ],
+     "coverage_p5_p50_p95": [
+      0.8416786226685796,
+      0.8739837398373984,
+      0.9186991869918699
+     ]
+    }
+   },
+   "share_contract_resplits_risk_ge_original": 0.028
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b block (one window), seed 1",
+   "run": "base-block-cuad-steps-s1",
+   "n_cal": 2091,
+   "cal_documents": 51,
+   "original": {
+    "question-test": {
+     "tau": 0.999438464641571,
+     "found": true,
+     "coverage": 0.9273075083692014,
+     "risk": 0.12841670964414648,
+     "above": true,
+     "ci_above": true
+    },
+    "document-test": {
+     "tau": 0.9996620416641235,
+     "found": true,
+     "coverage": 0.9067431850789096,
+     "risk": 0.12289029535864979,
+     "above": true,
+     "ci_above": true
+    }
+   },
+   "design_effect_cal": {
+    "n_accepted": 1949,
+    "risk": 0.08568496664956388,
+    "design_effect": 2.1769116261105705,
+    "n_effective": 895.305062742591,
+    "documents": 51
+   },
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.004,
+     "share_risk_above_alpha": 0.19477911646586346,
+     "share_ci_above_alpha": 0.04417670682730924,
+     "test_risk_p5_p50_p95": [
+      0.06038253626359353,
+      0.08723699168721886,
+      0.1122664825575074
+     ],
+     "coverage_p5_p50_p95": [
+      0.762649450023912,
+      0.8510282161645146,
+      0.9014825442372071
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.108,
+     "share_ci_above_alpha": 0.02,
+     "test_risk_p5_p50_p95": [
+      0.05223508243229072,
+      0.08133130667717525,
+      0.10824289547268659
+     ],
+     "coverage_p5_p50_p95": [
+      0.7245337159253945,
+      0.8252032520325203,
+      0.8785509325681492
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.088,
+     "share_ci_above_alpha": 0.004,
+     "test_risk_p5_p50_p95": [
+      0.0720497147680426,
+      0.08710234675391118,
+      0.10390795463259231
+     ],
+     "coverage_p5_p50_p95": [
+      0.8067670970827355,
+      0.852702056432329,
+      0.8885939741750358
+     ]
+    }
+   },
+   "share_contract_resplits_risk_ge_original": 0.006024096385542169
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b windowed (four windows), seed 1",
+   "run": "base-windowed-cuad-steps-s1",
+   "n_cal": 2091,
+   "cal_documents": 51,
+   "original": {
+    "question-test": {
+     "tau": 0.9978001713752747,
+     "found": true,
+     "coverage": 0.9177427068388331,
+     "risk": 0.10265763418447107,
+     "above": true,
+     "ci_above": false
+    },
+    "document-test": {
+     "tau": 0.9988304972648621,
+     "found": true,
+     "coverage": 0.9081779053084649,
+     "risk": 0.10057925223802001,
+     "above": true,
+     "ci_above": false
+    }
+   },
+   "design_effect_cal": {
+    "n_accepted": 1963,
+    "risk": 0.08660213958227203,
+    "design_effect": 2.1588127645320183,
+    "n_effective": 909.2960872989529,
+    "documents": 51
+   },
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.152,
+     "share_ci_above_alpha": 0.022,
+     "test_risk_p5_p50_p95": [
+      0.06831608611070764,
+      0.08756257502088138,
+      0.10575909837482708
+     ],
+     "coverage_p5_p50_p95": [
+      0.8732424677187949,
+      0.9053084648493543,
+      0.9335246293639407
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.098,
+     "share_ci_above_alpha": 0.018,
+     "test_risk_p5_p50_p95": [
+      0.06548717243131112,
+      0.0846504698865039,
+      0.1050003979392055
+     ],
+     "coverage_p5_p50_p95": [
+      0.8500478240076519,
+      0.8971783835485414,
+      0.9254184600669536
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.084,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.07243417849285809,
+      0.08765461867424967,
+      0.10186356932663644
+     ],
+     "coverage_p5_p50_p95": [
+      0.8794117647058823,
+      0.9057867049258728,
+      0.9277857484457197
+     ]
+    }
+   },
+   "share_contract_resplits_risk_ge_original": 0.098
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-b full, retuned, seed 1",
+   "run": "base-full-contractnli-lr2e5-bestacc-s1",
+   "n_cal": 1037,
+   "cal_documents": 61,
+   "original": {
+    "question-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    },
+    "document-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    }
+   },
+   "design_effect_cal": null,
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.766,
+     "share_risk_above_alpha": 0.042735042735042736,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.043478260869565216,
+      0.060941828254847646,
+      0.09559513712185468
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.0,
+      0.715370018975332
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.284,
+     "share_risk_above_alpha": 0.08379888268156424,
+     "share_ci_above_alpha": 0.008379888268156424,
+     "test_risk_p5_p50_p95": [
+      0.02246990911323999,
+      0.06645377743643639,
+      0.1073038288987331
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.28083491461100574,
+      0.7886148007590131
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.734,
+     "share_risk_above_alpha": 0.06015037593984962,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.03920646282851007,
+      0.06689536878216124,
+      0.1003645222091824
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.0,
+      0.7239563567362428
+     ]
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-b served-masked (retuned full), seed 1",
+   "run": "base-full-contractnli-lr2e5-bestacc-s1@block",
+   "n_cal": 1037,
+   "cal_documents": 61,
+   "original": {
+    "question-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    },
+    "document-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    }
+   },
+   "design_effect_cal": null,
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.794,
+     "share_risk_above_alpha": 0.0970873786407767,
+     "share_ci_above_alpha": 0.009708737864077669,
+     "test_risk_p5_p50_p95": [
+      0.04878048780487805,
+      0.07713125845737483,
+      0.10437357520492797
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.0,
+      0.7078273244781783
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.33,
+     "share_risk_above_alpha": 0.09850746268656717,
+     "share_ci_above_alpha": 0.014925373134328358,
+     "test_risk_p5_p50_p95": [
+      0.02631578947368421,
+      0.07797537619699042,
+      0.10412777226084079
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.5341555977229602,
+      0.7495256166982922
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.756,
+     "share_risk_above_alpha": 0.10655737704918032,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.047619047619047616,
+      0.08242910846057455,
+      0.10539169259910702
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.0,
+      0.7230075901328272
+     ]
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-b full, retuned, seed 2",
+   "run": "base-full-contractnli-lr2e5-bestacc-s2",
+   "n_cal": 1037,
+   "cal_documents": 61,
+   "original": {
+    "question-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    },
+    "document-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    }
+   },
+   "design_effect_cal": null,
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.518,
+     "share_risk_above_alpha": 0.0995850622406639,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.022222222222222223,
+      0.07335329341317365,
+      0.10386151797603196
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.0,
+      0.7058823529411765
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.314,
+     "share_risk_above_alpha": 0.11370262390670553,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.019647058823529413,
+      0.07703488372093023,
+      0.10394399460188934
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.05787476280834915,
+      0.7154174573055028
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.556,
+     "share_risk_above_alpha": 0.09009009009009009,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.02275369978858351,
+      0.06398127925117005,
+      0.10330655327308559
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.0,
+      0.698292220113852
+     ]
+    }
+   }
+  },
+  {
+   "task": "contractnli",
+   "arm": "MB-b served-masked (retuned full), seed 2",
+   "run": "base-full-contractnli-lr2e5-bestacc-s2@block",
+   "n_cal": 1037,
+   "cal_documents": 61,
+   "original": {
+    "question-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    },
+    "document-test": {
+     "tau": null,
+     "found": false,
+     "coverage": 0.0
+    }
+   },
+   "design_effect_cal": null,
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.692,
+     "share_risk_above_alpha": 0.16883116883116883,
+     "share_ci_above_alpha": 0.0,
+     "test_risk_p5_p50_p95": [
+      0.03952200416294975,
+      0.08357158610999926,
+      0.10447399068322982
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.0,
+      0.6907020872865275
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.504,
+     "share_risk_above_alpha": 0.14919354838709678,
+     "share_ci_above_alpha": 0.004032258064516129,
+     "test_risk_p5_p50_p95": [
+      0.04496538229981939,
+      0.0826800134931376,
+      0.10743424876489388
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.0,
+      0.7059297912713473
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.734,
+     "share_risk_above_alpha": 0.14285714285714285,
+     "share_ci_above_alpha": 0.007518796992481203,
+     "test_risk_p5_p50_p95": [
+      0.042018779342723,
+      0.08321167883211679,
+      0.10648239888098845
+     ],
+     "coverage_p5_p50_p95": [
+      0.0,
+      0.0,
+      0.6860056925996204
+     ]
+    }
+   }
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b full (one window), seed 2",
+   "run": "base-full-cuad-s2",
+   "n_cal": 2091,
+   "cal_documents": 51,
+   "original": {
+    "question-test": {
+     "tau": 0.7579735517501831,
+     "found": true,
+     "coverage": 0.9253945480631277,
+     "risk": 0.12454780361757106,
+     "above": true,
+     "ci_above": true
+    },
+    "document-test": {
+     "tau": 0.804405927658081,
+     "found": true,
+     "coverage": 0.9038737446197992,
+     "risk": 0.11798941798941799,
+     "above": true,
+     "ci_above": true
+    }
+   },
+   "design_effect_cal": {
+    "n_accepted": 1922,
+    "risk": 0.08740894901144641,
+    "design_effect": 2.2235669680836554,
+    "n_effective": 864.3769347124472,
+    "documents": 51
+   },
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.154,
+     "share_ci_above_alpha": 0.044,
+     "test_risk_p5_p50_p95": [
+      0.06560451566537484,
+      0.0861339846386876,
+      0.11287605822604876
+     ],
+     "coverage_p5_p50_p95": [
+      0.8110712577714012,
+      0.8517455762792921,
+      0.8986370157819225
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.114,
+     "share_ci_above_alpha": 0.024,
+     "test_risk_p5_p50_p95": [
+      0.059886759519104514,
+      0.08255033774585435,
+      0.10871273534910791
+     ],
+     "coverage_p5_p50_p95": [
+      0.7842898134863702,
+      0.8330942132950742,
+      0.881898613103778
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.064,
+     "share_ci_above_alpha": 0.002,
+     "test_risk_p5_p50_p95": [
+      0.07046348744788129,
+      0.08582733076618701,
+      0.10398987185147318
+     ],
+     "coverage_p5_p50_p95": [
+      0.8192013390722143,
+      0.8522238163558106,
+      0.8843615494978478
+     ]
+    }
+   },
+   "share_contract_resplits_risk_ge_original": 0.01
+  },
+  {
+   "task": "cuad",
+   "arm": "MB-b served-masked (one window), seed 2",
+   "run": "base-full-cuad-s2@block",
+   "n_cal": 2091,
+   "cal_documents": 51,
+   "original": {
+    "question-test": {
+     "tau": 0.7365901470184326,
+     "found": true,
+     "coverage": 0.9220468675274988,
+     "risk": 0.12344398340248963,
+     "above": true,
+     "ci_above": true
+    },
+    "document-test": {
+     "tau": 0.7718434929847717,
+     "found": true,
+     "coverage": 0.9043519846963175,
+     "risk": 0.11845584346906399,
+     "above": true,
+     "ci_above": true
+    }
+   },
+   "design_effect_cal": {
+    "n_accepted": 1946,
+    "risk": 0.0868448098663926,
+    "design_effect": 2.0144947490191196,
+    "n_effective": 965.999043158355,
+    "documents": 51
+   },
+   "resplits": {
+    "contract/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.178,
+     "share_ci_above_alpha": 0.05,
+     "test_risk_p5_p50_p95": [
+      0.06571951892492978,
+      0.08771439772615897,
+      0.11349114373674636
+     ],
+     "coverage_p5_p50_p95": [
+      0.8072692491630798,
+      0.8565279770444764,
+      0.901506456241033
+     ]
+    },
+    "contract/document-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.12,
+     "share_ci_above_alpha": 0.022,
+     "test_risk_p5_p50_p95": [
+      0.060142809463962575,
+      0.08335712925947078,
+      0.10728144786623596
+     ],
+     "coverage_p5_p50_p95": [
+      0.7852702056432329,
+      0.8350071736011477,
+      0.8809421329507412
+     ]
+    },
+    "question/question-test": {
+     "n": 500,
+     "share_no_threshold": 0.0,
+     "share_risk_above_alpha": 0.086,
+     "share_ci_above_alpha": 0.002,
+     "test_risk_p5_p50_p95": [
+      0.07138222405320511,
+      0.08771926831462348,
+      0.1024605490776077
+     ],
+     "coverage_p5_p50_p95": [
+      0.8139646102343376,
+      0.8555714968914395,
+      0.8852223816355811
+     ]
+    }
+   },
+   "share_contract_resplits_risk_ge_original": 0.008
+  }
+ ]
+}

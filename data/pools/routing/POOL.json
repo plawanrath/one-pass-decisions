@@ -2,12 +2,12 @@
  "spec": {
   "task": "routing",
   "seed": 20260927,
-  "n_dev": 1033,
-  "n_cal": 2067,
-  "n_test": 5500,
+  "n_dev": 3100,
+  "n_cal": 2750,
+  "n_test": 2750,
   "n_train": 15250,
   "source": "clinc/clinc_oos:plus",
-  "notes": "official splits; validation split into dev/cal 1:2 with seed 20260927; layout=domain"
+  "notes": "train and validation official (validation is dev); official test split into cal/test halves stratified by gold option and out-of-scope flag with seed 20260927, so that cal and test are exchangeable; layout=domain"
  },
  "splits": {
   "train": {
@@ -16,23 +16,23 @@
    "n_groups": 15250
   },
   "dev": {
-   "n": 1033,
-   "sha256": "08cb8ff5fca05bbb7f1573047b81076aa7c7136fe6e5b513df52b8a28d6a5799",
-   "n_groups": 1033
+   "n": 3100,
+   "sha256": "c724b9a26d28be454edf96b0f8fd4d5bb2076a05674f978520f60a568bec13b1",
+   "n_groups": 3100
   },
   "cal": {
-   "n": 2067,
-   "sha256": "9df7f33c5ea7381829ec61d522bc26d10bbb049a6f9e7905e5404546522e4d0c",
-   "n_groups": 2067
+   "n": 2750,
+   "sha256": "0017eaa16576040d736ec7e5e9cc61394bb8a64d4c1081ce45b6ff9fc97033be",
+   "n_groups": 2750
   },
   "test": {
-   "n": 5500,
-   "sha256": "977cced922b7db045309c20b9881d2298ce441b533fc638245a694f82b8ead47",
-   "n_groups": 5500
+   "n": 2750,
+   "sha256": "fb3522c6d865ee783d540c342c4f221edd70a1fd89a36036c7765afd8fb1a648",
+   "n_groups": 2750
   }
  },
  "kinds": [
   "choice"
  ],
- "manifest_sha256": "9fec741a822d2b1958fbdfe1c6c01bb7724a6f2903958e8092549cd8403f4c0f"
+ "manifest_sha256": "4461e984d8d1e08eed823c355c417101db5f3ead2ab12fe447360dafa070432f"
 }

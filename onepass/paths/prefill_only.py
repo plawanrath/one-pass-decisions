@@ -17,7 +17,23 @@ import torch
 
 from ..schema import Decision, Question
 
+
+def crop_to(cache, length: int) -> None:
+    """Drop cached tokens beyond `length` (negative crop: the positive form is deprecated in transformers 5.17)."""
+    extra = cache.get_seq_length() - length
+    if extra > 0:
+        cache.crop(-extra)
+
 LETTERS = list(string.ascii_uppercase)
+
+
+def render_prefix(state: str) -> str:
+    return f"Context:\n{state}\n\n"
+
+
+def render_suffix(q: Question) -> str:
+    opts = "\n".join(f"{LETTERS[i]}. {o}" for i, o in enumerate(q.options))
+    return f"Question: {q.text}\nOptions:\n{opts}\nAnswer with the letter of the best option.\nAnswer:"
 
 
 def render(state: str, q: Question) -> str:
@@ -47,6 +63,47 @@ class PrefillOnly:
         logits = self.model(**enc).logits[0, -1].float()
         sel = logits[self.letter_ids[: len(q.options)]]
         return torch.log_softmax(sel, dim=-1).cpu().numpy()
+
+    def _ids(self, text: str) -> list[int]:
+        return self.tok.encode(text, add_special_tokens=False)
+
+    def _readout(self, logits_last: torch.Tensor, q: Question, path: str) -> Decision:
+        lp = torch.log_softmax(logits_last.float()[self.letter_ids[: len(q.options)]], dim=-1).cpu().numpy()
+        if q.qid in self.bias:
+            lp = lp + self.bias[q.qid]
+        p = np.exp(lp - lp.max())
+        p = p / p.sum()
+        return Decision(q.qid, q.kind, int(p.argmax()), [float(x) for x in p], float(p.max()), path=path)
+
+    @torch.no_grad()
+    def decide_uncached(self, state: str, questions: list[Question]) -> list[Decision]:
+        """One prefill per question over context + question, with the same tokenization as `decide_cached`
+        (context and question tokenized separately and concatenated), so the two differ only in the reuse."""
+        pre = self._ids(render_prefix(state))
+        out = []
+        for q in questions:
+            ids = torch.tensor([pre + self._ids(render_suffix(q))], device=self.dev)
+            out.append(self._readout(self.model(input_ids=ids).logits[0, -1], q, "prefill-uncached"))
+        return out
+
+    @torch.no_grad()
+    def decide_cached(self, state: str, questions: list[Question]) -> list[Decision]:
+        """Context-first prefix caching, the reuse a decoder gets from causality: the context is prefilled once and its
+        key-value cache is reused for every question (cropped back to the context after each one)."""
+        from transformers import DynamicCache
+
+        pre = torch.tensor([self._ids(render_prefix(state))], device=self.dev)
+        cache = DynamicCache()
+        self.model(input_ids=pre, past_key_values=cache, use_cache=True)
+        P = pre.shape[1]
+        out = []
+        for q in questions:
+            suf = torch.tensor([self._ids(render_suffix(q))], device=self.dev)
+            pos = torch.arange(P, P + suf.shape[1], device=self.dev)[None]
+            logits = self.model(input_ids=suf, past_key_values=cache, position_ids=pos, use_cache=True).logits[0, -1]
+            out.append(self._readout(logits, q, "prefill-cached"))
+            crop_to(cache, P)
+        return out
 
     def decide(self, state: str, q: Question, path: str = "prefill-only") -> Decision:
         lp = self.option_logprobs(state, q)

@@ -47,7 +47,14 @@ class PackPlan:
 
 class Packer:
     def __init__(self, max_tokens_per_batch: int = 16384, max_groups: int = 32, max_questions_per_group: int = 64,
-                 token_estimate=None):
+                 token_estimate=None, order: str = "edf", max_questions_per_request: int | None = None):
+        """`order`: "edf" takes questions by deadline (the default), "fcfs" by arrival. `max_questions_per_request`
+        caps how many questions of one request a single step may take, so a large request is split across steps and
+        smaller requests that arrive behind it are interleaved instead of waiting for all of it."""
+        if order not in ("edf", "fcfs"):
+            raise ValueError(order)
+        self.order = order
+        self.max_per_request = max_questions_per_request
         self.max_tokens = max_tokens_per_batch
         self.max_groups = max_groups
         self.max_q = max_questions_per_group
@@ -70,11 +77,14 @@ class Packer:
 
     def plan(self, cached_states: set[str] = frozenset()) -> PackPlan:
         """Take questions from the queue by deadline, grouping by state hash; states already cached cost no state tokens."""
-        self._queue.sort()
+        self._queue.sort(key=(lambda p: (p.deadline_s, p.seq)) if self.order == "edf" else (lambda p: (p.enqueued_s, p.seq)))
         groups: dict[str, Group] = {}
         tokens = 0
         taken: list[Pending] = []
+        per_request: dict[int, int] = {}
         for p in self._queue:
+            if self.max_per_request is not None and per_request.get(id(p.request), 0) >= self.max_per_request:
+                continue
             sh = p.request.state_hash
             q_tokens = self._est(p.question.text) + sum(self._est(o) + 1 for o in p.question.options)
             new_group = sh not in groups
@@ -90,6 +100,7 @@ class Packer:
             groups[sh].items.append(p)
             tokens += q_tokens + s_tokens
             taken.append(p)
+            per_request[id(p.request)] = per_request.get(id(p.request), 0) + 1
         taken_ids = {id(p) for p in taken}
         self._queue = [p for p in self._queue if id(p) not in taken_ids]
         return PackPlan(list(groups.values()), len(taken), tokens)

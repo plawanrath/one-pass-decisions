@@ -1,0 +1,69 @@
+{
+ "trace": "results/traces/agent/requests_arrival_sample.jsonl",
+ "trace_meta": {
+  "arrivals": "measured step completion times, one uncontended run",
+  "n_trajectories": 300
+ },
+ "n_requests": 451,
+ "trace_rate_per_s": 0.053612501969136674,
+ "threads": 8,
+ "results": {
+  "x16": {
+   "speedup": 16.0,
+   "offered_rate_per_s": 0.8578000315061868,
+   "n_requests": 451,
+   "n_questions": 1804,
+   "wall_s": 526.350416457979,
+   "latency_ms_p50": 181.61270895507187,
+   "latency_ms_p99": 2463.9925829833373,
+   "wait_ms_p99": 0.09941699681803584,
+   "deadline_miss_rate": 1.0,
+   "max_queue_depth": 8,
+   "steps": 450,
+   "cache": {
+    "entries": 147,
+    "bytes": 17175257088,
+    "hits": 0,
+    "misses": 451
+   }
+  },
+  "x64": {
+   "speedup": 64.0,
+   "offered_rate_per_s": 3.431200126024747,
+   "n_requests": 451,
+   "n_questions": 1804,
+   "wall_s": 265.2928113339585,
+   "latency_ms_p50": 45027.78095798567,
+   "latency_ms_p99": 136388.1809170125,
+   "wait_ms_p99": 131143.41483300086,
+   "deadline_miss_rate": 1.0,
+   "max_queue_depth": 718,
+   "steps": 58,
+   "cache": {
+    "entries": 147,
+    "bytes": 17175257088,
+    "hits": 330,
+    "misses": 451
+   }
+  },
+  "x256": {
+   "speedup": 256.0,
+   "offered_rate_per_s": 13.724800504098988,
+   "n_requests": 451,
+   "n_questions": 1804,
+   "wall_s": 228.32592858397402,
+   "latency_ms_p50": 82939.35404199874,
+   "latency_ms_p99": 194653.74949999386,
+   "wait_ms_p99": 190664.97404203983,
+   "deadline_miss_rate": 1.0,
+   "max_queue_depth": 1446,
+   "steps": 39,
+   "cache": {
+    "entries": 145,
+    "bytes": 17173635072,
+    "hits": 440,
+    "misses": 451
+   }
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "spec": {
+  "task": "contractnli",
+  "seed": 20260927,
+  "n_dev": 1037,
+  "n_cal": 1037,
+  "n_test": 1054,
+  "n_train": 7191,
+  "source": "https://stanfordnlp.github.io/contract-nli/resources/contract-nli.zip sha256:e03fc77bbf8b53e2976a250e81d8a294bc3d5e5fb014521e477dee9340d6287b",
+  "notes": "train and dev official; official test split by contract into cal/test halves with seed 20260927; 17 hypotheses per contract"
+ },
+ "splits": {
+  "train": {
+   "n": 7191,
+   "sha256": "c190c24949c7964ae519dfd016991ea7d18eea02fc1d60f87b9e2b53e4d94aa7",
+   "n_groups": 423
+  },
+  "dev": {
+   "n": 1037,
+   "sha256": "282bcf0e9526ccd7673cf694128d803387b66adbf8532b96f8e05e1a8201617f",
+   "n_groups": 61
+  },
+  "cal": {
+   "n": 1037,
+   "sha256": "25af467eafeb2cdad8ae40209870ac145e5508572255a1406f0005aaeca7ceea",
+   "n_groups": 61
+  },
+  "test": {
+   "n": 1054,
+   "sha256": "8a0503bbc6597f9fc296b98eb22b259defdaed8aa1abe6abde76fac2017c9999",
+   "n_groups": 62
+  }
+ },
+ "kinds": [
+  "choice"
+ ],
+ "manifest_sha256": "3be931bc0c7a1e694e9822ac732674a28ea4559e833986910f7be8fd0269ee79"
+}

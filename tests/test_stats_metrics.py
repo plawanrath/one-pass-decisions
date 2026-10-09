@@ -58,3 +58,32 @@ def test_ece_and_threshold():
 
 def test_auroc():
     assert metrics.auroc([0.1, 0.4, 0.35, 0.8], [0, 0, 1, 1]) == pytest.approx(0.75)
+
+
+def test_kappa_and_label_sampling():
+    import importlib.util
+    import sys
+
+    spec = importlib.util.spec_from_file_location("human_labels", "scripts/human_labels.py")
+    hl = importlib.util.module_from_spec(spec)
+    sys.modules["human_labels"] = hl
+    spec.loader.exec_module(hl)
+    assert abs(hl.kappa([0, 1, 2, 1], [0, 1, 2, 1], 3) - 1.0) < 1e-12
+    # chance-level agreement on a balanced pair gives kappa 0
+    assert abs(hl.kappa([0, 0, 1, 1], [0, 1, 0, 1], 2)) < 1e-12
+    # quadratic weights penalise near misses less than far misses on an ordinal scale
+    near = hl.kappa([0, 1, 2, 3, 4], [1, 1, 2, 3, 4], 5, weighted=True)
+    far = hl.kappa([0, 1, 2, 3, 4], [4, 1, 2, 3, 0], 5, weighted=True)
+    assert near > far
+    lo, hi = hl.kappa_ci([0, 1, 2, 1, 0, 2] * 5, [0, 1, 2, 1, 0, 2] * 5, 3)
+    assert lo == hi == 1.0
+    from onepass.schema import DecisionRecord, Question
+    recs = []
+    for s in range(12):
+        for qid, opts in (("progress", ["a", "b", "c", "d", "e"]), ("supervisor", ["x", "y", "z"])):
+            recs.append(DecisionRecord("tracegrade", f"st{s}", Question("choice", qid, opts, qid=qid), s % 5 if qid == "progress" else 0,
+                                       "system2-selfconsistency", group_id=f"t{s}", meta={"step": 0}))
+    picked = hl.sample_steps(recs, 5)
+    golds = [recs[v["progress"]].gold for _, v in picked]
+    assert len(picked) == 5 and len(set(golds)) == 5  # stratified: one step per silver level first
+    assert all(set(v) == {"progress", "supervisor"} for _, v in picked)

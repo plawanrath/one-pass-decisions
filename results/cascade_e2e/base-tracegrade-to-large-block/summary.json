@@ -1,0 +1,42 @@
+{
+ "task": "tracegrade",
+ "n": 1000,
+ "tau": 0.9159091711044312,
+ "target": "large-block",
+ "s1_ms": 4.51,
+ "s2_ms": 59.37,
+ "accuracy": {
+  "system1": 0.933,
+  "target": 0.946,
+  "cascade": 0.948
+ },
+ "delta_vs_target_pp": {
+  "point": 0.20000000000000018,
+  "ci_low": 0.0,
+  "ci_high": 0.5000000000000004
+ },
+ "delta_vs_system1_pp": {
+  "point": 1.4999999999999902,
+  "ci_low": 0.6999999999999895,
+  "ci_high": 2.399999999999991
+ },
+ "mean_ms": 8.903379999999997,
+ "target_alone_ms": 8.76,
+ "escalate_rate": 0.074,
+ "accepted": {
+  "n": 926,
+  "risk": 0.035637149028077755,
+  "risk_ci_low": 0.024655529548877536,
+  "risk_ci_high": 0.04968584319235046,
+  "violates_alpha": false
+ },
+ "escalated": {
+  "n": 74,
+  "system1_accuracy": 0.5405405405405406,
+  "final_accuracy": 0.7432432432432432,
+  "mean_ms": 63.88000000000009,
+  "p99_ms": 63.879999999999995,
+  "usd_share": 0.530935442494883
+ },
+ "escalation_gain_pp": 1.4999999999999996
+}

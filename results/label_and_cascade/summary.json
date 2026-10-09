@@ -1,0 +1,147 @@
+{
+ "per_label": {
+  "runs": [
+   "base-full-contractnli-lr2e5-bestacc",
+   "base-full-contractnli-lr2e5-bestacc-s1",
+   "base-full-contractnli-lr2e5-bestacc-s2",
+   "base-full-contractnli-lr2e5-bestacc-s1r",
+   "base-full-contractnli-lr2e5-bestacc-s2r"
+  ],
+  "n_items": 1054,
+  "n_documents": 62,
+  "labels": {
+   "entailed": {
+    "n": 496,
+    "full": 88.26612903225806,
+    "served_masked": 86.25,
+    "diff_pp": -2.0161290322580627,
+    "ci": [
+     -2.746781115879826,
+     -1.3709677419354827
+    ]
+   },
+   "contradicted": {
+    "n": 108,
+    "full": 68.14814814814815,
+    "served_masked": 70.0,
+    "diff_pp": 1.851851851851849,
+    "ci": [
+     -0.17543859649122645,
+     4.000000000000002
+    ]
+   },
+   "not mentioned": {
+    "n": 450,
+    "full": 81.91111111111111,
+    "served_masked": 82.8,
+    "diff_pp": 0.8888888888888835,
+    "ci": [
+     0.3286384976525824,
+     1.4462941797081068
+    ]
+   }
+  },
+  "changed_decisions_per_run": 27.6,
+  "changes_by_direction_per_run": {
+   "entailed -> not mentioned": 12.4,
+   "entailed -> contradicted": 6.0,
+   "contradicted -> not mentioned": 4.4,
+   "not mentioned -> entailed": 2.6,
+   "not mentioned -> contradicted": 1.4,
+   "contradicted -> entailed": 0.8
+  }
+ },
+ "cascade": {
+  "decoder": "decoder-smol3-contractnli-lr1e5",
+  "decoder_accuracy": 0.905123339658444,
+  "engines": {
+   "base served masked": {
+    "engine_accuracy": 0.849146110056926,
+    "points": [
+     {
+      "escalated_share": 0.0,
+      "contracts_touched_share": 0.0,
+      "accuracy": 0.849146110056926
+     },
+     {
+      "escalated_share": 0.02,
+      "contracts_touched_share": 0.24193548387096775,
+      "accuracy": 0.8472485768500949
+     },
+     {
+      "escalated_share": 0.05,
+      "contracts_touched_share": 0.5161290322580645,
+      "accuracy": 0.8529411764705882
+     },
+     {
+      "escalated_share": 0.1,
+      "contracts_touched_share": 0.7419354838709677,
+      "accuracy": 0.8624288425047438
+     },
+     {
+      "escalated_share": 0.2,
+      "contracts_touched_share": 0.9354838709677419,
+      "accuracy": 0.881404174573055
+     },
+     {
+      "escalated_share": 0.3,
+      "contracts_touched_share": 0.9516129032258065,
+      "accuracy": 0.8870967741935484
+     },
+     {
+      "escalated_share": 0.5,
+      "contracts_touched_share": 1.0,
+      "accuracy": 0.8946869070208728
+     }
+    ]
+   },
+   "large served masked": {
+    "engine_accuracy": 0.8833017077798861,
+    "points": [
+     {
+      "escalated_share": 0.0,
+      "contracts_touched_share": 0.0,
+      "accuracy": 0.8833017077798861,
+      "compute_vs_decoder_alone": 0.12804817805194402
+     },
+     {
+      "escalated_share": 0.02,
+      "contracts_touched_share": 0.2903225806451613,
+      "accuracy": 0.8918406072106262,
+      "compute_vs_decoder_alone": 0.4183707586971054
+     },
+     {
+      "escalated_share": 0.05,
+      "contracts_touched_share": 0.5645161290322581,
+      "accuracy": 0.8984819734345351,
+      "compute_vs_decoder_alone": 0.6925643070842021
+     },
+     {
+      "escalated_share": 0.1,
+      "contracts_touched_share": 0.8064516129032258,
+      "accuracy": 0.9003795066413662,
+      "compute_vs_decoder_alone": 0.9344997909551698
+     },
+     {
+      "escalated_share": 0.2,
+      "contracts_touched_share": 0.9032258064516129,
+      "accuracy": 0.9013282732447818,
+      "compute_vs_decoder_alone": 1.031273984503557
+     },
+     {
+      "escalated_share": 0.3,
+      "contracts_touched_share": 0.9193548387096774,
+      "accuracy": 0.9003795066413662,
+      "compute_vs_decoder_alone": 1.0474030167616213
+     },
+     {
+      "escalated_share": 0.5,
+      "contracts_touched_share": 1.0,
+      "accuracy": 0.9041745730550285,
+      "compute_vs_decoder_alone": 1.128048178051944
+     }
+    ]
+   }
+  }
+ }
+}

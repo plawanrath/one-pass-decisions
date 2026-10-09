@@ -1,6 +1,6 @@
 """The escalation gate, the System 2 fallback, the audit sampler and the cost ledger.
 
-A `Gate` holds one threshold per (task, qid) group, or one for all, plus the certificate it came from. `apply`
+A `Gate` holds one threshold per (task, qid) group, or one for all, plus the record it came from. `apply`
 splits decisions into accepted and escalated; `Cascade` sends escalated questions to a System 2 answerer that returns
 the same typed answer, samples accepted decisions for a second opinion (the audit), and records tokens, seconds and
 dollars per decision in the ledger. The System 2 answerer is any callable `(state, question) -> (index, meta)`, so
@@ -15,14 +15,14 @@ from pathlib import Path
 from typing import Callable
 
 from ..schema import Decision, Question
-from .certify import Certificate
+from .risk_control import ThresholdRecord
 
 
 @dataclass
 class Gate:
     thresholds: dict[str, float]  # key "*" or qid
-    certificates: dict[str, dict] = field(default_factory=dict)
-    name: str = "engine-certified"
+    records: dict[str, dict] = field(default_factory=dict)
+    name: str = "served-path"
 
     def tau(self, qid: str) -> float:
         return self.thresholds.get(qid, self.thresholds.get("*", 1.0))
@@ -36,7 +36,7 @@ class Gate:
         return acc, esc
 
     @staticmethod
-    def from_certificates(certs: dict[str, Certificate], name: str = "engine-certified") -> "Gate":
+    def from_records(certs: dict[str, ThresholdRecord], name: str = "served-path") -> "Gate":
         return Gate({k: c.tau for k, c in certs.items()}, {k: c.as_dict() for k, c in certs.items()}, name)
 
     def save(self, path: str | Path) -> None:
@@ -97,6 +97,7 @@ class Ledger:
                 "prices": asdict(self.prices)}
 
     def save(self, path: str | Path) -> None:
+        Path(path).parent.mkdir(parents=True, exist_ok=True)
         with Path(path).open("w") as f:
             for e in self.entries:
                 f.write(json.dumps(asdict(e)) + "\n")
@@ -152,3 +153,31 @@ class Cascade:
         n = len(log)
         return {"n_audited": n, "disagreement_rate": (sum(e["disagree"] for e in log) / n) if n else float("nan"),
                 "confident_disagreement_rate": (sum(e["disagree"] and e["conf"] >= 0.9 for e in log) / n) if n else float("nan")}
+
+
+def split_summary(escalated: list[bool], s1_correct: list[int], final_correct: list[int], latency_ms: list[float], usd: list[float],
+                  alpha: float = 0.05) -> dict:
+    """What the gate did, split into the accepted and the escalated decisions. Accepted: the realized selective risk of
+    the System 1 answers the gate let through (Clopper-Pearson 95% CI) against alpha. Escalated: how the escalated
+    questions would have fared on System 1 against how they fared after System 2, their latency and their share of
+    the spend. This is the evidence for whether escalation buys anything beyond the risk bound."""
+    from ..stats import clopper_pearson
+
+    n = len(escalated)
+    acc_i = [i for i in range(n) if not escalated[i]]
+    esc_i = [i for i in range(n) if escalated[i]]
+    out = {"n": n, "escalate_rate": len(esc_i) / n if n else float("nan")}
+    k_wrong = sum(1 - s1_correct[i] for i in acc_i)
+    lo, hi = clopper_pearson(k_wrong, len(acc_i)) if acc_i else (float("nan"), float("nan"))
+    out["accepted"] = {"n": len(acc_i), "risk": k_wrong / len(acc_i) if acc_i else float("nan"), "risk_ci_low": lo, "risk_ci_high": hi,
+                       "violates_alpha": bool(acc_i) and lo > alpha}
+    tot_usd = sum(usd)
+    out["escalated"] = {"n": len(esc_i),
+                        "system1_accuracy": sum(s1_correct[i] for i in esc_i) / len(esc_i) if esc_i else float("nan"),
+                        "final_accuracy": sum(final_correct[i] for i in esc_i) / len(esc_i) if esc_i else float("nan"),
+                        "mean_ms": sum(latency_ms[i] for i in esc_i) / len(esc_i) if esc_i else float("nan"),
+                        "p99_ms": (sorted(latency_ms[i] for i in esc_i)[max(0, int(0.99 * len(esc_i)) - 1)] if esc_i else float("nan")),
+                        "usd_share": sum(usd[i] for i in esc_i) / tot_usd if tot_usd else float("nan")}
+    out["escalation_gain_pp"] = 100 * (out["escalated"]["final_accuracy"] - out["escalated"]["system1_accuracy"]) * len(esc_i) / n if esc_i else 0.0
+    return out
+

@@ -1,0 +1,27 @@
+{
+ "task": "contractnli",
+ "seed": 20261005,
+ "n_questions": 17,
+ "holdout_qids": [
+  "nda-10",
+  "nda-11",
+  "nda-16",
+  "nda-18",
+  "nda-19"
+ ],
+ "train_qids": [
+  "nda-1",
+  "nda-12",
+  "nda-13",
+  "nda-15",
+  "nda-17",
+  "nda-2",
+  "nda-20",
+  "nda-3",
+  "nda-4",
+  "nda-5",
+  "nda-7",
+  "nda-8"
+ ],
+ "note": "questions held out of training to test answering unseen questions; drawn with random.Random(seed).sample over the sorted question ids"
+}

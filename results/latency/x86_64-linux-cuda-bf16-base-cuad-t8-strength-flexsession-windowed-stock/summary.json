@@ -1,0 +1,44 @@
+{
+ "host": "x86_64-linux-cuda-bf16",
+ "threads": 8,
+ "size": "base",
+ "task": "cuad",
+ "torch": "2.14.1+cu130",
+ "grid": {
+  "S32768_K41": {
+   "N": 2,
+   "p50_ms": {
+    "engine-windowed-cold-split": 290.5720341950655,
+    "engine-windowed-hit-split": 62.406035140156746
+   },
+   "per_decision_p50_ms": {
+    "engine-windowed-cold-split": 7.0871227852455,
+    "engine-windowed-hit-split": 1.5220984180526036
+   },
+   "speedup_vs_one_seq": {
+    "engine-windowed-cold-split": {
+     "speedup": 1.0,
+     "ci_low": 0.9700376847301719,
+     "ci_high": 1.0312176281265375,
+     "cell": "engine-windowed-cold-split",
+     "reference": "engine-windowed-cold-split",
+     "cell_p50_ms": 290.5720341950655,
+     "reference_p50_ms": 290.5720341950655,
+     "K": 41,
+     "S": 32768
+    },
+    "engine-windowed-hit-split": {
+     "speedup": 4.656152783019691,
+     "ci_low": 4.567329121189246,
+     "ci_high": 4.765065858767736,
+     "cell": "engine-windowed-hit-split",
+     "reference": "engine-windowed-cold-split",
+     "cell_p50_ms": 62.406035140156746,
+     "reference_p50_ms": 290.5720341950655,
+     "K": 41,
+     "S": 32768
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,7 @@
+{
+ "model": "models/_from_h100_unpacked/modernbert-base-block-contractnli-unpacked-s1",
+ "result": "base-block-contractnli-unpacked-s1",
+ "n": 34,
+ "same_decisions": 34,
+ "max_prob_diff": 0.008390000000000009
+}

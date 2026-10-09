@@ -1,0 +1,112 @@
+{
+ "decoder": "decoder-smol3-contractnli-lr1e5",
+ "test": {
+  "n": 1054,
+  "accuracy": 0.905123339658444,
+  "aurc": 0.0307871026948273,
+  "eaurc": 0.02609181660350307,
+  "ece": 0.0703743879720427,
+  "auroc_error": 0.8245702306079664,
+  "coverage_at_risk_0.02": 0.573055028462998,
+  "coverage_at_risk_0.05": 0.8538899430740038,
+  "coverage_at_risk_0.1": 1.0
+ },
+ "dev": {
+  "n": 1037,
+  "accuracy": 0.8813886210221794,
+  "aurc": 0.03387939232271052,
+  "eaurc": 0.026492006275580363,
+  "ece": 0.09647637962030467,
+  "auroc_error": 0.8389772464464251,
+  "coverage_at_risk_0.02": 0.420443587270974,
+  "coverage_at_risk_0.05": 0.7801350048216008,
+  "coverage_at_risk_0.1": 0.9508196721311475
+ },
+ "kv_bytes_per_token_bf16": 73728,
+ "minus_decoder_pp": {
+  "MB-l engine, served masked": {
+   "accuracy_pp": {
+    "point": -2.1821631878557923,
+    "ci_low": -3.605313092979131,
+    "ci_high": -0.7590132827324396
+   },
+   "aurc": {
+    "point": 0.00994111961766114,
+    "ci_low": 0.0021283827530045787,
+    "ci_high": 0.01834891002110357,
+    "n": 1054,
+    "n_groups": 62,
+    "n_resamples": 10000
+   }
+  },
+  "MB-l engine, adapted": {
+   "accuracy_pp": {
+    "point": -1.6129032258064484,
+    "ci_low": -3.0384250474383374,
+    "ci_high": -0.1897533206831099
+   },
+   "aurc": {
+    "point": 0.01995791456104046,
+    "ci_low": 0.009132966296984011,
+    "ci_high": 0.032115298888662394,
+    "n": 1054,
+    "n_groups": 62,
+    "n_resamples": 10000
+   }
+  },
+  "MB-l full attention": {
+   "accuracy_pp": {
+    "point": -1.3282732447817835,
+    "ci_low": -2.751423149905122,
+    "ci_high": 0.0
+   },
+   "aurc": {
+    "point": 0.0108150630525119,
+    "ci_low": 0.003059268269631761,
+    "ci_high": 0.019281496913094106,
+    "n": 1054,
+    "n_groups": 62,
+    "n_resamples": 10000
+   }
+  },
+  "SmolLM2-1.7B": {
+   "accuracy_pp": {
+    "point": -1.7077798861480034,
+    "ci_low": -3.130929791271342,
+    "ci_high": -0.3795066413662198
+   },
+   "aurc": {
+    "point": 0.0025075410046115527,
+    "ci_low": -0.006995577768984692,
+    "ci_high": 0.012018658480972371,
+    "n": 1054,
+    "n_groups": 62,
+    "n_resamples": 10000
+   }
+  }
+ },
+ "flops_per_contract": 31592718925824.0,
+ "nonembedding_params": 2812280832,
+ "engine_large_flops_per_contract": 4045390098158.933,
+ "flop_ratio": 7.809560551453845,
+ "latency_ms": {
+  "decoder_cold": {
+   "vllm": 101.94042100192746,
+   "tight": 152.91944049386075
+  },
+  "decoder_warm": {
+   "vllm": 78.81858250038931,
+   "tight": 90.31798100477317
+  },
+  "engine_cold": 35.36985442042351,
+  "engine_resident": 13.111734762787819
+ },
+ "throughput_contracts_per_s": {
+  "N": 16,
+  "decoder": 14.461975369492723,
+  "engine": 31.431593037056565
+ },
+ "cold_speedup": 2.882127242883542,
+ "resident_speedup": 6.01130086341305,
+ "throughput_ratio_16": 2.173395558628937
+}

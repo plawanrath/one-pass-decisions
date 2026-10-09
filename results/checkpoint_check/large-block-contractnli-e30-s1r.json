@@ -1,0 +1,7 @@
+{
+ "model": "models/_from_h100_large_seeds/modernbert-large-block-contractnli-e30-s1r",
+ "result": "large-block-contractnli-e30-s1r",
+ "n": 34,
+ "same_decisions": 34,
+ "max_prob_diff": 1.2999999999929734e-05
+}

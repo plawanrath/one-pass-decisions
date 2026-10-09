@@ -1,0 +1,486 @@
+{
+ "rows": [
+  {
+   "task": "contracts",
+   "seed": 0,
+   "long": "base-full-contractnli-lr2e5-e39",
+   "short": "base-full-contractnli-lr2e5-bestacc",
+   "mask": "base-block-contractnli-steps",
+   "epochs_long": 38.672,
+   "dev_curve": [
+    {
+     "step": 5759,
+     "dev_aurc": 0.06667974676601163,
+     "dev_accuracy": 0.8167791706846673
+    },
+    {
+     "step": 11518,
+     "dev_aurc": 0.08687105594470518,
+     "dev_accuracy": 0.8476374156219865
+    },
+    {
+     "step": 17276,
+     "dev_aurc": 0.07112993572063109,
+     "dev_accuracy": 0.8379942140790743
+    },
+    {
+     "step": 23035,
+     "dev_aurc": 0.08616439011538564,
+     "dev_accuracy": 0.8486017357762777
+    },
+    {
+     "step": 28794,
+     "dev_aurc": 0.06428441120741975,
+     "dev_accuracy": 0.8447444551591128
+    },
+    {
+     "step": 34552,
+     "dev_aurc": 0.0681609638788559,
+     "dev_accuracy": 0.8476374156219865
+    },
+    {
+     "step": 40311,
+     "dev_aurc": 0.06666083395974595,
+     "dev_accuracy": 0.8505303760848602
+    },
+    {
+     "step": 46070,
+     "dev_aurc": 0.08440856243174,
+     "dev_accuracy": 0.8495660559305689
+    }
+   ],
+   "long_full": {
+    "accuracy": 0.8861480075901328,
+    "aurc": 0.053573944502224836
+   },
+   "long_served_masked": {
+    "accuracy": 0.8823529411764706,
+    "aurc": 0.05202099129843159
+   },
+   "short_full": {
+    "accuracy": 0.8538899430740038,
+    "aurc": 0.057666099648812474
+   },
+   "mask_trained": {
+    "accuracy": 0.8235294117647058,
+    "aurc": 0.10745998264239516
+   },
+   "long_minus_short": {
+    "accuracy_pp": {
+     "point": 3.225806451612897,
+     "ci_low": 1.4231499051233385,
+     "ci_high": 5.028462998102469,
+     "excludes_zero": true
+    },
+    "aurc": {
+     "point": -0.004092155146587638,
+     "ci_low": -0.019965119850241332,
+     "ci_high": 0.01432170197524488,
+     "excludes_zero": false
+    }
+   },
+   "mask_minus_long": {
+    "accuracy_pp": {
+     "point": -6.261859582542698,
+     "ci_low": -8.728652751423141,
+     "ci_high": -3.8899430740037957,
+     "excludes_zero": true
+    },
+    "aurc": {
+     "point": 0.053886038140170324,
+     "ci_low": 0.030323428872512073,
+     "ci_high": 0.07281396453518163,
+     "excludes_zero": true
+    }
+   },
+   "long_served_minus_long": {
+    "accuracy_pp": {
+     "point": -0.3795066413662198,
+     "ci_low": -1.4231499051233385,
+     "ci_high": 0.5692599620493297,
+     "excludes_zero": false
+    },
+    "aurc": {
+     "point": -0.001552953203793249,
+     "ci_low": -0.007707861924634601,
+     "ci_high": 0.007473328547228496,
+     "excludes_zero": false
+    }
+   },
+   "mask_minus_long_served": {
+    "accuracy_pp": {
+     "point": -5.882352941176478,
+     "ci_low": -8.064516129032256,
+     "ci_high": -3.700189753320686,
+     "excludes_zero": true
+    },
+    "aurc": {
+     "point": 0.05543899134396357,
+     "ci_low": 0.030166866089271282,
+     "ci_high": 0.07255297016230655,
+     "excludes_zero": true
+    }
+   }
+  },
+  {
+   "task": "contracts",
+   "seed": 1,
+   "long": "base-full-contractnli-lr2e5-e39-s1",
+   "short": "base-full-contractnli-lr2e5-bestacc-s1",
+   "mask": "base-block-contractnli-steps",
+   "epochs_long": 38.675,
+   "dev_curve": [
+    {
+     "step": 5755,
+     "dev_aurc": 0.08601341702972917,
+     "dev_accuracy": 0.7984570877531341
+    },
+    {
+     "step": 11510,
+     "dev_aurc": 0.11539167259831519,
+     "dev_accuracy": 0.7888138862102219
+    },
+    {
+     "step": 17265,
+     "dev_aurc": 0.10236368954410424,
+     "dev_accuracy": 0.7974927675988428
+    },
+    {
+     "step": 23020,
+     "dev_aurc": 0.08675601817408742,
+     "dev_accuracy": 0.8129218900675024
+    },
+    {
+     "step": 28776,
+     "dev_aurc": 0.0986839009933615,
+     "dev_accuracy": 0.8061716489874639
+    },
+    {
+     "step": 34531,
+     "dev_aurc": 0.09703376645144098,
+     "dev_accuracy": 0.8052073288331726
+    },
+    {
+     "step": 40286,
+     "dev_aurc": 0.10029395157551226,
+     "dev_accuracy": 0.8090646094503375
+    },
+    {
+     "step": 46041,
+     "dev_aurc": 0.10157324825824121,
+     "dev_accuracy": 0.81099324975892
+    }
+   ],
+   "long_full": {
+    "accuracy": 0.8349146110056926,
+    "aurc": 0.07390529435955429
+   },
+   "long_served_masked": {
+    "accuracy": 0.8263757115749526,
+    "aurc": 0.06793815996724964
+   },
+   "short_full": {
+    "accuracy": 0.8586337760910816,
+    "aurc": 0.06472272989371755
+   },
+   "mask_trained": {
+    "accuracy": 0.8235294117647058,
+    "aurc": 0.10745998264239516
+   },
+   "long_minus_short": {
+    "accuracy_pp": {
+     "point": -2.371916508538888,
+     "ci_low": -4.554079696394695,
+     "ci_high": -0.3795066413662198,
+     "excludes_zero": true
+    },
+    "aurc": {
+     "point": 0.009182564465836734,
+     "ci_low": -0.004606351152395895,
+     "ci_high": 0.02602014949020903,
+     "excludes_zero": false
+    }
+   },
+   "mask_minus_long": {
+    "accuracy_pp": {
+     "point": -1.1385199240986879,
+     "ci_low": -2.846299810246677,
+     "ci_high": 0.6641366223908847,
+     "excludes_zero": false
+    },
+    "aurc": {
+     "point": 0.033554688282840875,
+     "ci_low": 0.01626511043939285,
+     "ci_high": 0.04681449558801042,
+     "excludes_zero": true
+    }
+   },
+   "long_served_minus_long": {
+    "accuracy_pp": {
+     "point": -0.8538899430740088,
+     "ci_low": -1.6129032258064484,
+     "ci_high": -0.18738140417459204,
+     "excludes_zero": true
+    },
+    "aurc": {
+     "point": -0.005967134392304646,
+     "ci_low": -0.011970679443445958,
+     "ci_high": 0.00017141098977668372,
+     "excludes_zero": false
+    }
+   },
+   "mask_minus_long_served": {
+    "accuracy_pp": {
+     "point": -0.28462998102467907,
+     "ci_low": -1.8026565464895725,
+     "ci_high": 1.4231499051233385,
+     "excludes_zero": false
+    },
+    "aurc": {
+     "point": 0.03952182267514552,
+     "ci_low": 0.020782924371943602,
+     "ci_high": 0.05307933571938634,
+     "excludes_zero": true
+    }
+   }
+  },
+  {
+   "task": "contracts",
+   "seed": 2,
+   "long": "base-full-contractnli-lr2e5-e39-s2",
+   "short": "base-full-contractnli-lr2e5-bestacc-s2",
+   "mask": "base-block-contractnli-steps",
+   "epochs_long": 38.674,
+   "dev_curve": [
+    {
+     "step": 5755,
+     "dev_aurc": 0.08530441702350183,
+     "dev_accuracy": 0.7849566055930569
+    },
+    {
+     "step": 11511,
+     "dev_aurc": 0.09028364235596606,
+     "dev_accuracy": 0.8061716489874639
+    },
+    {
+     "step": 17266,
+     "dev_aurc": 0.1071932177136648,
+     "dev_accuracy": 0.8042430086788814
+    },
+    {
+     "step": 23022,
+     "dev_aurc": 0.11971029576109049,
+     "dev_accuracy": 0.81099324975892
+    },
+    {
+     "step": 28777,
+     "dev_aurc": 0.08528095649987172,
+     "dev_accuracy": 0.8148505303760849
+    },
+    {
+     "step": 34532,
+     "dev_aurc": 0.11429059370865748,
+     "dev_accuracy": 0.8081002892960463
+    },
+    {
+     "step": 40288,
+     "dev_aurc": 0.10459887044241614,
+     "dev_accuracy": 0.8042430086788814
+    },
+    {
+     "step": 46043,
+     "dev_aurc": 0.10991355293750359,
+     "dev_accuracy": 0.8061716489874639
+    }
+   ],
+   "long_full": {
+    "accuracy": 0.8330170777988615,
+    "aurc": 0.08040968527570115
+   },
+   "long_served_masked": {
+    "accuracy": 0.8292220113851992,
+    "aurc": 0.0790453792851812
+   },
+   "short_full": {
+    "accuracy": 0.8273244781783682,
+    "aurc": 0.06630713307981452
+   },
+   "mask_trained": {
+    "accuracy": 0.8235294117647058,
+    "aurc": 0.10745998264239516
+   },
+   "long_minus_short": {
+    "accuracy_pp": {
+     "point": 0.5692599620493297,
+     "ci_low": -1.3306451612903338,
+     "ci_high": 2.3719165085389164,
+     "excludes_zero": false
+    },
+    "aurc": {
+     "point": 0.01410255219588663,
+     "ci_low": -0.001803023862384242,
+     "ci_high": 0.028844983022236523,
+     "excludes_zero": false
+    }
+   },
+   "mask_minus_long": {
+    "accuracy_pp": {
+     "point": -0.9487666034155637,
+     "ci_low": -3.036053130929801,
+     "ci_high": 1.2333965844402286,
+     "excludes_zero": false
+    },
+    "aurc": {
+     "point": 0.02705029736669401,
+     "ci_low": 0.0046289376397967,
+     "ci_high": 0.04894227832066913,
+     "excludes_zero": true
+    }
+   },
+   "long_served_minus_long": {
+    "accuracy_pp": {
+     "point": -0.3795066413662198,
+     "ci_low": -1.0436432637571187,
+     "ci_high": 0.28462998102466486,
+     "excludes_zero": false
+    },
+    "aurc": {
+     "point": -0.001364305990519954,
+     "ci_low": -0.007199307816854522,
+     "ci_high": 0.0028055862187653163,
+     "excludes_zero": false
+    }
+   },
+   "mask_minus_long_served": {
+    "accuracy_pp": {
+     "point": -0.5692599620493439,
+     "ci_low": -2.751423149905122,
+     "ci_high": 1.6129032258064484,
+     "excludes_zero": false
+    },
+    "aurc": {
+     "point": 0.028414603357213963,
+     "ci_low": 0.0068630248468311535,
+     "ci_high": 0.05065637786198377,
+     "excludes_zero": true
+    }
+   }
+  },
+  {
+   "task": "clauses",
+   "seed": 0,
+   "long": "base-full-cuad-e14",
+   "short": "base-full-cuad",
+   "mask": "base-block-cuad-steps",
+   "epochs_long": 14.065,
+   "dev_curve": [
+    {
+     "step": 4710,
+     "dev_aurc": 0.037106854508400684,
+     "dev_accuracy": 0.874701099952176
+    },
+    {
+     "step": 9419,
+     "dev_aurc": 0.05138852485812862,
+     "dev_accuracy": 0.882831181252989
+    },
+    {
+     "step": 14129,
+     "dev_aurc": 0.049410382579156156,
+     "dev_accuracy": 0.8943089430894309
+    },
+    {
+     "step": 18838,
+     "dev_aurc": 0.04254738206732103,
+     "dev_accuracy": 0.8895265423242468
+    },
+    {
+     "step": 23548,
+     "dev_aurc": 0.05012447586486537,
+     "dev_accuracy": 0.8962219033955046
+    }
+   ],
+   "long_full": {
+    "accuracy": 0.8694404591104734,
+    "aurc": 0.0683237483745044
+   },
+   "long_served_masked": {
+    "accuracy": 0.8637015781922526,
+    "aurc": 0.07453107738806114
+   },
+   "short_full": {
+    "accuracy": 0.8684839789574366,
+    "aurc": 0.04056985407237483
+   },
+   "mask_trained": {
+    "accuracy": 0.8603538976566236,
+    "aurc": 0.09772235309054807
+   },
+   "long_minus_short": {
+    "accuracy_pp": {
+     "point": 0.09564801530366651,
+     "ci_low": -1.1956001912960232,
+     "ci_high": 1.3390722142515443,
+     "excludes_zero": false
+    },
+    "aurc": {
+     "point": 0.027753894302129573,
+     "ci_low": 0.014530243509462276,
+     "ci_high": 0.041570762402208916,
+     "excludes_zero": true
+    }
+   },
+   "mask_minus_long": {
+    "accuracy_pp": {
+     "point": -0.9086561453849811,
+     "ci_low": -2.152080344332859,
+     "ci_high": 0.43041606886656325,
+     "excludes_zero": false
+    },
+    "aurc": {
+     "point": 0.029398604716043664,
+     "ci_low": 0.010346296638915672,
+     "ci_high": 0.053098618212931305,
+     "excludes_zero": true
+    }
+   },
+   "long_served_minus_long": {
+    "accuracy_pp": {
+     "point": -0.5738880918220985,
+     "ci_low": -1.4825442372070654,
+     "ci_high": 0.2869440459110564,
+     "excludes_zero": false
+    },
+    "aurc": {
+     "point": 0.006207329013556737,
+     "ci_low": -0.0001569289960376764,
+     "ci_high": 0.015257449007124066,
+     "excludes_zero": false
+    }
+   },
+   "mask_minus_long_served": {
+    "accuracy_pp": {
+     "point": -0.33476805356288253,
+     "ci_low": -1.5303682448589058,
+     "ci_high": 0.8608321377331549,
+     "excludes_zero": false
+    },
+    "aurc": {
+     "point": 0.023191275702486927,
+     "ci_low": 0.0018102127089593472,
+     "ci_high": 0.04749708587779968,
+     "excludes_zero": true
+    }
+   }
+  }
+ ],
+ "rules": {
+  "A": false,
+  "B": false,
+  "C": true,
+  "contracts_length_effect_seeds": 0,
+  "contracts_mask_effect_seeds": 3,
+  "clauses_length_effect": true,
+  "clauses_mask_effect": true
+ }
+}

@@ -1,0 +1,9 @@
+{
+ "host": "arm64-darwin",
+ "threads": 12,
+ "size": "base",
+ "task": "guardrail",
+ "paths": [
+  "ort-int8-static"
+ ]
+}

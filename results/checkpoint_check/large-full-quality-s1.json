@@ -1,0 +1,7 @@
+{
+ "model": "models/_from_h100_dose/modernbert-large-full-quality-s1",
+ "result": "large-full-quality-s1",
+ "n": 18,
+ "same_decisions": 18,
+ "max_prob_diff": 0.04764099999999999
+}

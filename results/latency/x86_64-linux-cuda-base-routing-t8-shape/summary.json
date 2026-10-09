@@ -1,0 +1,231 @@
+{
+ "host": "x86_64-linux-cuda",
+ "threads": 8,
+ "size": "base",
+ "task": "routing",
+ "torch": "2.14.1+cu130",
+ "grid": {
+  "S32_K2": {
+   "N": 11,
+   "p50_ms": {
+    "torch-one-seq-full": 33.667384181171656,
+    "torch-compile-one-seq-full": 15.555047895759344,
+    "torch-naive-batch-full": 15.144124627113342,
+    "engine-cold": 14.9452262558043,
+    "engine-hit": 14.585349708795547
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 16.833692090585828,
+    "torch-compile-one-seq-full": 7.777523947879672,
+    "torch-naive-batch-full": 7.572062313556671,
+    "engine-cold": 7.47261312790215,
+    "engine-hit": 7.292674854397774
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.8105676118774776,
+     "ci_high": 1.2322831873787887,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 33.667384181171656,
+     "reference_p50_ms": 33.667384181171656,
+     "K": 2,
+     "S": 32
+    },
+    "torch-compile-one-seq-full": {
+     "speedup": 2.1644024760830303,
+     "ci_low": 1.9755848684402246,
+     "ci_high": 2.4985561006756383,
+     "cell": "torch-compile-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 15.555047895759344,
+     "reference_p50_ms": 33.667384181171656,
+     "K": 2,
+     "S": 32
+    },
+    "torch-naive-batch-full": {
+     "speedup": 2.223131743177491,
+     "ci_low": 2.028356489836788,
+     "ci_high": 2.573809290685124,
+     "cell": "torch-naive-batch-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 15.144124627113342,
+     "reference_p50_ms": 33.667384181171656,
+     "K": 2,
+     "S": 32
+    },
+    "engine-cold": {
+     "speedup": 2.2527182663491763,
+     "ci_low": 2.054815844867796,
+     "ci_high": 2.6031467742727576,
+     "cell": "engine-cold",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 14.9452262558043,
+     "reference_p50_ms": 33.667384181171656,
+     "K": 2,
+     "S": 32
+    },
+    "engine-hit": {
+     "speedup": 2.3083014705412843,
+     "ci_low": 2.1031252714243216,
+     "ci_high": 2.6686822357639643,
+     "cell": "engine-hit",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 14.585349708795547,
+     "reference_p50_ms": 33.667384181171656,
+     "K": 2,
+     "S": 32
+    }
+   }
+  },
+  "S1024_K2": {
+   "N": 11,
+   "p50_ms": {
+    "torch-one-seq-full": 42.2895853407681,
+    "torch-compile-one-seq-full": 38.30153867602348,
+    "torch-naive-batch-full": 40.09613627567887,
+    "engine-cold": 24.4490634649992,
+    "engine-hit": 14.087340328842402
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 21.14479267038405,
+    "torch-compile-one-seq-full": 19.15076933801174,
+    "torch-naive-batch-full": 20.048068137839437,
+    "engine-cold": 12.2245317324996,
+    "engine-hit": 7.043670164421201
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.9967784970832226,
+     "ci_high": 1.0034042265981753,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 42.2895853407681,
+     "reference_p50_ms": 42.2895853407681,
+     "K": 2,
+     "S": 1024
+    },
+    "torch-compile-one-seq-full": {
+     "speedup": 1.1041223617274964,
+     "ci_low": 1.1001987632839738,
+     "ci_high": 1.1106817326689822,
+     "cell": "torch-compile-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 38.30153867602348,
+     "reference_p50_ms": 42.2895853407681,
+     "K": 2,
+     "S": 1024
+    },
+    "torch-naive-batch-full": {
+     "speedup": 1.0547047488568047,
+     "ci_low": 1.0499601758614518,
+     "ci_high": 1.058183937351085,
+     "cell": "torch-naive-batch-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 40.09613627567887,
+     "reference_p50_ms": 42.2895853407681,
+     "K": 2,
+     "S": 1024
+    },
+    "engine-cold": {
+     "speedup": 1.7297016469080315,
+     "ci_low": 1.7246276910699578,
+     "ci_high": 1.7353636078072958,
+     "cell": "engine-cold",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 24.4490634649992,
+     "reference_p50_ms": 42.2895853407681,
+     "K": 2,
+     "S": 1024
+    },
+    "engine-hit": {
+     "speedup": 3.0019566755397014,
+     "ci_low": 2.98804393570146,
+     "ci_high": 3.0183512777362784,
+     "cell": "engine-hit",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 14.087340328842402,
+     "reference_p50_ms": 42.2895853407681,
+     "K": 2,
+     "S": 1024
+    }
+   }
+  },
+  "S512_K20": {
+   "N": 11,
+   "p50_ms": {
+    "torch-one-seq-full": 311.87202082946897,
+    "torch-compile-one-seq-full": 231.2523778527975,
+    "torch-naive-batch-full": 163.38733956217766,
+    "engine-cold": 33.21509063243866,
+    "engine-hit": 27.219461742788553
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 15.593601041473448,
+    "torch-compile-one-seq-full": 11.562618892639875,
+    "torch-naive-batch-full": 8.169366978108883,
+    "engine-cold": 1.660754531621933,
+    "engine-hit": 1.3609730871394277
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.9889859317502372,
+     "ci_high": 1.0111991773574995,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 311.87202082946897,
+     "reference_p50_ms": 311.87202082946897,
+     "K": 20,
+     "S": 512
+    },
+    "torch-compile-one-seq-full": {
+     "speedup": 1.3486218984004976,
+     "ci_low": 1.3377876224405936,
+     "ci_high": 1.3599866569089183,
+     "cell": "torch-compile-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 231.2523778527975,
+     "reference_p50_ms": 311.87202082946897,
+     "K": 20,
+     "S": 512
+    },
+    "torch-naive-batch-full": {
+     "speedup": 1.9087893937509455,
+     "ci_low": 1.8927625165666515,
+     "ci_high": 1.925716588758934,
+     "cell": "torch-naive-batch-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 163.38733956217766,
+     "reference_p50_ms": 311.87202082946897,
+     "K": 20,
+     "S": 512
+    },
+    "engine-cold": {
+     "speedup": 9.389467705528018,
+     "ci_low": 9.315425342352173,
+     "ci_high": 9.471898721843877,
+     "cell": "engine-cold",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 33.21509063243866,
+     "reference_p50_ms": 311.87202082946897,
+     "K": 20,
+     "S": 512
+    },
+    "engine-hit": {
+     "speedup": 11.457685084904202,
+     "ci_low": 11.365448689781278,
+     "ci_high": 11.55586863239046,
+     "cell": "engine-hit",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 27.219461742788553,
+     "reference_p50_ms": 311.87202082946897,
+     "K": 20,
+     "S": 512
+    }
+   }
+  }
+ }
+}

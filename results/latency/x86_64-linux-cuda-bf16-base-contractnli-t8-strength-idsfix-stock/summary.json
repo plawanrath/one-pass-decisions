@@ -1,0 +1,70 @@
+{
+ "host": "x86_64-linux-cuda-bf16",
+ "threads": 8,
+ "size": "base",
+ "task": "contractnli",
+ "torch": "2.14.1+cu130",
+ "grid": {
+  "S4096_K17": {
+   "N": 3,
+   "p50_ms": {
+    "torch-one-seq-full": 457.6382175000617,
+    "torch-compile-one-seq-full": 354.80877100053476,
+    "varlen-torch-varlen-one-seq-full": 209.93176749470877,
+    "torch-naive-batch-full": 359.9341045046458
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 26.919895147062455,
+    "torch-compile-one-seq-full": 20.871104176502044,
+    "varlen-torch-varlen-one-seq-full": 12.34892749968875,
+    "torch-naive-batch-full": 21.172594382626222
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.9964536849396124,
+     "ci_high": 1.0036657373236775,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 457.6382175000617,
+     "reference_p50_ms": 457.6382175000617,
+     "K": 17,
+     "S": 4096
+    },
+    "torch-compile-one-seq-full": {
+     "speedup": 1.2898165290828507,
+     "ci_low": 1.2858797907222135,
+     "ci_high": 1.296778714330726,
+     "cell": "torch-compile-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 354.80877100053476,
+     "reference_p50_ms": 457.6382175000617,
+     "K": 17,
+     "S": 4096
+    },
+    "varlen-torch-varlen-one-seq-full": {
+     "speedup": 2.179937905355826,
+     "ci_low": 2.1691531291338024,
+     "ci_high": 2.195377264372619,
+     "cell": "varlen-torch-varlen-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 209.93176749470877,
+     "reference_p50_ms": 457.6382175000617,
+     "K": 17,
+     "S": 4096
+    },
+    "torch-naive-batch-full": {
+     "speedup": 1.2714500009102494,
+     "ci_low": 1.266606385073218,
+     "ci_high": 1.2742290982090503,
+     "cell": "torch-naive-batch-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 359.9341045046458,
+     "reference_p50_ms": 457.6382175000617,
+     "K": 17,
+     "S": 4096
+    }
+   }
+  }
+ }
+}

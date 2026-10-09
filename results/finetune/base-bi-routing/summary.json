@@ -1,0 +1,30 @@
+{
+ "model": "base-bi-routing",
+ "kind": "bi",
+ "task": "routing",
+ "train": {
+  "epochs": 2.0,
+  "steps": 3813,
+  "seconds": 2546.01837515831,
+  "device": "cuda",
+  "states_per_step": 8,
+  "lr": 3e-05,
+  "head_lr": 0.001,
+  "max_state_tokens": 1024,
+  "state_side": "head"
+ },
+ "splits": {
+  "dev": {
+   "n": 3100,
+   "accuracy": 0.9725806451612903
+  },
+  "cal": {
+   "n": 2750,
+   "accuracy": 0.9065454545454545
+  },
+  "test": {
+   "n": 2750,
+   "accuracy": 0.9123636363636364
+  }
+ }
+}

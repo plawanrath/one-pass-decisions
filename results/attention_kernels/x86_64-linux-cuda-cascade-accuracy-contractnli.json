@@ -1,0 +1,26 @@
+{
+ "model": "models/_from_h100_flex/modernbert-base-block-contractnli-bestacc",
+ "task": "contractnli",
+ "n_questions": 1054,
+ "n_documents": 62,
+ "accuracy": {
+  "sdpa_fp32": 0.864326375711575,
+  "sdpa_bf16": 0.8624288425047438,
+  "cascade_bf16": 0.8624288425047438
+ },
+ "sdpa_bf16_vs_sdpa_fp32": {
+  "argmax_same": 1050,
+  "total": 1054,
+  "max_prob_diff": 0.5227593407034874
+ },
+ "cascade_bf16_vs_sdpa_fp32": {
+  "argmax_same": 1050,
+  "total": 1054,
+  "max_prob_diff": 0.39753247052431107
+ },
+ "cascade_bf16_vs_sdpa_bf16": {
+  "argmax_same": 1052,
+  "total": 1054,
+  "max_prob_diff": 0.435546875
+ }
+}

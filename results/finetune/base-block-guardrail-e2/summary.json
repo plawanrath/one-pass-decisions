@@ -1,0 +1,105 @@
+{
+ "backbone": "answerdotai/ModernBERT-base@8949b909ec900327062f0ebf497f51aef5e6f0c8",
+ "task": "guardrail",
+ "mode": "block",
+ "pool_manifest": "5244010ae12827f632b81508797a88d195c51a09821504a91382c537e626e618",
+ "git": "nogit",
+ "train": {
+  "config": {
+   "mode": "block",
+   "epochs": 2.0,
+   "lr": 3e-05,
+   "head_lr": 0.0001,
+   "weight_decay": 0.01,
+   "warmup_frac": 0.06,
+   "tokens_per_batch": 8192,
+   "max_seqs_per_batch": 32,
+   "max_state_tokens": 1024,
+   "max_option_tokens": 24,
+   "max_questions_per_seq": 16,
+   "max_seq_tokens": 2048,
+   "pad_multiple": 128,
+   "autocast_bf16": true,
+   "seed": 20260927,
+   "ckpt_every": 200,
+   "log_every": 20,
+   "grad_clip": 1.0,
+   "device": "auto",
+   "notes": "answerdotai/ModernBERT-base@8949b909 task=guardrail"
+  },
+  "n_records": 45122,
+  "n_sequences": 14877,
+  "steps": 2494,
+  "final_loss_20": 0.18632549168542029,
+  "seconds": 321.4,
+  "device": "cuda"
+ },
+ "splits": {
+  "dev": {
+   "n": 9027,
+   "accuracy": 0.8865625346183671,
+   "aurc": 0.01099311168787353,
+   "eaurc": 0.004294697351923061,
+   "ece": 0.02228978899404214,
+   "auroc_error": 0.9636153898342809,
+   "coverage_at_risk_0.02": 0.8484546360917248,
+   "coverage_at_risk_0.05": 0.9102691924227319,
+   "coverage_at_risk_0.1": 0.9807244931871053
+  },
+  "dev_as_full": {
+   "n": 9027,
+   "accuracy": 0.550459731915365,
+   "aurc": 0.2548898800295201,
+   "eaurc": 0.13394998464341162,
+   "ece": 0.323541339207451,
+   "auroc_error": 0.7252221783931742,
+   "coverage_at_risk_0.02": 0.13193752077102028,
+   "coverage_at_risk_0.05": 0.1729256674421181,
+   "coverage_at_risk_0.1": 0.22753960341198626
+  },
+  "cal": {
+   "n": 24832,
+   "accuracy": 0.8943701675257731,
+   "aurc": 0.010568730694816264,
+   "eaurc": 0.004780260703434372,
+   "ece": 0.018607913098806945,
+   "auroc_error": 0.9584628111065009,
+   "coverage_at_risk_0.02": 0.8587709407216495,
+   "coverage_at_risk_0.05": 0.919056056701031,
+   "coverage_at_risk_0.1": 0.9915431701030928
+  },
+  "cal_as_full": {
+   "n": 24832,
+   "accuracy": 0.5502174613402062,
+   "aurc": 0.26256389706994226,
+   "eaurc": 0.14149515459694867,
+   "ece": 0.3264826864151754,
+   "auroc_error": 0.7137018974588198,
+   "coverage_at_risk_0.02": 0.11686533505154639,
+   "coverage_at_risk_0.05": 0.15306862113402062,
+   "coverage_at_risk_0.1": 0.219152706185567
+  },
+  "test": {
+   "n": 33850,
+   "accuracy": 0.8942392909896603,
+   "aurc": 0.010392889373867467,
+   "eaurc": 0.004590364013287827,
+   "ece": 0.021065503918790057,
+   "auroc_error": 0.9593805194589476,
+   "coverage_at_risk_0.02": 0.85698670605613,
+   "coverage_at_risk_0.05": 0.9187887740029542,
+   "coverage_at_risk_0.1": 0.9916100443131463
+  },
+  "test_as_full": {
+   "n": 33850,
+   "accuracy": 0.5540620384047268,
+   "aurc": 0.26638555018093885,
+   "eaurc": 0.14760278722335235,
+   "ece": 0.325179916577554,
+   "auroc_error": 0.7010873991071741,
+   "coverage_at_risk_0.02": 0.1189069423929099,
+   "coverage_at_risk_0.05": 0.14915805022156572,
+   "coverage_at_risk_0.1": 0.20779911373707532
+  }
+ }
+}

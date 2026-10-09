@@ -1,0 +1,201 @@
+{
+ "host": "x86_64-linux-cuda-bf16",
+ "threads": 8,
+ "size": "large",
+ "task": "contractnli",
+ "torch": "2.14.1+cu130",
+ "grid": {
+  "S4096_K1": {
+   "N": 3,
+   "p50_ms": {
+    "engine-cold-split": 38.479091599583626,
+    "engine-cold-fill-split": 39.65078853070736,
+    "engine-hit-split": 9.635424241423607
+   },
+   "per_decision_p50_ms": {
+    "engine-cold-split": 38.479091599583626,
+    "engine-cold-fill-split": 39.65078853070736,
+    "engine-hit-split": 9.635424241423607
+   },
+   "speedup_vs_one_seq": {
+    "engine-cold-split": {
+     "speedup": 1.0,
+     "ci_low": 0.9619204477261315,
+     "ci_high": 1.0386138469644086,
+     "cell": "engine-cold-split",
+     "reference": "engine-cold-split",
+     "cell_p50_ms": 38.479091599583626,
+     "reference_p50_ms": 38.479091599583626,
+     "K": 1,
+     "S": 4096
+    },
+    "engine-cold-fill-split": {
+     "speedup": 0.9704495931974639,
+     "ci_low": 0.9432159578175553,
+     "ci_high": 1.0084905283969081,
+     "cell": "engine-cold-fill-split",
+     "reference": "engine-cold-split",
+     "cell_p50_ms": 39.65078853070736,
+     "reference_p50_ms": 38.479091599583626,
+     "K": 1,
+     "S": 4096
+    },
+    "engine-hit-split": {
+     "speedup": 3.9935025833277114,
+     "ci_low": 3.9222414294140466,
+     "ci_high": 4.144870779379135,
+     "cell": "engine-hit-split",
+     "reference": "engine-cold-split",
+     "cell_p50_ms": 9.635424241423607,
+     "reference_p50_ms": 38.479091599583626,
+     "K": 1,
+     "S": 4096
+    }
+   }
+  },
+  "S4096_K2": {
+   "N": 3,
+   "p50_ms": {
+    "engine-cold-split": 38.99501450359821,
+    "engine-cold-fill-split": 40.47261364758015,
+    "engine-hit-split": 9.790454059839249
+   },
+   "per_decision_p50_ms": {
+    "engine-cold-split": 19.497507251799107,
+    "engine-cold-fill-split": 20.236306823790073,
+    "engine-hit-split": 4.895227029919624
+   },
+   "speedup_vs_one_seq": {
+    "engine-cold-split": {
+     "speedup": 1.0,
+     "ci_low": 0.9747314632681443,
+     "ci_high": 1.0253318366914135,
+     "cell": "engine-cold-split",
+     "reference": "engine-cold-split",
+     "cell_p50_ms": 38.99501450359821,
+     "reference_p50_ms": 38.99501450359821,
+     "K": 2,
+     "S": 4096
+    },
+    "engine-cold-fill-split": {
+     "speedup": 0.9634913831647174,
+     "ci_low": 0.9401740081559362,
+     "ci_high": 0.9864903931493634,
+     "cell": "engine-cold-fill-split",
+     "reference": "engine-cold-split",
+     "cell_p50_ms": 40.47261364758015,
+     "reference_p50_ms": 38.99501450359821,
+     "K": 2,
+     "S": 4096
+    },
+    "engine-hit-split": {
+     "speedup": 3.9829628192176494,
+     "ci_low": 3.8045302729678827,
+     "ci_high": 4.071982045477851,
+     "cell": "engine-hit-split",
+     "reference": "engine-cold-split",
+     "cell_p50_ms": 9.790454059839249,
+     "reference_p50_ms": 38.99501450359821,
+     "K": 2,
+     "S": 4096
+    }
+   }
+  },
+  "S4096_K5": {
+   "N": 3,
+   "p50_ms": {
+    "engine-cold-split": 40.405694395303726,
+    "engine-cold-fill-split": 41.6547991335392,
+    "engine-hit-split": 10.578492656350136
+   },
+   "per_decision_p50_ms": {
+    "engine-cold-split": 8.081138879060745,
+    "engine-cold-fill-split": 8.33095982670784,
+    "engine-hit-split": 2.115698531270027
+   },
+   "speedup_vs_one_seq": {
+    "engine-cold-split": {
+     "speedup": 1.0,
+     "ci_low": 0.9689294959605473,
+     "ci_high": 1.031881024172257,
+     "cell": "engine-cold-split",
+     "reference": "engine-cold-split",
+     "cell_p50_ms": 40.405694395303726,
+     "reference_p50_ms": 40.405694395303726,
+     "K": 5,
+     "S": 4096
+    },
+    "engine-cold-fill-split": {
+     "speedup": 0.9700129453456005,
+     "ci_low": 0.9431278023265558,
+     "ci_high": 0.9989274458960795,
+     "cell": "engine-cold-fill-split",
+     "reference": "engine-cold-split",
+     "cell_p50_ms": 41.6547991335392,
+     "reference_p50_ms": 40.405694395303726,
+     "K": 5,
+     "S": 4096
+    },
+    "engine-hit-split": {
+     "speedup": 3.819607925997727,
+     "ci_low": 3.6852232507743867,
+     "ci_high": 3.9502716294678097,
+     "cell": "engine-hit-split",
+     "reference": "engine-cold-split",
+     "cell_p50_ms": 10.578492656350136,
+     "reference_p50_ms": 40.405694395303726,
+     "K": 5,
+     "S": 4096
+    }
+   }
+  },
+  "S4096_K10": {
+   "N": 3,
+   "p50_ms": {
+    "engine-cold-split": 42.142581194639206,
+    "engine-cold-fill-split": 43.56963559985161,
+    "engine-hit-split": 11.794909834861755
+   },
+   "per_decision_p50_ms": {
+    "engine-cold-split": 4.214258119463921,
+    "engine-cold-fill-split": 4.356963559985161,
+    "engine-hit-split": 1.1794909834861755
+   },
+   "speedup_vs_one_seq": {
+    "engine-cold-split": {
+     "speedup": 1.0,
+     "ci_low": 0.9744840514126195,
+     "ci_high": 1.027006738598523,
+     "cell": "engine-cold-split",
+     "reference": "engine-cold-split",
+     "cell_p50_ms": 42.142581194639206,
+     "reference_p50_ms": 42.142581194639206,
+     "K": 10,
+     "S": 4096
+    },
+    "engine-cold-fill-split": {
+     "speedup": 0.9672465838750953,
+     "ci_low": 0.9387787957651988,
+     "ci_high": 0.9943260919617606,
+     "cell": "engine-cold-fill-split",
+     "reference": "engine-cold-split",
+     "cell_p50_ms": 43.56963559985161,
+     "reference_p50_ms": 42.142581194639206,
+     "K": 10,
+     "S": 4096
+    },
+    "engine-hit-split": {
+     "speedup": 3.572946447634557,
+     "ci_low": 3.489850350249783,
+     "ci_high": 3.6793855682409964,
+     "cell": "engine-hit-split",
+     "reference": "engine-cold-split",
+     "cell_p50_ms": 11.794909834861755,
+     "reference_p50_ms": 42.142581194639206,
+     "K": 10,
+     "S": 4096
+    }
+   }
+  }
+ }
+}

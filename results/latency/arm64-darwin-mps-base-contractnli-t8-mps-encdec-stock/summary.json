@@ -1,0 +1,57 @@
+{
+ "host": "arm64-darwin-mps",
+ "threads": 8,
+ "size": "base",
+ "task": "contractnli",
+ "torch": "2.14.0",
+ "grid": {
+  "S4096_K17": {
+   "N": 3,
+   "p50_ms": {
+    "torch-one-seq-full": 3272.1825004555285,
+    "engine-cold": 244.8684794944711,
+    "engine-hit": 38.40418753679842
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 192.48132355620757,
+    "engine-cold": 14.404028205557124,
+    "engine-hit": 2.259069855105789
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.9995301165833484,
+     "ci_high": 1.0004839199104767,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 3272.1825004555285,
+     "reference_p50_ms": 3272.1825004555285,
+     "K": 17,
+     "S": 4096
+    },
+    "engine-cold": {
+     "speedup": 13.363020455760257,
+     "ci_low": 13.327411477938004,
+     "ci_high": 13.42227370667737,
+     "cell": "engine-cold",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 244.8684794944711,
+     "reference_p50_ms": 3272.1825004555285,
+     "K": 17,
+     "S": 4096
+    },
+    "engine-hit": {
+     "speedup": 85.20379443830608,
+     "ci_low": 84.83600740371801,
+     "ci_high": 87.475901058666,
+     "cell": "engine-hit",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 38.40418753679842,
+     "reference_p50_ms": 3272.1825004555285,
+     "K": 17,
+     "S": 4096
+    }
+   }
+  }
+ }
+}

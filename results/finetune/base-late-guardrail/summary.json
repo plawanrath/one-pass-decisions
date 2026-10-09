@@ -1,0 +1,30 @@
+{
+ "model": "base-late-guardrail",
+ "kind": "late",
+ "task": "guardrail",
+ "train": {
+  "epochs": 1.0,
+  "steps": 549,
+  "seconds": 2299.930736064911,
+  "device": "cuda",
+  "states_per_step": 8,
+  "lr": 3e-05,
+  "head_lr": 0.001,
+  "max_state_tokens": 1024,
+  "state_side": "head"
+ },
+ "splits": {
+  "dev": {
+   "n": 9027,
+   "accuracy": 0.6337653705550017
+  },
+  "cal": {
+   "n": 24832,
+   "accuracy": 0.6541559278350515
+  },
+  "test": {
+   "n": 33850,
+   "accuracy": 0.6649335302806499
+  }
+ }
+}

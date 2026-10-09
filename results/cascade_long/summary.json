@@ -1,0 +1,136 @@
+{
+ "alpha": 0.1,
+ "delta": 0.05,
+ "cascades": [
+  {
+   "task": "contractnli",
+   "first": "MB-b block (equal steps)",
+   "target": "MB-l block (equal steps)",
+   "tau": null,
+   "n_test": 1054,
+   "escalate_rate": 1.0,
+   "accepted_risk": null,
+   "accepted_risk_ci": [
+    NaN,
+    NaN
+   ],
+   "accuracy_first": 0.8235294117647058,
+   "accuracy_target": 0.8927893738140418,
+   "accuracy_cascade": 0.8927893738140418,
+   "cascade_minus_first_pp": {
+    "point": 6.925996204933593,
+    "ci_low": 4.933586337760909,
+    "ci_high": 9.013282732447813
+   },
+   "cascade_minus_target_pp": {
+    "point": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0
+   }
+  },
+  {
+   "task": "contractnli",
+   "first": "MB-b block (equal steps)",
+   "target": "Mistral Small 3.2",
+   "tau": null,
+   "n_test": 1054,
+   "escalate_rate": 1.0,
+   "accepted_risk": null,
+   "accepted_risk_ci": [
+    NaN,
+    NaN
+   ],
+   "accuracy_first": 0.8235294117647058,
+   "accuracy_target": 0.7637571157495257,
+   "accuracy_cascade": 0.7637571157495257,
+   "cascade_minus_first_pp": {
+    "point": -5.977229601518019,
+    "ci_low": -8.72865275142315,
+    "ci_high": -3.130929791271353
+   },
+   "cascade_minus_target_pp": {
+    "point": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0
+   }
+  },
+  {
+   "task": "contractnli",
+   "first": "MB-l block (equal steps)",
+   "target": "Mistral Small 3.2",
+   "tau": 0.9999967813491821,
+   "n_test": 1054,
+   "escalate_rate": 0.5370018975332068,
+   "accepted_risk": 0.06967213114754098,
+   "accepted_risk_ci": [
+    0.0487292578487626,
+    0.09600162317677827
+   ],
+   "accuracy_first": 0.8927893738140418,
+   "accuracy_target": 0.7637571157495257,
+   "accuracy_cascade": 0.8244781783681214,
+   "cascade_minus_first_pp": {
+    "point": -6.831119544592035,
+    "ci_low": -8.918406072106267,
+    "ci_high": -4.743833017077803
+   },
+   "cascade_minus_target_pp": {
+    "point": 6.072106261859577,
+    "ci_low": 4.648956356736244,
+    "ci_high": 7.590132827324481
+   }
+  },
+  {
+   "task": "cuad",
+   "first": "MB-b block, one window",
+   "target": "MB-b windowed, four windows",
+   "tau": null,
+   "n_test": 2091,
+   "escalate_rate": 1.0,
+   "accepted_risk": null,
+   "accepted_risk_ci": [
+    NaN,
+    NaN
+   ],
+   "accuracy_first": 0.8603538976566236,
+   "accuracy_target": 0.8876135820181731,
+   "accuracy_cascade": 0.8876135820181731,
+   "cascade_minus_first_pp": {
+    "point": 2.7259684361549463,
+    "ci_low": 1.3390722142515576,
+    "ci_high": 4.112864658058346
+   },
+   "cascade_minus_target_pp": {
+    "point": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0
+   }
+  },
+  {
+   "task": "cuad",
+   "first": "MB-b windowed, four windows",
+   "target": "Mistral Small 3.2",
+   "tau": 0.5,
+   "n_test": 2091,
+   "escalate_rate": 0.0,
+   "accepted_risk": 0.11238641798182687,
+   "accepted_risk_ci": [
+    0.09916019089692253,
+    0.12670983380185316
+   ],
+   "accuracy_first": 0.8876135820181731,
+   "accuracy_target": 0.8517455762792923,
+   "accuracy_cascade": 0.8876135820181731,
+   "cascade_minus_first_pp": {
+    "point": 0.0,
+    "ci_low": 0.0,
+    "ci_high": 0.0
+   },
+   "cascade_minus_target_pp": {
+    "point": 3.5868005738880937,
+    "ci_low": 1.865136298421799,
+    "ci_high": 5.260640841702536
+   }
+  }
+ ]
+}

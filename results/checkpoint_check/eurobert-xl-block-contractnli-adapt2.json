@@ -1,0 +1,7 @@
+{
+ "model": "models/_from_h100_round19/eurobert-xl-block-contractnli-adapt2",
+ "result": "eurobert-xl-block-contractnli-adapt2",
+ "n": 34,
+ "same_decisions": 34,
+ "max_prob_diff": 0.0047539999999999805
+}

@@ -1,0 +1,26 @@
+{
+ "base": {
+  "n": 500,
+  "accuracy": 0.87,
+  "mean_conf": 0.8964674130380154,
+  "tau": 0.5780367851257324,
+  "escalate_rate": 0.122,
+  "risk_accepted": 0.05239179954441914
+ },
+ "paraphrase": {
+  "n": 500,
+  "accuracy": 0.842,
+  "mean_conf": 0.886509329199791,
+  "tau": 0.5780367851257324,
+  "escalate_rate": 0.126,
+  "risk_accepted": 0.08237986270022883
+ },
+ "option-shift": {
+  "n": 500,
+  "accuracy": 0.71,
+  "mean_conf": 0.7826403177082538,
+  "tau": 0.5780367851257324,
+  "escalate_rate": 0.20599999999999996,
+  "risk_accepted": 0.2141057934508816
+ }
+}

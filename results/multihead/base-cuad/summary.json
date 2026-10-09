@@ -1,0 +1,98 @@
+{
+ "backbone": "answerdotai/ModernBERT-base@8949b909ec900327062f0ebf497f51aef5e6f0c8",
+ "task": "cuad",
+ "pool_manifest": "fb9d753bc08db3a96bec908f64939e81e274bb7ac628a67445dcd83a98943d88",
+ "git": "nogit",
+ "train": {
+  "steps": 270,
+  "seconds": 462.0,
+  "selection": [
+   {
+    "step": 54,
+    "dev_accuracy": 0.8005738880918221
+   },
+   {
+    "step": 108,
+    "dev_accuracy": 0.8163558106169297
+   },
+   {
+    "step": 162,
+    "dev_accuracy": 0.8283118125298901
+   },
+   {
+    "step": 216,
+    "dev_accuracy": 0.8326159732185557
+   },
+   {
+    "step": 270,
+    "dev_accuracy": 0.8393113342898135
+   }
+  ],
+  "selected_step": 270,
+  "n_documents": 357
+ },
+ "config": {
+  "task": "cuad",
+  "size": "base",
+  "epochs": 3.0,
+  "lr": 3e-05,
+  "head_lr": 0.001,
+  "tokens_per_batch": 32768,
+  "max_docs": 4,
+  "pool": "cls",
+  "select_points": 5,
+  "seed": 20260927,
+  "holdout_qids_file": null,
+  "max_train": null,
+  "max_eval": null,
+  "max_state_tokens": null,
+  "device": null,
+  "tag": ""
+ },
+ "max_state_tokens": 8190,
+ "holdout_qids": [],
+ "heldout_answerable": null,
+ "splits": {
+  "dev": {
+   "n": 2091,
+   "accuracy": 0.8393113342898135,
+   "aurc": 0.0561285236587779,
+   "eaurc": 0.04242659811787713,
+   "ece": 0.020907393800533833,
+   "auroc_error": 0.7941247795414462,
+   "coverage_at_risk_0.02": 0.2950741272118603,
+   "coverage_at_risk_0.05": 0.5002391200382592,
+   "coverage_at_risk_0.1": 0.803921568627451,
+   "n_records_answered": 2091,
+   "n_records": 2091
+  },
+  "cal": {
+   "n": 2091,
+   "accuracy": 0.8498326159732186,
+   "aurc": 0.04668929069386835,
+   "eaurc": 0.034767259411563806,
+   "ece": 0.0094463296451961,
+   "auroc_error": 0.8167114115610293,
+   "coverage_at_risk_0.02": 0.35246293639406984,
+   "coverage_at_risk_0.05": 0.6360593017694883,
+   "coverage_at_risk_0.1": 0.8464849354375896,
+   "n_records_answered": 2091,
+   "n_records": 2091
+  },
+  "test": {
+   "n": 2091,
+   "accuracy": 0.8163558106169297,
+   "aurc": 0.06276003735822182,
+   "eaurc": 0.04471459943567739,
+   "ece": 0.018761244816736734,
+   "auroc_error": 0.7993327108963093,
+   "coverage_at_risk_0.02": 0.2926829268292683,
+   "coverage_at_risk_0.05": 0.4916307986609278,
+   "coverage_at_risk_0.1": 0.7345767575322812,
+   "n_records_answered": 2091,
+   "n_records": 2091
+  }
+ },
+ "latency_ms_per_document": 87.82521262764931,
+ "forwards_per_document": 1
+}

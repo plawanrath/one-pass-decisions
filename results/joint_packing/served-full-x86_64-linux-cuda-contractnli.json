@@ -1,0 +1,47 @@
+{
+ "model": "init/_from_h100_lr/modernbert-base-full-contractnli-lr2e5-bestacc",
+ "result": "base-full-contractnli-lr2e5-bestacc",
+ "task": "contractnli",
+ "n_documents": 62,
+ "n_items": 1054,
+ "one_per_seq_matches_stored": 0.9981024667931688,
+ "flips": {
+  "reorder": {
+   "changed": 217,
+   "total": 1054,
+   "share": 0.20588235294117646,
+   "max_prob_change": 0.8212890625
+  },
+  "drop": {
+   "changed": 175,
+   "total": 558,
+   "share": 0.31362007168458783,
+   "max_prob_change": 0.92852783203125
+  }
+ },
+ "accuracy": {
+  "one_per_seq": 0.8519924098671727,
+  "joint_16_per_seq": 0.5332068311195446,
+  "joint_whole_contract": 0.4990512333965844
+ },
+ "joint_16_per_seq_minus_one_per_seq_pp": {
+  "point": -31.87855787476281,
+  "ci": [
+   -36.527514231499055,
+   -27.419354838709676
+  ],
+  "n_items": 1054,
+  "n_documents": 62,
+  "resamples": 10000
+ },
+ "joint_whole_contract_minus_one_per_seq_pp": {
+  "point": -35.294117647058826,
+  "ci": [
+   -40.32258064516129,
+   -30.45540796963947
+  ],
+  "n_items": 1054,
+  "n_documents": 62,
+  "resamples": 10000
+ }
+}

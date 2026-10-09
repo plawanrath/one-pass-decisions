@@ -1,0 +1,11 @@
+{
+ "size": "base",
+ "task": "tracegrade",
+ "max_state_tokens": 128,
+ "splits": {
+  "test": {
+   "n": 2298,
+   "accuracy": 0.943864229765013
+  }
+ }
+}

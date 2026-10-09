@@ -1,0 +1,135 @@
+{
+ "host": "x86_64-linux-cuda-bf16",
+ "threads": 8,
+ "size": "base",
+ "task": "cuad",
+ "torch": "2.14.1+cu130",
+ "grid": {
+  "S8192_K41": {
+   "N": 2,
+   "p50_ms": {
+    "torch-one-seq-full": 3028.7164694746025,
+    "torch-compile-one-seq-full": 2520.8974049892277,
+    "varlen-torch-varlen-one-seq-full": 963.0554869945627,
+    "varlen-torch-varlen-batched-full": 821.434016485,
+    "torch-naive-batch-full": 2833.437473513186,
+    "engine-cold": 129.263891489245,
+    "engine-cold-fill": 131.2839774764143,
+    "engine-cold-fill-unfused": 197.3439464927651,
+    "engine-hit": 24.043450481258333
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 73.87113340181958,
+    "torch-compile-one-seq-full": 61.48530256071287,
+    "varlen-torch-varlen-one-seq-full": 23.489158219379576,
+    "varlen-torch-varlen-batched-full": 20.03497601182927,
+    "torch-naive-batch-full": 69.10823106129722,
+    "engine-cold": 3.1527778412010976,
+    "engine-cold-fill": 3.2020482311320557,
+    "engine-cold-fill-unfused": 4.813266987628417,
+    "engine-hit": 0.5864256214941057
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.9944377074677158,
+     "ci_high": 1.0055932495831508,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 3028.7164694746025,
+     "reference_p50_ms": 3028.7164694746025,
+     "K": 41,
+     "S": 8192
+    },
+    "torch-compile-one-seq-full": {
+     "speedup": 1.2014437650180947,
+     "ci_low": 1.1983255754298738,
+     "ci_high": 1.2092795308266502,
+     "cell": "torch-compile-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 2520.8974049892277,
+     "reference_p50_ms": 3028.7164694746025,
+     "K": 41,
+     "S": 8192
+    },
+    "varlen-torch-varlen-one-seq-full": {
+     "speedup": 3.1449033938079856,
+     "ci_low": 3.1308404119295283,
+     "ci_high": 3.162392684249166,
+     "cell": "varlen-torch-varlen-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 963.0554869945627,
+     "reference_p50_ms": 3028.7164694746025,
+     "K": 41,
+     "S": 8192
+    },
+    "varlen-torch-varlen-batched-full": {
+     "speedup": 3.687108652299048,
+     "ci_low": 3.6657282984158988,
+     "ci_high": 3.719024897205916,
+     "cell": "varlen-torch-varlen-batched-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 821.434016485,
+     "reference_p50_ms": 3028.7164694746025,
+     "K": 41,
+     "S": 8192
+    },
+    "torch-naive-batch-full": {
+     "speedup": 1.068919465415021,
+     "ci_low": 1.0652446604843278,
+     "ci_high": 1.073969587809575,
+     "cell": "torch-naive-batch-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 2833.437473513186,
+     "reference_p50_ms": 3028.7164694746025,
+     "K": 41,
+     "S": 8192
+    },
+    "engine-cold": {
+     "speedup": 23.43049118033552,
+     "ci_low": 22.525120389393358,
+     "ci_high": 24.31318136893798,
+     "cell": "engine-cold",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 129.263891489245,
+     "reference_p50_ms": 3028.7164694746025,
+     "K": 41,
+     "S": 8192
+    },
+    "engine-cold-fill": {
+     "speedup": 23.06996274559646,
+     "ci_low": 22.29463494522565,
+     "ci_high": 23.941734377535447,
+     "cell": "engine-cold-fill",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 131.2839774764143,
+     "reference_p50_ms": 3028.7164694746025,
+     "K": 41,
+     "S": 8192
+    },
+    "engine-cold-fill-unfused": {
+     "speedup": 15.347399924353086,
+     "ci_low": 15.014684030461337,
+     "ci_high": 15.795209538399021,
+     "cell": "engine-cold-fill-unfused",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 197.3439464927651,
+     "reference_p50_ms": 3028.7164694746025,
+     "K": 41,
+     "S": 8192
+    },
+    "engine-hit": {
+     "speedup": 125.96846163305311,
+     "ci_low": 124.94769205771964,
+     "ci_high": 128.00787483912706,
+     "cell": "engine-hit",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 24.043450481258333,
+     "reference_p50_ms": 3028.7164694746025,
+     "K": 41,
+     "S": 8192
+    }
+   }
+  }
+ }
+}

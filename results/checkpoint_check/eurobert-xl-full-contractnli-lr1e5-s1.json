@@ -1,0 +1,7 @@
+{
+ "model": "models/_from_h100_round19/eurobert-xl-full-contractnli-lr1e5-s1",
+ "result": "eurobert-xl-full-contractnli-lr1e5-s1",
+ "n": 34,
+ "same_decisions": 34,
+ "max_prob_diff": 0.006916000000000033
+}

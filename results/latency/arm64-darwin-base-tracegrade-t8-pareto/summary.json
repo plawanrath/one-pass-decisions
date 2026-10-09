@@ -1,0 +1,75 @@
+{
+ "host": "arm64-darwin",
+ "threads": 8,
+ "size": "base",
+ "task": "tracegrade",
+ "torch": "2.14.0",
+ "grid": {
+  "S64_K20": {
+   "N": 3,
+   "p50_ms": {
+    "torch-one-seq-full": 1524.6878750622272
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 76.23439375311136
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.8236423407095108,
+     "ci_high": 1.2186085172870362,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 1524.6878750622272,
+     "reference_p50_ms": 1524.6878750622272,
+     "K": 20,
+     "S": 64
+    }
+   }
+  },
+  "S128_K20": {
+   "N": 2,
+   "p50_ms": {
+    "torch-one-seq-full": 1346.1097920080647
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 67.30548960040323
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.8145289944343554,
+     "ci_high": 1.2214377354817074,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 1346.1097920080647,
+     "reference_p50_ms": 1346.1097920080647,
+     "K": 20,
+     "S": 128
+    }
+   }
+  },
+  "S256_K20": {
+   "N": 2,
+   "p50_ms": {
+    "torch-one-seq-full": 1726.58435406629
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 86.3292177033145
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.8165639486368876,
+     "ci_high": 1.2322111739923134,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 1726.58435406629,
+     "reference_p50_ms": 1726.58435406629,
+     "K": 20,
+     "S": 256
+    }
+   }
+  }
+ }
+}

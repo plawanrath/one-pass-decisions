@@ -1,0 +1,7 @@
+{
+ "model": "models/_from_h100_dose/modernbert-base-full-cuad-s2r",
+ "result": "base-full-cuad-s2r",
+ "n": 82,
+ "same_decisions": 82,
+ "max_prob_diff": 0.02098
+}

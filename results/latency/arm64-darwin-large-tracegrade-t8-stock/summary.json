@@ -1,0 +1,105 @@
+{
+ "host": "arm64-darwin",
+ "threads": 8,
+ "size": "large",
+ "task": "tracegrade",
+ "torch": "2.14.0",
+ "grid": {
+  "S512_K1": {
+   "N": 2,
+   "p50_ms": {
+    "torch-one-seq-full": 340.5498124775477,
+    "engine-cold": 340.2265624899883,
+    "engine-hit": 59.371458512032405
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 340.5498124775477,
+    "engine-cold": 340.2265624899883,
+    "engine-hit": 59.371458512032405
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.7635113330283,
+     "ci_high": 1.3051203754715415,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 340.5498124775477,
+     "reference_p50_ms": 340.5498124775477,
+     "K": 1,
+     "S": 512
+    },
+    "engine-cold": {
+     "speedup": 1.0009501021472094,
+     "ci_low": 0.7572966569795553,
+     "ci_high": 1.2974685336849432,
+     "cell": "engine-cold",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 340.2265624899883,
+     "reference_p50_ms": 340.5498124775477,
+     "K": 1,
+     "S": 512
+    },
+    "engine-hit": {
+     "speedup": 5.73591791430441,
+     "ci_low": 4.915217642828581,
+     "ci_high": 7.309597915699019,
+     "cell": "engine-hit",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 59.371458512032405,
+     "reference_p50_ms": 340.5498124775477,
+     "K": 1,
+     "S": 512
+    }
+   }
+  },
+  "S512_K20": {
+   "N": 3,
+   "p50_ms": {
+    "torch-one-seq-full": 6964.259208471049,
+    "engine-cold": 510.03900001524016,
+    "engine-hit": 175.18695801845752
+   },
+   "per_decision_p50_ms": {
+    "torch-one-seq-full": 348.21296042355243,
+    "engine-cold": 25.501950000762008,
+    "engine-hit": 8.759347900922876
+   },
+   "speedup_vs_one_seq": {
+    "torch-one-seq-full": {
+     "speedup": 1.0,
+     "ci_low": 0.7380047322262719,
+     "ci_high": 1.3600052013970105,
+     "cell": "torch-one-seq-full",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 6964.259208471049,
+     "reference_p50_ms": 6964.259208471049,
+     "K": 20,
+     "S": 512
+    },
+    "engine-cold": {
+     "speedup": 13.654366054876105,
+     "ci_low": 10.283397457424176,
+     "ci_high": 17.983412486853744,
+     "cell": "engine-cold",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 510.03900001524016,
+     "reference_p50_ms": 6964.259208471049,
+     "K": 20,
+     "S": 512
+    },
+    "engine-hit": {
+     "speedup": 39.75329720456303,
+     "ci_low": 31.430283336709902,
+     "ci_high": 47.580970934097294,
+     "cell": "engine-hit",
+     "reference": "torch-one-seq-full",
+     "cell_p50_ms": 175.18695801845752,
+     "reference_p50_ms": 6964.259208471049,
+     "K": 20,
+     "S": 512
+    }
+   }
+  }
+ }
+}

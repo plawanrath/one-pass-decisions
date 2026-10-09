@@ -1,0 +1,10 @@
+{
+ "host": "arm64-darwin",
+ "threads": 8,
+ "size": "base",
+ "task": "tracegrade",
+ "paths": [
+  "compiled-int8",
+  "compiled-int4"
+ ]
+}

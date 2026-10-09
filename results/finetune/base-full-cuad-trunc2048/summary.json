@@ -1,0 +1,11 @@
+{
+ "size": "base",
+ "task": "cuad",
+ "max_state_tokens": 2048,
+ "splits": {
+  "test": {
+   "n": 2091,
+   "accuracy": 0.7838354854136776
+  }
+ }
+}

@@ -37,6 +37,35 @@ def requests_from_records(records: list[DecisionRecord], rate_per_s: float, seed
     return out
 
 
+def user_turn_of(question_text: str) -> str | None:
+    """The user turn a guardrail question is about ("User message: <turn>\n<question>"), or None for questions about
+    the state itself."""
+    if question_text.startswith("User message: "):
+        return question_text[len("User message: "):].split("\n", 1)[0]
+    return None
+
+
+def requests_per_turn(records: list[DecisionRecord], rate_per_s: float, seed: int = 0) -> list[Request]:
+    """One request per user turn under its system prompt: the state is the system prompt (shared by every turn of
+    that prompt, so it recurs across requests), the questions are the policy questions about that one turn. Records
+    without a user turn form one request per state. Arrivals Poisson(rate) over turns, in a seeded random order so
+    turns of one system prompt are interleaved with other prompts' turns."""
+    groups: dict[tuple, list[DecisionRecord]] = {}
+    for r in records:
+        groups.setdefault((r.state_hash, user_turn_of(r.question.text)), []).append(r)
+    rng = np.random.default_rng(seed)
+    keys = sorted(groups, key=lambda k: (k[0], k[1] or ""))
+    order = rng.permutation(len(keys))
+    t = np.cumsum(rng.exponential(1.0 / rate_per_s, size=len(keys)))
+    out = []
+    for slot, ki in enumerate(order):
+        rs = groups[keys[ki]]
+        qs = [Question(r.question.kind, r.question.text, list(r.question.options), DEADLINES_MS.get(r.question.qid, 50.0), f"{r.question.qid}:{j}")
+              for j, r in enumerate(rs)]
+        out.append(Request(rs[0].state, qs, request_id=f"{rs[0].group_id}:{ki}", arrival_s=float(t[slot]), source="guardrail-per-turn"))
+    return out
+
+
 def save_requests(reqs: list[Request], path: str | Path, meta: dict | None = None) -> None:
     p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
@@ -61,7 +90,18 @@ def load_requests(path: str | Path) -> tuple[list[Request], dict]:
     return reqs, meta
 
 
-def shape_summary(reqs: list[Request], token_estimate=lambda s: max(1, len(s) // 4)) -> dict:
+def encoder_token_counter():
+    """Token count under the decision encoder's tokenizer (the unit every S in the paper is reported in)."""
+    from ..cli import ENCODERS
+    from ..model.encoder import load_tokenizer_adapter
+    repo, rev = ENCODERS["base"]
+    _, adapter = load_tokenizer_adapter(repo, rev)
+    return lambda s: max(1, len(adapter.encode(s)))
+
+
+def shape_summary(reqs: list[Request], token_estimate=None) -> dict:
+    """Shape statistics of a request trace. `token_estimate` defaults to the encoder tokenizer; tests pass a cheap one."""
+    token_estimate = token_estimate or encoder_token_counter()
     S = np.array([token_estimate(r.state) for r in reqs])
     K = np.array([len(r.questions) for r in reqs])
     N = np.array([len(q.options) for r in reqs for q in r.questions])

@@ -1,0 +1,7 @@
+{
+ "model": "models/_from_h100_dose/modernbert-large-block-quality-adapt2-s2",
+ "result": "large-block-quality-adapt2-s2",
+ "n": 18,
+ "same_decisions": 18,
+ "max_prob_diff": 0.00421399999999994
+}

@@ -1,0 +1,119 @@
+{
+ "trace": null,
+ "trace_meta": {
+  "slicing": "per-turn",
+  "subset": "system-prompt",
+  "arrivals": "simulated Poisson over user turns",
+  "source": "test pool"
+ },
+ "n_requests": 1500,
+ "questions_per_request": 3.424,
+ "trace_rate_per_s": 19.742372919036928,
+ "threads": 8,
+ "device": "cuda",
+ "dtype": "bf16",
+ "no_cudnn_sdp": true,
+ "server": "engine",
+ "order": "edf",
+ "split": null,
+ "max_batch_tokens": 4096,
+ "max_state_tokens": 1024,
+ "results": {
+  "r5": {
+   "speedup": 0.25326236215397707,
+   "offered_rate_per_s": 5.0,
+   "offered_questions_per_s": 17.12,
+   "n_requests": 1500,
+   "n_questions": 5136,
+   "wall_s": 300.0973981679999,
+   "latency_ms_p50": 11.621853001997806,
+   "latency_ms_p99": 28.443363989936188,
+   "wait_ms_p99": 0.02556201070547104,
+   "deadline_miss_rate": 0.048286604361370715,
+   "max_queue_depth": 12,
+   "steps": 1497,
+   "cache": {
+    "entries": 251,
+    "bytes": 3740233728,
+    "hits": 2498,
+    "misses": 251
+   },
+   "hit_rate": 0.8282710280373832,
+   "extend_rate": 0.0,
+   "goodput_qps": 16.288045247441996,
+   "p90_ms": 21.156451024580747
+  },
+  "r10": {
+   "speedup": 0.5065247243079541,
+   "offered_rate_per_s": 10.0,
+   "offered_questions_per_s": 34.24,
+   "n_requests": 1500,
+   "n_questions": 5136,
+   "wall_s": 150.05536723701516,
+   "latency_ms_p50": 11.404705495806411,
+   "latency_ms_p99": 23.972591006895527,
+   "wait_ms_p99": 0.019428000086918473,
+   "deadline_miss_rate": 0.030373831775700934,
+   "max_queue_depth": 12,
+   "steps": 1490,
+   "cache": {
+    "entries": 251,
+    "bytes": 3740233728,
+    "hits": 2498,
+    "misses": 251
+   },
+   "hit_rate": 0.8282710280373832,
+   "extend_rate": 0.0,
+   "goodput_qps": 33.187749906566154,
+   "p90_ms": 19.41005702246912
+  },
+  "r20": {
+   "speedup": 1.0130494486159083,
+   "offered_rate_per_s": 20.0,
+   "offered_questions_per_s": 68.48,
+   "n_requests": 1500,
+   "n_questions": 5136,
+   "wall_s": 75.03412274000584,
+   "latency_ms_p50": 11.409664497477934,
+   "latency_ms_p99": 34.20190597535111,
+   "wait_ms_p99": 0.019049010006710887,
+   "deadline_miss_rate": 0.044587227414330216,
+   "max_queue_depth": 15,
+   "steps": 1450,
+   "cache": {
+    "entries": 251,
+    "bytes": 3740233728,
+    "hits": 2498,
+    "misses": 251
+   },
+   "hit_rate": 0.8282710280373832,
+   "extend_rate": 0.0,
+   "goodput_qps": 65.3969130418545,
+   "p90_ms": 20.679159002611414
+  },
+  "r40": {
+   "speedup": 2.0260988972318166,
+   "offered_rate_per_s": 40.0,
+   "offered_questions_per_s": 136.96,
+   "n_requests": 1500,
+   "n_questions": 5136,
+   "wall_s": 37.52418443397619,
+   "latency_ms_p50": 11.811495991423726,
+   "latency_ms_p99": 52.4636680202093,
+   "wait_ms_p99": 0.01942599192261696,
+   "deadline_miss_rate": 0.09540498442367601,
+   "max_queue_depth": 18,
+   "steps": 1313,
+   "cache": {
+    "entries": 251,
+    "bytes": 3740233728,
+    "hits": 2502,
+    "misses": 251
+   },
+   "hit_rate": 0.8286604361370716,
+   "extend_rate": 0.0,
+   "goodput_qps": 123.81348375937759,
+   "p90_ms": 28.28316402155906
+  }
+ }
+}

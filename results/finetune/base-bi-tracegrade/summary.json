@@ -1,0 +1,30 @@
+{
+ "model": "base-bi-tracegrade",
+ "kind": "bi",
+ "task": "tracegrade",
+ "train": {
+  "epochs": 10.0,
+  "steps": 360,
+  "seconds": 1240.299257516861,
+  "device": "cuda",
+  "states_per_step": 8,
+  "lr": 3e-05,
+  "head_lr": 0.001,
+  "max_state_tokens": 1024,
+  "state_side": "tail"
+ },
+ "splits": {
+  "dev": {
+   "n": 576,
+   "accuracy": 0.9288194444444444
+  },
+  "cal": {
+   "n": 1726,
+   "accuracy": 0.9339513325608343
+  },
+  "test": {
+   "n": 2298,
+   "accuracy": 0.9490861618798956
+  }
+ }
+}

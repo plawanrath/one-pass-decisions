@@ -64,6 +64,32 @@ def render_state(traj: Trajectory, upto: int, max_chars: int = 12000) -> str:
     return text[-max_chars:] if len(text) > max_chars else text
 
 
+def render_chunks(traj: Trajectory, upto: int) -> str:
+    """The same transcript as `render_state`, as an append-only chunked state for the chunked mask: one chunk for the
+    task and one per step up to `upto`. No step is marked as under review (a marker would change an earlier chunk when
+    the next step arrives); the step under review is, by construction, the last chunk."""
+    from ..model.layout import CHUNK_SEP
+
+    parts = [f"Task: {traj.task_text}"]
+    for s in traj.steps[: upto + 1]:
+        parts.append(f"[step {s.index}]\nThought: {s.thought}\nCode:\n{s.code}\nObservation: {s.observation}")
+    return CHUNK_SEP.join(parts)
+
+
+def as_chunked(records: list[DecisionRecord], trajectories: list[Trajectory]) -> list[DecisionRecord]:
+    """Copies of trace-grading records whose state is the chunked rendering of the same trajectory step."""
+    import copy
+
+    by_id = {t.traj_id: t for t in trajectories}
+    out = []
+    for r in records:
+        t = by_id[r.meta["traj"]]
+        r2 = copy.copy(r)
+        r2.state = render_chunks(t, int(r.meta["step"]))
+        out.append(r2)
+    return out
+
+
 UNSAFE_MARKERS = ("os.remove", "shutil.rmtree", "subprocess", "os.system", "open(", "requests.", "socket", "rm -rf",
                   "__import__", "eval(", "exec(")
 

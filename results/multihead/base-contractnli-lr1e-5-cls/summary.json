@@ -1,0 +1,118 @@
+{
+ "backbone": "answerdotai/ModernBERT-base@8949b909ec900327062f0ebf497f51aef5e6f0c8",
+ "task": "contractnli",
+ "pool_manifest": "3be931bc0c7a1e694e9822ac732674a28ea4559e833986910f7be8fd0269ee79",
+ "git": "nogit",
+ "train": {
+  "steps": 517,
+  "seconds": 366.6,
+  "selection": [
+   {
+    "step": 52,
+    "dev_accuracy": 0.6711668273866924
+   },
+   {
+    "step": 103,
+    "dev_accuracy": 0.686595949855352
+   },
+   {
+    "step": 155,
+    "dev_accuracy": 0.6837029893924783
+   },
+   {
+    "step": 207,
+    "dev_accuracy": 0.7049180327868853
+   },
+   {
+    "step": 258,
+    "dev_accuracy": 0.7107039537126326
+   },
+   {
+    "step": 310,
+    "dev_accuracy": 0.7213114754098361
+   },
+   {
+    "step": 362,
+    "dev_accuracy": 0.7357762777242044
+   },
+   {
+    "step": 414,
+    "dev_accuracy": 0.7270973963355835
+   },
+   {
+    "step": 465,
+    "dev_accuracy": 0.7261330761812922
+   },
+   {
+    "step": 517,
+    "dev_accuracy": 0.7328833172613307
+   }
+  ],
+  "selected_step": 362,
+  "n_documents": 423
+ },
+ "config": {
+  "task": "contractnli",
+  "size": "base",
+  "epochs": 5.0,
+  "lr": 1e-05,
+  "head_lr": 0.001,
+  "tokens_per_batch": 16384,
+  "max_docs": 32,
+  "pool": "cls",
+  "select_points": 10,
+  "seed": 20260927,
+  "holdout_qids_file": null,
+  "max_train": null,
+  "max_eval": null,
+  "max_state_tokens": null,
+  "device": null,
+  "tag": "lr1e-5-cls"
+ },
+ "max_state_tokens": 4096,
+ "holdout_qids": [],
+ "heldout_answerable": null,
+ "splits": {
+  "dev": {
+   "n": 1037,
+   "accuracy": 0.7357762777242045,
+   "aurc": 0.14113078162309153,
+   "eaurc": 0.10253733923056066,
+   "ece": 0.05292416118954737,
+   "auroc_error": 0.716251638269987,
+   "coverage_at_risk_0.02": 0.05978784956605593,
+   "coverage_at_risk_0.05": 0.12246865959498554,
+   "coverage_at_risk_0.1": 0.24108003857280616,
+   "n_records_answered": 1037,
+   "n_records": 1037
+  },
+  "cal": {
+   "n": 1037,
+   "accuracy": 0.6981677917068467,
+   "aurc": 0.1763949044707429,
+   "eaurc": 0.12526598794545096,
+   "ece": 0.07232597634095694,
+   "auroc_error": 0.7006689848728223,
+   "coverage_at_risk_0.02": 0.0019286403085824494,
+   "coverage_at_risk_0.05": 0.04725168756027001,
+   "coverage_at_risk_0.1": 0.18418514946962392,
+   "n_records_answered": 1037,
+   "n_records": 1037
+  },
+  "test": {
+   "n": 1054,
+   "accuracy": 0.7362428842504745,
+   "aurc": 0.12444776350496617,
+   "eaurc": 0.08599961620007437,
+   "ece": 0.042230052530652464,
+   "auroc_error": 0.7460552176815248,
+   "coverage_at_risk_0.02": 0.14231499051233396,
+   "coverage_at_risk_0.05": 0.19639468690702086,
+   "coverage_at_risk_0.1": 0.38235294117647056,
+   "n_records_answered": 1054,
+   "n_records": 1054
+  }
+ },
+ "latency_ms_per_document": 97.94866398442537,
+ "forwards_per_document": 1
+}

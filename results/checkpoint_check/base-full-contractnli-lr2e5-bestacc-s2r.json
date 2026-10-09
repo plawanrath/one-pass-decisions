@@ -1,0 +1,7 @@
+{
+ "model": "models/_from_h100_dose/modernbert-base-full-contractnli-lr2e5-bestacc-s2r",
+ "result": "base-full-contractnli-lr2e5-bestacc-s2r",
+ "n": 34,
+ "same_decisions": 34,
+ "max_prob_diff": 0.020093999999999945
+}

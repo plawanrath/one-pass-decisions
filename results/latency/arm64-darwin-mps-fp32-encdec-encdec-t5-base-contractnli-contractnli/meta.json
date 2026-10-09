@@ -1,0 +1,21 @@
+{
+ "model": "encdec-t5-base-contractnli",
+ "task": "contractnli",
+ "enc_batch": 8,
+ "cells": {
+  "4096:17": {
+   "context_cap": 4096,
+   "context_tokens_median": 4097.0,
+   "flops_per_contract": 1778884884979.2
+  }
+ },
+ "cache_bytes_per_token_bf16": {
+  "encoder_output": 1536,
+  "cross_kv": 36864
+ },
+ "agreement_with_packed_scoring": {
+  "same": 170,
+  "total": 170,
+  "rate": 1.0
+ }
+}

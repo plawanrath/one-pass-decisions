@@ -1,0 +1,158 @@
+{
+ "backbone": "answerdotai/ModernBERT-base@8949b909ec900327062f0ebf497f51aef5e6f0c8",
+ "task": "quality",
+ "mode": "full",
+ "pool_manifest": "3f08b778555076f603e8a5497b043c9a70030fe14b8331327bfc7dd1aeaf1b51",
+ "git": "nogit",
+ "train": {
+  "config": {
+   "mode": "full",
+   "epochs": 4.0,
+   "lr": 2e-05,
+   "head_lr": 0.0001,
+   "weight_decay": 0.01,
+   "warmup_frac": 0.06,
+   "tokens_per_batch": 65536,
+   "max_seqs_per_batch": 64,
+   "max_state_tokens": 8190,
+   "state_side": "head",
+   "max_option_tokens": 48,
+   "max_questions_per_seq": 16,
+   "max_seq_tokens": 9214,
+   "window_tokens": 8192,
+   "decouple_layers": 0,
+   "max_steps": null,
+   "micro_tokens": 16384,
+   "pad_multiple": 128,
+   "autocast_bf16": true,
+   "seed": 1,
+   "ckpt_every": 200,
+   "select_points": 8,
+   "select_metric": "accuracy",
+   "log_every": 20,
+   "grad_clip": 1.0,
+   "device": "auto",
+   "notes": "answerdotai/ModernBERT-base@8949b909 task=quality"
+  },
+  "n_records": 2271,
+  "n_sequences": 2271,
+  "steps": 1010,
+  "epochs_run": 4.0,
+  "final_loss_20": 0.00552845721185804,
+  "seconds": 1753.0,
+  "device": "cuda",
+  "selection": [
+   {
+    "step": 126,
+    "dev_aurc": 0.4119008804982951,
+    "dev_accuracy": 0.45238095238095233
+   },
+   {
+    "step": 252,
+    "dev_aurc": 0.37947463984508173,
+    "dev_accuracy": 0.48809523809523814
+   },
+   {
+    "step": 379,
+    "dev_aurc": 0.4146360398420204,
+    "dev_accuracy": 0.4722222222222222
+   },
+   {
+    "step": 505,
+    "dev_aurc": 0.39357974798222406,
+    "dev_accuracy": 0.47619047619047616
+   },
+   {
+    "step": 631,
+    "dev_aurc": 0.4147567831736865,
+    "dev_accuracy": 0.4722222222222222
+   },
+   {
+    "step": 758,
+    "dev_aurc": 0.405049897242698,
+    "dev_accuracy": 0.46825396825396826
+   },
+   {
+    "step": 884,
+    "dev_aurc": 0.39378086630593584,
+    "dev_accuracy": 0.47619047619047616
+   },
+   {
+    "step": 1010,
+    "dev_aurc": 0.3917272188316965,
+    "dev_accuracy": 0.4642857142857143
+   }
+  ],
+  "selected_step": 252
+ },
+ "init_from": "models/modernbert-base-full-race",
+ "holdout_qids": [],
+ "splits": {
+  "dev": {
+   "n": 252,
+   "accuracy": 0.48809523809523814,
+   "aurc": 0.37947463984508173,
+   "eaurc": 0.21663998019246686,
+   "ece": 0.04320661770919012,
+   "auroc_error": 0.6572130837587445,
+   "coverage_at_risk_0.02": 0.023809523809523808,
+   "coverage_at_risk_0.05": 0.023809523809523808,
+   "coverage_at_risk_0.1": 0.03968253968253968
+  },
+  "dev_as_block": {
+   "n": 252,
+   "accuracy": 0.4722222222222222,
+   "aurc": 0.39286294078926365,
+   "eaurc": 0.21835111920977635,
+   "ece": 0.054509857462512114,
+   "auroc_error": 0.6583686106021356,
+   "coverage_at_risk_0.02": 0.015873015873015872,
+   "coverage_at_risk_0.05": 0.015873015873015872,
+   "coverage_at_risk_0.1": 0.015873015873015872
+  },
+  "cal": {
+   "n": 1029,
+   "accuracy": 0.47133138969873667,
+   "aurc": 0.3869331535911647,
+   "eaurc": 0.2125403587614796,
+   "ece": 0.056908382763552104,
+   "auroc_error": 0.6613288356579745,
+   "coverage_at_risk_0.02": 0.010689990281827016,
+   "coverage_at_risk_0.05": 0.010689990281827016,
+   "coverage_at_risk_0.1": 0.02040816326530612
+  },
+  "cal_as_block": {
+   "n": 1029,
+   "accuracy": 0.4528668610301263,
+   "aurc": 0.41145829359314706,
+   "eaurc": 0.22280113613748828,
+   "ece": 0.05501360856756872,
+   "auroc_error": 0.6528255284763568,
+   "coverage_at_risk_0.02": 0.004859086491739553,
+   "coverage_at_risk_0.05": 0.004859086491739553,
+   "coverage_at_risk_0.1": 0.03304178814382896
+  },
+  "test": {
+   "n": 1057,
+   "accuracy": 0.45695364238410596,
+   "aurc": 0.4169405586616336,
+   "eaurc": 0.23151135600226355,
+   "ece": 0.08035924342745526,
+   "auroc_error": 0.6369886236573102,
+   "coverage_at_risk_0.02": 0.010406811731315043,
+   "coverage_at_risk_0.05": 0.010406811731315043,
+   "coverage_at_risk_0.1": 0.014191106906338695
+  },
+  "test_as_block": {
+   "n": 1057,
+   "accuracy": 0.4541154210028382,
+   "aurc": 0.41254146706624095,
+   "eaurc": 0.22487927110039416,
+   "ece": 0.04568607122580061,
+   "auroc_error": 0.6474472848064703,
+   "coverage_at_risk_0.02": 0.01608325449385052,
+   "coverage_at_risk_0.05": 0.01608325449385052,
+   "coverage_at_risk_0.1": 0.020813623462630087
+  }
+ }
+}

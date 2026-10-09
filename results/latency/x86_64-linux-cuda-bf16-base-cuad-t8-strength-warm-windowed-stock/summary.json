@@ -1,0 +1,57 @@
+{
+ "host": "x86_64-linux-cuda-bf16",
+ "threads": 8,
+ "size": "base",
+ "task": "cuad",
+ "torch": "2.14.1+cu130",
+ "grid": {
+  "S32768_K41": {
+   "N": 2,
+   "p50_ms": {
+    "varlen-torch-varlen-batched-full": 765.5221316963434,
+    "engine-windowed-cold-split": 234.1380836442113,
+    "engine-windowed-hit-split": 56.343887001276016
+   },
+   "per_decision_p50_ms": {
+    "varlen-torch-varlen-batched-full": 18.671271504788862,
+    "engine-windowed-cold-split": 5.710684966931983,
+    "engine-windowed-hit-split": 1.3742411463725857
+   },
+   "speedup_vs_one_seq": {
+    "varlen-torch-varlen-batched-full": {
+     "speedup": 1.0,
+     "ci_low": 0.9991454531159748,
+     "ci_high": 1.0008463320229428,
+     "cell": "varlen-torch-varlen-batched-full",
+     "reference": "varlen-torch-varlen-batched-full",
+     "cell_p50_ms": 765.5221316963434,
+     "reference_p50_ms": 765.5221316963434,
+     "K": 41,
+     "S": 32768
+    },
+    "engine-windowed-cold-split": {
+     "speedup": 3.269532746580459,
+     "ci_low": 3.258578082853963,
+     "ci_high": 3.2911452950224622,
+     "cell": "engine-windowed-cold-split",
+     "reference": "varlen-torch-varlen-batched-full",
+     "cell_p50_ms": 234.1380836442113,
+     "reference_p50_ms": 765.5221316963434,
+     "K": 41,
+     "S": 32768
+    },
+    "engine-windowed-hit-split": {
+     "speedup": 13.586604908514861,
+     "ci_low": 13.499676510456462,
+     "ci_high": 13.710941045588342,
+     "cell": "engine-windowed-hit-split",
+     "reference": "varlen-torch-varlen-batched-full",
+     "cell_p50_ms": 56.343887001276016,
+     "reference_p50_ms": 765.5221316963434,
+     "K": 41,
+     "S": 32768
+    }
+   }
+  }
+ }
+}

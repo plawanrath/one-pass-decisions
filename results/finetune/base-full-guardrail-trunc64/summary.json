@@ -1,0 +1,11 @@
+{
+ "size": "base",
+ "task": "guardrail",
+ "max_state_tokens": 64,
+ "splits": {
+  "test": {
+   "n": 33850,
+   "accuracy": 0.8792909896602659
+  }
+ }
+}

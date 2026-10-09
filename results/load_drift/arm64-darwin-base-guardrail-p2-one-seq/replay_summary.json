@@ -1,0 +1,61 @@
+{
+ "trace": "results/traces/guardrail/requests.jsonl",
+ "trace_meta": {
+  "rate_per_s": 20.0,
+  "seed": 20260927,
+  "split": "test",
+  "arrivals": "simulated Poisson"
+ },
+ "n_requests": 600,
+ "questions_per_request": 2.6533333333333333,
+ "trace_rate_per_s": 19.813802657516703,
+ "threads": 8,
+ "device": "cpu",
+ "dtype": "fp32",
+ "no_cudnn_sdp": false,
+ "server": "one-seq",
+ "order": "edf",
+ "split": null,
+ "max_batch_tokens": 4096,
+ "max_state_tokens": 1024,
+ "results": {
+  "r1": {
+   "speedup": 0.05046986776264439,
+   "offered_rate_per_s": 1.0,
+   "offered_questions_per_s": 2.6533333333333333,
+   "n_requests": 600,
+   "n_questions": 1592,
+   "wall_s": 599.2351205000305,
+   "latency_ms_p50": 96.27854198333807,
+   "latency_ms_p99": 4680.925874970853,
+   "wait_ms_p99": 104.6739887440317,
+   "deadline_miss_rate": 0.9798994974874372,
+   "max_queue_depth": 60,
+   "steps": 600,
+   "cache": {},
+   "hit_rate": 0.0,
+   "extend_rate": 0.0,
+   "goodput_qps": 0.05340140940553963,
+   "p90_ms": 4331.4715410233475
+  },
+  "r2": {
+   "speedup": 0.10093973552528877,
+   "offered_rate_per_s": 2.0,
+   "offered_questions_per_s": 5.306666666666667,
+   "n_requests": 600,
+   "n_questions": 1592,
+   "wall_s": 299.6818316670251,
+   "latency_ms_p50": 102.74370852857828,
+   "latency_ms_p99": 4628.781917039305,
+   "wait_ms_p99": 941.1460969981233,
+   "deadline_miss_rate": 0.9635678391959799,
+   "max_queue_depth": 60,
+   "steps": 600,
+   "cache": {},
+   "hit_rate": 0.0,
+   "extend_rate": 0.0,
+   "goodput_qps": 0.1935385928381654,
+   "p90_ms": 4301.993500033859
+  }
+ }
+}

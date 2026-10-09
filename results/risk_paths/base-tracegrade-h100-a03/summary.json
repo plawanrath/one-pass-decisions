@@ -1,0 +1,173 @@
+{
+ "alpha": 0.03,
+ "delta": 0.05,
+ "reference": "torch-block",
+ "paths": {
+  "torch-block": {
+   "n_cal": 1726,
+   "n_test": 2298,
+   "grid_source": "own dev scores",
+   "own_threshold": {
+    "alpha": 0.03,
+    "delta": 0.05,
+    "tau": 0.9755535125732422,
+    "n_calibration": 1726,
+    "n_accepted": 1468,
+    "k_wrong": 32,
+    "coverage": 0.8505214368482039,
+    "empirical_risk": 0.021798365122615803,
+    "p_value": 0.03402577887121067,
+    "grid_sha256": "245ace2ce79b41223afd420afc323f2d06ce035b0121c3f2be0a433228454d16",
+    "pool_sha256": "",
+    "thresholds_tested": 79,
+    "path": {
+     "name": "torch-block"
+    }
+   },
+   "own_tau_on_test": {
+    "tau": 0.9755535125732422,
+    "coverage": 0.8572671888598782,
+    "risk": 0.024365482233502538,
+    "n": 2298,
+    "n_accepted": 1970,
+    "k_wrong": 48,
+    "risk_ci_low": 0.01801855811696128,
+    "risk_ci_high": 0.032176435053050456,
+    "violates_alpha": false
+   },
+   "reference_tau_on_test": {
+    "tau": 0.9755535125732422,
+    "coverage": 0.8572671888598782,
+    "risk": 0.024365482233502538,
+    "n": 2298,
+    "n_accepted": 1970,
+    "k_wrong": 48,
+    "risk_ci_low": 0.01801855811696128,
+    "risk_ci_high": 0.032176435053050456,
+    "violates_alpha": false
+   },
+   "hand_picked_tau_on_test": {
+    "tau": 0.9850581884384155,
+    "coverage": 0.803307223672759,
+    "risk": 0.01950162513542795,
+    "n": 2298,
+    "n_accepted": 1846,
+    "k_wrong": 36,
+    "risk_ci_low": 0.013695152132367447,
+    "risk_ci_high": 0.026897048194137983,
+    "violates_alpha": false
+   }
+  },
+  "torch-cuda-bf16": {
+   "n_cal": 1726,
+   "n_test": 2298,
+   "grid_source": "own dev scores",
+   "own_threshold": {
+    "alpha": 0.03,
+    "delta": 0.05,
+    "tau": 0.9760926961898804,
+    "n_calibration": 1726,
+    "n_accepted": 1467,
+    "k_wrong": 33,
+    "coverage": 0.8499420625724218,
+    "empirical_risk": 0.022494887525562373,
+    "p_value": 0.04920606085075081,
+    "grid_sha256": "3bf4ae20898ea0b7d0b943264539ad886709b825f99c5b2e367ea6d146d1aa19",
+    "pool_sha256": "",
+    "thresholds_tested": 79,
+    "path": {
+     "name": "torch-cuda-bf16"
+    }
+   },
+   "own_tau_on_test": {
+    "tau": 0.9760926961898804,
+    "coverage": 0.8559617058311575,
+    "risk": 0.02440264361972547,
+    "n": 2298,
+    "n_accepted": 1967,
+    "k_wrong": 48,
+    "risk_ci_low": 0.01804612161196351,
+    "risk_ci_high": 0.032225312263242226,
+    "violates_alpha": false
+   },
+   "reference_tau_on_test": {
+    "tau": 0.9755535125732422,
+    "coverage": 0.8598781549173194,
+    "risk": 0.02479757085020243,
+    "n": 2298,
+    "n_accepted": 1976,
+    "k_wrong": 49,
+    "risk_ci_low": 0.018400385380528347,
+    "risk_ci_high": 0.032652361066936836,
+    "violates_alpha": false
+   },
+   "hand_picked_tau_on_test": {
+    "tau": 0.9850581884384155,
+    "coverage": 0.804177545691906,
+    "risk": 0.01893939393939394,
+    "n": 2298,
+    "n_accepted": 1848,
+    "k_wrong": 35,
+    "risk_ci_low": 0.013226553194058632,
+    "risk_ci_high": 0.026242443260248258,
+    "violates_alpha": false
+   }
+  },
+  "torch-cuda-fp16": {
+   "n_cal": 1726,
+   "n_test": 2298,
+   "grid_source": "own dev scores",
+   "own_threshold": {
+    "alpha": 0.03,
+    "delta": 0.05,
+    "tau": 0.9750468730926514,
+    "n_calibration": 1726,
+    "n_accepted": 1474,
+    "k_wrong": 33,
+    "coverage": 0.8539976825028969,
+    "empirical_risk": 0.022388059701492536,
+    "p_value": 0.04615904992222386,
+    "grid_sha256": "ebd60404402d20bbb0aba4ab7ca6262acb3c8fc10f07dc972e464f47caa9e3a6",
+    "pool_sha256": "",
+    "thresholds_tested": 79,
+    "path": {
+     "name": "torch-cuda-fp16"
+    }
+   },
+   "own_tau_on_test": {
+    "tau": 0.9750468730926514,
+    "coverage": 0.8594429939077458,
+    "risk": 0.02481012658227848,
+    "n": 2298,
+    "n_accepted": 1975,
+    "k_wrong": 49,
+    "risk_ci_low": 0.018409730134826233,
+    "risk_ci_high": 0.03266882714784009,
+    "violates_alpha": false
+   },
+   "reference_tau_on_test": {
+    "tau": 0.9755535125732422,
+    "coverage": 0.8572671888598782,
+    "risk": 0.024873096446700507,
+    "n": 2298,
+    "n_accepted": 1970,
+    "k_wrong": 49,
+    "risk_ci_low": 0.018456596644970815,
+    "risk_ci_high": 0.03275140728214765,
+    "violates_alpha": false
+   },
+   "hand_picked_tau_on_test": {
+    "tau": 0.9850581884384155,
+    "coverage": 0.8054830287206266,
+    "risk": 0.019448946515397084,
+    "n": 2298,
+    "n_accepted": 1851,
+    "k_wrong": 36,
+    "risk_ci_low": 0.013658059322322958,
+    "risk_ci_high": 0.02682466656311912,
+    "violates_alpha": false
+   }
+  }
+ },
+ "path_scores_suffix": "h100"
+}

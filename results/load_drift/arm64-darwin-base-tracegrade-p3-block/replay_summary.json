@@ -1,0 +1,93 @@
+{
+ "trace": "results/traces/agent/requests_arrival_sample.jsonl",
+ "trace_meta": {
+  "arrivals": "measured step completion times, one uncontended run",
+  "n_trajectories": 300
+ },
+ "n_requests": 451,
+ "questions_per_request": 4.0,
+ "trace_rate_per_s": 0.053612501969136674,
+ "threads": 8,
+ "device": "cpu",
+ "dtype": "fp32",
+ "no_cudnn_sdp": false,
+ "server": "engine",
+ "order": "edf",
+ "split": null,
+ "max_batch_tokens": 4096,
+ "max_state_tokens": 1024,
+ "results": {
+  "x16": {
+   "speedup": 16.0,
+   "offered_rate_per_s": 0.8578000315061868,
+   "offered_questions_per_s": 3.431200126024747,
+   "n_requests": 451,
+   "n_questions": 1804,
+   "wall_s": 526.3494432920124,
+   "latency_ms_p50": 184.43170899990946,
+   "latency_ms_p99": 417.58187499362975,
+   "wait_ms_p99": 0.10366598144173622,
+   "deadline_miss_rate": 1.0,
+   "max_queue_depth": 4,
+   "steps": 451,
+   "cache": {
+    "entries": 235,
+    "bytes": 17059688448,
+    "hits": 0,
+    "misses": 451
+   },
+   "hit_rate": 0.0,
+   "extend_rate": 0.0,
+   "goodput_qps": 0.0,
+   "p90_ms": 406.2290829606354
+  },
+  "x64": {
+   "speedup": 64.0,
+   "offered_rate_per_s": 3.431200126024747,
+   "offered_questions_per_s": 13.724800504098988,
+   "n_requests": 451,
+   "n_questions": 1804,
+   "wall_s": 132.68509283394087,
+   "latency_ms_p50": 702.386207995005,
+   "latency_ms_p99": 3703.219832968898,
+   "wait_ms_p99": 2113.902207929641,
+   "deadline_miss_rate": 1.0,
+   "max_queue_depth": 56,
+   "steps": 244,
+   "cache": {
+    "entries": 235,
+    "bytes": 17059688448,
+    "hits": 180,
+    "misses": 451
+   },
+   "hit_rate": 0.0992239467849224,
+   "extend_rate": 0.0,
+   "goodput_qps": 0.0,
+   "p90_ms": 2880.424041999504
+  },
+  "x256": {
+   "speedup": 256.0,
+   "offered_rate_per_s": 13.724800504098988,
+   "offered_questions_per_s": 54.899202016395954,
+   "n_requests": 451,
+   "n_questions": 1804,
+   "wall_s": 114.65578649996314,
+   "latency_ms_p50": 38336.69014554471,
+   "latency_ms_p99": 80743.59345901757,
+   "wait_ms_p99": 78994.53850102145,
+   "deadline_miss_rate": 1.0,
+   "max_queue_depth": 1216,
+   "steps": 107,
+   "cache": {
+    "entries": 236,
+    "bytes": 17135652864,
+    "hits": 716,
+    "misses": 451
+   },
+   "hit_rate": 0.39634146341463417,
+   "extend_rate": 0.0,
+   "goodput_qps": 0.0,
+   "p90_ms": 72129.7880000202
+  }
+ }
+}

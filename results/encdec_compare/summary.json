@@ -1,0 +1,74 @@
+{
+ "encdec": {
+  "n": 1054,
+  "accuracy": 0.7741935483870968,
+  "aurc": 0.07371427882959625,
+  "eaurc": 0.04594271429788262,
+  "ece": 0.07597283631619736,
+  "auroc_error": 0.8308076907233481,
+  "coverage_at_risk_0.02": 0.2514231499051233,
+  "coverage_at_risk_0.05": 0.5502846299810247,
+  "coverage_at_risk_0.1": 0.683111954459203
+ },
+ "encdec_meta": {
+  "model": "encdec-t5-base-contractnli",
+  "task": "contractnli",
+  "enc_batch": 8,
+  "cells": {
+   "4096:17": {
+    "context_cap": 4096,
+    "context_tokens_median": 4097.0,
+    "flops_per_contract": 1778884884979.2
+   }
+  },
+  "cache_bytes_per_token_bf16": {
+   "encoder_output": 1536,
+   "cross_kv": 36864
+  },
+  "agreement_with_packed_scoring": {
+   "same": 170,
+   "total": 170,
+   "rate": 1.0
+  }
+ },
+ "engine_flops_per_contract": 1530816359628.8,
+ "engine_kb_per_token": 24.0025634765625,
+ "engine_served-masked_minus_encdec": {
+  "accuracy_pp": {
+   "point": 7.495256166982912,
+   "ci_low": 4.554079696394695,
+   "ci_high": 10.436432637571158
+  },
+  "aurc": {
+   "point": -0.011960346472886497,
+   "ci_low": -0.028662065064323117,
+   "ci_high": 0.005739968805821767,
+   "n": 1054,
+   "n_groups": 62,
+   "n_resamples": 10000
+  },
+  "n_groups": 62
+ },
+ "engine_full_minus_encdec": {
+  "accuracy_pp": {
+   "point": 7.969639468690701,
+   "ci_low": 5.313092979127148,
+   "ci_high": 10.626185958254268
+  },
+  "aurc": {
+   "point": -0.016048179180783773,
+   "ci_low": -0.03127099108754503,
+   "ci_high": -0.00033651971628565315,
+   "n": 1054,
+   "n_groups": 62,
+   "n_resamples": 10000
+  },
+  "n_groups": 62
+ },
+ "latency_ms_mps_S4096_K17": {
+  "encdec_cold": 350.74024996720254,
+  "encdec_resident": 91.92516648909077,
+  "engine_cold": 244.8684794944711,
+  "engine_hit": 38.40418753679842
+ }
+}

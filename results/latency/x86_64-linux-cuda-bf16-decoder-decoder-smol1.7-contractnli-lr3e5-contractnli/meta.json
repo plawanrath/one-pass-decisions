@@ -1,0 +1,25 @@
+{
+ "backend": "vllm",
+ "model": "decoder-smol1.7-contractnli-lr3e5",
+ "task": "contractnli",
+ "max_model_len": 8192,
+ "cells": {
+  "4096:1": {
+   "prefix_cap": 4096,
+   "prefix_tokens_median": 4097.0
+  },
+  "4096:2": {
+   "prefix_cap": 4096,
+   "prefix_tokens_median": 4097.0
+  },
+  "4096:5": {
+   "prefix_cap": 4096,
+   "prefix_tokens_median": 4097.0
+  },
+  "4096:10": {
+   "prefix_cap": 4096,
+   "prefix_tokens_median": 4097.0
+  }
+ },
+ "vllm": "0.30.0"
+}

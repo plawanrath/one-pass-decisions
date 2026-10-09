@@ -1,10 +1,10 @@
 {
- "n_requests": 451,
- "n_questions": 1804,
+ "n_requests": 1444,
+ "n_questions": 5776,
  "S_tokens": {
-  "5": 138.5,
-  "50": 331.0,
-  "95": 2851.5
+  "5": 180.15,
+  "50": 357.0,
+  "95": 1985.0499999999988
  },
  "K": {
   "5": 4.0,
@@ -32,14 +32,18 @@
   "50": 35.0,
   "95": 50.0
  },
+ "arrival_sample": {
+  "n_trajectories": 300,
+  "n_requests": 451
+ },
  "trajectories": {
-  "n": 300,
-  "steps_total": 451,
+  "n": 1000,
+  "steps_total": 1444,
   "steps_p50": 1.0,
-  "steps_p95": 4.0,
+  "steps_p95": 3.0,
   "steps_max": 9,
-  "step_error_rate": 0.3237250554323725,
-  "correct_rate": 0.7766666666666666,
+  "step_error_rate": 0.2922437673130194,
+  "correct_rate": 0.786,
   "run_errors": 9
  }
 }
